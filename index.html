@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LL9HD6QD6H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      // Denying analytics_storage puts GA4 into cookieless ping mode, so no
+      // consent banner is needed. Must be set before config. (client_storage
+      // is a Universal Analytics parameter and GA4 ignores it.) The trade-off
+      // is that every load counts as a new visitor.
+      gtag('consent', 'default', { analytics_storage: 'denied' });
+
+      gtag('js', new Date());
+      gtag('config', 'G-LL9HD6QD6H');
+    </script>
+    <title>TapScape — daily Old School RuneScape map game</title>
+    <meta name="description" content="Five Old School RuneScape locations a day. Click where you think each one is on the world map and score by how close you land." />
+    <meta name="theme-color" content="#0e0d0b" />
+    <link rel="canonical" href="https://tapscape.andrewhathaway.net/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tapscape.andrewhathaway.net/" />
+    <meta property="og:title" content="TapScape — daily Old School RuneScape map game" />
+    <meta property="og:description" content="Five OSRS locations a day. Click where you think each one is and score by how close you land." />
+    <meta property="og:image" content="https://tapscape.andrewhathaway.net/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

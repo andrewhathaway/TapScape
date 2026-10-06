@@ -1,0 +1,3602 @@
+[
+  {
+    "id": "al-kharid",
+    "name": "Al Kharid",
+    "x": 3290,
+    "y": 3185,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "aldarin",
+    "name": "Aldarin",
+    "x": 1391,
+    "y": 2935,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "ape-atoll",
+    "name": "Ape Atoll",
+    "x": 2750,
+    "y": 2750,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "arceuus",
+    "name": "Arceuus",
+    "x": 1700,
+    "y": 3800,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "ardougne-zoo",
+    "name": "Ardougne Zoo",
+    "x": 2615,
+    "y": 3272,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "barbarian-village",
+    "name": "Barbarian Village",
+    "x": 3080,
+    "y": 3427,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "barrows",
+    "name": "Barrows",
+    "x": 3567,
+    "y": 3291,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "baxtorian-falls",
+    "name": "Baxtorian Falls",
+    "x": 2513,
+    "y": 3483,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "brimhaven",
+    "name": "Brimhaven",
+    "x": 2760,
+    "y": 3195,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "burgh-de-rott",
+    "name": "Burgh de Rott",
+    "x": 3502,
+    "y": 3220,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "burthorpe",
+    "name": "Burthorpe",
+    "x": 2870,
+    "y": 3544,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "camelot",
+    "name": "Camelot",
+    "x": 2758,
+    "y": 3507,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "canifis",
+    "name": "Canifis",
+    "x": 3493,
+    "y": 3488,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "castle-drakan",
+    "name": "Castle Drakan",
+    "x": 3560,
+    "y": 3360,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "castle-wars",
+    "name": "Castle Wars",
+    "x": 2407,
+    "y": 3105,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "catherby",
+    "name": "Catherby",
+    "x": 2814,
+    "y": 3443,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "champions-guild",
+    "name": "Champions' Guild",
+    "x": 3191,
+    "y": 3357,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "corsair-cove",
+    "name": "Corsair Cove",
+    "x": 2573,
+    "y": 2856,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "crafting-guild",
+    "name": "Crafting Guild",
+    "x": 2932,
+    "y": 3281,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "crandor",
+    "name": "Crandor",
+    "x": 2836,
+    "y": 3271,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "darkmeyer",
+    "name": "Darkmeyer",
+    "x": 3597,
+    "y": 3360,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "digsite",
+    "name": "Digsite",
+    "x": 3354,
+    "y": 3420,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "draynor-manor",
+    "name": "Draynor Manor",
+    "x": 3107,
+    "y": 3359,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "draynor-village",
+    "name": "Draynor Village",
+    "x": 3103,
+    "y": 3265,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "duel-arena",
+    "name": "Duel Arena",
+    "x": 3360,
+    "y": 3233,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "east-ardougne",
+    "name": "East Ardougne",
+    "x": 2624,
+    "y": 3300,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "ectofuntus",
+    "name": "Ectofuntus",
+    "x": 3660,
+    "y": 3520,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "edgeville",
+    "name": "Edgeville",
+    "x": 3080,
+    "y": 3492,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "entrana",
+    "name": "Entrana",
+    "x": 2840,
+    "y": 3358,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "falador",
+    "name": "Falador",
+    "x": 3001,
+    "y": 3352,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "ferox-enclave",
+    "name": "Ferox Enclave",
+    "x": 3137,
+    "y": 3623,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "fishing-guild",
+    "name": "Fishing Guild",
+    "x": 2609,
+    "y": 3424,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "fossil-island",
+    "name": "Fossil Island",
+    "x": 3730,
+    "y": 3807,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "grand-exchange",
+    "name": "Grand Exchange",
+    "x": 3165,
+    "y": 3490,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "grand-tree",
+    "name": "Grand Tree",
+    "x": 2466,
+    "y": 3492,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "hosidius",
+    "name": "Hosidius",
+    "x": 1762,
+    "y": 3598,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "ice-mountain",
+    "name": "Ice Mountain",
+    "x": 3010,
+    "y": 3486,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "jatizso",
+    "name": "Jatizso",
+    "x": 2405,
+    "y": 3805,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "kourend-castle",
+    "name": "Kourend Castle",
+    "x": 1628,
+    "y": 3673,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "lava-maze",
+    "name": "Lava Maze",
+    "x": 3072,
+    "y": 3854,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "lletya",
+    "name": "Lletya",
+    "x": 2338,
+    "y": 3171,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "lovakengj",
+    "name": "Lovakengj",
+    "x": 1505,
+    "y": 3801,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "lumbridge",
+    "name": "Lumbridge",
+    "x": 3188,
+    "y": 3220,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "lumbridge-swamp",
+    "name": "Lumbridge Swamp",
+    "x": 3194,
+    "y": 3177,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "lunar-isle",
+    "name": "Lunar Isle",
+    "x": 2117,
+    "y": 3903,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "meiyerditch",
+    "name": "Meiyerditch",
+    "x": 3615,
+    "y": 3250,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "mining-guild",
+    "name": "Mining Guild",
+    "x": 3019,
+    "y": 3339,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "miscellania",
+    "name": "Miscellania",
+    "x": 2560,
+    "y": 3870,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "mor-ul-rek",
+    "name": "Mor Ul Rek",
+    "x": 2856,
+    "y": 3168,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "mos-le-harmless",
+    "name": "Mos Le'Harmless",
+    "x": 3735,
+    "y": 2999,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "mount-karuulm",
+    "name": "Mount Karuulm",
+    "x": 1311,
+    "y": 3807,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "musa-point",
+    "name": "Musa Point",
+    "x": 2904,
+    "y": 3162,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "nardah",
+    "name": "Nardah",
+    "x": 3427,
+    "y": 2911,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "neitiznot",
+    "name": "Neitiznot",
+    "x": 2331,
+    "y": 3802,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "pollnivneach",
+    "name": "Pollnivneach",
+    "x": 3358,
+    "y": 2974,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "port-khazard",
+    "name": "Port Khazard",
+    "x": 2653,
+    "y": 3159,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "port-phasmatys",
+    "name": "Port Phasmatys",
+    "x": 3679,
+    "y": 3486,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "port-piscarilius",
+    "name": "Port Piscarilius",
+    "x": 1803,
+    "y": 3752,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "port-sarim",
+    "name": "Port Sarim",
+    "x": 3029,
+    "y": 3221,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "rellekka",
+    "name": "Rellekka",
+    "x": 2658,
+    "y": 3677,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "rimmington",
+    "name": "Rimmington",
+    "x": 2949,
+    "y": 3226,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "seers-village",
+    "name": "Seers' Village",
+    "x": 2710,
+    "y": 3485,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "shantay-pass",
+    "name": "Shantay Pass",
+    "x": 3304,
+    "y": 3123,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "shayzien",
+    "name": "Shayzien",
+    "x": 1517,
+    "y": 3592,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "shilo-village-location",
+    "name": "Shilo Village",
+    "x": 2849,
+    "y": 2972,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "sophanem",
+    "name": "Sophanem",
+    "x": 3297,
+    "y": 2783,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "tai-bwo-wannai",
+    "name": "Tai Bwo Wannai",
+    "x": 2795,
+    "y": 3065,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "taverley",
+    "name": "Taverley",
+    "x": 2910,
+    "y": 3451,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "tree-gnome-stronghold",
+    "name": "Tree Gnome Stronghold",
+    "x": 2440,
+    "y": 3460,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "trollheim",
+    "name": "Trollheim",
+    "x": 2891,
+    "y": 3678,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "varlamore",
+    "name": "Varlamore",
+    "x": 1580,
+    "y": 3120,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "varrock",
+    "name": "Varrock",
+    "x": 3210,
+    "y": 3448,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "varrock-square",
+    "name": "Varrock Square",
+    "x": 3213,
+    "y": 3429,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "void-knights-outpost",
+    "name": "Void Knights' Outpost",
+    "x": 2656,
+    "y": 2656,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "west-ardougne",
+    "name": "West Ardougne",
+    "x": 2500,
+    "y": 3305,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "witchaven",
+    "name": "Witchaven",
+    "x": 2720,
+    "y": 3287,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "wizards-tower",
+    "name": "Wizards' Tower",
+    "x": 3109,
+    "y": 3160,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "yanille",
+    "name": "Yanille",
+    "x": 2577,
+    "y": 3090,
+    "plane": 0,
+    "tier": 1
+  },
+  {
+    "id": "abandoned-mine",
+    "name": "Abandoned Mine",
+    "x": 3440,
+    "y": 3232,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "agility-pyramid",
+    "name": "Agility Pyramid",
+    "x": 3365,
+    "y": 2842,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "al-kharid-mine",
+    "name": "Al Kharid mine",
+    "x": 3298,
+    "y": 3293,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "al-kharid-palace",
+    "name": "Al Kharid Palace",
+    "x": 3293,
+    "y": 3170,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "ancient-pyramid",
+    "name": "Ancient Pyramid",
+    "x": 3232,
+    "y": 2898,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "ancient-vault",
+    "name": "Ancient Vault",
+    "x": 3508,
+    "y": 2971,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "ape-atoll-agility-course",
+    "name": "Ape Atoll Agility Course",
+    "x": 2753,
+    "y": 2741,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "ape-atoll-dungeon",
+    "name": "Ape Atoll Dungeon",
+    "x": 2763,
+    "y": 2703,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "arandar",
+    "name": "Arandar",
+    "x": 2342,
+    "y": 3290,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "arceuus-library",
+    "name": "Arceuus Library",
+    "x": 1633,
+    "y": 3808,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "ardougne",
+    "name": "Ardougne",
+    "x": 2570,
+    "y": 3300,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "ardougne-market",
+    "name": "Ardougne Market",
+    "x": 2660,
+    "y": 3300,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "ardougne-monastery",
+    "name": "Ardougne Monastery",
+    "x": 2607,
+    "y": 3212,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "bandit-camp-kharidian-desert",
+    "name": "Bandit Camp (Kharidian Desert)",
+    "x": 3171,
+    "y": 2979,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "bandit-camp-wilderness",
+    "name": "Bandit Camp (Wilderness)",
+    "x": 3037,
+    "y": 3685,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "barbarian-outpost",
+    "name": "Barbarian Outpost",
+    "x": 2549,
+    "y": 3558,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "bedabin-camp",
+    "name": "Bedabin Camp",
+    "x": 3169,
+    "y": 3036,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "black-knights-fortress-location",
+    "name": "Black Knights' Fortress",
+    "x": 3020,
+    "y": 3514,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "blighted-volcano",
+    "name": "Blighted Volcano",
+    "x": 3365,
+    "y": 3935,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "bone-yard-hunter-area",
+    "name": "Bone Yard Hunter area",
+    "x": 3297,
+    "y": 3673,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "brine-rat-cavern",
+    "name": "Brine Rat Cavern",
+    "x": 2740,
+    "y": 3736,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "brittle-isle",
+    "name": "Brittle Isle",
+    "x": 1947,
+    "y": 4069,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "cairn-isle",
+    "name": "Cairn Isle",
+    "x": 2765,
+    "y": 2976,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "chaos-druid-tower",
+    "name": "Chaos Druid Tower",
+    "x": 2563,
+    "y": 3356,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "chaos-temple-asgarnia",
+    "name": "Chaos Temple (Asgarnia)",
+    "x": 2934,
+    "y": 3516,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "chaos-temple-church",
+    "name": "Chaos Temple (church)",
+    "x": 2952,
+    "y": 3821,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "chaos-temple-wilderness",
+    "name": "Chaos Temple (Wilderness)",
+    "x": 3240,
+    "y": 3608,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "charred-island",
+    "name": "Charred Island",
+    "x": 2648,
+    "y": 2406,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "chasm-of-fire",
+    "name": "Chasm of Fire",
+    "x": 1435,
+    "y": 3668,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "citharede-abbey",
+    "name": "Citharede Abbey",
+    "x": 3411,
+    "y": 3177,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "clock-tower-building",
+    "name": "Clock Tower (building)",
+    "x": 2569,
+    "y": 3244,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "coal-trucks",
+    "name": "Coal Trucks",
+    "x": 2598,
+    "y": 3490,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "combat-ring-shayzien",
+    "name": "Combat Ring (Shayzien)",
+    "x": 1544,
+    "y": 3624,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "combat-training-camp",
+    "name": "Combat Training Camp",
+    "x": 2515,
+    "y": 3370,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "cooks-guild",
+    "name": "Cooks' Guild",
+    "x": 3144,
+    "y": 3449,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "corsair-cove-resource-area",
+    "name": "Corsair Cove Resource Area",
+    "x": 2477,
+    "y": 2892,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "crash-site-cavern",
+    "name": "Crash Site Cavern",
+    "x": 2436,
+    "y": 3520,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "daimon-s-crater",
+    "name": "Daimon's Crater",
+    "x": 3426,
+    "y": 4064,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "dark-warriors-fortress",
+    "name": "Dark Warriors' Fortress",
+    "x": 3029,
+    "y": 3630,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "death-plateau-location",
+    "name": "Death Plateau",
+    "x": 2868,
+    "y": 3586,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "demonic-ruins",
+    "name": "Demonic Ruins",
+    "x": 3289,
+    "y": 3885,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "dense-essence-mine",
+    "name": "Dense essence mine",
+    "x": 1764,
+    "y": 3853,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "desert-mining-camp",
+    "name": "Desert Mining Camp",
+    "x": 3288,
+    "y": 3021,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "diango-s-workshop",
+    "name": "Diango's Workshop",
+    "x": 3091,
+    "y": 3276,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "eagles-peak-mountain",
+    "name": "Eagles' Peak",
+    "x": 2332,
+    "y": 3486,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "edgeville-bank",
+    "name": "Edgeville bank",
+    "x": 3095,
+    "y": 3494,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "edgeville-monastery",
+    "name": "Edgeville Monastery",
+    "x": 3052,
+    "y": 3490,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "elemental-workshop-location",
+    "name": "Elemental Workshop",
+    "x": 2710,
+    "y": 3497,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "etceteria",
+    "name": "Etceteria",
+    "x": 2604,
+    "y": 3873,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "falador-park",
+    "name": "Falador Park",
+    "x": 3007,
+    "y": 3380,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "farming-guild",
+    "name": "Farming Guild",
+    "x": 1249,
+    "y": 3737,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "feldip-hunter-area",
+    "name": "Feldip Hunter area",
+    "x": 2558,
+    "y": 2911,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "fenkenstrain-s-castle",
+    "name": "Fenkenstrain's Castle",
+    "x": 3549,
+    "y": 3550,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "fishing-platform",
+    "name": "Fishing Platform",
+    "x": 2778,
+    "y": 3282,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "ghorrock",
+    "name": "Ghorrock",
+    "x": 2915,
+    "y": 3935,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "giants-plateau",
+    "name": "Giants' Plateau",
+    "x": 3380,
+    "y": 3161,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "glarial-s-tomb",
+    "name": "Glarial's Tomb",
+    "x": 2556,
+    "y": 3445,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "gnome-stronghold-agility-course",
+    "name": "Gnome Stronghold Agility Course",
+    "x": 2480,
+    "y": 3428,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "goblin-settlement",
+    "name": "Goblin settlement",
+    "x": 2465,
+    "y": 3180,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "gu-tanoth",
+    "name": "Gu'Tanoth",
+    "x": 2524,
+    "y": 3035,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "gwenith",
+    "name": "Gwenith",
+    "x": 2200,
+    "y": 3410,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "h-a-m-hideout",
+    "name": "H.A.M. Hideout",
+    "x": 3200,
+    "y": 3235,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "hardwood-grove",
+    "name": "Hardwood Grove",
+    "x": 2824,
+    "y": 3084,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "harmony-island",
+    "name": "Harmony Island",
+    "x": 3805,
+    "y": 2844,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "haunted-woods",
+    "name": "Haunted Woods",
+    "x": 3584,
+    "y": 3492,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "hosidius-kitchen",
+    "name": "Hosidius Kitchen",
+    "x": 1679,
+    "y": 3618,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "house-on-the-hill",
+    "name": "House on the Hill",
+    "x": 3772,
+    "y": 3872,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "ice-path",
+    "name": "Ice Path",
+    "x": 2853,
+    "y": 3809,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "iorwerth-camp",
+    "name": "Iorwerth Camp",
+    "x": 2198,
+    "y": 3253,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "isafdar",
+    "name": "Isafdar",
+    "x": 2244,
+    "y": 3182,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "isle-of-souls",
+    "name": "Isle of Souls",
+    "x": 2210,
+    "y": 2900,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "jalsavrah-pyramid",
+    "name": "Jalsavrah Pyramid",
+    "x": 3289,
+    "y": 2795,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "kalphite-cave",
+    "name": "Kalphite Cave",
+    "x": 3320,
+    "y": 3122,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "karamja",
+    "name": "Karamja",
+    "x": 2843,
+    "y": 3070,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "kebos-swamp",
+    "name": "Kebos Swamp",
+    "x": 1270,
+    "y": 3616,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "kharazi-jungle",
+    "name": "Kharazi Jungle",
+    "x": 2865,
+    "y": 2907,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "kharid-et",
+    "name": "Kharid-et",
+    "x": 3381,
+    "y": 3198,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "klenter-s-pyramid",
+    "name": "Klenter's Pyramid",
+    "x": 3295,
+    "y": 2773,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "kourend-woodland",
+    "name": "Kourend Woodland",
+    "x": 1540,
+    "y": 3464,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "kruk-s-dungeon",
+    "name": "Kruk's Dungeon",
+    "x": 2715,
+    "y": 2789,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "lake-molch",
+    "name": "Lake Molch",
+    "x": 1370,
+    "y": 3633,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "land-s-end",
+    "name": "Land's End",
+    "x": 1510,
+    "y": 3430,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "lassar",
+    "name": "Lassar",
+    "x": 3010,
+    "y": 3486,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "lava-dragon-isle",
+    "name": "Lava Dragon Isle",
+    "x": 3204,
+    "y": 3828,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "legends-guild",
+    "name": "Legends' Guild",
+    "x": 2729,
+    "y": 3369,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "library-historical-archive",
+    "name": "Library Historical Archive",
+    "x": 1624,
+    "y": 3808,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "lighthouse",
+    "name": "Lighthouse",
+    "x": 2509,
+    "y": 3641,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "lizardman-caves",
+    "name": "Lizardman Caves",
+    "x": 1420,
+    "y": 3586,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "lumbridge-castle",
+    "name": "Lumbridge Castle",
+    "x": 3215,
+    "y": 3219,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "mage-arena",
+    "name": "Mage Arena",
+    "x": 3106,
+    "y": 3934,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "mage-arena-bank",
+    "name": "Mage Arena bank",
+    "x": 3090,
+    "y": 3956,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "marim",
+    "name": "Marim",
+    "x": 2765,
+    "y": 2786,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "melzar-s-maze",
+    "name": "Melzar's Maze",
+    "x": 2932,
+    "y": 3247,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "mess",
+    "name": "Mess",
+    "x": 1642,
+    "y": 3627,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "mistrock",
+    "name": "Mistrock",
+    "x": 1387,
+    "y": 2862,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "mort-myre-swamp",
+    "name": "Mort Myre Swamp",
+    "x": 3478,
+    "y": 3390,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "mort-ton",
+    "name": "Mort'ton",
+    "x": 3487,
+    "y": 3288,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "mount-quidamortem",
+    "name": "Mount Quidamortem",
+    "x": 1246,
+    "y": 3550,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "mountain-camp",
+    "name": "Mountain Camp",
+    "x": 2800,
+    "y": 3670,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "mourner-headquarters",
+    "name": "Mourner Headquarters",
+    "x": 2549,
+    "y": 3327,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "mudskipper-point",
+    "name": "Mudskipper Point",
+    "x": 2999,
+    "y": 3122,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "museum-camp",
+    "name": "Museum Camp",
+    "x": 3738,
+    "y": 3812,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "mushroom-forest",
+    "name": "Mushroom Forest",
+    "x": 3688,
+    "y": 3857,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "mycelium-pool",
+    "name": "Mycelium pool",
+    "x": 3689,
+    "y": 3886,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "myreque-hideout",
+    "name": "Myreque Hideout",
+    "x": 3510,
+    "y": 3449,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "myths-guild",
+    "name": "Myths' Guild",
+    "x": 2457,
+    "y": 2846,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "necromancer-s-tower",
+    "name": "Necromancer's Tower",
+    "x": 2670,
+    "y": 3243,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "necropolis",
+    "name": "Necropolis",
+    "x": 3340,
+    "y": 2724,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "observatory",
+    "name": "Observatory",
+    "x": 2441,
+    "y": 3162,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "ourania-cave",
+    "name": "Ourania Cave",
+    "x": 2452,
+    "y": 3231,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "paterdomus-temple",
+    "name": "Paterdomus Temple",
+    "x": 3416,
+    "y": 3487,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "penguin-agility-course",
+    "name": "Penguin Agility Course",
+    "x": 2648,
+    "y": 4055,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "pest-control",
+    "name": "Pest Control",
+    "x": 2658,
+    "y": 2625,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "pirates-cove",
+    "name": "Pirates' Cove",
+    "x": 2205,
+    "y": 3812,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "piscatoris",
+    "name": "Piscatoris",
+    "x": 2333,
+    "y": 3576,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "piscatoris-fishing-colony",
+    "name": "Piscatoris Fishing Colony",
+    "x": 2332,
+    "y": 3683,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "piscatoris-hunter-area",
+    "name": "Piscatoris Hunter area",
+    "x": 2329,
+    "y": 3585,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "port-roberts",
+    "name": "Port Roberts",
+    "x": 1888,
+    "y": 3298,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "port-sarim-jail",
+    "name": "Port Sarim jail",
+    "x": 3014,
+    "y": 3186,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "port-tyras",
+    "name": "Port Tyras",
+    "x": 2153,
+    "y": 3122,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "ranging-guild",
+    "name": "Ranging Guild",
+    "x": 2669,
+    "y": 3429,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "ritual-site",
+    "name": "Ritual Site",
+    "x": 1127,
+    "y": 3422,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "river-dougne",
+    "name": "River Dougne",
+    "x": 2557,
+    "y": 3304,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "river-lum",
+    "name": "River Lum",
+    "x": 3171,
+    "y": 3350,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "river-of-souls",
+    "name": "River of Souls",
+    "x": 1799,
+    "y": 3898,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "river-salve",
+    "name": "River Salve",
+    "x": 3403,
+    "y": 3350,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "rogues-castle",
+    "name": "Rogues' Castle",
+    "x": 3286,
+    "y": 3933,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "ruins-of-unkah",
+    "name": "Ruins of Unkah",
+    "x": 3165,
+    "y": 2845,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "ruins-of-uzer",
+    "name": "Ruins of Uzer",
+    "x": 3480,
+    "y": 3095,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "salt-mine",
+    "name": "Salt Mine",
+    "x": 2867,
+    "y": 3941,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "senntisten",
+    "name": "Senntisten",
+    "x": 3354,
+    "y": 3390,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "shayzien-encampment",
+    "name": "Shayzien Encampment",
+    "x": 1505,
+    "y": 3645,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "shilo-village-mine",
+    "name": "Shilo Village mine",
+    "x": 2823,
+    "y": 3001,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "silvarea",
+    "name": "Silvarea",
+    "x": 3375,
+    "y": 3500,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "sinclair-mansion",
+    "name": "Sinclair Mansion",
+    "x": 2743,
+    "y": 3555,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "slepe",
+    "name": "Slepe",
+    "x": 3724,
+    "y": 3335,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "smoke-devil-dungeon",
+    "name": "Smoke Devil Dungeon",
+    "x": 2412,
+    "y": 3061,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "smoke-dungeon",
+    "name": "Smoke Dungeon",
+    "x": 3310,
+    "y": 2962,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "south-falador-farm",
+    "name": "South Falador Farm",
+    "x": 3043,
+    "y": 3294,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "tar-swamp",
+    "name": "Tar Swamp",
+    "x": 3675,
+    "y": 3750,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "the-great-conch",
+    "name": "The Great Conch",
+    "x": 3200,
+    "y": 2435,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "the-node",
+    "name": "The Node",
+    "x": 3106,
+    "y": 3028,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "the-pandemonium",
+    "name": "The Pandemonium",
+    "x": 3040,
+    "y": 2980,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "the-stranglewood",
+    "name": "The Stranglewood",
+    "x": 1162,
+    "y": 3379,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "the-teomat",
+    "name": "The Teomat",
+    "x": 1449,
+    "y": 3185,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "tower-of-life-building",
+    "name": "Tower of Life (building)",
+    "x": 2650,
+    "y": 3219,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "tree-gnome-village-location",
+    "name": "Tree Gnome Village",
+    "x": 2520,
+    "y": 3167,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "troll-stronghold-location",
+    "name": "Troll Stronghold",
+    "x": 2836,
+    "y": 3680,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "trollweiss-mountain",
+    "name": "Trollweiss Mountain",
+    "x": 2782,
+    "y": 3790,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "tyras-camp",
+    "name": "Tyras Camp",
+    "x": 2185,
+    "y": 3145,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "underground-pass-dungeon",
+    "name": "Underground Pass",
+    "x": 2449,
+    "y": 3312,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "uzer-hunter-area",
+    "name": "Uzer Hunter area",
+    "x": 3419,
+    "y": 3100,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "uzer-mastaba",
+    "name": "Uzer Mastaba",
+    "x": 3490,
+    "y": 3021,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "uzer-oasis",
+    "name": "Uzer Oasis",
+    "x": 3489,
+    "y": 3041,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "varrock-palace",
+    "name": "Varrock Palace",
+    "x": 3212,
+    "y": 3474,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "varrock-rooftop-course",
+    "name": "Varrock Rooftop Course",
+    "x": 3220,
+    "y": 3414,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "vinery",
+    "name": "Vinery",
+    "x": 1815,
+    "y": 3555,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "warriors-guild",
+    "name": "Warriors' Guild",
+    "x": 2858,
+    "y": 3546,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "waterbirth-island",
+    "name": "Waterbirth Island",
+    "x": 2525,
+    "y": 3743,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "watson-s-house",
+    "name": "Watson's house",
+    "x": 1645,
+    "y": 3570,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "weiss",
+    "name": "Weiss",
+    "x": 2870,
+    "y": 3940,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "werewolf-skullball",
+    "name": "Werewolf Skullball",
+    "x": 3544,
+    "y": 3462,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "wilderness-god-wars-dungeon",
+    "name": "Wilderness God Wars Dungeon",
+    "x": 3016,
+    "y": 3739,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "witchaven-dungeon",
+    "name": "Witchaven Dungeon",
+    "x": 2696,
+    "y": 3283,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "wizards-guild",
+    "name": "Wizards' Guild",
+    "x": 2591,
+    "y": 3088,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "woodcutting-guild",
+    "name": "Woodcutting Guild",
+    "x": 1611,
+    "y": 3496,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "zemouregal-s-fort",
+    "name": "Zemouregal's Fort",
+    "x": 2833,
+    "y": 3858,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "zul-andra",
+    "name": "Zul-Andra",
+    "x": 2193,
+    "y": 3060,
+    "plane": 0,
+    "tier": 2
+  },
+  {
+    "id": "adventurers-camp-lumbridge-swamp",
+    "name": "Adventurers' Camp (Lumbridge Swamp)",
+    "x": 3150,
+    "y": 3205,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "agility-pyramid-mine",
+    "name": "Agility Pyramid mine",
+    "x": 3323,
+    "y": 2875,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "ah-za-rhoon",
+    "name": "Ah Za Rhoon",
+    "x": 2922,
+    "y": 3000,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "al-kharid-bank",
+    "name": "Al Kharid bank",
+    "x": 3269,
+    "y": 3167,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "aldarin-windmill",
+    "name": "Aldarin windmill",
+    "x": 1398,
+    "y": 2894,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "alice-s-farm",
+    "name": "Alice's farm",
+    "x": 3623,
+    "y": 3524,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "annakarl",
+    "name": "Annakarl",
+    "x": 3288,
+    "y": 3885,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "apple-orchard",
+    "name": "Apple orchard",
+    "x": 2480,
+    "y": 3380,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "arandar-mine",
+    "name": "Arandar mine",
+    "x": 2323,
+    "y": 3268,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "ardougne-castle",
+    "name": "Ardougne Castle",
+    "x": 2577,
+    "y": 3298,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "ardougne-farm",
+    "name": "Ardougne farm",
+    "x": 2650,
+    "y": 3366,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "ardougne-south-bank",
+    "name": "Ardougne south bank",
+    "x": 2654,
+    "y": 3284,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "banana-plantation",
+    "name": "Banana plantation",
+    "x": 2922,
+    "y": 3165,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "bandit-camp-mine",
+    "name": "Bandit Camp mine",
+    "x": 3087,
+    "y": 3762,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "barbarian-village-mine",
+    "name": "Barbarian Village mine",
+    "x": 3080,
+    "y": 3430,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "battlefield",
+    "name": "Battlefield",
+    "x": 2520,
+    "y": 3232,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "battlefield-mine",
+    "name": "Battlefield mine",
+    "x": 2473,
+    "y": 3252,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "battlefront",
+    "name": "Battlefront",
+    "x": 1368,
+    "y": 3716,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "bazaar",
+    "name": "Bazaar",
+    "x": 1680,
+    "y": 3106,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "black-arm-gang-headquarters",
+    "name": "Black Arm Gang Headquarters",
+    "x": 3189,
+    "y": 3391,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "bone-yard",
+    "name": "Bone Yard",
+    "x": 3236,
+    "y": 3746,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "brimstail-s-cave",
+    "name": "Brimstail's cave",
+    "x": 2402,
+    "y": 3419,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "burning-man",
+    "name": "Burning Man",
+    "x": 1460,
+    "y": 3791,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "burthorpe-castle",
+    "name": "Burthorpe Castle",
+    "x": 2899,
+    "y": 3564,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "canal-barge",
+    "name": "Canal barge",
+    "x": 3362,
+    "y": 3451,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "canifis-hunter-area",
+    "name": "Canifis Hunter area",
+    "x": 3550,
+    "y": 3450,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "carnillean-mansion",
+    "name": "Carnillean Mansion",
+    "x": 2571,
+    "y": 3272,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "carrallanger",
+    "name": "Carrallanger",
+    "x": 3148,
+    "y": 3652,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "central-fremennik-isles-mine",
+    "name": "Central Fremennik Isles mine",
+    "x": 2375,
+    "y": 3850,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "chemist-s-house",
+    "name": "Chemist's house",
+    "x": 2933,
+    "y": 3211,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "chompy-marsh",
+    "name": "Chompy Marsh",
+    "x": 2375,
+    "y": 3048,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "citharede-abbey-mine",
+    "name": "Citharede Abbey mine",
+    "x": 3403,
+    "y": 3170,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "corsair-cove-bank",
+    "name": "Corsair Cove bank",
+    "x": 2570,
+    "y": 2865,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "crabclaw-isle",
+    "name": "Crabclaw Isle",
+    "x": 1767,
+    "y": 3420,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "crafting-guild-mine",
+    "name": "Crafting Guild mine",
+    "x": 2932,
+    "y": 3283,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "crash-island",
+    "name": "Crash Island",
+    "x": 2914,
+    "y": 2720,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "crombwick-manor",
+    "name": "Crombwick Manor",
+    "x": 3726,
+    "y": 3358,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "crumbling-tower",
+    "name": "Crumbling Tower",
+    "x": 2135,
+    "y": 2996,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "crypt-white-knights-castle",
+    "name": "Crypt (White Knights' Castle)",
+    "x": 2965,
+    "y": 3331,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "dareeyak",
+    "name": "Dareeyak",
+    "x": 2970,
+    "y": 3695,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "dark-wizards-tower",
+    "name": "Dark Wizards' Tower",
+    "x": 2909,
+    "y": 3335,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "dognose-island",
+    "name": "Dognose Island",
+    "x": 3048,
+    "y": 2648,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "doric-s-hut",
+    "name": "Doric's hut",
+    "x": 2952,
+    "y": 3451,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "dragontooth-island",
+    "name": "Dragontooth Island",
+    "x": 3806,
+    "y": 3549,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "draynor-jail",
+    "name": "Draynor jail",
+    "x": 3122,
+    "y": 3247,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "east-fremennik-isles-mine",
+    "name": "East Fremennik Isles mine",
+    "x": 2408,
+    "y": 3860,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "east-lumbridge-swamp-mine",
+    "name": "East Lumbridge Swamp mine",
+    "x": 3227,
+    "y": 3148,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "edgeville-furnace",
+    "name": "Edgeville furnace",
+    "x": 3108,
+    "y": 3499,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "entrana-church",
+    "name": "Entrana church",
+    "x": 2850,
+    "y": 3349,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "exam-centre",
+    "name": "Exam Centre",
+    "x": 3352,
+    "y": 3340,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "experiment-cave",
+    "name": "Experiment cave",
+    "x": 3575,
+    "y": 3526,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "falador-east-bank",
+    "name": "Falador east bank",
+    "x": 3016,
+    "y": 3356,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "falador-west-bank",
+    "name": "Falador west bank",
+    "x": 2947,
+    "y": 3367,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "fight-arena-location",
+    "name": "Fight Arena",
+    "x": 2592,
+    "y": 3168,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "fight-arena-mine",
+    "name": "Fight Arena mine",
+    "x": 2630,
+    "y": 3145,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "fishing-guild-bank",
+    "name": "Fishing Guild bank",
+    "x": 2588,
+    "y": 3416,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "fishing-hamlet",
+    "name": "Fishing Hamlet",
+    "x": 1699,
+    "y": 3945,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "flamtaer",
+    "name": "Flamtaer",
+    "x": 3505,
+    "y": 3317,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "forthos-ruin",
+    "name": "Forthos Ruin",
+    "x": 1675,
+    "y": 3573,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "fortis-temple",
+    "name": "Fortis temple",
+    "x": 1698,
+    "y": 3086,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "fossil-island-volcano",
+    "name": "Fossil Island Volcano",
+    "x": 3783,
+    "y": 3783,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "frozen-waste-plateau",
+    "name": "Frozen Waste Plateau",
+    "x": 2964,
+    "y": 3903,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "giant-pit",
+    "name": "Giant Pit",
+    "x": 1445,
+    "y": 3613,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "gorlah",
+    "name": "Gorlah",
+    "x": 2284,
+    "y": 3428,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "grave-of-scorpius",
+    "name": "Grave of Scorpius",
+    "x": 2464,
+    "y": 3228,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "graveyard",
+    "name": "Graveyard",
+    "x": 3569,
+    "y": 3402,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "graveyard-of-heroes",
+    "name": "Graveyard of Heroes",
+    "x": 1497,
+    "y": 3564,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "graveyard-of-shadows",
+    "name": "Graveyard of Shadows",
+    "x": 3164,
+    "y": 3672,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "gwenith-hunter-area",
+    "name": "Gwenith Hunter area",
+    "x": 2270,
+    "y": 3408,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "harmony-island-windmill",
+    "name": "Harmony Island windmill",
+    "x": 3787,
+    "y": 2826,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "here-be-penguins",
+    "name": "Here be penguins",
+    "x": 2585,
+    "y": 3910,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "hobgoblin-peninsula",
+    "name": "Hobgoblin Peninsula",
+    "x": 2912,
+    "y": 3281,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "ice-troll-caves",
+    "name": "Ice Troll Caves",
+    "x": 2360,
+    "y": 3891,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "iceberg",
+    "name": "Iceberg",
+    "x": 2652,
+    "y": 4029,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "infirmary",
+    "name": "Infirmary",
+    "x": 1521,
+    "y": 3620,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "isafdar-mine",
+    "name": "Isafdar mine",
+    "x": 2278,
+    "y": 3158,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "island-of-stone",
+    "name": "Island of Stone",
+    "x": 2463,
+    "y": 4008,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "isle-of-souls-mine",
+    "name": "Isle of Souls mine",
+    "x": 2198,
+    "y": 2793,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "jaltevas-pyramid",
+    "name": "Jaltevas Pyramid",
+    "x": 3365,
+    "y": 2705,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "jatizso-mine",
+    "name": "Jatizso mine",
+    "x": 2397,
+    "y": 3812,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "jiggig",
+    "name": "Jiggig",
+    "x": 2465,
+    "y": 3046,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "jormungand-s-prison",
+    "name": "Jormungand's Prison",
+    "x": 2621,
+    "y": 3691,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "kandarin-windmill",
+    "name": "Kandarin windmill",
+    "x": 2634,
+    "y": 3386,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "karamja-hunter-area",
+    "name": "Karamja Hunter area",
+    "x": 2783,
+    "y": 3001,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "karamja-jungle-mine",
+    "name": "Karamja Jungle mine",
+    "x": 2849,
+    "y": 3033,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "karamja-volcano",
+    "name": "Karamja Volcano",
+    "x": 2845,
+    "y": 3174,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "karamjan-temple",
+    "name": "Karamjan Temple",
+    "x": 2943,
+    "y": 2896,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "kebos-lowlands-mine",
+    "name": "Kebos Lowlands mine",
+    "x": 1212,
+    "y": 3657,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "keep-le-faye",
+    "name": "Keep Le Faye",
+    "x": 2769,
+    "y": 3401,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "keldagrim-entrance-mine",
+    "name": "Keldagrim entrance mine",
+    "x": 2715,
+    "y": 3705,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "kingstown",
+    "name": "Kingstown",
+    "x": 1660,
+    "y": 3677,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "kraken-cove",
+    "name": "Kraken Cove",
+    "x": 2278,
+    "y": 3611,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "last-light",
+    "name": "Last Light",
+    "x": 2850,
+    "y": 2330,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "lava-maze-runite-mine",
+    "name": "Lava Maze runite mine",
+    "x": 3060,
+    "y": 3884,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "limestone-mine",
+    "name": "Limestone Mine",
+    "x": 3372,
+    "y": 3500,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "lithkren",
+    "name": "Lithkren",
+    "x": 3566,
+    "y": 4003,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "lizardman-canyon",
+    "name": "Lizardman Canyon",
+    "x": 1503,
+    "y": 3704,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "lizardman-settlement",
+    "name": "Lizardman Settlement",
+    "x": 1324,
+    "y": 3556,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "lletya-bank",
+    "name": "Lletya bank",
+    "x": 2352,
+    "y": 3162,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "locus-oasis",
+    "name": "Locus Oasis",
+    "x": 1685,
+    "y": 2986,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "lovakite-mine",
+    "name": "Lovakite mine",
+    "x": 1433,
+    "y": 3830,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "lucien-s-camp",
+    "name": "Lucien's camp",
+    "x": 2927,
+    "y": 3804,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "lumber-yard",
+    "name": "Lumber Yard",
+    "x": 3310,
+    "y": 3505,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "lumbridge-cow-field",
+    "name": "Lumbridge cow field",
+    "x": 3253,
+    "y": 3278,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "lumbridge-cow-field-north",
+    "name": "Lumbridge cow field (north)",
+    "x": 3183,
+    "y": 3328,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "lumbridge-graveyard",
+    "name": "Lumbridge Graveyard",
+    "x": 3245,
+    "y": 3200,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "lunar-isle-mine",
+    "name": "Lunar Isle mine",
+    "x": 2142,
+    "y": 3944,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "mac-s-island",
+    "name": "Mac's island",
+    "x": 2792,
+    "y": 3540,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "magic-axe-hut",
+    "name": "Magic axe hut",
+    "x": 3190,
+    "y": 3960,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "mausoleum",
+    "name": "Mausoleum",
+    "x": 3504,
+    "y": 3571,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "mcgrubor-s-wood",
+    "name": "McGrubor's Wood",
+    "x": 2652,
+    "y": 3485,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "miscellania-castle",
+    "name": "Miscellania Castle",
+    "x": 2513,
+    "y": 3861,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "molch",
+    "name": "Molch",
+    "x": 1304,
+    "y": 3663,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "monk-camp",
+    "name": "Monk camp",
+    "x": 1746,
+    "y": 3494,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "mons-gratia",
+    "name": "Mons Gratia",
+    "x": 1440,
+    "y": 3240,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "moonrise-brewery-and-winery",
+    "name": "Moonrise Brewery and Winery",
+    "x": 1360,
+    "y": 2922,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "moss-giant-island",
+    "name": "Moss Giant Island",
+    "x": 2696,
+    "y": 3208,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "mount-karuulm-mine",
+    "name": "Mount Karuulm mine",
+    "x": 1279,
+    "y": 3814,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "mynydd",
+    "name": "Mynydd",
+    "x": 2158,
+    "y": 3423,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "myreque-s-rest",
+    "name": "Myreque's Rest",
+    "x": 3493,
+    "y": 3230,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "nature-grotto",
+    "name": "Nature Grotto",
+    "x": 3441,
+    "y": 3337,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "necropolis-hunter-area",
+    "name": "Necropolis Hunter area",
+    "x": 3287,
+    "y": 2738,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "north-brimhaven-mine",
+    "name": "North Brimhaven mine",
+    "x": 2733,
+    "y": 3225,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "north-crandor-mine",
+    "name": "North Crandor mine",
+    "x": 2846,
+    "y": 3300,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "observatory-dungeon",
+    "name": "Observatory Dungeon",
+    "x": 2459,
+    "y": 3184,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "ortus-farm",
+    "name": "Ortus Farm",
+    "x": 1569,
+    "y": 3126,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "otto-s-grotto",
+    "name": "Otto's Grotto",
+    "x": 2502,
+    "y": 3489,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "ourania-hunter-area",
+    "name": "Ourania Hunter area",
+    "x": 2476,
+    "y": 3240,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "outer-fortis",
+    "name": "Outer Fortis",
+    "x": 1704,
+    "y": 3065,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "outlaw-camp",
+    "name": "Outlaw Camp",
+    "x": 3123,
+    "y": 3472,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "paddewwa",
+    "name": "Paddewwa",
+    "x": 3104,
+    "y": 3491,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "pest-control-island",
+    "name": "Pest Control Island",
+    "x": 2656,
+    "y": 2592,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "phoenix-gang-hideout",
+    "name": "Phoenix Gang Hideout",
+    "x": 3244,
+    "y": 3383,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "pirates-hideout-mine",
+    "name": "Pirates' Hideout mine",
+    "x": 3056,
+    "y": 3944,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "piscatoris-falconry-area",
+    "name": "Piscatoris falconry area",
+    "x": 2378,
+    "y": 3596,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "piscatoris-mine",
+    "name": "Piscatoris mine",
+    "x": 2338,
+    "y": 3640,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "poison-waste",
+    "name": "Poison Waste",
+    "x": 2245,
+    "y": 3078,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "quidamortem-cave",
+    "name": "Quidamortem Cave",
+    "x": 1214,
+    "y": 3559,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "ralos-rise-mine",
+    "name": "Ralos' Rise mine",
+    "x": 1482,
+    "y": 3085,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "rashiliyia-s-tomb",
+    "name": "Rashiliyia's Tomb",
+    "x": 2914,
+    "y": 3088,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "red-chinchompa-hunting-ground",
+    "name": "Red chinchompa hunting ground",
+    "x": 2526,
+    "y": 2894,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "red-rock",
+    "name": "Red Rock",
+    "x": 2799,
+    "y": 2517,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "rellekka-hunter-area",
+    "name": "Rellekka Hunter area",
+    "x": 2721,
+    "y": 3791,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "rellekka-mine",
+    "name": "Rellekka mine",
+    "x": 2683,
+    "y": 3704,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "rimmington-mine",
+    "name": "Rimmington mine",
+    "x": 2978,
+    "y": 3239,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "river-amja",
+    "name": "River Amja",
+    "x": 2915,
+    "y": 3030,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "river-hos",
+    "name": "River Hos",
+    "x": 1700,
+    "y": 3550,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "river-molch",
+    "name": "River Molch",
+    "x": 1262,
+    "y": 3686,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "river-varla",
+    "name": "River Varla",
+    "x": 1379,
+    "y": 3135,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "rock-island-prison",
+    "name": "Rock Island Prison",
+    "x": 2898,
+    "y": 2837,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "ruins-of-morra",
+    "name": "Ruins of Morra",
+    "x": 1452,
+    "y": 3509,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "ruins-of-ullek",
+    "name": "Ruins of Ullek",
+    "x": 3412,
+    "y": 2811,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "ruins-of-unkah-mine",
+    "name": "Ruins of Unkah mine",
+    "x": 3170,
+    "y": 2870,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "salvager-overlook",
+    "name": "Salvager Overlook",
+    "x": 1625,
+    "y": 3295,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "scorpion-pit",
+    "name": "Scorpion Pit",
+    "x": 3240,
+    "y": 3944,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "seers-village-bank",
+    "name": "Seers' Village bank",
+    "x": 2725,
+    "y": 3492,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "seers-village-courthouse",
+    "name": "Seers' Village courthouse",
+    "x": 2735,
+    "y": 3469,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "settlement-ruins",
+    "name": "Settlement Ruins",
+    "x": 1560,
+    "y": 3895,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "shed-lumbridge-swamp",
+    "name": "Shed (Lumbridge Swamp)",
+    "x": 3204,
+    "y": 3169,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "shilo-village-bank",
+    "name": "Shilo Village bank",
+    "x": 2853,
+    "y": 2955,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "shimmering-atoll",
+    "name": "Shimmering Atoll",
+    "x": 1569,
+    "y": 2786,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "shipwreck-cove",
+    "name": "Shipwreck Cove",
+    "x": 1575,
+    "y": 3315,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "shipyard-karamja",
+    "name": "Shipyard (Karamja)",
+    "x": 2987,
+    "y": 3050,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "slepe-church",
+    "name": "Slepe church",
+    "x": 3739,
+    "y": 3312,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "sorcerer-s-tower",
+    "name": "Sorcerer's Tower",
+    "x": 2703,
+    "y": 3406,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "south-brimhaven-mine",
+    "name": "South Brimhaven mine",
+    "x": 2744,
+    "y": 3150,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "south-crandor-mine",
+    "name": "South Crandor mine",
+    "x": 2829,
+    "y": 3245,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "south-salvager-overlook-mine",
+    "name": "South Salvager Overlook mine",
+    "x": 1632,
+    "y": 3277,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "south-wilderness-mine",
+    "name": "South Wilderness mine",
+    "x": 3105,
+    "y": 3569,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "south-east-ardougne-mine",
+    "name": "South-east Ardougne mine",
+    "x": 2600,
+    "y": 3232,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "south-east-varrock-mine",
+    "name": "South-east Varrock mine",
+    "x": 3287,
+    "y": 3365,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "south-west-varrock-mine",
+    "name": "South-west Varrock mine",
+    "x": 3177,
+    "y": 3370,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "south-west-wilderness-mine",
+    "name": "South-west Wilderness mine",
+    "x": 3014,
+    "y": 3589,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "stonecutter-outpost",
+    "name": "Stonecutter Outpost",
+    "x": 1740,
+    "y": 2963,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "temple-of-marimbo",
+    "name": "Temple of Marimbo",
+    "x": 2797,
+    "y": 2787,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "tempoross-cove",
+    "name": "Tempoross Cove",
+    "x": 3035,
+    "y": 2850,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "the-forgotten-cemetery",
+    "name": "The Forgotten Cemetery",
+    "x": 2976,
+    "y": 3750,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "the-stranglewood-mine",
+    "name": "The Stranglewood mine",
+    "x": 1168,
+    "y": 3320,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "tower-of-ascension",
+    "name": "Tower of Ascension",
+    "x": 1641,
+    "y": 3222,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "tower-of-magic",
+    "name": "Tower of Magic",
+    "x": 1580,
+    "y": 3820,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "trakerel-s-fish-shop",
+    "name": "Trakerel's Fish Shop",
+    "x": 3630,
+    "y": 3291,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "troll-arena",
+    "name": "Troll arena",
+    "x": 2911,
+    "y": 3612,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "tunnel-of-chaos",
+    "name": "Tunnel of Chaos",
+    "x": 3284,
+    "y": 3469,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "ungael",
+    "name": "Ungael",
+    "x": 2272,
+    "y": 4064,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "uzer-mine",
+    "name": "Uzer mine",
+    "x": 3416,
+    "y": 3160,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "varrock-anvil-building",
+    "name": "Varrock anvil building",
+    "x": 3190,
+    "y": 3424,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "varrock-church",
+    "name": "Varrock church",
+    "x": 3255,
+    "y": 3480,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "varrock-hair-salon",
+    "name": "Varrock hair salon",
+    "x": 3258,
+    "y": 3463,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "ver-sinhaza",
+    "name": "Ver Sinhaza",
+    "x": 3663,
+    "y": 3220,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "verdant-valley",
+    "name": "Verdant Valley",
+    "x": 3760,
+    "y": 3760,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "villa-lucens",
+    "name": "Villa Lucens",
+    "x": 1450,
+    "y": 2930,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "war-tent",
+    "name": "War Tent",
+    "x": 1485,
+    "y": 3636,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "water-mill-cellar",
+    "name": "Water mill cellar",
+    "x": 3230,
+    "y": 3286,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "west-falador-mine",
+    "name": "West Falador mine",
+    "x": 2908,
+    "y": 3362,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "west-fremennik-isles-mine",
+    "name": "West Fremennik Isles mine",
+    "x": 2315,
+    "y": 3854,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "white-knights-castle",
+    "name": "White Knights' Castle",
+    "x": 2974,
+    "y": 3342,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "white-wolf-mountain",
+    "name": "White Wolf Mountain",
+    "x": 2845,
+    "y": 3483,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "wilderness-hunter-area",
+    "name": "Wilderness Hunter area",
+    "x": 3144,
+    "y": 3776,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "wilderness-pond",
+    "name": "Wilderness Pond",
+    "x": 3144,
+    "y": 3800,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "wintertodt-camp",
+    "name": "Wintertodt Camp",
+    "x": 1630,
+    "y": 3938,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "witch-s-house-location",
+    "name": "Witch's house",
+    "x": 2919,
+    "y": 3468,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "xeric-s-lookout",
+    "name": "Xeric's Lookout",
+    "x": 1590,
+    "y": 3531,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "yanille-chain",
+    "name": "Yanille Chain",
+    "x": 2665,
+    "y": 3098,
+    "plane": 0,
+    "tier": 3
+  },
+  {
+    "id": "zamorakian-chapel",
+    "name": "Zamorakian chapel",
+    "x": 3259,
+    "y": 3387,
+    "plane": 0,
+    "tier": 3
+  }
+]

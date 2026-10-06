@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tapscape",
+  "compatibility_date": "2026-10-01",
+
+  // Assets-only Worker: no `main` script, Cloudflare just serves ./dist.
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  },
+
+  // custom_domain creates and manages the DNS record for the subdomain, so this
+  // never touches the apex route that serves the Astro site.
+  "routes": [
+    {
+      "pattern": "tapscape.andrewhathaway.net",
+      "custom_domain": true
+    }
+  ]
+}

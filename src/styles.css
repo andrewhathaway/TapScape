@@ -1,0 +1,254 @@
+:root {
+  --bg: #0e0d0b;
+  --panel: #17150f;
+  --panel-2: #211d14;
+  --edge: #3a3426;
+  --ink: #f0e6d2;
+  --ink-dim: #a2977d;
+  --gold: #ffb833;
+  --bad: #d84b3a;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; margin: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 14px/1.5 system-ui, -apple-system, 'Segoe UI', sans-serif;
+  overscroll-behavior: none;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: var(--gold); }
+
+.app { display: grid; grid-template-rows: auto 1fr; height: 100%; }
+
+/* ---------- top bar ---------- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 9px 14px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--edge);
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.modes { display: flex; gap: 2px; background: var(--panel-2); border-radius: 7px; padding: 2px; }
+
+.tab {
+  background: none;
+  border: 0;
+  color: var(--ink-dim);
+  padding: 5px 12px;
+  border-radius: 5px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.tab.active { background: var(--edge); color: var(--ink); }
+
+.prompt { flex: 1 1 180px; min-width: 0; }
+
+.prompt-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--ink-dim);
+}
+
+.prompt-name {
+  font-size: 19px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rounds { display: flex; gap: 5px; }
+
+.pip { width: 9px; height: 9px; border-radius: 50%; background: var(--edge); }
+.pip.done { background: var(--gold); }
+.pip.current { box-shadow: 0 0 0 2px var(--ink) inset; background: transparent; }
+
+.score { font-variant-numeric: tabular-nums; font-weight: 700; min-width: 3.5em; text-align: right; }
+
+.icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--edge);
+  background: var(--panel-2);
+  color: var(--ink-dim);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+.icon:hover { color: var(--ink); border-color: var(--ink-dim); }
+
+/* ---------- map stage ---------- */
+
+.stage { position: relative; }
+.map-root { position: absolute; inset: 0; }
+.leaflet-container { background: #0a0908; font: inherit; }
+.leaflet-control-attribution { background: rgba(14,13,11,.75); color: var(--ink-dim); }
+.leaflet-control-attribution a { color: var(--ink-dim); }
+
+.pin span {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #0e0d0b;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.4);
+}
+.pin-guess span { background: var(--ink); }
+
+/* The rendered tiles are dense with their own icons, so the answer needs to
+   out-shout them rather than just sit on top. */
+.pin-answer span {
+  background: var(--bad);
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px rgba(216,75,58,.55), 0 2px 10px rgba(0,0,0,.8);
+}
+.pin-answer::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border-radius: 50%;
+  border: 2px solid var(--bad);
+  animation: ping 1.6s ease-out 3;
+}
+
+@keyframes ping {
+  from { transform: scale(1); opacity: .9; }
+  to   { transform: scale(3.2); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pin-answer::after { animation: none; opacity: 0; }
+}
+
+/* ---------- heads-up display ---------- */
+
+.hud {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  pointer-events: none;
+  width: min(420px, calc(100vw - 24px));
+}
+.hud > * { pointer-events: auto; }
+
+.readout {
+  background: rgba(23,21,15,.95);
+  border: 1px solid var(--edge);
+  border-radius: 9px;
+  padding: 9px 16px;
+  text-align: center;
+  width: 100%;
+}
+.readout-score { font-size: 21px; font-weight: 800; color: var(--gold); }
+.readout-dist { color: var(--ink-dim); font-size: 13px; }
+
+.hint { font-size: 12px; color: var(--ink-dim); text-shadow: 0 1px 4px #000; }
+
+/* ---------- buttons ---------- */
+
+button.primary, button.secondary {
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 24px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+button.primary { background: var(--gold); color: #1a1403; }
+button.primary:disabled { background: var(--panel-2); color: var(--ink-dim); cursor: not-allowed; }
+button.secondary { background: var(--panel-2); color: var(--ink); border: 1px solid var(--edge); }
+
+/* ---------- overlays ---------- */
+
+.scrim, .summary {
+  position: absolute;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  background: rgba(8,7,5,.84);
+  padding: 16px;
+}
+.scrim { position: fixed; }
+
+.sheet, .summary-card {
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  border-radius: 12px;
+  padding: 20px 22px;
+  width: min(440px, 100%);
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+}
+
+.sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.sheet-head h2 { margin: 0 0 6px; font-size: 20px; }
+
+.sheet-actions { display: flex; gap: 9px; margin-top: 18px; flex-wrap: wrap; }
+.sheet-actions button { flex: 1 1 140px; }
+
+.prose p { margin: 10px 0; }
+.prose ul { margin: 10px 0; padding-left: 18px; }
+.prose li { margin: 5px 0; }
+.muted { color: var(--ink-dim); font-size: 13px; }
+.streak { margin-top: 12px; }
+
+.summary-card h2 { margin: 0 0 2px; font-size: 18px; }
+.summary-total { font-size: 34px; font-weight: 800; color: var(--gold); line-height: 1.1; }
+
+.summary-list { list-style: none; margin: 14px 0 0; padding: 0; }
+.summary-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  border-top: 1px solid var(--edge);
+  font-size: 13px;
+}
+.summary-list span:last-child { color: var(--ink-dim); white-space: nowrap; }
+
+@media (max-width: 560px) {
+  .topbar { gap: 8px 10px; padding: 7px 10px; }
+  .brand { font-size: 13px; }
+  .tab { padding: 5px 10px; }
+  /* The prompt already says which round it is, so the pips are redundant here. */
+  .rounds { display: none; }
+  .score { min-width: 0; margin-left: auto; }
+  .prompt { order: 10; flex-basis: 100%; }
+  .prompt-name { font-size: 17px; }
+  .summary-total { font-size: 30px; }
+  .hud { bottom: 30px; }
+}
