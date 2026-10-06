@@ -5,3 +5,6 @@ dist
 .DS_Store
 *.local
 *.tsbuildinfo
+
+# Local working notes, not for the public repo
+*.local.md
