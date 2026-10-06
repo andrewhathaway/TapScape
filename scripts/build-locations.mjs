@@ -61,10 +61,16 @@ function polygonPoints(raw) {
  * region from the `zoom` the infobox map opens at — the wiki's own judgement of
  * how much of Gielinor you need on screen to see the place. 0 is an island, 3 is
  * one building. Articles with no zoom at all are mostly small interiors.
+ *
+ * Calibrated against the articles that have both a zoom and a real polygon, at
+ * roughly the 75th percentile of each bucket: generous enough for the larger
+ * members, since a zoom frames a lot of context around the place itself and
+ * sizing off that directly came out 2-4x too big. Zoom 0 has no polygon anywhere
+ * to check against — those nine are whole islands and regions.
  */
-const ZOOM_RADIUS = { 0: 220, 1: 90, 2: 45, 3: 20, 4: 15 }
-const DEFAULT_RADIUS = 25
-const MAX_RADIUS = 250
+const ZOOM_RADIUS = { 0: 150, 1: 50, 2: 22, 3: 12, 4: 8 }
+const DEFAULT_RADIUS = 12
+const MAX_RADIUS = 150
 
 /**
  * Finds the {{Map}} call describing the article's own subject. Pages often carry

@@ -6,7 +6,7 @@
     "y": 3185,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "aldarin",
@@ -15,7 +15,7 @@
     "y": 2935,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "ape-atoll",
@@ -24,7 +24,7 @@
     "y": 2750,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "arceuus",
@@ -33,7 +33,7 @@
     "y": 3800,
     "plane": 0,
     "tier": 1,
-    "radius": 220
+    "radius": 150
   },
   {
     "id": "ardougne-zoo",
@@ -42,7 +42,7 @@
     "y": 3272,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "barbarian-village",
@@ -51,7 +51,7 @@
     "y": 3427,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "barrows",
@@ -60,7 +60,7 @@
     "y": 3291,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "baxtorian-falls",
@@ -69,7 +69,7 @@
     "y": 3483,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "brimhaven",
@@ -78,7 +78,7 @@
     "y": 3195,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "burgh-de-rott",
@@ -87,7 +87,7 @@
     "y": 3220,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "burthorpe",
@@ -96,7 +96,7 @@
     "y": 3544,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "camelot",
@@ -105,7 +105,7 @@
     "y": 3507,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "canifis",
@@ -114,7 +114,7 @@
     "y": 3488,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "castle-drakan",
@@ -123,7 +123,7 @@
     "y": 3360,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "castle-wars",
@@ -132,7 +132,7 @@
     "y": 3105,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "catherby",
@@ -141,7 +141,7 @@
     "y": 3443,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "champions-guild",
@@ -150,7 +150,7 @@
     "y": 3357,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "corsair-cove",
@@ -159,7 +159,7 @@
     "y": 2856,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "crafting-guild",
@@ -168,7 +168,7 @@
     "y": 3281,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "crandor",
@@ -177,7 +177,7 @@
     "y": 3271,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "darkmeyer",
@@ -186,7 +186,7 @@
     "y": 3360,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "digsite",
@@ -195,7 +195,7 @@
     "y": 3420,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "draynor-manor",
@@ -213,7 +213,7 @@
     "y": 3265,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "duel-arena",
@@ -222,7 +222,7 @@
     "y": 3233,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "east-ardougne",
@@ -231,7 +231,7 @@
     "y": 3300,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "ectofuntus",
@@ -240,7 +240,7 @@
     "y": 3520,
     "plane": 0,
     "tier": 1,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "edgeville",
@@ -249,7 +249,7 @@
     "y": 3492,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "entrana",
@@ -258,7 +258,7 @@
     "y": 3358,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "falador",
@@ -276,7 +276,7 @@
     "y": 3623,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "fishing-guild",
@@ -285,7 +285,7 @@
     "y": 3424,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "fossil-island",
@@ -294,7 +294,7 @@
     "y": 3807,
     "plane": 0,
     "tier": 1,
-    "radius": 220
+    "radius": 150
   },
   {
     "id": "grand-exchange",
@@ -303,7 +303,7 @@
     "y": 3490,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "grand-tree",
@@ -312,7 +312,7 @@
     "y": 3492,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "hosidius",
@@ -321,7 +321,7 @@
     "y": 3598,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "ice-mountain",
@@ -330,7 +330,7 @@
     "y": 3486,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "jatizso",
@@ -339,7 +339,7 @@
     "y": 3805,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "kourend-castle",
@@ -348,7 +348,7 @@
     "y": 3673,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "lava-maze",
@@ -357,7 +357,7 @@
     "y": 3854,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "lletya",
@@ -366,7 +366,7 @@
     "y": 3171,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "lovakengj",
@@ -375,7 +375,7 @@
     "y": 3801,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "lumbridge",
@@ -384,7 +384,7 @@
     "y": 3220,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "lumbridge-swamp",
@@ -402,7 +402,7 @@
     "y": 3903,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "meiyerditch",
@@ -411,7 +411,7 @@
     "y": 3250,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "mining-guild",
@@ -420,7 +420,7 @@
     "y": 3339,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "miscellania",
@@ -429,7 +429,7 @@
     "y": 3870,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "mor-ul-rek",
@@ -438,7 +438,7 @@
     "y": 3168,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "mos-le-harmless",
@@ -447,7 +447,7 @@
     "y": 2999,
     "plane": 0,
     "tier": 1,
-    "radius": 220
+    "radius": 150
   },
   {
     "id": "mount-karuulm",
@@ -456,7 +456,7 @@
     "y": 3807,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "musa-point",
@@ -465,7 +465,7 @@
     "y": 3162,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "nardah",
@@ -474,7 +474,7 @@
     "y": 2911,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "neitiznot",
@@ -483,7 +483,7 @@
     "y": 3802,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "pollnivneach",
@@ -492,7 +492,7 @@
     "y": 2974,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "port-khazard",
@@ -501,7 +501,7 @@
     "y": 3159,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "port-phasmatys",
@@ -510,7 +510,7 @@
     "y": 3486,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "port-piscarilius",
@@ -519,7 +519,7 @@
     "y": 3752,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "port-sarim",
@@ -528,7 +528,7 @@
     "y": 3221,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "rellekka",
@@ -537,7 +537,7 @@
     "y": 3677,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "rimmington",
@@ -555,7 +555,7 @@
     "y": 3485,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "shantay-pass",
@@ -564,7 +564,7 @@
     "y": 3123,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "shayzien",
@@ -573,7 +573,7 @@
     "y": 3592,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "shilo-village-location",
@@ -582,7 +582,7 @@
     "y": 2972,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "sophanem",
@@ -591,7 +591,7 @@
     "y": 2783,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "tai-bwo-wannai",
@@ -600,7 +600,7 @@
     "y": 3065,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "taverley",
@@ -609,7 +609,7 @@
     "y": 3451,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "tree-gnome-stronghold",
@@ -618,7 +618,7 @@
     "y": 3460,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "trollheim",
@@ -627,7 +627,7 @@
     "y": 3678,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "varlamore",
@@ -636,7 +636,7 @@
     "y": 3120,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "varrock",
@@ -645,7 +645,7 @@
     "y": 3448,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "varrock-square",
@@ -654,7 +654,7 @@
     "y": 3429,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "void-knights-outpost",
@@ -663,7 +663,7 @@
     "y": 2656,
     "plane": 0,
     "tier": 1,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "west-ardougne",
@@ -672,7 +672,7 @@
     "y": 3305,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "witchaven",
@@ -681,7 +681,7 @@
     "y": 3287,
     "plane": 0,
     "tier": 1,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "wizards-tower",
@@ -690,7 +690,7 @@
     "y": 3160,
     "plane": 0,
     "tier": 1,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "yanille",
@@ -699,7 +699,7 @@
     "y": 3090,
     "plane": 0,
     "tier": 1,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "abandoned-mine",
@@ -708,7 +708,7 @@
     "y": 3232,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "agility-pyramid",
@@ -717,7 +717,7 @@
     "y": 2842,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "al-kharid-mine",
@@ -726,7 +726,7 @@
     "y": 3293,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "al-kharid-palace",
@@ -735,7 +735,7 @@
     "y": 3170,
     "plane": 0,
     "tier": 2,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "ancient-pyramid",
@@ -744,7 +744,7 @@
     "y": 2898,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "ancient-vault",
@@ -753,7 +753,7 @@
     "y": 2971,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "ape-atoll-agility-course",
@@ -762,7 +762,7 @@
     "y": 2741,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "ape-atoll-dungeon",
@@ -771,7 +771,7 @@
     "y": 2703,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "arandar",
@@ -780,7 +780,7 @@
     "y": 3290,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "arceuus-library",
@@ -798,7 +798,7 @@
     "y": 3300,
     "plane": 0,
     "tier": 2,
-    "radius": 220
+    "radius": 150
   },
   {
     "id": "ardougne-market",
@@ -807,7 +807,7 @@
     "y": 3300,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "ardougne-monastery",
@@ -825,7 +825,7 @@
     "y": 2979,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "bandit-camp-wilderness",
@@ -834,7 +834,7 @@
     "y": 3685,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "barbarian-outpost",
@@ -843,7 +843,7 @@
     "y": 3558,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "bedabin-camp",
@@ -852,7 +852,7 @@
     "y": 3036,
     "plane": 0,
     "tier": 2,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "black-knights-fortress-location",
@@ -861,7 +861,7 @@
     "y": 3514,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "blighted-volcano",
@@ -870,7 +870,7 @@
     "y": 3935,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "bone-yard-hunter-area",
@@ -879,7 +879,7 @@
     "y": 3673,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "brine-rat-cavern",
@@ -888,7 +888,7 @@
     "y": 3736,
     "plane": 0,
     "tier": 2,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "brittle-isle",
@@ -897,7 +897,7 @@
     "y": 4069,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "cairn-isle",
@@ -906,7 +906,7 @@
     "y": 2976,
     "plane": 0,
     "tier": 2,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "chaos-druid-tower",
@@ -915,7 +915,7 @@
     "y": 3356,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "chaos-temple-asgarnia",
@@ -924,7 +924,7 @@
     "y": 3516,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "chaos-temple-church",
@@ -942,7 +942,7 @@
     "y": 3608,
     "plane": 0,
     "tier": 2,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "charred-island",
@@ -951,7 +951,7 @@
     "y": 2406,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "chasm-of-fire",
@@ -960,7 +960,7 @@
     "y": 3668,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "citharede-abbey",
@@ -969,7 +969,7 @@
     "y": 3177,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "clock-tower-building",
@@ -987,7 +987,7 @@
     "y": 3490,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "combat-ring-shayzien",
@@ -996,7 +996,7 @@
     "y": 3624,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "combat-training-camp",
@@ -1005,7 +1005,7 @@
     "y": 3370,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "cooks-guild",
@@ -1023,7 +1023,7 @@
     "y": 2892,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "crash-site-cavern",
@@ -1032,7 +1032,7 @@
     "y": 3520,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "daimon-s-crater",
@@ -1041,7 +1041,7 @@
     "y": 4064,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "dark-warriors-fortress",
@@ -1050,7 +1050,7 @@
     "y": 3630,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "death-plateau-location",
@@ -1059,7 +1059,7 @@
     "y": 3586,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "demonic-ruins",
@@ -1068,7 +1068,7 @@
     "y": 3885,
     "plane": 0,
     "tier": 2,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "dense-essence-mine",
@@ -1077,7 +1077,7 @@
     "y": 3853,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "desert-mining-camp",
@@ -1086,7 +1086,7 @@
     "y": 3021,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "diango-s-workshop",
@@ -1104,7 +1104,7 @@
     "y": 3486,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "edgeville-bank",
@@ -1122,7 +1122,7 @@
     "y": 3490,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "elemental-workshop-location",
@@ -1131,7 +1131,7 @@
     "y": 3497,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "etceteria",
@@ -1140,7 +1140,7 @@
     "y": 3873,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "falador-park",
@@ -1158,7 +1158,7 @@
     "y": 3737,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "feldip-hunter-area",
@@ -1167,7 +1167,7 @@
     "y": 2911,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "fenkenstrain-s-castle",
@@ -1176,7 +1176,7 @@
     "y": 3550,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "fishing-platform",
@@ -1185,7 +1185,7 @@
     "y": 3282,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "ghorrock",
@@ -1194,7 +1194,7 @@
     "y": 3935,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "giants-plateau",
@@ -1203,7 +1203,7 @@
     "y": 3161,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "glarial-s-tomb",
@@ -1212,7 +1212,7 @@
     "y": 3445,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "gnome-stronghold-agility-course",
@@ -1221,7 +1221,7 @@
     "y": 3428,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "goblin-settlement",
@@ -1230,7 +1230,7 @@
     "y": 3180,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "gu-tanoth",
@@ -1239,7 +1239,7 @@
     "y": 3035,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "gwenith",
@@ -1248,7 +1248,7 @@
     "y": 3410,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "h-a-m-hideout",
@@ -1257,7 +1257,7 @@
     "y": 3235,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "hardwood-grove",
@@ -1275,7 +1275,7 @@
     "y": 2844,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "haunted-woods",
@@ -1284,7 +1284,7 @@
     "y": 3492,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "hosidius-kitchen",
@@ -1293,7 +1293,7 @@
     "y": 3618,
     "plane": 0,
     "tier": 2,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "house-on-the-hill",
@@ -1302,7 +1302,7 @@
     "y": 3872,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "ice-path",
@@ -1311,7 +1311,7 @@
     "y": 3809,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "iorwerth-camp",
@@ -1320,7 +1320,7 @@
     "y": 3253,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "isafdar",
@@ -1329,7 +1329,7 @@
     "y": 3182,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "isle-of-souls",
@@ -1338,7 +1338,7 @@
     "y": 2900,
     "plane": 0,
     "tier": 2,
-    "radius": 220
+    "radius": 150
   },
   {
     "id": "jalsavrah-pyramid",
@@ -1347,7 +1347,7 @@
     "y": 2795,
     "plane": 0,
     "tier": 2,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "kalphite-cave",
@@ -1356,7 +1356,7 @@
     "y": 3122,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "karamja",
@@ -1365,7 +1365,7 @@
     "y": 3070,
     "plane": 0,
     "tier": 2,
-    "radius": 220
+    "radius": 150
   },
   {
     "id": "kebos-swamp",
@@ -1374,7 +1374,7 @@
     "y": 3616,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "kharazi-jungle",
@@ -1383,7 +1383,7 @@
     "y": 2907,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "kharid-et",
@@ -1392,7 +1392,7 @@
     "y": 3198,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "kingstown",
@@ -1401,7 +1401,7 @@
     "y": 3677,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "klenter-s-pyramid",
@@ -1410,7 +1410,7 @@
     "y": 2773,
     "plane": 0,
     "tier": 2,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "kourend-woodland",
@@ -1419,7 +1419,7 @@
     "y": 3464,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "kruk-s-dungeon",
@@ -1428,7 +1428,7 @@
     "y": 2789,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "lake-molch",
@@ -1437,7 +1437,7 @@
     "y": 3633,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "land-s-end",
@@ -1446,7 +1446,7 @@
     "y": 3430,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "lassar",
@@ -1455,7 +1455,7 @@
     "y": 3486,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "lava-dragon-isle",
@@ -1464,7 +1464,7 @@
     "y": 3828,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "legends-guild",
@@ -1482,7 +1482,7 @@
     "y": 3808,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "lighthouse",
@@ -1491,7 +1491,7 @@
     "y": 3641,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "lizardman-caves",
@@ -1500,7 +1500,7 @@
     "y": 3586,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "lumbridge-castle",
@@ -1527,7 +1527,7 @@
     "y": 3956,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "marim",
@@ -1536,7 +1536,7 @@
     "y": 2786,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "melzar-s-maze",
@@ -1545,7 +1545,7 @@
     "y": 3247,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "mess",
@@ -1563,7 +1563,7 @@
     "y": 2862,
     "plane": 0,
     "tier": 2,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "mort-myre-swamp",
@@ -1572,7 +1572,7 @@
     "y": 3390,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "mort-ton",
@@ -1581,7 +1581,7 @@
     "y": 3288,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "mount-quidamortem",
@@ -1590,7 +1590,7 @@
     "y": 3550,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "mountain-camp",
@@ -1599,7 +1599,7 @@
     "y": 3670,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "mourner-headquarters",
@@ -1617,7 +1617,7 @@
     "y": 3812,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "mushroom-forest",
@@ -1626,7 +1626,7 @@
     "y": 3857,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "mycelium-pool",
@@ -1635,7 +1635,7 @@
     "y": 3886,
     "plane": 0,
     "tier": 2,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "myreque-hideout",
@@ -1644,7 +1644,7 @@
     "y": 3449,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "myths-guild",
@@ -1653,7 +1653,7 @@
     "y": 2846,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "necromancer-s-tower",
@@ -1671,7 +1671,7 @@
     "y": 2724,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "observatory",
@@ -1680,7 +1680,7 @@
     "y": 3162,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "ourania-cave",
@@ -1689,7 +1689,7 @@
     "y": 3231,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "paddewwa",
@@ -1698,7 +1698,7 @@
     "y": 3491,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "paterdomus-temple",
@@ -1707,7 +1707,7 @@
     "y": 3487,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "penguin-agility-course",
@@ -1716,7 +1716,7 @@
     "y": 4055,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "pest-control",
@@ -1725,7 +1725,7 @@
     "y": 2625,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "pirates-cove",
@@ -1734,7 +1734,7 @@
     "y": 3812,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "piscatoris",
@@ -1743,7 +1743,7 @@
     "y": 3576,
     "plane": 0,
     "tier": 2,
-    "radius": 220
+    "radius": 150
   },
   {
     "id": "piscatoris-fishing-colony",
@@ -1752,7 +1752,7 @@
     "y": 3683,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "piscatoris-hunter-area",
@@ -1761,7 +1761,7 @@
     "y": 3585,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "port-roberts",
@@ -1770,7 +1770,7 @@
     "y": 3298,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "port-sarim-jail",
@@ -1779,7 +1779,7 @@
     "y": 3186,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "port-tyras",
@@ -1788,7 +1788,7 @@
     "y": 3122,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "ranging-guild",
@@ -1815,7 +1815,7 @@
     "y": 3304,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "river-lum",
@@ -1824,7 +1824,7 @@
     "y": 3350,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "river-of-souls",
@@ -1833,7 +1833,7 @@
     "y": 3898,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "river-salve",
@@ -1842,7 +1842,7 @@
     "y": 3350,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "rogues-castle",
@@ -1851,7 +1851,7 @@
     "y": 3933,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "ruins-of-unkah",
@@ -1860,7 +1860,7 @@
     "y": 2845,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "ruins-of-uzer",
@@ -1869,7 +1869,7 @@
     "y": 3095,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "salt-mine",
@@ -1878,7 +1878,7 @@
     "y": 3941,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "senntisten",
@@ -1887,7 +1887,7 @@
     "y": 3390,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "shayzien-encampment",
@@ -1896,7 +1896,7 @@
     "y": 3645,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "shilo-village-mine",
@@ -1905,7 +1905,7 @@
     "y": 3001,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "silvarea",
@@ -1914,7 +1914,7 @@
     "y": 3500,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "sinclair-mansion",
@@ -1923,7 +1923,7 @@
     "y": 3555,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "slepe",
@@ -1932,7 +1932,7 @@
     "y": 3335,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "smoke-devil-dungeon",
@@ -1941,7 +1941,7 @@
     "y": 3061,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "smoke-dungeon",
@@ -1950,7 +1950,7 @@
     "y": 2962,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "sorcerer-s-tower",
@@ -1968,7 +1968,7 @@
     "y": 3294,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "tar-swamp",
@@ -1977,7 +1977,7 @@
     "y": 3750,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "the-great-conch",
@@ -1986,7 +1986,7 @@
     "y": 2435,
     "plane": 0,
     "tier": 2,
-    "radius": 220
+    "radius": 150
   },
   {
     "id": "the-pandemonium",
@@ -1995,7 +1995,7 @@
     "y": 2980,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "the-stranglewood",
@@ -2004,7 +2004,7 @@
     "y": 3379,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "the-teomat",
@@ -2013,7 +2013,7 @@
     "y": 3185,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "tower-of-life-building",
@@ -2031,7 +2031,7 @@
     "y": 3167,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "troll-stronghold-location",
@@ -2040,7 +2040,7 @@
     "y": 3680,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "trollweiss-mountain",
@@ -2049,7 +2049,7 @@
     "y": 3790,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "tyras-camp",
@@ -2058,7 +2058,7 @@
     "y": 3145,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "underground-pass-dungeon",
@@ -2067,7 +2067,7 @@
     "y": 3312,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "uzer-hunter-area",
@@ -2076,7 +2076,7 @@
     "y": 3100,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "uzer-oasis",
@@ -2085,7 +2085,7 @@
     "y": 3041,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "varrock-palace",
@@ -2094,7 +2094,7 @@
     "y": 3474,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "varrock-rooftop-course",
@@ -2103,7 +2103,7 @@
     "y": 3414,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "vinery",
@@ -2112,7 +2112,7 @@
     "y": 3555,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "warriors-guild",
@@ -2130,7 +2130,7 @@
     "y": 3743,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "watson-s-house",
@@ -2139,7 +2139,7 @@
     "y": 3570,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "weiss",
@@ -2148,7 +2148,7 @@
     "y": 3940,
     "plane": 0,
     "tier": 2,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "werewolf-skullball",
@@ -2157,7 +2157,7 @@
     "y": 3462,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "wilderness-god-wars-dungeon",
@@ -2166,7 +2166,7 @@
     "y": 3739,
     "plane": 0,
     "tier": 2,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "witchaven-dungeon",
@@ -2175,7 +2175,7 @@
     "y": 3283,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "wizards-guild",
@@ -2202,7 +2202,7 @@
     "y": 3858,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "zul-andra",
@@ -2211,7 +2211,7 @@
     "y": 3060,
     "plane": 0,
     "tier": 2,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "adventurers-camp-lumbridge-swamp",
@@ -2220,7 +2220,7 @@
     "y": 3205,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "agility-pyramid-mine",
@@ -2229,7 +2229,7 @@
     "y": 2875,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "ah-za-rhoon",
@@ -2238,7 +2238,7 @@
     "y": 3000,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "al-kharid-bank",
@@ -2247,7 +2247,7 @@
     "y": 3167,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "aldarin-windmill",
@@ -2256,7 +2256,7 @@
     "y": 2894,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "alice-s-farm",
@@ -2265,7 +2265,7 @@
     "y": 3524,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "annakarl",
@@ -2274,7 +2274,7 @@
     "y": 3885,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "apple-orchard",
@@ -2283,7 +2283,7 @@
     "y": 3380,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "arandar-mine",
@@ -2292,7 +2292,7 @@
     "y": 3268,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "ardougne-castle",
@@ -2301,7 +2301,7 @@
     "y": 3298,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "ardougne-farm",
@@ -2310,7 +2310,7 @@
     "y": 3366,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "ardougne-south-bank",
@@ -2328,7 +2328,7 @@
     "y": 3165,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "bandit-camp-mine",
@@ -2337,7 +2337,7 @@
     "y": 3762,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "barbarian-village-mine",
@@ -2346,7 +2346,7 @@
     "y": 3430,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "battlefield",
@@ -2355,7 +2355,7 @@
     "y": 3232,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "battlefield-mine",
@@ -2364,7 +2364,7 @@
     "y": 3252,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "battlefront",
@@ -2373,7 +2373,7 @@
     "y": 3716,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "bazaar",
@@ -2382,7 +2382,7 @@
     "y": 3106,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "black-arm-gang-headquarters",
@@ -2400,7 +2400,7 @@
     "y": 3746,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "brimstail-s-cave",
@@ -2409,7 +2409,7 @@
     "y": 3419,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "burning-man",
@@ -2418,7 +2418,7 @@
     "y": 3791,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "burthorpe-castle",
@@ -2427,7 +2427,7 @@
     "y": 3564,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "canal-barge",
@@ -2436,7 +2436,7 @@
     "y": 3451,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "canifis-hunter-area",
@@ -2445,7 +2445,7 @@
     "y": 3450,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "carnillean-mansion",
@@ -2463,7 +2463,7 @@
     "y": 3652,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "central-fremennik-isles-mine",
@@ -2472,7 +2472,7 @@
     "y": 3850,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "chemist-s-house",
@@ -2481,7 +2481,7 @@
     "y": 3211,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "chompy-marsh",
@@ -2490,7 +2490,7 @@
     "y": 3048,
     "plane": 0,
     "tier": 3,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "citharede-abbey-mine",
@@ -2499,7 +2499,7 @@
     "y": 3170,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "corsair-cove-bank",
@@ -2508,7 +2508,7 @@
     "y": 2865,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "crabclaw-isle",
@@ -2517,7 +2517,7 @@
     "y": 3420,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "crafting-guild-mine",
@@ -2526,7 +2526,7 @@
     "y": 3283,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "crash-island",
@@ -2535,7 +2535,7 @@
     "y": 2720,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "crombwick-manor",
@@ -2544,7 +2544,7 @@
     "y": 3358,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "crumbling-tower",
@@ -2553,7 +2553,7 @@
     "y": 2996,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "crypt-white-knights-castle",
@@ -2562,7 +2562,7 @@
     "y": 3331,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "dareeyak",
@@ -2571,7 +2571,7 @@
     "y": 3695,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "dark-wizards-tower",
@@ -2580,7 +2580,7 @@
     "y": 3335,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "dognose-island",
@@ -2589,7 +2589,7 @@
     "y": 2648,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "doric-s-hut",
@@ -2598,7 +2598,7 @@
     "y": 3451,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "dragontooth-island",
@@ -2607,7 +2607,7 @@
     "y": 3549,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "draynor-jail",
@@ -2625,7 +2625,7 @@
     "y": 3860,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "east-lumbridge-swamp-mine",
@@ -2634,7 +2634,7 @@
     "y": 3148,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "edgeville-furnace",
@@ -2661,7 +2661,7 @@
     "y": 3340,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "experiment-cave",
@@ -2670,7 +2670,7 @@
     "y": 3526,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "falador-east-bank",
@@ -2697,7 +2697,7 @@
     "y": 3168,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "fight-arena-mine",
@@ -2706,7 +2706,7 @@
     "y": 3145,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "fishing-guild-bank",
@@ -2715,7 +2715,7 @@
     "y": 3416,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "fishing-hamlet",
@@ -2724,7 +2724,7 @@
     "y": 3945,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "flamtaer",
@@ -2733,7 +2733,7 @@
     "y": 3317,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "forthos-ruin",
@@ -2742,7 +2742,7 @@
     "y": 3573,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "fortis-temple",
@@ -2751,7 +2751,7 @@
     "y": 3086,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "fossil-island-volcano",
@@ -2760,7 +2760,7 @@
     "y": 3783,
     "plane": 0,
     "tier": 3,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "frozen-waste-plateau",
@@ -2769,7 +2769,7 @@
     "y": 3903,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "giant-pit",
@@ -2787,7 +2787,7 @@
     "y": 3428,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "grave-of-scorpius",
@@ -2796,7 +2796,7 @@
     "y": 3228,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "graveyard",
@@ -2805,7 +2805,7 @@
     "y": 3402,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "graveyard-of-heroes",
@@ -2814,7 +2814,7 @@
     "y": 3564,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "graveyard-of-shadows",
@@ -2823,7 +2823,7 @@
     "y": 3672,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "gwenith-hunter-area",
@@ -2832,7 +2832,7 @@
     "y": 3408,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "harmony-island-windmill",
@@ -2841,7 +2841,7 @@
     "y": 2826,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "here-be-penguins",
@@ -2850,7 +2850,7 @@
     "y": 3910,
     "plane": 0,
     "tier": 3,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "hobgoblin-peninsula",
@@ -2859,7 +2859,7 @@
     "y": 3281,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "ice-troll-caves",
@@ -2868,7 +2868,7 @@
     "y": 3891,
     "plane": 0,
     "tier": 3,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "iceberg",
@@ -2877,7 +2877,7 @@
     "y": 4029,
     "plane": 0,
     "tier": 3,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "infirmary",
@@ -2886,7 +2886,7 @@
     "y": 3620,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "isafdar-mine",
@@ -2895,7 +2895,7 @@
     "y": 3158,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "island-of-stone",
@@ -2904,7 +2904,7 @@
     "y": 4008,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "isle-of-souls-mine",
@@ -2913,7 +2913,7 @@
     "y": 2793,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "jaltevas-pyramid",
@@ -2922,7 +2922,7 @@
     "y": 2705,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "jatizso-mine",
@@ -2931,7 +2931,7 @@
     "y": 3812,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "jiggig",
@@ -2940,7 +2940,7 @@
     "y": 3046,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "jormungand-s-prison",
@@ -2949,7 +2949,7 @@
     "y": 3691,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "kandarin-windmill",
@@ -2958,7 +2958,7 @@
     "y": 3386,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "karamja-hunter-area",
@@ -2967,7 +2967,7 @@
     "y": 3001,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "karamja-jungle-mine",
@@ -2976,7 +2976,7 @@
     "y": 3033,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "karamja-volcano",
@@ -2985,7 +2985,7 @@
     "y": 3174,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "karamjan-temple",
@@ -2994,7 +2994,7 @@
     "y": 2896,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "kebos-lowlands-mine",
@@ -3003,7 +3003,7 @@
     "y": 3657,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "keep-le-faye",
@@ -3012,7 +3012,7 @@
     "y": 3401,
     "plane": 0,
     "tier": 3,
-    "radius": 15
+    "radius": 8
   },
   {
     "id": "keldagrim-entrance-mine",
@@ -3021,7 +3021,7 @@
     "y": 3705,
     "plane": 0,
     "tier": 3,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "kraken-cove",
@@ -3030,7 +3030,7 @@
     "y": 3611,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "last-light",
@@ -3039,7 +3039,7 @@
     "y": 2330,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "lava-maze-runite-mine",
@@ -3048,7 +3048,7 @@
     "y": 3884,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "limestone-mine",
@@ -3057,7 +3057,7 @@
     "y": 3500,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "lithkren",
@@ -3066,7 +3066,7 @@
     "y": 4003,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "lizardman-canyon",
@@ -3075,7 +3075,7 @@
     "y": 3704,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "lizardman-settlement",
@@ -3084,7 +3084,7 @@
     "y": 3556,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "lletya-bank",
@@ -3093,7 +3093,7 @@
     "y": 3162,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "locus-oasis",
@@ -3102,7 +3102,7 @@
     "y": 2986,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "lovakite-mine",
@@ -3111,7 +3111,7 @@
     "y": 3830,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "lucien-s-camp",
@@ -3120,7 +3120,7 @@
     "y": 3804,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "lumber-yard",
@@ -3156,7 +3156,7 @@
     "y": 3200,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "lunar-isle-mine",
@@ -3165,7 +3165,7 @@
     "y": 3944,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "mac-s-island",
@@ -3183,7 +3183,7 @@
     "y": 3960,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "mausoleum",
@@ -3192,7 +3192,7 @@
     "y": 3571,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "mcgrubor-s-wood",
@@ -3201,7 +3201,7 @@
     "y": 3485,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "miscellania-castle",
@@ -3210,7 +3210,7 @@
     "y": 3861,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "molch",
@@ -3219,7 +3219,7 @@
     "y": 3663,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "monk-camp",
@@ -3228,7 +3228,7 @@
     "y": 3494,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "mons-gratia",
@@ -3237,7 +3237,7 @@
     "y": 3240,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "moonrise-brewery-and-winery",
@@ -3246,7 +3246,7 @@
     "y": 2922,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "moss-giant-island",
@@ -3255,7 +3255,7 @@
     "y": 3208,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "mount-karuulm-mine",
@@ -3264,7 +3264,7 @@
     "y": 3814,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "mudskipper-point",
@@ -3273,7 +3273,7 @@
     "y": 3122,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "mynydd",
@@ -3282,7 +3282,7 @@
     "y": 3423,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "myreque-s-rest",
@@ -3291,7 +3291,7 @@
     "y": 3230,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "nature-grotto",
@@ -3300,7 +3300,7 @@
     "y": 3337,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "necropolis-hunter-area",
@@ -3309,7 +3309,7 @@
     "y": 2738,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "north-brimhaven-mine",
@@ -3318,7 +3318,7 @@
     "y": 3225,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "north-crandor-mine",
@@ -3327,7 +3327,7 @@
     "y": 3300,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "observatory-dungeon",
@@ -3336,7 +3336,7 @@
     "y": 3184,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "ortus-farm",
@@ -3345,7 +3345,7 @@
     "y": 3126,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "otto-s-grotto",
@@ -3354,7 +3354,7 @@
     "y": 3489,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "ourania-hunter-area",
@@ -3363,7 +3363,7 @@
     "y": 3240,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "outer-fortis",
@@ -3372,7 +3372,7 @@
     "y": 3065,
     "plane": 0,
     "tier": 3,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "outlaw-camp",
@@ -3381,7 +3381,7 @@
     "y": 3472,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "pest-control-island",
@@ -3390,7 +3390,7 @@
     "y": 2592,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "phoenix-gang-hideout",
@@ -3399,7 +3399,7 @@
     "y": 3383,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "pirates-hideout-mine",
@@ -3408,7 +3408,7 @@
     "y": 3944,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "piscatoris-falconry-area",
@@ -3417,7 +3417,7 @@
     "y": 3596,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "piscatoris-mine",
@@ -3426,7 +3426,7 @@
     "y": 3640,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "poison-waste",
@@ -3435,7 +3435,7 @@
     "y": 3078,
     "plane": 0,
     "tier": 3,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "quidamortem-cave",
@@ -3444,7 +3444,7 @@
     "y": 3559,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "ralos-rise-mine",
@@ -3453,7 +3453,7 @@
     "y": 3085,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "rashiliyia-s-tomb",
@@ -3462,7 +3462,7 @@
     "y": 3088,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "red-chinchompa-hunting-ground",
@@ -3471,7 +3471,7 @@
     "y": 2894,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "red-rock",
@@ -3480,7 +3480,7 @@
     "y": 2517,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "rellekka-hunter-area",
@@ -3489,7 +3489,7 @@
     "y": 3791,
     "plane": 0,
     "tier": 3,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "rellekka-mine",
@@ -3498,7 +3498,7 @@
     "y": 3704,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "rimmington-mine",
@@ -3507,7 +3507,7 @@
     "y": 3239,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "river-amja",
@@ -3516,7 +3516,7 @@
     "y": 3030,
     "plane": 0,
     "tier": 3,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "river-hos",
@@ -3525,7 +3525,7 @@
     "y": 3550,
     "plane": 0,
     "tier": 3,
-    "radius": 220
+    "radius": 150
   },
   {
     "id": "river-molch",
@@ -3534,7 +3534,7 @@
     "y": 3686,
     "plane": 0,
     "tier": 3,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "river-varla",
@@ -3543,7 +3543,7 @@
     "y": 3135,
     "plane": 0,
     "tier": 3,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "rock-island-prison",
@@ -3552,7 +3552,7 @@
     "y": 2837,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "ruins-of-morra",
@@ -3561,7 +3561,7 @@
     "y": 3509,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "ruins-of-ullek",
@@ -3570,7 +3570,7 @@
     "y": 2811,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "ruins-of-unkah-mine",
@@ -3579,7 +3579,7 @@
     "y": 2870,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "salvager-overlook",
@@ -3588,7 +3588,7 @@
     "y": 3295,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "scorpion-pit",
@@ -3597,7 +3597,7 @@
     "y": 3944,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "seers-village-bank",
@@ -3606,7 +3606,7 @@
     "y": 3492,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "seers-village-courthouse",
@@ -3615,7 +3615,7 @@
     "y": 3469,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "settlement-ruins",
@@ -3624,7 +3624,7 @@
     "y": 3895,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "shed-lumbridge-swamp",
@@ -3633,7 +3633,7 @@
     "y": 3169,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "shilo-village-bank",
@@ -3651,7 +3651,7 @@
     "y": 2786,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "shipwreck-cove",
@@ -3660,7 +3660,7 @@
     "y": 3315,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "shipyard-karamja",
@@ -3669,7 +3669,7 @@
     "y": 3050,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "slepe-church",
@@ -3687,7 +3687,7 @@
     "y": 3150,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "south-crandor-mine",
@@ -3696,7 +3696,7 @@
     "y": 3245,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "south-salvager-overlook-mine",
@@ -3705,7 +3705,7 @@
     "y": 3277,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "south-wilderness-mine",
@@ -3714,7 +3714,7 @@
     "y": 3569,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "south-east-ardougne-mine",
@@ -3723,7 +3723,7 @@
     "y": 3232,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "south-east-varrock-mine",
@@ -3732,7 +3732,7 @@
     "y": 3365,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "south-west-varrock-mine",
@@ -3741,7 +3741,7 @@
     "y": 3370,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "south-west-wilderness-mine",
@@ -3750,7 +3750,7 @@
     "y": 3589,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "stonecutter-outpost",
@@ -3759,7 +3759,7 @@
     "y": 2963,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "temple-of-marimbo",
@@ -3768,7 +3768,7 @@
     "y": 2787,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "tempoross-cove",
@@ -3777,7 +3777,7 @@
     "y": 2850,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "the-forgotten-cemetery",
@@ -3786,7 +3786,7 @@
     "y": 3750,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "the-node",
@@ -3795,7 +3795,7 @@
     "y": 3028,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "the-stranglewood-mine",
@@ -3804,7 +3804,7 @@
     "y": 3320,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "tower-of-ascension",
@@ -3822,7 +3822,7 @@
     "y": 3820,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "trakerel-s-fish-shop",
@@ -3840,7 +3840,7 @@
     "y": 3612,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "tunnel-of-chaos",
@@ -3858,7 +3858,7 @@
     "y": 4064,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "uzer-mastaba",
@@ -3867,7 +3867,7 @@
     "y": 3021,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "uzer-mine",
@@ -3876,7 +3876,7 @@
     "y": 3160,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "varrock-anvil-building",
@@ -3894,7 +3894,7 @@
     "y": 3480,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "varrock-hair-salon",
@@ -3912,7 +3912,7 @@
     "y": 3220,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "verdant-valley",
@@ -3921,7 +3921,7 @@
     "y": 3760,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "villa-lucens",
@@ -3930,7 +3930,7 @@
     "y": 2930,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "war-tent",
@@ -3939,7 +3939,7 @@
     "y": 3636,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "water-mill-cellar",
@@ -3948,7 +3948,7 @@
     "y": 3286,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "west-falador-mine",
@@ -3957,7 +3957,7 @@
     "y": 3362,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "west-fremennik-isles-mine",
@@ -3966,7 +3966,7 @@
     "y": 3854,
     "plane": 0,
     "tier": 3,
-    "radius": 20
+    "radius": 12
   },
   {
     "id": "white-knights-castle",
@@ -3975,7 +3975,7 @@
     "y": 3342,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "white-wolf-mountain",
@@ -3984,7 +3984,7 @@
     "y": 3483,
     "plane": 0,
     "tier": 3,
-    "radius": 90
+    "radius": 50
   },
   {
     "id": "wilderness-hunter-area",
@@ -3993,7 +3993,7 @@
     "y": 3776,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "wilderness-pond",
@@ -4002,7 +4002,7 @@
     "y": 3800,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "wintertodt-camp",
@@ -4011,7 +4011,7 @@
     "y": 3938,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   },
   {
     "id": "witch-s-house-location",
@@ -4038,7 +4038,7 @@
     "y": 3098,
     "plane": 0,
     "tier": 3,
-    "radius": 25
+    "radius": 12
   },
   {
     "id": "zamorakian-chapel",
@@ -4047,6 +4047,6 @@
     "y": 3387,
     "plane": 0,
     "tier": 3,
-    "radius": 45
+    "radius": 22
   }
 ]
