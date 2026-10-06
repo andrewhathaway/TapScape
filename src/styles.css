@@ -240,6 +240,74 @@ button.secondary { background: var(--panel-2); color: var(--ink); border: 1px so
 }
 .summary-list span:last-child { color: var(--ink-dim); white-space: nowrap; }
 
+/* ---------- score history ---------- */
+
+/*
+ * Bands match the emoji in the share grid, so a day that pastes as green reads
+ * as green here too. Empty is an outline rather than a fill: a day not played
+ * has to be tellable from a day played badly.
+ */
+.cell { border-radius: 3px; aspect-ratio: 1; }
+.cell.band-0 { background: #63a844; }
+.cell.band-1 { background: #e0b43a; }
+.cell.band-2 { background: #cf7430; }
+.cell.band-3 { background: #4c4433; }
+.cell.empty { background: transparent; box-shadow: 0 0 0 1px var(--edge) inset; }
+.cell.today { box-shadow: 0 0 0 2px var(--ink); }
+
+.streak-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 9px 11px;
+  border: 1px solid var(--edge);
+  border-radius: 8px;
+  background: var(--panel-2);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.streak-row:hover { border-color: var(--ink-dim); }
+.streak-more { color: var(--gold); font-size: 13px; font-weight: 700; white-space: nowrap; }
+
+.history-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 4px 0 18px;
+}
+.history-stats dt { color: var(--ink-dim); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+.history-stats dd { margin: 2px 0 0; font-size: 18px; font-weight: 800; }
+.history-stats .muted { font-size: 12px; font-weight: 400; }
+
+.history-grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px; }
+
+.history-axis { display: flex; justify-content: space-between; margin-top: 7px; font-size: 11px; }
+
+.history-legend {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 16px;
+  font-size: 11px;
+}
+.history-legend .cell { width: 11px; }
+
+.history-note { margin-top: 14px; font-size: 11px; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 @media (max-width: 560px) {
   .topbar { gap: 8px 10px; padding: 7px 10px; }
   .brand { font-size: 13px; }
@@ -251,4 +319,7 @@ button.secondary { background: var(--panel-2); color: var(--ink); border: 1px so
   .prompt-name { font-size: 17px; }
   .summary-total { font-size: 30px; }
   .hud { bottom: 30px; }
+  /* Ten columns of squares get too small to tap or read on a phone. */
+  .history-grid { grid-template-columns: repeat(6, 1fr); }
+  .history-stats { grid-template-columns: repeat(2, 1fr); }
 }

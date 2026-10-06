@@ -14,6 +14,10 @@ interface Stored {
   streak?: { current: number; best: number; lastDay: string }
 }
 
+function previousDay(dayKey: string): string {
+  return new Date(Date.parse(`${dayKey}T00:00:00Z`) - 86_400_000).toISOString().slice(0, 10)
+}
+
 /** Private browsing and blocked site-data both make localStorage throw. */
 function read(): Stored {
   try {
@@ -43,13 +47,31 @@ export function getDayResult(dayKey: string): DayResult | null {
   return read().days?.[dayKey] ?? null
 }
 
+/** One calendar day in the history window; `result` is null for a day not played. */
+export interface HistoryDay {
+  dayKey: string
+  result: DayResult | null
+}
+
+/**
+ * The last `days` calendar days ending on `dayKey`, oldest first. Unplayed days
+ * come back as nulls rather than being dropped, so the heatmap shows the gaps —
+ * which is what makes the streak number explain itself.
+ */
+export function getHistory(dayKey: string, days: number): HistoryDay[] {
+  const stored = read().days ?? {}
+  const out: HistoryDay[] = []
+  let key = dayKey
+  for (let i = 0; i < days; i++) {
+    out.push({ dayKey: key, result: stored[key] ?? null })
+    key = previousDay(key)
+  }
+  return out.reverse()
+}
+
 export function getStreak(): { current: number; best: number } {
   const { streak } = read()
   return { current: streak?.current ?? 0, best: streak?.best ?? 0 }
-}
-
-function previousDay(dayKey: string): string {
-  return new Date(Date.parse(`${dayKey}T00:00:00Z`) - 86_400_000).toISOString().slice(0, 10)
 }
 
 export function saveDayResult(dayKey: string, results: Guess[]): void {

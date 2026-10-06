@@ -1,17 +1,11 @@
-import { MAX_ROUND_SCORE } from './scoring'
+import { MAX_ROUND_SCORE, bandForRatio } from './scoring'
 
-const BANDS: [number, string][] = [
-  [0.8, '🟩'],
-  [0.5, '🟨'],
-  [0.25, '🟧'],
-  [0, '⬛'],
-]
+const BAND_EMOJI = ['🟩', '🟨', '🟧', '⬛']
 
 export const SITE_URL = 'https://tapscape.andrewhathaway.net'
 
 function band(score: number): string {
-  const ratio = score / MAX_ROUND_SCORE
-  return BANDS.find(([min]) => ratio >= min)![1]
+  return BAND_EMOJI[bandForRatio(score / MAX_ROUND_SCORE)]
 }
 
 export function shareText(dayKey: string, scores: number[]): string {

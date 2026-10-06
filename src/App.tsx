@@ -3,12 +3,14 @@ import OsrsMap from './map/OsrsMap'
 import Modal from './ui/Modal'
 import HowToPlay from './ui/HowToPlay'
 import About from './ui/About'
+import History, { HISTORY_DAYS } from './ui/History'
 import { LOCATIONS } from './data/locations'
 import { dailyRounds, endlessRounds, todayKey } from './game/daily'
 import { MAX_ROUND_SCORE, isInside, scoreForDistance, tileDistance } from './game/scoring'
 import { copyText, shareText } from './game/share'
 import {
   getDayResult,
+  getHistory,
   getStreak,
   hasSeenIntro,
   markIntroSeen,
@@ -17,7 +19,7 @@ import {
 import type { Guess, WorldPoint } from './game/types'
 
 type Mode = 'daily' | 'endless'
-type Sheet = 'intro' | 'how' | 'about' | null
+type Sheet = 'intro' | 'how' | 'about' | 'history' | null
 
 interface Line {
   name: string
@@ -198,6 +200,7 @@ export default function App() {
             total={total}
             replaying={replaying}
             onPlayEndless={() => startSession('endless')}
+            onShowHistory={() => setSheet('history')}
           />
         )}
       </div>
@@ -234,6 +237,11 @@ export default function App() {
           <HowToPlay />
         </Modal>
       )}
+      {sheet === 'history' && (
+        <Modal title={`Last ${HISTORY_DAYS} days`} onClose={() => setSheet(null)}>
+          <History dayKey={dayKey} streak={getStreak()} />
+        </Modal>
+      )}
       {sheet === 'about' && (
         <Modal title="About" onClose={() => setSheet(null)}>
           <About />
@@ -250,11 +258,24 @@ interface SummaryProps {
   total: number
   replaying: boolean
   onPlayEndless: () => void
+  onShowHistory: () => void
 }
 
-function Summary({ dayKey, mode, lines, total, replaying, onPlayEndless }: SummaryProps) {
+function Summary({
+  dayKey,
+  mode,
+  lines,
+  total,
+  replaying,
+  onPlayEndless,
+  onShowHistory,
+}: SummaryProps) {
   const [copied, setCopied] = useState(false)
   const streak = useMemo(() => getStreak(), [])
+  const played = useMemo(
+    () => getHistory(dayKey, HISTORY_DAYS).filter((d) => d.result).length,
+    [dayKey],
+  )
   const max = MAX_ROUND_SCORE * lines.length
 
   const share = async () => {
@@ -285,10 +306,15 @@ function Summary({ dayKey, mode, lines, total, replaying, onPlayEndless }: Summa
           ))}
         </ul>
 
-        {mode === 'daily' && streak.current > 0 && (
-          <p className="muted streak">
-            Streak {streak.current} · best {streak.best}
-          </p>
+        {mode === 'daily' && played > 1 && (
+          <button className="streak-row" onClick={onShowHistory}>
+            <span className="muted">
+              {streak.current > 0
+                ? `Streak ${streak.current} · best ${streak.best}`
+                : `${played} days played`}
+            </span>
+            <span className="streak-more">Last {HISTORY_DAYS} days ›</span>
+          </button>
         )}
 
         <div className="sheet-actions">

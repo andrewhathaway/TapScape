@@ -31,3 +31,17 @@ export function scoreForDistance(distance: number, radius = 0): number {
 export function isInside(distance: number, radius = 0): boolean {
   return distance <= Math.max(radius, MIN_RADIUS_TILES)
 }
+
+/**
+ * Four quality bands, lowest bound first. The share grid and the history
+ * heatmap read from this one list so a day that pastes as green also shows as
+ * green — the grid people paste into Reddit is the game's visual language.
+ */
+const BAND_MINIMUMS = [0.8, 0.5, 0.25, 0]
+
+export type Band = 0 | 1 | 2 | 3
+
+export function bandForRatio(ratio: number): Band {
+  const i = BAND_MINIMUMS.findIndex((min) => ratio >= min)
+  return (i === -1 ? BAND_MINIMUMS.length - 1 : i) as Band
+}
