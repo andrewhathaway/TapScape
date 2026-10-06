@@ -9,12 +9,6 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      // Denying analytics_storage puts GA4 into cookieless ping mode, so no
-      // consent banner is needed. Must be set before config. (client_storage
-      // is a Universal Analytics parameter and GA4 ignores it.) The trade-off
-      // is that every load counts as a new visitor.
-      gtag('consent', 'default', { analytics_storage: 'denied' });
-
       gtag('js', new Date());
       gtag('config', 'G-LL9HD6QD6H');
     </script>
