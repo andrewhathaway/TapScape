@@ -24,7 +24,11 @@ export default function About() {
         <a href="https://andrewhathaway.net" target="_blank" rel="noreferrer">
           Andrew Hathaway
         </a>
-        .
+        . Open source on{' '}
+        <a href="https://github.com/andrewhathaway/TapScape" target="_blank" rel="noreferrer">
+          GitHub
+        </a>{' '}
+        — code under MIT, location data under CC BY-NC-SA.
       </p>
       <p className="muted">{SITE_URL}</p>
     </div>
