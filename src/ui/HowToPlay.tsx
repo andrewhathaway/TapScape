@@ -7,8 +7,9 @@ export default function HowToPlay() {
       </p>
       <p>
         You score by how close you land — up to <strong>5,000 points</strong> a round, falling
-        off with distance in game tiles. A pin within sight of the real spot scores nearly
-        full marks; the other side of Gielinor scores almost nothing.
+        off with distance in game tiles. Places are areas, not pinpricks: land anywhere
+        inside the highlighted region and you take full marks. Just outside still scores
+        nearly all of them; the other side of Gielinor scores almost nothing.
       </p>
       <ul>
         <li>

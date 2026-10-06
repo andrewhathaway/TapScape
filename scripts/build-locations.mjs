@@ -37,18 +37,34 @@ async function categoryMembers(category) {
 
 /** Bounding-box centre of a polygon outline, which cities use instead of x/y. */
 function polygonCentre(raw) {
+  const pts = polygonPoints(raw)
+  if (!pts) return null
+  const xs = pts.map((p) => p[0])
+  const ys = pts.map((p) => p[1])
+  const x = Math.round((Math.min(...xs) + Math.max(...xs)) / 2)
+  const y = Math.round((Math.min(...ys) + Math.max(...ys)) / 2)
+  // Circumscribed rather than inscribed: erring generous is the whole point.
+  const radius = Math.round(Math.max(...pts.map(([px, py]) => Math.hypot(px - x, py - y))))
+  return { x, y, radius }
+}
+
+function polygonPoints(raw) {
   const pts = [...raw.matchAll(/\|\s*(\d{3,4})\s*,\s*(\d{3,5})\s*(?=\||\}\})/g)].map((m) => [
     +m[1],
     +m[2],
   ])
-  if (pts.length < 3) return null
-  const xs = pts.map((p) => p[0])
-  const ys = pts.map((p) => p[1])
-  return {
-    x: Math.round((Math.min(...xs) + Math.max(...xs)) / 2),
-    y: Math.round((Math.min(...ys) + Math.max(...ys)) / 2),
-  }
+  return pts.length >= 3 ? pts : null
 }
+
+/**
+ * Only 11% of location articles carry a polygon, so everything else sizes its
+ * region from the `zoom` the infobox map opens at — the wiki's own judgement of
+ * how much of Gielinor you need on screen to see the place. 0 is an island, 3 is
+ * one building. Articles with no zoom at all are mostly small interiors.
+ */
+const ZOOM_RADIUS = { 0: 220, 1: 90, 2: 45, 3: 20, 4: 15 }
+const DEFAULT_RADIUS = 25
+const MAX_RADIUS = 250
 
 /**
  * Finds the {{Map}} call describing the article's own subject. Pages often carry
@@ -76,9 +92,12 @@ function parseMap(wikitext) {
     const plane = raw.match(/\|\s*plane\s*=\s*(\d+)/i)
     if (plane && plane[1] !== '0') continue
 
+    const zoom = raw.match(/\|\s*zoom\s*=\s*(\d+)/i)
+    const fromZoom = zoom ? ZOOM_RADIUS[+zoom[1]] : undefined
+
     const x = raw.match(/\|\s*x\s*=\s*(\d+)/i)
     const y = raw.match(/\|\s*y\s*=\s*(\d+)/i)
-    if (x && y) return { x: +x[1], y: +y[1], plane: 0 }
+    if (x && y) return { x: +x[1], y: +y[1], plane: 0, radius: fromZoom ?? DEFAULT_RADIUS }
 
     if (/mtype\s*=\s*polygon/i.test(raw)) {
       const centre = polygonCentre(raw)
@@ -143,7 +162,13 @@ async function main() {
       if (!coords) continue
       const { x, y } = coords
       if (x < SURFACE.minX || x > SURFACE.maxX || y < SURFACE.minY || y > SURFACE.maxY) continue
-      found.push({ name: page.title, x, y, weight: page.length ?? text.length })
+      found.push({
+        name: page.title,
+        x,
+        y,
+        radius: Math.min(coords.radius ?? DEFAULT_RADIUS, MAX_RADIUS),
+        weight: page.length ?? text.length,
+      })
     }
     process.stdout.write(`\r  parsed ${Math.min(i + 50, titles.length)}/${titles.length} → ${found.length} located`)
   }
@@ -167,6 +192,7 @@ async function main() {
         y: loc.y,
         plane: 0,
         tier,
+        radius: loc.radius,
       }
     })
     .sort((a, b) => a.tier - b.tier || a.name.localeCompare(b.name))
@@ -177,6 +203,8 @@ async function main() {
   )
   console.log(`wrote ${locations.length} locations`)
   console.log('tiers:', [1, 2, 3].map((t) => `${t}=${locations.filter((l) => l.tier === t).length}`).join(' '))
+  const radii = locations.map((l) => l.radius).sort((a, b) => a - b)
+  console.log('radius tiles:', `min=${radii[0]}`, `median=${radii[radii.length >> 1]}`, `max=${radii.at(-1)}`)
 }
 
 main()

@@ -13,6 +13,11 @@ export interface Location extends WorldPoint {
   blurb?: string
   /** Rough difficulty, used to shape the daily mix. */
   tier: 1 | 2 | 3
+  /**
+   * How far from the pin still counts as "there", in tiles. A place is an area,
+   * not a point: anywhere inside Lumbridge Graveyard is the graveyard.
+   */
+  radius?: number
 }
 
 export interface Guess {

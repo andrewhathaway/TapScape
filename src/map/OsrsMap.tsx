@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react'
 import L from 'leaflet'
 import { MAP_VIEW, attachOsrsTiles, toLatLng, toWorld } from './tiles'
-import type { Plane, WorldPoint } from '../game/types'
+import { MIN_RADIUS_TILES } from '../game/scoring'
+import type { Location, Plane, WorldPoint } from '../game/types'
 
 interface Props {
   guess: WorldPoint | null
-  answer: WorldPoint | null
+  answer: Location | null
   /** Omitted once the round is locked in, which also freezes picking. */
   onPick?: (point: WorldPoint) => void
   plane?: Plane
@@ -69,6 +70,16 @@ export default function OsrsMap({ guess, answer, onPick, plane = 0 }: Props) {
     }
 
     if (answer) {
+      // The region first, so the pin and the guess line sit on top of it.
+      const radius = Math.max(answer.radius ?? 0, MIN_RADIUS_TILES)
+      const region = L.circle(toLatLng(answer), {
+        radius,
+        color: '#ffb833',
+        weight: 1,
+        fillColor: '#ffb833',
+        fillOpacity: 0.16,
+      }).addTo(overlay)
+
       L.marker(toLatLng(answer), { icon: pinIcon('answer') }).addTo(overlay)
       if (guess) {
         const line = L.polyline([toLatLng(guess), toLatLng(answer)], {
@@ -76,7 +87,8 @@ export default function OsrsMap({ guess, answer, onPick, plane = 0 }: Props) {
           weight: 2,
           dashArray: '6 6',
         }).addTo(overlay)
-        map.fitBounds(line.getBounds().pad(0.4), { animate: true })
+        // Union of the two, so a tight guess still frames the whole region.
+        map.fitBounds(line.getBounds().extend(region.getBounds()).pad(0.4), { animate: true })
       }
     }
   }, [guess, answer, onPick, plane])

@@ -13,7 +13,21 @@ export function tileDistance(a: WorldPoint, b: WorldPoint): number {
  */
 const FALLOFF_TILES = 300
 
-export function scoreForDistance(distance: number): number {
-  if (distance <= 5) return MAX_ROUND_SCORE
-  return Math.round(MAX_ROUND_SCORE * Math.exp(-distance / FALLOFF_TILES))
+/** Even a doorway-sized target gets this much slack, for fat fingers on mobile. */
+export const MIN_RADIUS_TILES = 5
+
+/**
+ * Only the distance *outside* the location's own area is penalised, so landing
+ * anywhere within it scores full marks. The curve is continuous at the edge:
+ * a tile outside still scores ~4,983, not a cliff down from 5,000.
+ */
+export function scoreForDistance(distance: number, radius = 0): number {
+  const outside = distance - Math.max(radius, MIN_RADIUS_TILES)
+  if (outside <= 0) return MAX_ROUND_SCORE
+  return Math.round(MAX_ROUND_SCORE * Math.exp(-outside / FALLOFF_TILES))
+}
+
+/** True when the guess landed inside the place itself rather than near it. */
+export function isInside(distance: number, radius = 0): boolean {
+  return distance <= Math.max(radius, MIN_RADIUS_TILES)
 }

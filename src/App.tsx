@@ -5,7 +5,7 @@ import HowToPlay from './ui/HowToPlay'
 import About from './ui/About'
 import { LOCATIONS } from './data/locations'
 import { dailyRounds, endlessRounds, todayKey } from './game/daily'
-import { MAX_ROUND_SCORE, scoreForDistance, tileDistance } from './game/scoring'
+import { MAX_ROUND_SCORE, isInside, scoreForDistance, tileDistance } from './game/scoring'
 import { copyText, shareText } from './game/share'
 import {
   getDayResult,
@@ -23,6 +23,7 @@ interface Line {
   name: string
   score: number
   distance?: number
+  inside?: boolean
 }
 
 export default function App() {
@@ -67,7 +68,12 @@ export default function App() {
     const distance = tileDistance(pending, target)
     const next = [
       ...results,
-      { location: target, guessed: pending, distance, score: scoreForDistance(distance) },
+      {
+        location: target,
+        guessed: pending,
+        distance,
+        score: scoreForDistance(distance, target.radius),
+      },
     ]
     setResults(next)
     setRevealed(true)
@@ -93,7 +99,12 @@ export default function App() {
 
   const lines: Line[] = replaying
     ? rounds.map((r, i) => ({ name: r.name, score: archived!.scores[i] ?? 0 }))
-    : results.map((r) => ({ name: r.location.name, score: r.score, distance: r.distance }))
+    : results.map((r) => ({
+        name: r.location.name,
+        score: r.score,
+        distance: r.distance,
+        inside: isInside(r.distance, r.location.radius),
+      }))
   const total = lines.reduce((sum, l) => sum + l.score, 0)
 
   return (
@@ -159,8 +170,9 @@ export default function App() {
               <div className="readout">
                 <div className="readout-score">{current.score.toLocaleString()} pts</div>
                 <div className="readout-dist">
-                  {Math.round(current.distance).toLocaleString()} tiles from{' '}
-                  {current.location.name}
+                  {isInside(current.distance, current.location.radius)
+                    ? `Inside ${current.location.name}`
+                    : `${Math.round(current.distance).toLocaleString()} tiles from ${current.location.name}`}
                 </div>
               </div>
             ) : (
@@ -265,7 +277,8 @@ function Summary({ dayKey, mode, lines, total, replaying, onPlayEndless }: Summa
             <li key={l.name}>
               <span>{l.name}</span>
               <span>
-                {l.distance !== undefined && `${Math.round(l.distance).toLocaleString()} tiles · `}
+                {l.distance !== undefined &&
+                  (l.inside ? 'inside · ' : `${Math.round(l.distance).toLocaleString()} tiles · `)}
                 {l.score.toLocaleString()}
               </span>
             </li>
