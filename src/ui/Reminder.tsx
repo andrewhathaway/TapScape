@@ -11,6 +11,7 @@ import {
   sendTestReminder,
   snoozeOffer,
 } from '../game/reminders'
+import { track } from '../game/analytics'
 
 const HOURS = [6, 7, 8, 9, 10, 12, 18, 20]
 
@@ -78,6 +79,7 @@ export default function Reminder({ context = 'card' }: Props) {
     setBusy(true)
     const result = await enableReminders(serverKey, hour)
     setBusy(false)
+    track('reminder', { result, hour })
     if (result === 'enabled') setState(getReminderState())
     else if (result === 'denied') setHidden(true)
     else flash("Couldn't set that up, sorry")
@@ -91,12 +93,14 @@ export default function Reminder({ context = 'card' }: Props) {
 
   const disable = async () => {
     setBusy(true)
+    track('reminder', { result: 'off' })
     await disableReminders()
     setBusy(false)
     setState(getReminderState())
   }
 
   const dismiss = () => {
+    track('reminder', { result: 'not_now' })
     snoozeOffer()
     setHidden(true)
   }

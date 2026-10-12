@@ -16,6 +16,7 @@ import {
   type GroupView,
   type Membership,
 } from '../game/groups'
+import { track } from '../game/analytics'
 
 const BAND_EMOJI = ['🟩', '🟨', '🟧', '⬛']
 const DAY_MAX = MAX_ROUND_SCORE * ROUNDS_PER_DAY
@@ -134,6 +135,7 @@ function CreateOrJoin({ onDone }: { onDone: (m: Membership) => void }) {
     const result =
       tab === 'create' ? await createGroup(groupName, playerName) : await joinGroup(code, playerName)
     setBusy(false)
+    track(tab === 'create' ? 'clan_create' : 'clan_join', { ok: !!result, via: 'form' })
     if (result) onDone(result)
     else setError(tab === 'create' ? "Couldn't create that clan" : 'No clan with that code')
   }
@@ -213,6 +215,7 @@ function JoinForm({ code, onDone }: { code: string; onDone: (m: Membership | nul
     setBusy(true)
     const m = await joinGroup(code, playerName)
     setBusy(false)
+    track('clan_join', { ok: !!m, via: 'invite' })
     if (m) onDone(m)
     else setError("Couldn't join just now")
   }
@@ -284,12 +287,14 @@ function GroupPanel({ code, today, onBack, onLeft }: PanelProps) {
   const weekRows = [...week.entries()].sort((a, b) => b[1].total - a[1].total)
 
   const invite = async () => {
+    track('clan_invite_copy')
     setCopied(await copyText(`Join my TapScape clan "${group.name}": ${groupInviteUrl(code)}`))
     setTimeout(() => setCopied(false), 2000)
   }
 
   const leave = async () => {
     if (!confirm(`Leave ${group.name}?`)) return
+    track('clan_leave')
     await leaveGroup(code)
     onLeft()
   }

@@ -61,7 +61,16 @@ const CSS = `
   .letter { font-size: 13px; color: var(--dim); margin: 18px 0 4px; font-weight: 700; }
 `
 
-function shell({ title, description, canonical, body }) {
+function breadcrumbs(canonical, name) {
+  const items = [
+    { '@type': 'ListItem', position: 1, name: 'TapScape', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'All locations', item: `${SITE}/where/` },
+  ]
+  if (name) items.push({ '@type': 'ListItem', position: 3, name, item: canonical })
+  return JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items })
+}
+
+function shell({ title, description, canonical, body, name }) {
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -79,6 +88,7 @@ function shell({ title, description, canonical, body }) {
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:image" content="${SITE}/og.png">
 <meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">${breadcrumbs(canonical, name)}</script>
 <style>${CSS}</style>
 </head>
 <body>
@@ -143,7 +153,7 @@ ${loc.blurb ? `<p>${esc(loc.blurb)}</p>` : ''}
 })()
 </script>`
 
-  return shell({ title, description, canonical: pageUrl(loc), body })
+  return shell({ title, description, canonical: pageUrl(loc), body, name: loc.name })
 }
 
 function indexPage() {

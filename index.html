@@ -12,8 +12,8 @@
       gtag('js', new Date());
       gtag('config', 'G-LL9HD6QD6H');
     </script>
-    <title>TapScape — daily Old School RuneScape map game</title>
-    <meta name="description" content="Five Old School RuneScape locations a day. Click where you think each one is on the world map and score by how close you land." />
+    <title>TapScape — the daily OSRS map game</title>
+    <meta name="description" content="Five OSRS (Old School RuneScape) locations a day. Click where you think each one is on the world map and score by how close you land. Free, no sign-up." />
     <meta name="theme-color" content="#0e0d0b" />
     <link rel="canonical" href="https://tapscape.andrewhathaway.net/" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -24,16 +24,67 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tapscape.andrewhathaway.net/" />
-    <meta property="og:title" content="TapScape — daily Old School RuneScape map game" />
+    <meta property="og:title" content="TapScape — the daily OSRS map game" />
     <meta property="og:description" content="Five OSRS locations a day. Click where you think each one is and score by how close you land." />
     <meta property="og:image" content="https://tapscape.andrewhathaway.net/og/today.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://tapscape.andrewhathaway.net/og/today.png" />
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "TapScape",
+      "url": "https://tapscape.andrewhathaway.net/",
+      "description": "A daily geography game for the Old School RuneScape world map. Five locations a day; click where you think each one is and score by how close you land.",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "GBP"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Andrew Hathaway",
+        "url": "https://andrewhathaway.net"
+      },
+      "genre": "Puzzle"
+    }</script>
+    <style>
+      /* What a crawler, a reader mode, or a very slow connection sees before the app mounts. */
+      .prerender { max-width: 640px; margin: 0 auto; padding: 32px 16px; color: #f0e6d2; font: 15px/1.6 system-ui, sans-serif; }
+      .prerender h1 { color: #ffb833; margin: 0 0 8px; }
+      .prerender a { color: #ffb833; }
+      .prerender ul { padding-left: 18px; }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main class="prerender">
+        <h1>TapScape</h1>
+        <p>
+          A free daily geography game for the Old School RuneScape (OSRS) world map. You get five
+          locations, you click where you think each one is, and you score by how close you land.
+          Same five for everyone, new set at midnight UTC.
+        </p>
+        <ul>
+          <li><strong>Daily</strong> — one go a day, with a streak and a 30-day grid.</li>
+          <li><strong>Endless</strong> — fresh places whenever you like, and challenge links to send a friend the same five.</li>
+          <li><strong>Clans</strong> — a code to share so friends see each other's scores.</li>
+          <li><strong>Hard mode</strong> — thirty seconds a round, no zooming in.</li>
+        </ul>
+        <p>
+          Wondering where somewhere is? <a href="/where/">Every location has its own page</a> with a map
+          and what's nearby. The map and location data come from the
+          <a href="https://oldschool.runescape.wiki">OSRS Wiki</a>. Unofficial fan project, not affiliated
+          with Jagex. <a href="https://github.com/andrewhathaway/TapScape">Open source</a>.
+        </p>
+        <p>Loading the map…</p>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

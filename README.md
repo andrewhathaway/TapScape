@@ -119,6 +119,20 @@ more likely and to turn a share into an invitation:
   the map, cached ten minutes. Counts come from an anonymous ping per finished
   daily into `daily_stats`.
 
+## Search and measurement
+
+The homepage ships a static block inside `#root` (headline, what the game is,
+links to the location index) that React replaces on mount, so crawlers and
+reader modes get text rather than an empty div. Unknown paths are real 404s
+(`public/404.html`; the app has no client-side routes). The homepage carries
+`WebApplication` JSON-LD and every location page a `BreadcrumbList`.
+
+GA4 events, all anonymous, from `src/game/analytics.ts`: `run_complete`
+(mode, kind, hard, total), `share_result`, `share_challenge`, `clan_create`,
+`clan_join` (via form or invite), `clan_invite_copy`, `clan_leave`,
+`reminder` (result), `hard_mode`, `stream_mode`, `sheet_open`,
+`archive_play`, `challenge_open`, `clan_invite_open`, `milestone`.
+
 ## Daily reminders
 
 Players can opt in, after finishing a daily run, to one Web Push notification a

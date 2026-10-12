@@ -17,6 +17,7 @@ import { reportPlayed, syncReminders } from './game/reminders'
 import { postScores } from './game/groups'
 import { reportDailyStat } from './game/stats'
 import { markTipSeen, tipPending } from './game/tips'
+import { track } from './game/analytics'
 import {
   getDayResult,
   getStreak,
@@ -158,7 +159,10 @@ export default function App() {
 
   useEffect(() => {
     syncReminders()
-  }, [])
+    if (launch.challenge) track('challenge_open', { has_score: launch.challenge.theirScore !== null })
+    if (launch.invite) track('clan_invite_open')
+    if (readStream()) track('stream_mode', { on: true, from: 'url' })
+  }, [launch])
 
   const rounds = useMemo(
     () => (mode === 'daily' ? dailyRounds(poolForDay(dayKey), dayKey) : endlessRounds(LOCATIONS, seed)),
@@ -215,18 +219,29 @@ export default function App() {
       ]
       setResults(next)
       setRevealed(true)
-      if (mode === 'daily' && next.length === rounds.length) {
-        const isToday = dayKey === today
-        setMilestone(saveDayResult(dayKey, next, { countsForStreak: isToday, hard }))
-        if (isToday) {
-          const scores = next.map((r) => r.score)
-          reportPlayed(dayKey)
-          postScores(dayKey, scores)
-          reportDailyStat(dayKey, scores.reduce((a, b) => a + b, 0))
+      if (next.length === rounds.length) {
+        const total = next.reduce((sum, r) => sum + r.score, 0)
+        const isToday = mode === 'daily' && dayKey === today
+        track('run_complete', {
+          mode,
+          kind: mode === 'endless' ? (challenge ? 'challenge' : 'endless') : isToday ? 'today' : 'archive',
+          hard,
+          total,
+        })
+        if (mode === 'daily') {
+          const milestone = saveDayResult(dayKey, next, { countsForStreak: isToday, hard })
+          setMilestone(milestone)
+          if (milestone) track('milestone', { kind: milestone.kind })
+          if (isToday) {
+            const scores = next.map((r) => r.score)
+            reportPlayed(dayKey)
+            postScores(dayKey, scores)
+            reportDailyStat(dayKey, total)
+          }
         }
       }
     },
-    [pending, target, revealed, results, mode, rounds.length, dayKey, today, hard],
+    [pending, target, revealed, results, mode, rounds.length, dayKey, today, hard, challenge],
   )
 
   // The hard-mode clock. Kept off the lockIn identity so a dragged pin doesn't
@@ -255,11 +270,17 @@ export default function App() {
     const next = !hard
     setHard(next)
     writeHard(next)
+    track('hard_mode', { on: next })
   }
   const toggleStream = () => {
     const next = !stream
     setStream(next)
     writeStream(next)
+    track('stream_mode', { on: next, from: 'menu' })
+  }
+  const openSheet = (next: Sheet) => {
+    if (next) track('sheet_open', { sheet: next })
+    setSheet(next)
   }
 
   const advance = useCallback(() => {
@@ -299,7 +320,7 @@ export default function App() {
     then()
   }
 
-  const openFromMenu = (target: MenuTarget) => setSheet(target)
+  const openFromMenu = (target: MenuTarget) => openSheet(target)
 
   const hardRun = replaying ? archived?.hard === true : hard
   const isToday = mode === 'daily' && dayKey === today
@@ -360,7 +381,7 @@ export default function App() {
             ))}
           </div>
           {total > 0 && <div className="score">{total.toLocaleString()}</div>}
-          <button className="icon menu-btn" onClick={() => setSheet('menu')} aria-label="Menu">
+          <button className="icon menu-btn" onClick={() => openSheet('menu')} aria-label="Menu">
             <span />
             <span />
             <span />
@@ -445,7 +466,7 @@ export default function App() {
             hard={hardRun}
             onPlayEndless={() => startSession('endless')}
             onBackToToday={() => startSession('daily')}
-            onOpen={(target) => setSheet(target)}
+            onOpen={(target) => openSheet(target)}
           />
         )}
       </div>
@@ -484,6 +505,7 @@ export default function App() {
             streak={getStreak()}
             onPickDay={(day) => {
               setSheet(null)
+              track('archive_play', { day })
               startSession('daily', { dayKey: day })
             }}
           />
@@ -602,7 +624,9 @@ function Summary({
   const dateWords = DATE_LONG.format(new Date(`${dayKey}T00:00:00Z`))
 
   const copy = async (kind: 'result' | 'challenge', text: string) => {
-    setCopied((await copyText(text)) ? kind : null)
+    const ok = await copyText(text)
+    track(kind === 'result' ? 'share_result' : 'share_challenge', { ok, hard })
+    setCopied(ok ? kind : null)
     setTimeout(() => setCopied(null), 2000)
   }
 
