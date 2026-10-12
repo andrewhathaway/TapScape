@@ -31,7 +31,7 @@ jobs:
           if [ -n "$missing" ]; then
             echo "::error::Missing repository secret(s):$missing — add them under"
             echo "::error::Settings → Secrets and variables → Actions."
-            echo "::error::The token needs Workers Scripts:Edit, Workers Routes:Edit and DNS:Edit."
+            echo "::error::The token needs Workers Scripts:Edit, Workers Routes:Edit, DNS:Edit and D1:Edit."
             exit 1
           fi
           echo "Cloudflare credentials present."

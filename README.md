@@ -75,6 +75,32 @@ A Playwright run through the intro modal, a full five-round daily, and the reloa
 lock. It counts tile responses and collects console errors. Look at the
 screenshots — some regressions only show up in the image.
 
+## Coming back, and bringing friends
+
+Beyond the streak and the share grid, a few things are there to make tomorrow
+more likely and to turn a share into an invitation:
+
+- **Countdown** to the next puzzle on the result card.
+- **Archive days.** Any empty cell in the 30-day history grid is playable. It
+  fills the grid but never moves the streak — a streak is days played on the day.
+- **Quiet milestones.** One line on the result card for a personal best, a
+  streak of 3/7/14/30/50/100/365, or crossing 10/25/50/100/250/500 places
+  found. Never more than one, never a modal.
+- **Friend groups.** A code (`ABCD-EFGH`) shared with a clan. Members see each
+  other's daily scores and a seven-day table, nothing else. Stored in D1 with
+  no accounts: a random id per device and the name you typed.
+- **Share pages.** A shared result links to `/r/<day>/<scores>`, a challenge to
+  `/c/<seed>/<score>`. The Worker renders each with its own 1200×630 preview
+  (`worker/og.ts`, hand-built SVG rasterised by resvg in WebAssembly), so the
+  link unfurls as a card in Discord, Reddit and iMessage. The card shows no
+  location names — the viewer hasn't played yet.
+- **Challenges.** An endless run is seeded, so "Challenge a friend" sends the
+  same five places with your score to beat.
+- **Location pages.** `scripts/build-pages.mjs` writes `/where/<id>/` for all
+  450 locations after the build: a map, the coordinates, what's nearby, and a
+  nudge to play. They answer "where is X in OSRS" searches and are in the
+  sitemap.
+
 ## Daily reminders
 
 Players can opt in, after finishing a daily run, to one Web Push notification a
@@ -108,6 +134,11 @@ shown on localhost) fires the real notification through the push service.
 `curl 'localhost:8787/__scheduled?cron=0+*+*+*+*'` runs the cron by hand.
 Inspect the table with
 `npx wrangler d1 execute tapscape-reminders --local --command 'SELECT * FROM subscriptions'`.
+
+The Worker on :8787 also serves the built `dist/`, so share pages and location
+pages can be checked there after `npm run build`:
+`localhost:8787/r/2026-10-12/5000-4000-2000-1000-0`, its image under `/og/…png`,
+and `localhost:8787/where/lumbridge/`.
 
 ## Deploying
 

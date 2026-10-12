@@ -22,13 +22,15 @@ function label(dayKey: string): string {
 interface Props {
   dayKey: string
   streak: { current: number; best: number }
+  /** Makes every cell a button: play a missed day, or look at a played one. */
+  onPickDay?: (dayKey: string) => void
 }
 
-export default function History({ dayKey, streak }: Props) {
+export default function History({ dayKey, streak, onPickDay }: Props) {
   const days = useMemo(() => getHistory(dayKey, HISTORY_DAYS), [dayKey])
   const played = days.filter((d) => d.result)
 
-  if (played.length < 2) {
+  if (played.length < 2 && !onPickDay) {
     return (
       <div className="prose">
         <p>
@@ -40,11 +42,17 @@ export default function History({ dayKey, streak }: Props) {
   }
 
   const totals = played.map((d) => d.result!.total)
-  const average = Math.round(totals.reduce((a, b) => a + b, 0) / totals.length)
-  const best = Math.max(...totals)
+  const average = totals.length ? Math.round(totals.reduce((a, b) => a + b, 0) / totals.length) : 0
+  const best = totals.length ? Math.max(...totals) : 0
 
   return (
     <div className="history">
+      {onPickDay && (
+        <div className="history-callout">
+          <strong>Missed a day? Tap any empty square to play that puzzle.</strong>
+          <span className="muted">Every past day has its own five places. They fill in the grid but don't count toward your streak.</span>
+        </div>
+      )}
       <dl className="history-stats">
         <div>
           <dt>Played</dt>
@@ -73,25 +81,33 @@ export default function History({ dayKey, streak }: Props) {
       <div className="history-grid">
         {days.map((d) => {
           const name = label(d.dayKey)
+          const Cell = onPickDay ? 'button' : 'div'
+          const pick = onPickDay ? () => onPickDay(d.dayKey) : undefined
           if (!d.result) {
             return (
-              <div key={d.dayKey} className="cell empty" title={`${name} — not played`}>
-                <span className="sr-only">{name}, not played</span>
-              </div>
+              <Cell
+                key={d.dayKey}
+                className={`cell empty${onPickDay ? ' playable' : ''}`}
+                title={onPickDay ? `${name} — tap to play` : `${name} — not played`}
+                onClick={pick}
+              >
+                <span className="sr-only">{name}, not played{onPickDay ? ' — play it' : ''}</span>
+              </Cell>
             )
           }
           const band = bandForRatio(d.result.total / DAY_MAX)
           const score = d.result.total.toLocaleString()
           return (
-            <div
+            <Cell
               key={d.dayKey}
               className={`cell band-${band}${d.dayKey === dayKey ? ' today' : ''}`}
               title={`${name} — ${score}`}
+              onClick={pick}
             >
               <span className="sr-only">
                 {name}, {score}
               </span>
-            </div>
+            </Cell>
           )
         })}
       </div>

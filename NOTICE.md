@@ -33,6 +33,12 @@ text licence — the underlying map art is Jagex's, rendered from the game cache
 It is included here as a social preview image for a non-commercial fan project.
 If you fork this, generate your own rather than reusing it.
 
+## Font — `worker/fonts/Inter-Bold.ttf`
+
+[Inter](https://rsms.me/inter/) by Rasmus Andersson, under the
+[SIL Open Font License 1.1](https://openfontlicense.org/). Bundled into the
+Worker to draw the share-card images.
+
 ## Trademarks
 
 RuneScape and Old School RuneScape are trademarks of Jagex Limited. This is an

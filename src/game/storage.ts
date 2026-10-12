@@ -1,3 +1,4 @@
+import { isInside } from './scoring'
 import type { Guess } from './types'
 
 const KEY = 'tapscape:v1'
@@ -12,7 +13,17 @@ interface Stored {
   introSeen?: boolean
   days?: Record<string, DayResult>
   streak?: { current: number; best: number; lastDay: string }
+  /** Counters that outlive the 60-day window. */
+  lifetime?: { found: number; best: number; days: number }
 }
+
+export type Milestone =
+  | { kind: 'best'; total: number }
+  | { kind: 'streak'; days: number }
+  | { kind: 'found'; count: number }
+
+const STREAK_MILESTONES = [3, 7, 14, 30, 50, 100, 365]
+const FOUND_MILESTONES = [10, 25, 50, 100, 250, 500, 1000]
 
 function previousDay(dayKey: string): string {
   return new Date(Date.parse(`${dayKey}T00:00:00Z`) - 86_400_000).toISOString().slice(0, 10)
@@ -74,14 +85,21 @@ export function getStreak(): { current: number; best: number } {
   return { current: streak?.current ?? 0, best: streak?.best ?? 0 }
 }
 
-export function saveDayResult(dayKey: string, results: Guess[]): void {
+/**
+ * Records a finished daily. Archive days (played after the fact) are kept so
+ * the history grid fills in, but never move the streak: a streak is days
+ * played *on* the day. Returns the one milestone worth a quiet mention, if any.
+ */
+export function saveDayResult(
+  dayKey: string,
+  results: Guess[],
+  { countsForStreak = true } = {},
+): Milestone | null {
   const state = read()
-  if (state.days?.[dayKey]) return
+  if (state.days?.[dayKey]) return null
 
-  const days = { ...state.days, [dayKey]: {
-    total: results.reduce((sum, r) => sum + r.score, 0),
-    scores: results.map((r) => r.score),
-  } }
+  const total = results.reduce((sum, r) => sum + r.score, 0)
+  const days = { ...state.days, [dayKey]: { total, scores: results.map((r) => r.score) } }
 
   // Drop anything older than the window so the entry can't grow without bound.
   const kept = Object.fromEntries(
@@ -91,12 +109,29 @@ export function saveDayResult(dayKey: string, results: Guess[]): void {
   )
 
   const prior = state.streak
-  const continuing = prior && prior.lastDay === previousDay(dayKey)
-  const current = continuing ? prior.current + 1 : 1
+  let streak = prior
+  if (countsForStreak) {
+    const continuing = prior && prior.lastDay === previousDay(dayKey)
+    const current = continuing ? prior.current + 1 : 1
+    streak = { current, best: Math.max(current, prior?.best ?? 0), lastDay: dayKey }
+  }
 
-  write({
-    ...state,
-    days: kept,
-    streak: { current, best: Math.max(current, prior?.best ?? 0), lastDay: dayKey },
-  })
+  const before = state.lifetime ?? { found: 0, best: 0, days: 0 }
+  const found = results.filter((r) => isInside(r.distance, r.location.radius)).length
+  const lifetime = {
+    found: before.found + found,
+    best: Math.max(before.best, total),
+    days: before.days + 1,
+  }
+
+  write({ ...state, days: kept, streak, lifetime })
+
+  // Most meaningful first; only one is ever shown.
+  if (before.days > 0 && total > before.best) return { kind: 'best', total }
+  if (countsForStreak && streak && STREAK_MILESTONES.includes(streak.current)) {
+    return { kind: 'streak', days: streak.current }
+  }
+  const crossed = FOUND_MILESTONES.find((m) => before.found < m && lifetime.found >= m)
+  if (crossed) return { kind: 'found', count: crossed }
+  return null
 }

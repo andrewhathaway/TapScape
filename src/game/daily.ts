@@ -95,9 +95,16 @@ export function dailyRounds(pool: readonly Location[], dayKey: string): Location
   return TIER_PATTERN.map((tier) => dealt.get(tier)!.shift()!).filter(Boolean)
 }
 
-/** Practice mode: a fresh set every time, same difficulty shape. */
-export function endlessRounds(pool: readonly Location[]): Location[] {
-  const rng = mulberry32((Math.random() * 2 ** 32) >>> 0)
+export function randomSeed(): number {
+  return (Math.random() * 2 ** 32) >>> 0
+}
+
+/**
+ * Practice mode: a fresh set every time, same difficulty shape. The seed is
+ * what makes a run shareable — two people with the same seed get the same five.
+ */
+export function endlessRounds(pool: readonly Location[], seed: number): Location[] {
+  const rng = mulberry32(seed >>> 0)
   const byTier = new Map<number, Location[]>()
   for (const tier of new Set(TIER_PATTERN)) {
     byTier.set(tier, shuffled(pool.filter((l) => l.tier === tier), rng))

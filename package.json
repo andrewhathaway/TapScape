@@ -19,7 +19,8 @@
     "db:migrate:local": "wrangler d1 migrations apply tapscape-reminders --local",
     "db:migrate": "wrangler d1 migrations apply tapscape-reminders --remote",
     "icons": "node scripts/build-icons.mjs",
-    "build": "tsc -b && tsc -p worker && vite build",
+    "pages": "node scripts/build-pages.mjs",
+    "build": "tsc -b && tsc -p worker && vite build && node scripts/build-pages.mjs",
     "preview": "vite preview",
     "data:locations": "node scripts/build-locations.mjs",
     "data:map-version": "node scripts/refresh-map-version.mjs",
@@ -30,6 +31,7 @@
   },
   "dependencies": {
     "@block65/webcrypto-web-push": "^2.0.0",
+    "@resvg/resvg-wasm": "^2.6.2",
     "leaflet": "^1.9.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"

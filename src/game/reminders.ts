@@ -223,8 +223,10 @@ export async function sendTestReminder(): Promise<string> {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ endpoint: subscription.endpoint }),
     })
-    const body = (await res.json()) as { ok?: boolean; status?: number; error?: string }
-    return body.ok ? 'Sent' : `Push service said ${body.status ?? body.error}`
+    const body = (await res.json()) as { ok?: boolean; status?: number; error?: string; pushService?: string }
+    if (body.ok) return 'Sent'
+    const detail = (body.pushService || body.error || '').trim().slice(0, 120)
+    return `Push service said ${body.status ?? ''}${detail ? `: ${detail}` : ''}`
   } catch {
     return 'Request failed'
   }

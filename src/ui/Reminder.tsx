@@ -54,7 +54,7 @@ export default function Reminder() {
 
   const flash = (text: string) => {
     setNote(text)
-    setTimeout(() => setNote(null), 3000)
+    setTimeout(() => setNote(null), 8000)
   }
 
   const enable = async () => {

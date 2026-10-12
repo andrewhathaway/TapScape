@@ -1,9 +1,12 @@
 /**
- * Reminder backend: a handful of JSON routes under /api/reminders and an
- * hourly cron that sends one Web Push per subscriber at their chosen local hour.
+ * The dynamic side of TapScape:
+ *
+ *   /api/reminders/*   push reminder subscriptions (this file) and an hourly cron
+ *   /api/groups/*      friend groups (groups.ts)
+ *   /r/*, /c/*, /og/*  share pages and their preview images (pages.ts)
  *
  * Everything else on the domain is served straight from ./dist by Cloudflare;
- * `run_worker_first` in wrangler.jsonc only routes /api/* here.
+ * `run_worker_first` in wrangler.jsonc routes only these paths here.
  */
 
 import {
@@ -13,6 +16,8 @@ import {
   type VapidKeys,
 } from '@block65/webcrypto-web-push'
 import { dayKeyOf, nextSendAt } from './schedule'
+import { handleGroups } from './groups'
+import { handlePage } from './pages'
 
 export interface Env {
   DB: D1Database
@@ -123,13 +128,27 @@ async function getRow(env: Env, endpoint: string): Promise<Row | null> {
   return env.DB.prepare('SELECT * FROM subscriptions WHERE endpoint = ?').bind(endpoint).first<Row>()
 }
 
+/**
+ * Apple's push service answers any request carrying a Topic header with
+ * 400 BadWebPushTopic, whatever the value. Chrome and Firefox honour it (a
+ * newer undelivered message replaces the older one), so it is dropped only for
+ * Apple endpoints; the notification's own tag still collapses duplicates on
+ * the device.
+ */
+function forPushService(message: PushMessage, endpoint: string): PushMessage {
+  if (!new URL(endpoint).hostname.endsWith('.push.apple.com')) return message
+  if (!message.options?.topic) return message
+  const { topic: _topic, ...options } = message.options
+  return { ...message, options: options as PushMessage['options'] }
+}
+
 async function send(env: Env, row: Row, message: PushMessage): Promise<Response> {
   const subscription: PushSubscription = {
     endpoint: row.endpoint,
     expirationTime: null,
     keys: { p256dh: row.p256dh, auth: row.auth },
   }
-  const payload = await buildPushPayload(message, subscription, vapid(env))
+  const payload = await buildPushPayload(forPushService(message, row.endpoint), subscription, vapid(env))
   return fetch(row.endpoint, payload)
 }
 
@@ -269,7 +288,9 @@ async function handleApi(request: Request, env: Env, path: string): Promise<Resp
     if (!row) return json({ error: 'not subscribed' }, 404)
     try {
       const res = await send(env, row, DAILY_MESSAGE)
-      return json({ ok: res.ok, status: res.status, pushService: await res.text() })
+      const pushService = await res.text()
+      console.log(`test send → ${new URL(row.endpoint).host} ${res.status} ${pushService}`)
+      return json({ ok: res.ok, status: res.status, pushService })
     } catch (err) {
       return json({ ok: false, error: err instanceof Error ? err.message : String(err) }, 502)
     }
@@ -281,7 +302,12 @@ async function handleApi(request: Request, env: Env, path: string): Promise<Resp
 export default {
   async fetch(request, env): Promise<Response> {
     const { pathname } = new URL(request.url)
+    if (pathname.startsWith('/api/groups')) return handleGroups(request, env, pathname)
     if (pathname.startsWith('/api/')) return handleApi(request, env, pathname)
+    if (request.method === 'GET') {
+      const page = await handlePage(request, pathname)
+      if (page) return page
+    }
     return new Response('Not found', { status: 404 })
   },
 

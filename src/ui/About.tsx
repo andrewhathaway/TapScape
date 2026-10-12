@@ -31,9 +31,14 @@ export default function About() {
         — code under MIT, location data under CC BY-NC-SA.
       </p>
       <p>
-        Nothing about you is stored. If you turn on the morning reminder, the server keeps
-        only the browser's anonymous push address, your time zone and the hour you chose,
-        and forgets them if you turn it off or stop playing for a couple of weeks.
+        Wondering where somewhere actually is?{' '}
+        <a href="/where/">Every location has a page</a> with a map and what's nearby.
+      </p>
+      <p>
+        Nothing about you is stored unless you opt in. The morning reminder keeps only the
+        browser's anonymous push address, your time zone and the hour you chose, and forgets
+        them if you turn it off or stop playing for a couple of weeks. A friend group keeps
+        the name you typed and your daily scores, visible to that group only.
       </p>
       <p className="muted">{SITE_URL}</p>
     </div>

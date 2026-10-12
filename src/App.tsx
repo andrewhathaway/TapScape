@@ -5,11 +5,13 @@ import HowToPlay from './ui/HowToPlay'
 import About from './ui/About'
 import History, { HISTORY_DAYS } from './ui/History'
 import Reminder from './ui/Reminder'
+import Groups from './ui/Groups'
 import { LOCATIONS } from './data/locations'
-import { dailyRounds, endlessRounds, todayKey } from './game/daily'
+import { dailyRounds, endlessRounds, msUntilNextDay, randomSeed, todayKey } from './game/daily'
 import { MAX_ROUND_SCORE, isInside, scoreForDistance, tileDistance } from './game/scoring'
-import { copyText, shareText } from './game/share'
+import { challengeText, copyText, shareText } from './game/share'
 import { reportPlayed, syncReminders } from './game/reminders'
+import { getMemberships, postScores } from './game/groups'
 import {
   getDayResult,
   getHistory,
@@ -17,11 +19,12 @@ import {
   hasSeenIntro,
   markIntroSeen,
   saveDayResult,
+  type Milestone,
 } from './game/storage'
 import type { Guess, WorldPoint } from './game/types'
 
 type Mode = 'daily' | 'endless'
-type Sheet = 'intro' | 'how' | 'about' | 'history' | null
+type Sheet = 'intro' | 'how' | 'about' | 'history' | 'groups' | null
 
 interface Line {
   name: string
@@ -30,25 +33,61 @@ interface Line {
   inside?: boolean
 }
 
-export default function App() {
-  const dayKey = useMemo(() => todayKey(), [])
+/** A friend's endless run, arriving via a /c/ link: same seed, their score to beat. */
+interface Challenge {
+  seed: number
+  theirScore: number | null
+}
 
-  const [mode, setMode] = useState<Mode>('daily')
-  const [sheet, setSheet] = useState<Sheet>(null)
-  const [seed, setSeed] = useState(0)
+/**
+ * Deep links are read once and scrubbed from the address bar, so a reload
+ * doesn't re-trigger them. `?source=` is left alone for analytics.
+ */
+function readLaunch(): { challenge: Challenge | null; invite: string | null } {
+  const params = new URLSearchParams(window.location.search)
+  const seed = params.get('challenge')
+  const invite = params.get('group')
+  if (!seed && !invite) return { challenge: null, invite: null }
+
+  const score = Number(params.get('score'))
+  params.delete('challenge')
+  params.delete('score')
+  params.delete('group')
+  const rest = params.toString()
+  window.history.replaceState(null, '', window.location.pathname + (rest ? `?${rest}` : ''))
+
+  return {
+    challenge: seed ? { seed: parseInt(seed, 36) >>> 0, theirScore: score > 0 ? score : null } : null,
+    invite: invite ? invite.toUpperCase() : null,
+  }
+}
+
+export default function App() {
+  const today = useMemo(() => todayKey(), [])
+  const [launch] = useState(readLaunch)
+  /** An invite code from the URL, cleared once the join form has been answered. */
+  const [invite, setInvite] = useState(launch.invite)
+
+  const [mode, setMode] = useState<Mode>(launch.challenge ? 'endless' : 'daily')
+  /** The daily being played; differs from `today` for an archive day from the history grid. */
+  const [dayKey, setDayKey] = useState(today)
+  const [seed, setSeed] = useState(() => launch.challenge?.seed ?? randomSeed())
+  const [challenge, setChallenge] = useState<Challenge | null>(launch.challenge)
+  const [sheet, setSheet] = useState<Sheet>(() =>
+    !hasSeenIntro() ? 'intro' : launch.invite ? 'groups' : null,
+  )
   const [roundIndex, setRoundIndex] = useState(0)
   const [revealed, setRevealed] = useState(false)
   const [pending, setPending] = useState<WorldPoint | null>(null)
   const [results, setResults] = useState<Guess[]>([])
+  const [milestone, setMilestone] = useState<Milestone | null>(null)
 
   useEffect(() => {
-    if (!hasSeenIntro()) setSheet('intro')
     syncReminders()
   }, [])
 
   const rounds = useMemo(
-    () => (mode === 'daily' ? dailyRounds(LOCATIONS, dayKey) : endlessRounds(LOCATIONS)),
-    // `seed` deliberately re-rolls an endless set without changing mode.
+    () => (mode === 'daily' ? dailyRounds(LOCATIONS, dayKey) : endlessRounds(LOCATIONS, seed)),
     [mode, dayKey, seed],
   )
 
@@ -59,14 +98,20 @@ export default function App() {
   const showSummary = finished || replaying
   const current = revealed ? results[roundIndex] : undefined
 
-  const startSession = useCallback((next: Mode) => {
-    setMode(next)
-    setResults([])
-    setPending(null)
-    setRoundIndex(0)
-    setRevealed(false)
-    setSeed((s) => s + 1)
-  }, [])
+  const startSession = useCallback(
+    (next: Mode, opts: { dayKey?: string; seed?: number; challenge?: Challenge | null } = {}) => {
+      setMode(next)
+      setDayKey(opts.dayKey ?? today)
+      setSeed(opts.seed ?? randomSeed())
+      setChallenge(opts.challenge ?? null)
+      setResults([])
+      setPending(null)
+      setRoundIndex(0)
+      setRevealed(false)
+      setMilestone(null)
+    },
+    [today],
+  )
 
   const lockIn = useCallback(() => {
     if (!pending || !target || revealed) return
@@ -83,10 +128,14 @@ export default function App() {
     setResults(next)
     setRevealed(true)
     if (mode === 'daily' && next.length === rounds.length) {
-      saveDayResult(dayKey, next)
-      reportPlayed(dayKey)
+      const isToday = dayKey === today
+      setMilestone(saveDayResult(dayKey, next, { countsForStreak: isToday }))
+      if (isToday) {
+        reportPlayed(dayKey)
+        postScores(dayKey, next.map((r) => r.score))
+      }
     }
-  }, [pending, target, revealed, results, mode, rounds.length, dayKey])
+  }, [pending, target, revealed, results, mode, rounds.length, dayKey, today])
 
   const advance = useCallback(() => {
     setRevealed(false)
@@ -115,6 +164,12 @@ export default function App() {
       }))
   const total = lines.reduce((sum, l) => sum + l.score, 0)
 
+  const closeIntro = (then: () => void) => {
+    markIntroSeen()
+    setSheet(launch.invite ? 'groups' : null)
+    then()
+  }
+
   return (
     <div className="app">
       <header className="topbar">
@@ -140,6 +195,7 @@ export default function App() {
               <div className="prompt-label">
                 Round {roundIndex + 1} of {rounds.length}
                 {mode === 'daily' && ` · ${dayKey}`}
+                {mode === 'endless' && challenge && ' · Challenge'}
               </div>
               <div className="prompt-name">{target?.name}</div>
             </>
@@ -201,12 +257,18 @@ export default function App() {
         {showSummary && (
           <Summary
             dayKey={dayKey}
+            today={today}
             mode={mode}
+            seed={seed}
+            challenge={challenge}
             lines={lines}
             total={total}
             replaying={replaying}
+            milestone={milestone}
             onPlayEndless={() => startSession('endless')}
+            onBackToToday={() => startSession('daily')}
             onShowHistory={() => setSheet('history')}
+            onShowGroups={() => setSheet('groups')}
           />
         )}
       </div>
@@ -215,24 +277,16 @@ export default function App() {
         <Modal title="TapScape">
           <HowToPlay />
           <div className="sheet-actions">
-            <button
-              className="primary"
-              onClick={() => {
-                markIntroSeen()
-                setSheet(null)
-                startSession('daily')
-              }}
-            >
-              Play today's
-            </button>
-            <button
-              className="secondary"
-              onClick={() => {
-                markIntroSeen()
-                setSheet(null)
-                startSession('endless')
-              }}
-            >
+            {launch.challenge ? (
+              <button className="primary" onClick={() => closeIntro(() => {})}>
+                Play the challenge
+              </button>
+            ) : (
+              <button className="primary" onClick={() => closeIntro(() => startSession('daily'))}>
+                Play today's
+              </button>
+            )}
+            <button className="secondary" onClick={() => closeIntro(() => startSession('endless'))}>
               Endless mode
             </button>
           </div>
@@ -245,7 +299,19 @@ export default function App() {
       )}
       {sheet === 'history' && (
         <Modal title={`Last ${HISTORY_DAYS} days`} onClose={() => setSheet(null)}>
-          <History dayKey={dayKey} streak={getStreak()} />
+          <History
+            dayKey={today}
+            streak={getStreak()}
+            onPickDay={(day) => {
+              setSheet(null)
+              startSession('daily', { dayKey: day })
+            }}
+          />
+        </Modal>
+      )}
+      {sheet === 'groups' && (
+        <Modal title="Friends" onClose={() => setSheet(null)}>
+          <Groups today={today} inviteCode={invite} onInviteDone={() => setInvite(null)} />
         </Modal>
       )}
       {sheet === 'about' && (
@@ -257,47 +323,115 @@ export default function App() {
   )
 }
 
+/** "4h 20m 13s" until the next daily, ticking every second. */
+function Countdown() {
+  const [ms, setMs] = useState(msUntilNextDay)
+  useEffect(() => {
+    const id = setInterval(() => setMs(msUntilNextDay()), 1000)
+    return () => clearInterval(id)
+  }, [])
+  const h = Math.floor(ms / 3_600_000)
+  const m = Math.floor((ms % 3_600_000) / 60_000)
+  const sec = Math.floor((ms % 60_000) / 1000)
+  return (
+    <span className="countdown">
+      {h}h {m}m {sec}s
+    </span>
+  )
+}
+
+function milestoneText(m: Milestone): string {
+  switch (m.kind) {
+    case 'best':
+      return 'New personal best'
+    case 'streak':
+      return `${m.days}-day streak`
+    case 'found':
+      return `${m.count} places found`
+  }
+}
+
+const DATE_LABEL = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', timeZone: 'UTC' })
+
 interface SummaryProps {
   dayKey: string
+  today: string
   mode: Mode
+  seed: number
+  challenge: Challenge | null
   lines: Line[]
   total: number
   replaying: boolean
+  milestone: Milestone | null
   onPlayEndless: () => void
+  onBackToToday: () => void
   onShowHistory: () => void
+  onShowGroups: () => void
 }
 
 function Summary({
   dayKey,
+  today,
   mode,
+  seed,
+  challenge,
   lines,
   total,
   replaying,
+  milestone,
   onPlayEndless,
+  onBackToToday,
   onShowHistory,
+  onShowGroups,
 }: SummaryProps) {
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useState<'result' | 'challenge' | null>(null)
   const streak = useMemo(() => getStreak(), [])
   const played = useMemo(
-    () => getHistory(dayKey, HISTORY_DAYS).filter((d) => d.result).length,
-    [dayKey],
+    () => getHistory(today, HISTORY_DAYS).filter((d) => d.result).length,
+    [today],
   )
+  const groups = useMemo(() => getMemberships().length, [])
   const max = MAX_ROUND_SCORE * lines.length
+  const isToday = mode === 'daily' && dayKey === today
+  const isArchive = mode === 'daily' && !isToday
+  const scores = lines.map((l) => l.score)
 
-  const share = async () => {
-    const ok = await copyText(shareText(dayKey, lines.map((l) => l.score)))
-    setCopied(ok)
-    setTimeout(() => setCopied(false), 2000)
+  const copy = async (kind: 'result' | 'challenge', text: string) => {
+    setCopied((await copyText(text)) ? kind : null)
+    setTimeout(() => setCopied(null), 2000)
   }
+
+  const heading = mode === 'endless'
+    ? challenge ? 'Challenge' : 'Practice run'
+    : isToday ? dayKey : DATE_LABEL.format(new Date(`${dayKey}T00:00:00Z`))
 
   return (
     <div className="summary">
       <div className="summary-card">
-        <h2>{mode === 'daily' ? dayKey : 'Practice run'}</h2>
-        {replaying && <p className="muted">You've already played today — back at midnight UTC.</p>}
+        <h2>{heading}</h2>
+        {isToday && replaying && (
+          <p className="muted">
+            You've already played today. Next puzzle in <Countdown />
+          </p>
+        )}
+        {isArchive && <p className="muted">An earlier puzzle, played from your history.</p>}
+        {challenge?.theirScore != null && (
+          <p className="muted">
+            Your friend scored {challenge.theirScore.toLocaleString()}.{' '}
+            {total > challenge.theirScore ? 'You beat it.' : total === challenge.theirScore ? 'Dead heat.' : 'Not this time.'}
+          </p>
+        )}
 
         <div className="summary-total">{total.toLocaleString()}</div>
-        <div className="muted">out of {max.toLocaleString()}</div>
+        <div className="muted">
+          out of {max.toLocaleString()}
+          {isToday && !replaying && (
+            <>
+              {' '}· next puzzle in <Countdown />
+            </>
+          )}
+        </div>
+        {milestone && <div className="milestone">{milestoneText(milestone)}</div>}
 
         <ul className="summary-list">
           {lines.map((l) => (
@@ -312,35 +446,65 @@ function Summary({
           ))}
         </ul>
 
-        {mode === 'daily' && played > 1 && (
+        {mode === 'daily' && (
           <button className="streak-row" onClick={onShowHistory}>
             <span className="muted">
-              {streak.current > 0
+              {streak.current > 1
                 ? `Streak ${streak.current} · best ${streak.best}`
-                : `${played} days played`}
+                : `${played} ${played === 1 ? 'day' : 'days'} played`}
             </span>
             <span className="streak-more">Last {HISTORY_DAYS} days ›</span>
           </button>
         )}
 
-        {mode === 'daily' && <Reminder />}
+        {isToday && (
+          <button className="streak-row" onClick={onShowGroups}>
+            <span className="muted">
+              {groups === 0 ? 'Compare scores with friends' : groups === 1 ? '1 group' : `${groups} groups`}
+            </span>
+            <span className="streak-more">Friends ›</span>
+          </button>
+        )}
+
+        {isToday && <Reminder />}
 
         <div className="sheet-actions">
-          {mode === 'daily' ? (
+          {isToday && (
             <>
-              <button className="primary" onClick={share}>
-                {copied ? 'Copied' : 'Share result'}
+              <button className="primary" onClick={() => copy('result', shareText(dayKey, scores))}>
+                {copied === 'result' ? 'Copied' : 'Share result'}
               </button>
               <button className="secondary" onClick={onPlayEndless}>
                 Keep playing
               </button>
             </>
-          ) : (
-            <button className="primary" onClick={onPlayEndless}>
-              Play again
-            </button>
+          )}
+          {isArchive && (
+            <>
+              <button className="primary" onClick={onBackToToday}>
+                Back to today
+              </button>
+              <button className="secondary" onClick={onShowHistory}>
+                Play another day
+              </button>
+            </>
+          )}
+          {mode === 'endless' && (
+            <>
+              <button className="primary" onClick={() => copy('challenge', challengeText(seed, scores))}>
+                {copied === 'challenge' ? 'Copied' : 'Challenge a friend'}
+              </button>
+              <button className="secondary" onClick={onPlayEndless}>
+                Play again
+              </button>
+            </>
           )}
         </div>
+        {isToday && (
+          <button className="secondary wide" onClick={onShowHistory}>
+            Play previous days
+          </button>
+        )}
       </div>
     </div>
   )
