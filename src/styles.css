@@ -323,3 +323,40 @@ button.secondary { background: var(--panel-2); color: var(--ink); border: 1px so
   .history-grid { grid-template-columns: repeat(6, 1fr); }
   .history-stats { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ---------- reminder offer ---------- */
+
+.reminder {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 12px;
+  padding: 9px 11px;
+  border: 1px dashed var(--edge);
+  border-radius: 8px;
+}
+p.reminder { margin-bottom: 0; }
+.reminder-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.reminder-actions { display: flex; gap: 16px; white-space: nowrap; }
+.reminder-hour {
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink);
+  background: var(--panel-2);
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+  padding: 3px 6px;
+}
+button.link {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink-dim);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+button.link.strong { color: var(--gold); font-weight: 700; text-decoration: none; }
+button.link:disabled { opacity: .5; cursor: default; }

@@ -4,10 +4,12 @@ import Modal from './ui/Modal'
 import HowToPlay from './ui/HowToPlay'
 import About from './ui/About'
 import History, { HISTORY_DAYS } from './ui/History'
+import Reminder from './ui/Reminder'
 import { LOCATIONS } from './data/locations'
 import { dailyRounds, endlessRounds, todayKey } from './game/daily'
 import { MAX_ROUND_SCORE, isInside, scoreForDistance, tileDistance } from './game/scoring'
 import { copyText, shareText } from './game/share'
+import { reportPlayed, syncReminders } from './game/reminders'
 import {
   getDayResult,
   getHistory,
@@ -41,6 +43,7 @@ export default function App() {
 
   useEffect(() => {
     if (!hasSeenIntro()) setSheet('intro')
+    syncReminders()
   }, [])
 
   const rounds = useMemo(
@@ -79,7 +82,10 @@ export default function App() {
     ]
     setResults(next)
     setRevealed(true)
-    if (mode === 'daily' && next.length === rounds.length) saveDayResult(dayKey, next)
+    if (mode === 'daily' && next.length === rounds.length) {
+      saveDayResult(dayKey, next)
+      reportPlayed(dayKey)
+    }
   }, [pending, target, revealed, results, mode, rounds.length, dayKey])
 
   const advance = useCallback(() => {
@@ -316,6 +322,8 @@ function Summary({
             <span className="streak-more">Last {HISTORY_DAYS} days ›</span>
           </button>
         )}
+
+        {mode === 'daily' && <Reminder />}
 
         <div className="sheet-actions">
           {mode === 'daily' ? (

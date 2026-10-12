@@ -3,11 +3,40 @@
   "name": "tapscape",
   "compatibility_date": "2026-10-01",
 
-  // Assets-only Worker: no `main` script, Cloudflare just serves ./dist.
+  // The Worker only handles /api/*; Cloudflare serves everything else straight
+  // from ./dist without invoking it. /__scheduled is wrangler dev's way of
+  // firing the cron by hand (`npm run dev:worker`, then GET /__scheduled); in
+  // production it is just a 404 from the Worker.
+  "main": "worker/index.ts",
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "single-page-application"
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*", "/__scheduled"]
   },
+
+  // Hourly, on the hour. Each run sends to subscribers whose local reminder
+  // hour has just arrived (see worker/schedule.ts).
+  "triggers": {
+    "crons": ["0 * * * *"]
+  },
+
+  // Push subscriptions. Create the database once with
+  //   npx wrangler d1 create tapscape-reminders
+  // and paste the id it prints over the placeholder below. Local dev ignores
+  // the id and uses a Miniflare database under .wrangler/.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "tapscape-reminders",
+      "database_id": "REPLACE_WITH_D1_DATABASE_ID",
+      "migrations_dir": "migrations"
+    }
+  ],
+
+  // VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY and VAPID_SUBJECT are secrets:
+  //   node scripts/vapid-keys.mjs
+  //   npx wrangler secret put VAPID_PUBLIC_KEY   (and the other two)
+  // Locally they come from .dev.vars, which is gitignored.
 
   // custom_domain creates and manages the DNS record for the subdomain, so this
   // never touches the apex route that serves the Astro site.

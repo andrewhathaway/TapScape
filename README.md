@@ -75,9 +75,56 @@ A Playwright run through the intro modal, a full five-round daily, and the reloa
 lock. It counts tile responses and collects console errors. Look at the
 screenshots — some regressions only show up in the image.
 
+## Daily reminders
+
+Players can opt in, after finishing a daily run, to one Web Push notification a
+day at an hour they choose. The browser holds the subscription; a Cloudflare
+Worker (`worker/`) keeps the schedule in D1 and an hourly cron sends whatever is
+due. Nothing identifying is stored: endpoint, keys, time zone, hour.
+
+The quiet bits are deliberate. The offer appears only on the result card, the
+browser's permission prompt only after a tap, one notification a day with a
+six-hour TTL so it never lands at night, and a subscriber who hasn't played for
+two weeks gets one goodbye and is dropped — reopening the game quietly resumes
+them. The puzzle rolls at midnight UTC, so for players east of about UTC+8 the
+reminder waits for the rollover rather than pointing at yesterday's puzzle
+(`worker/schedule.ts`, checked by `npm run test:schedule`).
+
+iOS only delivers web push to sites added to the Home Screen, so on iPhone the
+card explains that instead of offering.
+
+### Running it locally
+
+```bash
+node scripts/vapid-keys.mjs > .dev.vars
+printf 'VAPID_SUBJECT=https://tapscape.andrewhathaway.net\nALLOW_TEST_SEND=1\n' >> .dev.vars
+npm run db:migrate:local
+npm run dev:worker          # Worker + D1 on :8787
+npm run dev                 # Vite on :5173, proxies /api to the Worker
+```
+
+Finish a daily run, tap **Remind me**, accept the prompt, then **Send test** (only
+shown on localhost) fires the real notification through the push service.
+`curl 'localhost:8787/__scheduled?cron=0+*+*+*+*'` runs the cron by hand.
+Inspect the table with
+`npx wrangler d1 execute tapscape-reminders --local --command 'SELECT * FROM subscriptions'`.
+
 ## Deploying
 
-A Cloudflare Worker serving static assets, on a custom domain.
+A Cloudflare Worker serving static assets, with the reminder API alongside, on
+a custom domain. One-time setup for the reminders:
+
+```bash
+npx wrangler d1 create tapscape-reminders     # paste the id into wrangler.jsonc
+npm run db:migrate
+node scripts/vapid-keys.mjs                   # then, for each line it prints:
+npx wrangler secret put VAPID_PUBLIC_KEY
+npx wrangler secret put VAPID_PRIVATE_KEY
+npx wrangler secret put VAPID_SUBJECT         # mailto: or https: URL
+```
+
+Do not rotate the VAPID keys casually: every existing subscription is bound to
+the public key and would have to be recreated.
 
 ```bash
 npm run deploy
