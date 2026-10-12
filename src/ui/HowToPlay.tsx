@@ -20,8 +20,8 @@ export default function HowToPlay() {
           <strong>Endless</strong> — a fresh five whenever you want them. Nothing is recorded.
         </li>
         <li>
-          <strong>Hard</strong> — the same puzzle with thirty seconds a round and no zooming
-          in close. Your shared result says so.
+          <strong>Hard mode</strong> — a switch in the menu: thirty seconds a round and no
+          zooming in close. Your shared result says so.
         </li>
       </ul>
       <p className="muted">

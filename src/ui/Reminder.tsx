@@ -28,13 +28,19 @@ const LOCAL = typeof location !== 'undefined' && ['localhost', '127.0.0.1'].incl
  * copy, an hour picker, and a "Not now" that hides it for a week. The browser's
  * own permission prompt only appears after the player taps "Remind me".
  */
-export default function Reminder() {
+interface Props {
+  /** `sheet`: its own settings page, so it never hides itself and has no "Not now". */
+  context?: 'card' | 'sheet'
+}
+
+export default function Reminder({ context = 'card' }: Props) {
+  const inSheet = context === 'sheet'
   const [state, setState] = useState(getReminderState)
   const [hour, setHour] = useState(state.hour)
   const [serverKey, setServerKey] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
   const [note, setNote] = useState<string | null>(null)
-  const [hidden, setHidden] = useState(offerSnoozed)
+  const [hidden, setHidden] = useState(() => !inSheet && offerSnoozed())
 
   // Fetch the key up front so the click handler can prompt without awaiting first.
   useEffect(() => {
@@ -49,8 +55,18 @@ export default function Reminder() {
       </p>
     )
   }
-  if (!pushSupported() || hidden) return null
-  if (Notification.permission === 'denied') return null
+  if (!pushSupported()) {
+    return inSheet ? <p className="muted">This browser can't receive notifications.</p> : null
+  }
+  if (hidden) return null
+  if (Notification.permission === 'denied') {
+    return inSheet ? (
+      <p className="muted">
+        Notifications are blocked for this site in your browser settings. Allow them there and
+        come back.
+      </p>
+    ) : null
+  }
 
   const flash = (text: string) => {
     setNote(text)
@@ -124,13 +140,19 @@ export default function Reminder() {
 
   return (
     <div className="reminder">
-      <span className="muted">{note ?? 'Want a quiet nudge each morning when the new puzzle is ready?'}</span>
+      <span className="muted">
+        {note ?? (inSheet
+          ? 'One quiet notification a day when the new five is ready. Nothing else, ever, and it stops on its own if you stop playing.'
+          : 'Want a quiet nudge each morning when the new puzzle is ready?')}
+      </span>
       <div className="reminder-row">
         {picker}
         <span className="reminder-actions">
-          <button className="link" onClick={dismiss}>
-            Not now
-          </button>
+          {!inSheet && (
+            <button className="link" onClick={dismiss}>
+              Not now
+            </button>
+          )}
           <button className="link strong" disabled={busy || !serverKey} onClick={() => void enable()}>
             Remind me
           </button>

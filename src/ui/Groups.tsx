@@ -78,8 +78,8 @@ export default function Groups({ today, inviteCode, onInviteDone }: Props) {
     <div className="groups">
       {memberships.length === 0 ? (
         <p className="muted">
-          A group is a code you share with friends or your clan. Everyone in it can see each
-          other's daily scores — nothing else.
+          A clan is a code you share with friends. Everyone in it sees each other's daily
+          scores and nothing else. No accounts, no email.
         </p>
       ) : (
         <ul className="groups-list">
@@ -111,7 +111,7 @@ function NameField({ value, onChange }: { value: string; onChange: (v: string) =
       <input
         value={value}
         maxLength={MAX_PLAYER_NAME}
-        placeholder="Shown to the group"
+        placeholder="Shown to your clan"
         onChange={(e) => onChange(e.target.value)}
         required
       />
@@ -135,14 +135,14 @@ function CreateOrJoin({ onDone }: { onDone: (m: Membership) => void }) {
       tab === 'create' ? await createGroup(groupName, playerName) : await joinGroup(code, playerName)
     setBusy(false)
     if (result) onDone(result)
-    else setError(tab === 'create' ? "Couldn't create that group" : 'No group with that code')
+    else setError(tab === 'create' ? "Couldn't create that clan" : 'No clan with that code')
   }
 
   return (
     <form className="groups-form" onSubmit={submit}>
       <div className="modes" role="tablist">
         <button type="button" className={tab === 'create' ? 'tab active' : 'tab'} onClick={() => setTab('create')}>
-          New group
+          New clan
         </button>
         <button type="button" className={tab === 'join' ? 'tab active' : 'tab'} onClick={() => setTab('join')}>
           Join with a code
@@ -151,11 +151,11 @@ function CreateOrJoin({ onDone }: { onDone: (m: Membership) => void }) {
 
       {tab === 'create' ? (
         <label className="field">
-          <span>Group name</span>
+          <span>Clan name</span>
           <input
             value={groupName}
             maxLength={MAX_GROUP_NAME}
-            placeholder="e.g. Clan chat"
+            placeholder="e.g. The Lads"
             onChange={(e) => setGroupName(e.target.value)}
             required
           />
@@ -177,7 +177,7 @@ function CreateOrJoin({ onDone }: { onDone: (m: Membership) => void }) {
       {error && <p className="muted">{error}</p>}
       <div className="sheet-actions">
         <button className="primary" disabled={busy}>
-          {tab === 'create' ? 'Create group' : 'Join group'}
+          {tab === 'create' ? 'Create clan' : 'Join clan'}
         </button>
       </div>
     </form>
@@ -198,7 +198,7 @@ function JoinForm({ code, onDone }: { code: string; onDone: (m: Membership | nul
   if (groupName === null) {
     return (
       <div className="prose">
-        <p>No group matches the code {code}. It may have been typed wrong, or the group was deleted.</p>
+        <p>No clan matches the code {code}. It may have been typed wrong, or the clan was deleted.</p>
         <div className="sheet-actions">
           <button className="secondary" onClick={() => onDone(null)}>
             Back
@@ -257,7 +257,7 @@ function GroupPanel({ code, today, onBack, onLeft }: PanelProps) {
   if (group === null) {
     return (
       <div className="prose">
-        <p>Couldn't load this group right now.</p>
+        <p>Couldn't load this clan right now.</p>
         <div className="sheet-actions">
           <button className="secondary" onClick={onBack}>
             Back
@@ -284,7 +284,7 @@ function GroupPanel({ code, today, onBack, onLeft }: PanelProps) {
   const weekRows = [...week.entries()].sort((a, b) => b[1].total - a[1].total)
 
   const invite = async () => {
-    setCopied(await copyText(`Join my TapScape group "${group.name}": ${groupInviteUrl(code)}`))
+    setCopied(await copyText(`Join my TapScape clan "${group.name}": ${groupInviteUrl(code)}`))
     setTimeout(() => setCopied(false), 2000)
   }
 
@@ -298,7 +298,7 @@ function GroupPanel({ code, today, onBack, onLeft }: PanelProps) {
     <div className="groups">
       <div className="group-head">
         <button className="link" onClick={onBack}>
-          ‹ Groups
+          ‹ Clans
         </button>
         <span className="muted">{code}</span>
       </div>

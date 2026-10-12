@@ -31,18 +31,10 @@ export default function About() {
         — code under MIT, location data under CC BY-NC-SA.
       </p>
       <p>
-        Streaming it? <a href="/?stream=1">Streamer mode</a> uses big text and hides the running
-        score until the reveal, so chat can guess along.
-      </p>
-      <p>
-        Wondering where somewhere actually is?{' '}
-        <a href="/where/">Every location has a page</a> with a map and what's nearby.
-      </p>
-      <p>
         Nothing about you is stored unless you opt in. The morning reminder keeps only the
         browser's anonymous push address, your time zone and the hour you chose, and forgets
-        them if you turn it off or stop playing for a couple of weeks. A friend group keeps
-        the name you typed and your daily scores, visible to that group only.
+        them if you turn it off or stop playing for a couple of weeks. A clan keeps the name
+        you typed and your daily scores, visible to that clan only.
       </p>
       <p className="muted">{SITE_URL}</p>
     </div>

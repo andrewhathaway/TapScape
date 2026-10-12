@@ -3,20 +3,22 @@ import OsrsMap from './map/OsrsMap'
 import Modal from './ui/Modal'
 import HowToPlay from './ui/HowToPlay'
 import About from './ui/About'
-import History, { HISTORY_DAYS } from './ui/History'
+import Intro from './ui/Intro'
+import Menu, { type MenuTarget } from './ui/Menu'
+import History from './ui/History'
 import Reminder from './ui/Reminder'
 import Groups from './ui/Groups'
 import { LOCATIONS, wikiUrl } from './data/locations'
 import { MAP_VIEW } from './map/tiles'
-import { dailyRounds, endlessRounds, msUntilNextDay, randomSeed, todayKey } from './game/daily'
-import { MAX_ROUND_SCORE, isInside, scoreForDistance, tileDistance } from './game/scoring'
+import { dailyRounds, dayIndex, endlessRounds, msUntilNextDay, randomSeed, todayKey } from './game/daily'
+import { MAX_ROUND_SCORE, bandForRatio, isInside, scoreForDistance, tileDistance } from './game/scoring'
 import { challengeText, copyText, shareText } from './game/share'
 import { reportPlayed, syncReminders } from './game/reminders'
-import { getMemberships, postScores } from './game/groups'
+import { postScores } from './game/groups'
 import { reportDailyStat } from './game/stats'
+import { markTipSeen, tipPending } from './game/tips'
 import {
   getDayResult,
-  getHistory,
   getStreak,
   hasSeenIntro,
   markIntroSeen,
@@ -26,7 +28,7 @@ import {
 import type { Guess, WorldPoint } from './game/types'
 
 type Mode = 'daily' | 'endless'
-type Sheet = 'intro' | 'how' | 'about' | 'history' | 'groups' | null
+type Sheet = 'intro' | 'menu' | 'how' | 'about' | 'history' | 'clan' | 'reminders' | null
 
 interface Line {
   name: string
@@ -53,6 +55,8 @@ const PLAY_CENTRE: WorldPoint = {
   plane: 0,
 }
 
+const DATE_LONG = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', timeZone: 'UTC' })
+
 function readHard(): boolean {
   try {
     return localStorage.getItem(HARD_KEY) === '1'
@@ -67,6 +71,19 @@ function writeHard(on: boolean): void {
   } catch {
     // Not remembered; the toggle still works for this visit.
   }
+}
+
+/** Streamer mode lives in the URL so a bookmark or an OBS browser source keeps it. */
+function readStream(): boolean {
+  return new URLSearchParams(window.location.search).get('stream') === '1'
+}
+
+function writeStream(on: boolean): void {
+  const params = new URLSearchParams(window.location.search)
+  if (on) params.set('stream', '1')
+  else params.delete('stream')
+  const rest = params.toString()
+  window.history.replaceState(null, '', window.location.pathname + (rest ? `?${rest}` : ''))
 }
 
 /**
@@ -92,6 +109,28 @@ function readLaunch(): { challenge: Challenge | null; invite: string | null } {
   }
 }
 
+/** A word for one round, from how close the pin landed. */
+function roundVerdict(score: number, inside: boolean): string {
+  if (inside) return 'Spot on'
+  const r = score / MAX_ROUND_SCORE
+  if (r >= 0.8) return 'So close'
+  if (r >= 0.5) return 'Not bad'
+  if (r >= 0.25) return 'Warm-ish'
+  if (r >= 0.1) return 'Cold'
+  return 'Wrong continent'
+}
+
+/** A word for the whole run. */
+function runVerdict(total: number, max: number): string {
+  const r = total / max
+  if (r >= 0.9) return 'Cartographer'
+  if (r >= 0.75) return 'Sharp'
+  if (r >= 0.55) return 'Solid'
+  if (r >= 0.35) return 'Getting warmer'
+  if (r >= 0.15) return 'Lost in the Wilderness'
+  return 'Back to Tutorial Island'
+}
+
 export default function App() {
   const today = useMemo(() => todayKey(), [])
   const [launch] = useState(readLaunch)
@@ -104,7 +143,7 @@ export default function App() {
   const [seed, setSeed] = useState(() => launch.challenge?.seed ?? randomSeed())
   const [challenge, setChallenge] = useState<Challenge | null>(launch.challenge)
   const [sheet, setSheet] = useState<Sheet>(() =>
-    !hasSeenIntro() ? 'intro' : launch.invite ? 'groups' : null,
+    !hasSeenIntro() ? 'intro' : launch.invite ? 'clan' : null,
   )
   const [roundIndex, setRoundIndex] = useState(0)
   const [revealed, setRevealed] = useState(false)
@@ -113,8 +152,9 @@ export default function App() {
   const [milestone, setMilestone] = useState<Milestone | null>(null)
   const [hard, setHard] = useState(readHard)
   const [secondsLeft, setSecondsLeft] = useState(HARD_SECONDS)
-  /** ?stream=1: big text, running score hidden, for playing on stream. */
-  const [stream] = useState(() => new URLSearchParams(window.location.search).get('stream') === '1')
+  const [stream, setStream] = useState(readStream)
+  const [pinTip, setPinTip] = useState(() => tipPending('placePin'))
+  const [revealTip, setRevealTip] = useState(() => tipPending('firstReveal'))
 
   useEffect(() => {
     syncReminders()
@@ -145,6 +185,17 @@ export default function App() {
       setMilestone(null)
     },
     [today],
+  )
+
+  const pick = useCallback(
+    (point: WorldPoint) => {
+      setPending(point)
+      if (pinTip) {
+        markTipSeen('placePin')
+        setPinTip(false)
+      }
+    },
+    [pinTip],
   )
 
   /** `fallback` is only used when the hard-mode clock runs out with no pin placed. */
@@ -205,12 +256,21 @@ export default function App() {
     setHard(next)
     writeHard(next)
   }
+  const toggleStream = () => {
+    const next = !stream
+    setStream(next)
+    writeStream(next)
+  }
 
   const advance = useCallback(() => {
+    if (revealTip) {
+      markTipSeen('firstReveal')
+      setRevealTip(false)
+    }
     setRevealed(false)
     setPending(null)
     setRoundIndex((i) => i + 1)
-  }, [])
+  }, [revealTip])
 
   // Enter advances whatever the current step is.
   useEffect(() => {
@@ -235,11 +295,19 @@ export default function App() {
 
   const closeIntro = (then: () => void) => {
     markIntroSeen()
-    setSheet(launch.invite ? 'groups' : null)
+    setSheet(launch.invite ? 'clan' : null)
     then()
   }
 
+  const openFromMenu = (target: MenuTarget) => setSheet(target)
+
   const hardRun = replaying ? archived?.hard === true : hard
+  const isToday = mode === 'daily' && dayKey === today
+  const isArchive = mode === 'daily' && !isToday
+
+  const promptHeading = mode === 'endless'
+    ? challenge ? 'Challenge' : 'Endless'
+    : isToday ? "Today's five" : DATE_LONG.format(new Date(`${dayKey}T00:00:00Z`))
 
   return (
     <div className={stream ? 'app stream' : 'app'}>
@@ -257,55 +325,54 @@ export default function App() {
             </button>
           ))}
         </nav>
-        <button
-          className={hard ? 'tab hard active' : 'tab hard'}
-          onClick={toggleHard}
-          disabled={midRun}
-          aria-pressed={hard}
-          title={`Hard mode: ${HARD_SECONDS} seconds a round, no zooming in close`}
-        >
-          Hard
-        </button>
 
         <div className="prompt">
           {showSummary ? (
-            <div className="prompt-name">Run complete</div>
+            <div className="prompt-name">{promptHeading}</div>
           ) : (
             <>
               <div className="prompt-label">
-                Round {roundIndex + 1} of {rounds.length}
-                {mode === 'daily' && ` · ${dayKey}`}
-                {mode === 'endless' && challenge && ' · Challenge'}
+                <span className="rounds in-prompt" aria-hidden>
+                  {rounds.map((r, i) => (
+                    <span
+                      key={r.id}
+                      className={`pip ${i < results.length ? 'done' : i === roundIndex ? 'current' : ''}`}
+                    />
+                  ))}
+                </span>
+                <span>Round {roundIndex + 1} of {rounds.length}</span>
+                {isArchive && <span className="chip">{DATE_LONG.format(new Date(`${dayKey}T00:00:00Z`))}</span>}
+                {challenge && <span className="chip">Challenge</span>}
+                {hard && <span className="chip chip-hard">Hard</span>}
               </div>
               <div className="prompt-name">{target?.name}</div>
             </>
           )}
         </div>
 
-        <div className="rounds" aria-hidden>
-          {rounds.map((r, i) => (
-            <span
-              key={r.id}
-              className={`pip ${i < results.length ? 'done' : i === roundIndex ? 'current' : ''}`}
-            />
-          ))}
+        <div className="topbar-right">
+          <div className="rounds" aria-hidden>
+            {rounds.map((r, i) => (
+              <span
+                key={r.id}
+                className={`pip ${i < results.length ? 'done' : i === roundIndex ? 'current' : ''}`}
+              />
+            ))}
+          </div>
+          {total > 0 && <div className="score">{total.toLocaleString()}</div>}
+          <button className="icon menu-btn" onClick={() => setSheet('menu')} aria-label="Menu">
+            <span />
+            <span />
+            <span />
+          </button>
         </div>
-
-        <div className="score">{total.toLocaleString()}</div>
-
-        <button className="icon" onClick={() => setSheet('how')} aria-label="How to play">
-          ?
-        </button>
-        <button className="icon" onClick={() => setSheet('about')} aria-label="About">
-          i
-        </button>
       </header>
 
       <div className="stage">
         <OsrsMap
           guess={pending}
           answer={current ? current.location : null}
-          onPick={showSummary || revealed ? undefined : setPending}
+          onPick={showSummary || revealed ? undefined : pick}
           maxZoom={hard && guessing ? HARD_MAX_ZOOM : undefined}
         />
 
@@ -317,13 +384,21 @@ export default function App() {
               </div>
             )}
             {current ? (
-              <div className="readout">
+              <div className={`readout band-${bandForRatio(current.score / MAX_ROUND_SCORE)}`}>
+                <div className="readout-verdict">
+                  {roundVerdict(current.score, isInside(current.distance, current.location.radius))}
+                </div>
                 <div className="readout-score">{current.score.toLocaleString()} pts</div>
                 <div className="readout-dist">
                   {isInside(current.distance, current.location.radius)
                     ? `Inside ${current.location.name}`
                     : `${Math.round(current.distance).toLocaleString()} tiles from ${current.location.name}`}
                 </div>
+                {revealTip && (
+                  <div className="readout-tip">
+                    Anywhere inside the gold circle scores the full 5,000. The further out, the fewer.
+                  </div>
+                )}
                 {current.location.blurb && (
                   <div className="readout-fact">
                     {current.location.blurb}{' '}
@@ -333,9 +408,13 @@ export default function App() {
                   </div>
                 )}
               </div>
+            ) : pinTip && !pending ? (
+              <div className="hint callout">
+                Tap the map where you think <strong>{target?.name}</strong> is
+              </div>
             ) : (
               <div className="hint">
-                {pending ? 'Drag to adjust, or lock it in.' : 'Click the map to place your guess.'}
+                {pending ? 'Drag to adjust, or lock it in.' : 'Tap the map to place your pin.'}
               </div>
             )}
             <button
@@ -347,7 +426,7 @@ export default function App() {
                 ? roundIndex === rounds.length - 1
                   ? 'See results'
                   : 'Next round'
-                : 'Lock in guess'}
+                : 'Lock it in'}
             </button>
           </div>
         )}
@@ -366,29 +445,31 @@ export default function App() {
             hard={hardRun}
             onPlayEndless={() => startSession('endless')}
             onBackToToday={() => startSession('daily')}
-            onShowHistory={() => setSheet('history')}
-            onShowGroups={() => setSheet('groups')}
+            onOpen={(target) => setSheet(target)}
           />
         )}
       </div>
 
       {sheet === 'intro' && (
         <Modal title="TapScape">
-          <HowToPlay />
-          <div className="sheet-actions">
-            {launch.challenge ? (
-              <button className="primary" onClick={() => closeIntro(() => {})}>
-                Play the challenge
-              </button>
-            ) : (
-              <button className="primary" onClick={() => closeIntro(() => startSession('daily'))}>
-                Play today's
-              </button>
-            )}
-            <button className="secondary" onClick={() => closeIntro(() => startSession('endless'))}>
-              Endless mode
-            </button>
-          </div>
+          <Intro
+            challenge={launch.challenge !== null}
+            onPlayDaily={() => closeIntro(() => startSession('daily'))}
+            onPlayEndless={() => closeIntro(() => startSession('endless'))}
+            onPlayChallenge={() => closeIntro(() => {})}
+          />
+        </Modal>
+      )}
+      {sheet === 'menu' && (
+        <Modal title="Menu" onClose={() => setSheet(null)}>
+          <Menu
+            hard={hard}
+            hardLocked={midRun}
+            onToggleHard={toggleHard}
+            stream={stream}
+            onToggleStream={toggleStream}
+            onOpen={openFromMenu}
+          />
         </Modal>
       )}
       {sheet === 'how' && (
@@ -397,7 +478,7 @@ export default function App() {
         </Modal>
       )}
       {sheet === 'history' && (
-        <Modal title={`Last ${HISTORY_DAYS} days`} onClose={() => setSheet(null)}>
+        <Modal title="Your 30 days" onClose={() => setSheet(null)}>
           <History
             dayKey={today}
             streak={getStreak()}
@@ -408,9 +489,14 @@ export default function App() {
           />
         </Modal>
       )}
-      {sheet === 'groups' && (
-        <Modal title="Friends" onClose={() => setSheet(null)}>
+      {sheet === 'clan' && (
+        <Modal title="Clan" onClose={() => setSheet(null)}>
           <Groups today={today} inviteCode={invite} onInviteDone={() => setInvite(null)} />
+        </Modal>
+      )}
+      {sheet === 'reminders' && (
+        <Modal title="Morning reminder" onClose={() => setSheet(null)}>
+          <Reminder context="sheet" />
         </Modal>
       )}
       {sheet === 'about' && (
@@ -439,6 +525,30 @@ function Countdown() {
   )
 }
 
+/** Counts the score up from zero when the card appears, unless motion is reduced. */
+function useCountUp(target: number, ms = 900): number {
+  const [value, setValue] = useState(() =>
+    window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? target : 0,
+  )
+  useEffect(() => {
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+      setValue(target)
+      return
+    }
+    const start = performance.now()
+    let frame = 0
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - start) / ms)
+      const eased = 1 - (1 - t) * (1 - t)
+      setValue(Math.round(target * eased))
+      if (t < 1) frame = requestAnimationFrame(tick)
+    }
+    frame = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(frame)
+  }, [target, ms])
+  return value
+}
+
 function milestoneText(m: Milestone): string {
   switch (m.kind) {
     case 'best':
@@ -449,8 +559,6 @@ function milestoneText(m: Milestone): string {
       return `${m.count} places found`
   }
 }
-
-const DATE_LABEL = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', timeZone: 'UTC' })
 
 interface SummaryProps {
   dayKey: string
@@ -465,8 +573,7 @@ interface SummaryProps {
   hard: boolean
   onPlayEndless: () => void
   onBackToToday: () => void
-  onShowHistory: () => void
-  onShowGroups: () => void
+  onOpen: (sheet: 'history' | 'clan' | 'reminders') => void
 }
 
 function Summary({
@@ -482,20 +589,17 @@ function Summary({
   hard,
   onPlayEndless,
   onBackToToday,
-  onShowHistory,
-  onShowGroups,
+  onOpen,
 }: SummaryProps) {
   const [copied, setCopied] = useState<'result' | 'challenge' | null>(null)
   const streak = useMemo(() => getStreak(), [])
-  const played = useMemo(
-    () => getHistory(today, HISTORY_DAYS).filter((d) => d.result).length,
-    [today],
-  )
-  const groups = useMemo(() => getMemberships().length, [])
+  const shown = useCountUp(total)
   const max = MAX_ROUND_SCORE * lines.length
   const isToday = mode === 'daily' && dayKey === today
   const isArchive = mode === 'daily' && !isToday
   const scores = lines.map((l) => l.score)
+  const puzzleNumber = dayIndex(dayKey) + 1
+  const dateWords = DATE_LONG.format(new Date(`${dayKey}T00:00:00Z`))
 
   const copy = async (kind: 'result' | 'challenge', text: string) => {
     setCopied((await copyText(text)) ? kind : null)
@@ -503,32 +607,27 @@ function Summary({
   }
 
   const heading = mode === 'endless'
-    ? challenge ? 'Challenge' : 'Practice run'
-    : isToday ? dayKey : DATE_LABEL.format(new Date(`${dayKey}T00:00:00Z`))
+    ? challenge ? 'Challenge' : 'Endless'
+    : isToday ? "Today's five" : dateWords
+  const subheading = mode === 'endless'
+    ? challenge ? 'Same five places as your friend' : 'Five random places, nothing recorded'
+    : isToday ? `Puzzle #${puzzleNumber} · ${dateWords}` : `Puzzle #${puzzleNumber}, played from your history`
 
   return (
     <div className="summary">
       <div className="summary-card">
         <h2>{heading}</h2>
-        {isToday && replaying && (
-          <p className="muted">
-            You've already played today. Next puzzle in <Countdown />
-          </p>
-        )}
-        {isArchive && <p className="muted">An earlier puzzle, played from your history.</p>}
-        {challenge?.theirScore != null && (
-          <p className="muted">
-            Your friend scored {challenge.theirScore.toLocaleString()}.{' '}
-            {total > challenge.theirScore ? 'You beat it.' : total === challenge.theirScore ? 'Dead heat.' : 'Not this time.'}
-          </p>
-        )}
+        <p className="muted summary-sub">{subheading}</p>
 
-        <div className="summary-total">{total.toLocaleString()}</div>
+        <div className="summary-score">
+          <div className="summary-total">{shown.toLocaleString()}</div>
+          <div className="summary-verdict">{runVerdict(total, max)}</div>
+        </div>
         <div className="muted">
           out of {max.toLocaleString()}
-          {isToday && !replaying && (
+          {isToday && (
             <>
-              {' '}· next puzzle in <Countdown />
+              {' '}· next five in <Countdown />
             </>
           )}
         </div>
@@ -536,12 +635,19 @@ function Summary({
           {hard && <span className="pill">Hard mode</span>}
           {milestone && <span className="pill milestone">{milestoneText(milestone)}</span>}
         </div>
+        {challenge?.theirScore != null && (
+          <p className="muted">
+            Your friend scored {challenge.theirScore.toLocaleString()}.{' '}
+            {total > challenge.theirScore ? 'You beat it.' : total === challenge.theirScore ? 'Dead heat.' : 'Not this time.'}
+          </p>
+        )}
 
         <ul className="summary-list">
           {lines.map((l) => (
             <li key={l.name}>
-              <span>{l.name}</span>
-              <span>
+              <span className={`band-dot band-${bandForRatio(l.score / MAX_ROUND_SCORE)}`} aria-hidden />
+              <span className="summary-name">{l.name}</span>
+              <span className="summary-pts">
                 {l.distance !== undefined &&
                   (l.inside ? 'inside · ' : `${Math.round(l.distance).toLocaleString()} tiles · `)}
                 {l.score.toLocaleString()}
@@ -551,26 +657,21 @@ function Summary({
         </ul>
 
         {mode === 'daily' && (
-          <button className="streak-row" onClick={onShowHistory}>
-            <span className="muted">
-              {streak.current > 1
-                ? `Streak ${streak.current} · best ${streak.best}`
-                : `${played} ${played === 1 ? 'day' : 'days'} played`}
-            </span>
-            <span className="streak-more">Last {HISTORY_DAYS} days ›</span>
-          </button>
+          <div className="chips">
+            <button className="chip-btn" onClick={() => onOpen('history')}>
+              <span className="chip-icon">▦</span>
+              {streak.current > 1 ? `${streak.current}-day streak` : 'Your 30 days'}
+            </button>
+            <button className="chip-btn" onClick={() => onOpen('clan')}>
+              <span className="chip-icon">⚔</span>
+              Clan
+            </button>
+            <button className="chip-btn" onClick={() => onOpen('reminders')}>
+              <span className="chip-icon">☀</span>
+              Remind me
+            </button>
+          </div>
         )}
-
-        {isToday && (
-          <button className="streak-row" onClick={onShowGroups}>
-            <span className="muted">
-              {groups === 0 ? 'Compare scores with friends' : groups === 1 ? '1 group' : `${groups} groups`}
-            </span>
-            <span className="streak-more">Friends ›</span>
-          </button>
-        )}
-
-        {isToday && <Reminder />}
 
         <div className="sheet-actions">
           {isToday && (
@@ -579,7 +680,7 @@ function Summary({
                 {copied === 'result' ? 'Copied' : 'Share result'}
               </button>
               <button className="secondary" onClick={onPlayEndless}>
-                Keep playing
+                Play endless
               </button>
             </>
           )}
@@ -588,15 +689,15 @@ function Summary({
               <button className="primary" onClick={onBackToToday}>
                 Back to today
               </button>
-              <button className="secondary" onClick={onShowHistory}>
-                Play another day
+              <button className="secondary" onClick={() => onOpen('history')}>
+                Another day
               </button>
             </>
           )}
           {mode === 'endless' && (
             <>
               <button className="primary" onClick={() => copy('challenge', challengeText(seed, scores))}>
-                {copied === 'challenge' ? 'Copied' : 'Challenge a friend'}
+                {copied === 'challenge' ? 'Copied' : 'Challenge'}
               </button>
               <button className="secondary" onClick={onPlayEndless}>
                 Play again
@@ -605,9 +706,12 @@ function Summary({
           )}
         </div>
         {isToday && (
-          <button className="secondary wide" onClick={onShowHistory}>
+          <button className="secondary wide" onClick={() => onOpen('history')}>
             Play previous days
           </button>
+        )}
+        {isToday && replaying && (
+          <p className="muted summary-note">You've already played today's five.</p>
         )}
       </div>
     </div>
