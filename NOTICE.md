@@ -22,11 +22,11 @@ Two consequences worth being explicit about:
 - **ShareAlike.** Redistributing a modified version of the data means releasing
   it under the same licence.
 
-## Map imagery — `public/og.png` and the tiles at runtime
+## Map imagery — `public/og.png`, `public/card-bg.jpg` and the tiles at runtime
 
 Map tiles are served at runtime from Weird Gloop's tile server and are not
-redistributed here. `public/og.png` *is* committed, and is composed from those
-tiles.
+redistributed here. `public/og.png` and `public/card-bg.jpg` *are* committed,
+and are composed from those tiles.
 
 Note that Weird Gloop state non-text media should not be assumed to share the
 text licence — the underlying map art is Jagex's, rendered from the game cache.

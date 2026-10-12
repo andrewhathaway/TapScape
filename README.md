@@ -100,6 +100,18 @@ more likely and to turn a share into an invitation:
   450 locations after the build: a map, the coordinates, what's nearby, and a
   nudge to play. They answer "where is X in OSRS" searches and are in the
   sitemap.
+- **A fact after every guess.** Each location carries a one-sentence `blurb`
+  from the wiki's TextExtracts API (`npm run data:blurbs`), shown under the
+  distance readout with a link to the article.
+- **Hard mode.** Thirty seconds a round and the map capped at zoom 1 while
+  guessing. Same daily puzzle; the result is flagged `hard` in storage and in
+  the share text. An unanswered round is scored from the middle of the map.
+- **Streamer mode.** `/?stream=1` hides the running score and the small
+  controls and enlarges the prompt, the clock and the readout.
+- **Live homepage card.** `/og/today.png` is the homepage's `og:image`: day
+  number, how many have played so far and yesterday's average, over a crop of
+  the map, cached ten minutes. Counts come from an anonymous ping per finished
+  daily into `daily_stats`.
 
 ## Daily reminders
 

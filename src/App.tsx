@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import OsrsMap from './map/OsrsMap'
 import Modal from './ui/Modal'
 import HowToPlay from './ui/HowToPlay'
@@ -6,12 +6,14 @@ import About from './ui/About'
 import History, { HISTORY_DAYS } from './ui/History'
 import Reminder from './ui/Reminder'
 import Groups from './ui/Groups'
-import { LOCATIONS } from './data/locations'
+import { LOCATIONS, wikiUrl } from './data/locations'
+import { MAP_VIEW } from './map/tiles'
 import { dailyRounds, endlessRounds, msUntilNextDay, randomSeed, todayKey } from './game/daily'
 import { MAX_ROUND_SCORE, isInside, scoreForDistance, tileDistance } from './game/scoring'
 import { challengeText, copyText, shareText } from './game/share'
 import { reportPlayed, syncReminders } from './game/reminders'
 import { getMemberships, postScores } from './game/groups'
+import { reportDailyStat } from './game/stats'
 import {
   getDayResult,
   getHistory,
@@ -39,9 +41,37 @@ interface Challenge {
   theirScore: number | null
 }
 
+/** Hard mode: seconds per round, and how far in the map will zoom while guessing. */
+const HARD_SECONDS = 30
+const HARD_MAX_ZOOM = 1
+const HARD_KEY = 'tapscape:hard'
+
+/** Where an unanswered hard-mode round is scored from: the middle of the map. */
+const PLAY_CENTRE: WorldPoint = {
+  x: Math.round((MAP_VIEW.playSw.x + MAP_VIEW.playNe.x) / 2),
+  y: Math.round((MAP_VIEW.playSw.y + MAP_VIEW.playNe.y) / 2),
+  plane: 0,
+}
+
+function readHard(): boolean {
+  try {
+    return localStorage.getItem(HARD_KEY) === '1'
+  } catch {
+    return false
+  }
+}
+
+function writeHard(on: boolean): void {
+  try {
+    localStorage.setItem(HARD_KEY, on ? '1' : '0')
+  } catch {
+    // Not remembered; the toggle still works for this visit.
+  }
+}
+
 /**
  * Deep links are read once and scrubbed from the address bar, so a reload
- * doesn't re-trigger them. `?source=` is left alone for analytics.
+ * doesn't re-trigger them. `?source=` and `?stream=` are left alone.
  */
 function readLaunch(): { challenge: Challenge | null; invite: string | null } {
   const params = new URLSearchParams(window.location.search)
@@ -81,6 +111,10 @@ export default function App() {
   const [pending, setPending] = useState<WorldPoint | null>(null)
   const [results, setResults] = useState<Guess[]>([])
   const [milestone, setMilestone] = useState<Milestone | null>(null)
+  const [hard, setHard] = useState(readHard)
+  const [secondsLeft, setSecondsLeft] = useState(HARD_SECONDS)
+  /** ?stream=1: big text, running score hidden, for playing on stream. */
+  const [stream] = useState(() => new URLSearchParams(window.location.search).get('stream') === '1')
 
   useEffect(() => {
     syncReminders()
@@ -113,29 +147,64 @@ export default function App() {
     [today],
   )
 
-  const lockIn = useCallback(() => {
-    if (!pending || !target || revealed) return
-    const distance = tileDistance(pending, target)
-    const next = [
-      ...results,
-      {
-        location: target,
-        guessed: pending,
-        distance,
-        score: scoreForDistance(distance, target.radius),
-      },
-    ]
-    setResults(next)
-    setRevealed(true)
-    if (mode === 'daily' && next.length === rounds.length) {
-      const isToday = dayKey === today
-      setMilestone(saveDayResult(dayKey, next, { countsForStreak: isToday }))
-      if (isToday) {
-        reportPlayed(dayKey)
-        postScores(dayKey, next.map((r) => r.score))
+  /** `fallback` is only used when the hard-mode clock runs out with no pin placed. */
+  const lockIn = useCallback(
+    (fallback?: WorldPoint) => {
+      const point = pending ?? fallback
+      if (!point || !target || revealed) return
+      const distance = tileDistance(point, target)
+      const next = [
+        ...results,
+        {
+          location: target,
+          guessed: point,
+          distance,
+          score: scoreForDistance(distance, target.radius),
+        },
+      ]
+      setResults(next)
+      setRevealed(true)
+      if (mode === 'daily' && next.length === rounds.length) {
+        const isToday = dayKey === today
+        setMilestone(saveDayResult(dayKey, next, { countsForStreak: isToday, hard }))
+        if (isToday) {
+          const scores = next.map((r) => r.score)
+          reportPlayed(dayKey)
+          postScores(dayKey, scores)
+          reportDailyStat(dayKey, scores.reduce((a, b) => a + b, 0))
+        }
       }
-    }
-  }, [pending, target, revealed, results, mode, rounds.length, dayKey, today])
+    },
+    [pending, target, revealed, results, mode, rounds.length, dayKey, today, hard],
+  )
+
+  // The hard-mode clock. Kept off the lockIn identity so a dragged pin doesn't
+  // restart the countdown.
+  const lockInRef = useRef(lockIn)
+  lockInRef.current = lockIn
+  const guessing = !showSummary && !revealed && !sheet && !!target
+  useEffect(() => {
+    if (!hard || !guessing) return
+    setSecondsLeft(HARD_SECONDS)
+    const started = Date.now()
+    const id = setInterval(() => {
+      const left = HARD_SECONDS - Math.floor((Date.now() - started) / 1000)
+      setSecondsLeft(Math.max(0, left))
+      if (left <= 0) {
+        clearInterval(id)
+        lockInRef.current(PLAY_CENTRE)
+      }
+    }, 250)
+    return () => clearInterval(id)
+  }, [hard, guessing, roundIndex, mode, dayKey, seed])
+
+  const midRun = results.length > 0 && !showSummary
+  const toggleHard = () => {
+    if (midRun) return
+    const next = !hard
+    setHard(next)
+    writeHard(next)
+  }
 
   const advance = useCallback(() => {
     setRevealed(false)
@@ -170,8 +239,10 @@ export default function App() {
     then()
   }
 
+  const hardRun = replaying ? archived?.hard === true : hard
+
   return (
-    <div className="app">
+    <div className={stream ? 'app stream' : 'app'}>
       <header className="topbar">
         <div className="brand">TapScape</div>
 
@@ -186,6 +257,15 @@ export default function App() {
             </button>
           ))}
         </nav>
+        <button
+          className={hard ? 'tab hard active' : 'tab hard'}
+          onClick={toggleHard}
+          disabled={midRun}
+          aria-pressed={hard}
+          title={`Hard mode: ${HARD_SECONDS} seconds a round, no zooming in close`}
+        >
+          Hard
+        </button>
 
         <div className="prompt">
           {showSummary ? (
@@ -226,10 +306,16 @@ export default function App() {
           guess={pending}
           answer={current ? current.location : null}
           onPick={showSummary || revealed ? undefined : setPending}
+          maxZoom={hard && guessing ? HARD_MAX_ZOOM : undefined}
         />
 
         {!showSummary && (
           <div className="hud">
+            {hard && !revealed && (
+              <div className={secondsLeft <= 5 ? 'timer urgent' : 'timer'} aria-live="off">
+                {secondsLeft}s
+              </div>
+            )}
             {current ? (
               <div className="readout">
                 <div className="readout-score">{current.score.toLocaleString()} pts</div>
@@ -238,13 +324,25 @@ export default function App() {
                     ? `Inside ${current.location.name}`
                     : `${Math.round(current.distance).toLocaleString()} tiles from ${current.location.name}`}
                 </div>
+                {current.location.blurb && (
+                  <div className="readout-fact">
+                    {current.location.blurb}{' '}
+                    <a href={wikiUrl(current.location)} target="_blank" rel="noreferrer">
+                      Wiki ›
+                    </a>
+                  </div>
+                )}
               </div>
             ) : (
               <div className="hint">
                 {pending ? 'Drag to adjust, or lock it in.' : 'Click the map to place your guess.'}
               </div>
             )}
-            <button className="primary" disabled={!pending && !revealed} onClick={revealed ? advance : lockIn}>
+            <button
+              className="primary"
+              disabled={!pending && !revealed}
+              onClick={() => (revealed ? advance() : lockIn())}
+            >
               {revealed
                 ? roundIndex === rounds.length - 1
                   ? 'See results'
@@ -265,6 +363,7 @@ export default function App() {
             total={total}
             replaying={replaying}
             milestone={milestone}
+            hard={hardRun}
             onPlayEndless={() => startSession('endless')}
             onBackToToday={() => startSession('daily')}
             onShowHistory={() => setSheet('history')}
@@ -363,6 +462,7 @@ interface SummaryProps {
   total: number
   replaying: boolean
   milestone: Milestone | null
+  hard: boolean
   onPlayEndless: () => void
   onBackToToday: () => void
   onShowHistory: () => void
@@ -379,6 +479,7 @@ function Summary({
   total,
   replaying,
   milestone,
+  hard,
   onPlayEndless,
   onBackToToday,
   onShowHistory,
@@ -431,7 +532,10 @@ function Summary({
             </>
           )}
         </div>
-        {milestone && <div className="milestone">{milestoneText(milestone)}</div>}
+        <div className="pills">
+          {hard && <span className="pill">Hard mode</span>}
+          {milestone && <span className="pill milestone">{milestoneText(milestone)}</span>}
+        </div>
 
         <ul className="summary-list">
           {lines.map((l) => (
@@ -471,7 +575,7 @@ function Summary({
         <div className="sheet-actions">
           {isToday && (
             <>
-              <button className="primary" onClick={() => copy('result', shareText(dayKey, scores))}>
+              <button className="primary" onClick={() => copy('result', shareText(dayKey, scores, hard))}>
                 {copied === 'result' ? 'Copied' : 'Share result'}
               </button>
               <button className="secondary" onClick={onPlayEndless}>

@@ -363,16 +363,56 @@ button.link:disabled { opacity: .5; cursor: default; }
 
 /* ---------- milestones, archive, countdown ---------- */
 
-.milestone {
+.pills { display: flex; gap: 6px; flex-wrap: wrap; }
+.pills:empty { display: none; }
+.pill {
   display: inline-block;
   margin-top: 8px;
   padding: 3px 10px;
   border-radius: 999px;
-  background: rgba(255, 184, 51, .14);
-  color: var(--gold);
+  background: var(--panel-2);
+  border: 1px solid var(--edge);
+  color: var(--ink);
   font-size: 13px;
   font-weight: 700;
 }
+.pill.milestone { background: rgba(255, 184, 51, .14); border-color: transparent; color: var(--gold); }
+
+/* ---------- hard mode ---------- */
+
+.tab.hard { border: 1px solid var(--edge); background: var(--panel-2); }
+.tab.hard.active { background: var(--bad); color: #fff; border-color: transparent; }
+.tab.hard:disabled { opacity: .5; cursor: not-allowed; }
+.timer {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 1px 6px #000;
+}
+.timer.urgent { color: var(--bad); }
+.readout-fact {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--edge);
+  font-size: 12px;
+  color: var(--ink-dim);
+  text-align: left;
+}
+
+/* ---------- streamer mode ---------- */
+
+.stream .score, .stream button.icon { display: none; }
+.stream .topbar { padding: 12px 18px; }
+.stream .prompt-label { font-size: 14px; }
+.stream .prompt-name { font-size: 36px; white-space: normal; }
+.stream .hud { width: min(560px, calc(100vw - 24px)); }
+.stream .hint { font-size: 18px; }
+.stream .timer { font-size: 48px; }
+.stream .readout-score { font-size: 34px; }
+.stream .readout-dist { font-size: 19px; }
+.stream .readout-fact { font-size: 15px; }
+.stream .hud button.primary { font-size: 20px; padding: 16px 34px; }
 .countdown { color: var(--gold); font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
 button.secondary.wide { width: 100%; margin-top: 9px; }
 

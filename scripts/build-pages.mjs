@@ -123,7 +123,8 @@ ${near
   <p>TapScape gives you five OSRS locations a day. Click where you think each one is and score by how close you land.</p>
   <a class="play" href="/?source=where">Play today's puzzle</a>
 </div>
-<p>Read more about <a href="${wikiUrl(loc.name)}" rel="noreferrer">${esc(loc.name)} on the OSRS Wiki</a>.</p>
+${loc.blurb ? `<p>${esc(loc.blurb)}</p>` : ''}
+<p>Read more about <a href="${wikiUrl(loc.wiki ?? loc.name)}" rel="noreferrer">${esc(loc.name)} on the OSRS Wiki</a>.</p>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>

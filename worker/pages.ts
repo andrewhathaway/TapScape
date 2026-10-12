@@ -10,7 +10,10 @@
  */
 
 import { MAX_ROUND_SCORE } from '../src/game/scoring'
+import { dayIndex } from '../src/game/daily'
 import { cardSvg, renderPng, CARD_HEIGHT, CARD_WIDTH, type CardSpec } from './og'
+import { dayKeyOf } from './schedule'
+import type { Env } from './index'
 
 const ROUNDS = 5
 const DAY_MAX = MAX_ROUND_SCORE * ROUNDS
@@ -48,23 +51,70 @@ function parse(parts: string[]): Shared | null {
   return null
 }
 
+const fmt = (n: number) => n.toLocaleString('en-GB')
+
 function card(shared: Shared): CardSpec {
   if (shared.kind === 'result') {
     return {
       kicker: `Daily · ${shared.dayKey}`,
-      total: shared.total,
-      max: DAY_MAX,
+      big: fmt(shared.total),
+      sub: `out of ${fmt(DAY_MAX)}`,
       scores: shared.scores,
       tagline: 'Five OSRS locations. Can you do better?',
     }
   }
   return {
     kicker: 'Challenge',
-    total: shared.total,
-    max: DAY_MAX,
+    big: fmt(shared.total),
+    sub: `out of ${fmt(DAY_MAX)}`,
     scores: [],
     tagline: 'Same five places. Beat this score.',
   }
+}
+
+const DATE = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
+
+/**
+ * The homepage's preview card: today's day number, how many have played so far
+ * and yesterday's average, over the map art. Cached for ten minutes.
+ */
+async function todayCard(request: Request, env: Env): Promise<Response> {
+  const cache = caches.default
+  const hit = await cache.match(request)
+  if (hit) return hit
+
+  const now = Date.now()
+  const today = dayKeyOf(now)
+  const yesterday = dayKeyOf(now - 86_400_000)
+  const [stats, art] = await Promise.all([
+    env.DB.prepare('SELECT day_key, plays, total FROM daily_stats WHERE day_key IN (?, ?)')
+      .bind(today, yesterday)
+      .all<{ day_key: string; plays: number; total: number }>(),
+    env.ASSETS.fetch(new URL('/card-bg.jpg', request.url)).then((r) => (r.ok ? r.arrayBuffer() : undefined)),
+  ])
+  const byDay = new Map(stats.results.map((r) => [r.day_key, r]))
+  const plays = byDay.get(today)?.plays ?? 0
+  const prior = byDay.get(yesterday)
+  const avg = prior && prior.plays > 0 ? Math.round(prior.total / prior.plays) : null
+
+  const parts = [plays > 0 ? `${fmt(plays)} played so far today` : 'A fresh five places today']
+  if (avg !== null) parts.push(`yesterday's average ${fmt(avg)}`)
+
+  const png = await renderPng(
+    cardSvg({
+      kicker: `Daily puzzle · ${DATE.format(new Date(`${today}T00:00:00Z`))}`,
+      big: `Day ${dayIndex(today) + 1}`,
+      sub: parts.join(' · '),
+      scores: [],
+      tagline: 'Five OSRS locations a day.',
+      backdrop: art,
+    }),
+  )
+  const response = new Response(png as unknown as BodyInit, {
+    headers: { 'content-type': 'image/png', 'cache-control': 'public, max-age=600' },
+  })
+  await cache.put(request, response.clone())
+  return response
 }
 
 function esc(text: string): string {
@@ -75,8 +125,8 @@ function page(shared: Shared, origin: string, path: string): string {
   const spec = card(shared)
   const image = `${origin}/og${path}.png`
   const url = `${origin}${path}`
-  const total = shared.total.toLocaleString('en-GB')
-  const max = DAY_MAX.toLocaleString('en-GB')
+  const total = fmt(shared.total)
+  const max = fmt(DAY_MAX)
 
   const title = shared.kind === 'result'
     ? `TapScape ${shared.dayKey} — ${total} / ${max}`
@@ -153,8 +203,9 @@ ${redirect}
 
 const IMMUTABLE = 'public, max-age=31536000, immutable'
 
-export async function handlePage(request: Request, path: string): Promise<Response | null> {
+export async function handlePage(request: Request, env: Env, path: string): Promise<Response | null> {
   const url = new URL(request.url)
+  if (path === '/og/today.png') return todayCard(request, env)
   const isImage = path.startsWith('/og/') && path.endsWith('.png')
   const parts = (isImage ? path.slice(3, -4) : path).split('/').filter(Boolean)
   const shared = parse(parts)

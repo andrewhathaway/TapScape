@@ -8,3 +8,6 @@ dist
 
 # Local working notes, not for the public repo
 *.local.md
+
+# Draft posts and outreach, not for the public repo
+posts/

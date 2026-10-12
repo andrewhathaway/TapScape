@@ -31,6 +31,10 @@ export default function About() {
         — code under MIT, location data under CC BY-NC-SA.
       </p>
       <p>
+        Streaming it? <a href="/?stream=1">Streamer mode</a> uses big text and hides the running
+        score until the reveal, so chat can guess along.
+      </p>
+      <p>
         Wondering where somewhere actually is?{' '}
         <a href="/where/">Every location has a page</a> with a map and what's nearby.
       </p>

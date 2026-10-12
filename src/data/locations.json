@@ -6,7 +6,8 @@
     "y": 3185,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Al Kharid is a large city in the north of the Kharidian Desert, and the only desert city open to non-members."
   },
   {
     "id": "aldarin",
@@ -15,7 +16,8 @@
     "y": 2935,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Aldarin is a large island off the south-west coast of Varlamore."
   },
   {
     "id": "ape-atoll",
@@ -24,7 +26,8 @@
     "y": 2750,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Ape Atoll is an island in the Ardent Ocean of Gielinor, home to a vibrant population of monkeys."
   },
   {
     "id": "arceuus",
@@ -33,7 +36,8 @@
     "y": 3800,
     "plane": 0,
     "tier": 1,
-    "radius": 150
+    "radius": 150,
+    "blurb": "Arceuus is one of the five cities in the Kingdom of Great Kourend."
   },
   {
     "id": "ardougne-zoo",
@@ -42,7 +46,8 @@
     "y": 3272,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Ardougne Zoo, located in the southern part of East Ardougne, holds a variety of creatures gathered from across Gielinor."
   },
   {
     "id": "barbarian-village",
@@ -51,7 +56,8 @@
     "y": 3427,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Barbarian Village is a small village south of Edgeville and west of Varrock."
   },
   {
     "id": "barrows",
@@ -60,7 +66,8 @@
     "y": 3291,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Barrows is a series of six burial mounds east of Mort'ton in which the Barrows brothers were entombed after their deaths during the Third Age."
   },
   {
     "id": "baxtorian-falls",
@@ -69,7 +76,8 @@
     "y": 3483,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Baxtorian Falls is a small series of water rapids flowing southwards from the Lunar Sea to the River Dougne, featured in the Waterfall Quest."
   },
   {
     "id": "brimhaven",
@@ -78,7 +86,8 @@
     "y": 3195,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Brimhaven is a members-only pirate town located on north-western Karamja, led by the wealthy Scarface Pete."
   },
   {
     "id": "burgh-de-rott",
@@ -87,7 +96,8 @@
     "y": 3220,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Burgh de Rott is a desolate town located in the south-western coast of Morytania, known for housing the human resistance to the oppressive vampyres."
   },
   {
     "id": "burthorpe",
@@ -96,7 +106,8 @@
     "y": 3544,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Principality of Burthorpe, referred to colloquially as Burthorpe, is a military principality north-west of Falador and north of Taverley."
   },
   {
     "id": "camelot",
@@ -105,7 +116,8 @@
     "y": 3507,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The castle of Camelot is located in Kandarin, to the east of Seers' Village."
   },
   {
     "id": "canifis",
@@ -114,7 +126,8 @@
     "y": 3488,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Canifis, formerly known as Kharyrll, is a small town in Morytania inhabited by werewolves in human form."
   },
   {
     "id": "castle-drakan",
@@ -123,7 +136,8 @@
     "y": 3360,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Castle Drakan is the seat of power of Morytania and the stronghold from which Lowerniel Drakan rules the region."
   },
   {
     "id": "castle-wars",
@@ -132,7 +146,8 @@
     "y": 3105,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Castle Wars is a free-to-play combat minigame similar to Capture the Flag, but with a Old School RuneScape twist."
   },
   {
     "id": "catherby",
@@ -141,7 +156,8 @@
     "y": 3443,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Catherby is a small, members-only fishing town located immediately west White Wolf Mountain."
   },
   {
     "id": "champions-guild",
@@ -150,7 +166,8 @@
     "y": 3357,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Champions' Guild is located south of Varrock and is accessible to players with at least 32 quest points."
   },
   {
     "id": "corsair-cove",
@@ -159,7 +176,8 @@
     "y": 2856,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Corsair Cove is a small port town located on the southern shore of Feldip Hills."
   },
   {
     "id": "crafting-guild",
@@ -168,7 +186,8 @@
     "y": 3281,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Crafting Guild is located south-west of Falador and north of Rimmington."
   },
   {
     "id": "crandor",
@@ -177,7 +196,8 @@
     "y": 3271,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Crandor is a small volcanic island north of Karamja."
   },
   {
     "id": "darkmeyer",
@@ -186,7 +206,8 @@
     "y": 3360,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Darkmeyer is the capital city of Morytania located in the Sanguinesti region, north of Meiyerditch."
   },
   {
     "id": "digsite",
@@ -195,7 +216,8 @@
     "y": 3420,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Digsite is an archaeological excavation area just east of Varrock."
   },
   {
     "id": "draynor-manor",
@@ -204,7 +226,8 @@
     "y": 3359,
     "plane": 0,
     "tier": 1,
-    "radius": 35
+    "radius": 35,
+    "blurb": "Draynor Manor is a large, haunted, mansion located north of Draynor Village owned by Count Draynor Drakan."
   },
   {
     "id": "draynor-village",
@@ -213,7 +236,8 @@
     "y": 3265,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Draynor Village, often shortened to Draynor, is a small village located between Falador and Lumbridge."
   },
   {
     "id": "duel-arena",
@@ -222,7 +246,8 @@
     "y": 3233,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Al Kharid Duel Arena was a place where players could go to engage in one-on-one Combat."
   },
   {
     "id": "east-ardougne",
@@ -231,7 +256,8 @@
     "y": 3300,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "East Ardougne is the eastern of the two districts that form Ardougne, the capital of Kandarin."
   },
   {
     "id": "ectofuntus",
@@ -240,7 +266,8 @@
     "y": 3520,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Ectofuntus is a fountain located within a temple just north of Port Phasmatys that can be worshipped for Prayer experience."
   },
   {
     "id": "edgeville",
@@ -249,7 +276,8 @@
     "y": 3492,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Edgeville is a small town located at the border of the Wilderness."
   },
   {
     "id": "entrana",
@@ -258,7 +286,8 @@
     "y": 3358,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Entrana is a large island south-west of Taverley, occupied by Saradominist monks."
   },
   {
     "id": "falador",
@@ -267,7 +296,8 @@
     "y": 3352,
     "plane": 0,
     "tier": 1,
-    "radius": 74
+    "radius": 74,
+    "blurb": "Falador is the capital city of the Kingdom of Asgarnia."
   },
   {
     "id": "ferox-enclave",
@@ -276,7 +306,8 @@
     "y": 3623,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Ferox Enclave is the restored remains of the Carrallanger fortress, once part of the Zarosian Empire before being abandoned and left to decay over the ages."
   },
   {
     "id": "fishing-guild",
@@ -285,7 +316,8 @@
     "y": 3424,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Fishing Guild is a members-only guild located in a fenced area north of East Ardougne; west of Hemenster, which was released on 17 June 2002."
   },
   {
     "id": "fossil-island",
@@ -294,7 +326,8 @@
     "y": 3807,
     "plane": 0,
     "tier": 1,
-    "radius": 150
+    "radius": 150,
+    "blurb": "Fossil Island is a members-only area located north-east of Morytania and unveils a unique environment where players can train a variety of skills."
   },
   {
     "id": "grand-exchange",
@@ -303,7 +336,8 @@
     "y": 3490,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Grand Exchange, commonly referred to as the GE, is a trading system for players to purchase and sell tradeable items in Old School RuneScape."
   },
   {
     "id": "grand-tree",
@@ -312,7 +346,8 @@
     "y": 3492,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Grand Tree, or Ta Quir Priw in gnomish language, is home to a gnome community and is built inside a tree in the north-east of the Tree Gnome Stronghold."
   },
   {
     "id": "hosidius",
@@ -321,7 +356,8 @@
     "y": 3598,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Hosidius is one of the five cities in the Kingdom of Great Kourend."
   },
   {
     "id": "ice-mountain",
@@ -330,7 +366,8 @@
     "y": 3486,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Ice Mountain is located just north-west of Barbarian Village, and the main entrance to the Dwarven Mine is located on its lower southern slope."
   },
   {
     "id": "jatizso",
@@ -339,7 +376,8 @@
     "y": 3805,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Jatizso (Jagex: yah-TIZZ-so) is one of the islands which make up the Fremennik Isles."
   },
   {
     "id": "kourend-castle",
@@ -348,7 +386,8 @@
     "y": 3673,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Kourend Castle is a large castle found in the centre of Great Kourend, its courtyard directly flowing into the district of Kingstown."
   },
   {
     "id": "lava-maze",
@@ -357,7 +396,8 @@
     "y": 3854,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Lava Maze is a maze located deep in the Wilderness, around level 40-45."
   },
   {
     "id": "lletya",
@@ -366,7 +406,8 @@
     "y": 3171,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Lletya (Welsh pronunciation: /ˈɬɛt.ə.a/, Jagex pronunciation: LLE-to-ah) is a small village that can be accessed after starting Mourning's End Part I. Eluned brings players to Lletya the first time…"
   },
   {
     "id": "lovakengj",
@@ -375,7 +416,8 @@
     "y": 3801,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Lovakengj ( loh-və-KAYN) is one of the five cities in the Kingdom of Great Kourend, which resides in a volcanic area exclusively inhabited by dwarves."
   },
   {
     "id": "lumbridge",
@@ -384,7 +426,8 @@
     "y": 3220,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Lumbridge is a large town where players begin their Old School RuneScape journey."
   },
   {
     "id": "lumbridge-swamp",
@@ -393,7 +436,8 @@
     "y": 3177,
     "plane": 0,
     "tier": 1,
-    "radius": 67
+    "radius": 67,
+    "blurb": "The Lumbridge Swamp is located south of Lumbridge and is east of Draynor Village."
   },
   {
     "id": "lunar-isle",
@@ -402,7 +446,8 @@
     "y": 3903,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Lunar Isle is a crescent-shaped island located in the Northern Ocean, occupied by the ancient Moon Clan."
   },
   {
     "id": "meiyerditch",
@@ -411,7 +456,8 @@
     "y": 3250,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Meiyerditch is a slum ruled by Lord Drakan and his family from the city of vampyres, Darkmeyer, the capital of Morytania."
   },
   {
     "id": "mining-guild",
@@ -420,7 +466,8 @@
     "y": 3339,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Mining Guild, located in and beneath Falador, is a guild for expert miners available to players with at least 60 Mining (can be boosted)."
   },
   {
     "id": "miscellania",
@@ -429,7 +476,8 @@
     "y": 3870,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Miscellania is an island kingdom in the Northern Ocean, north-west off the coast of the Fremennik Province."
   },
   {
     "id": "mor-ul-rek",
@@ -438,7 +486,8 @@
     "y": 3168,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Mor Ul Rek, also known as the TzHaar City, is a city located underneath the volcano on Karamja."
   },
   {
     "id": "mos-le-harmless",
@@ -447,7 +496,8 @@
     "y": 2999,
     "plane": 0,
     "tier": 1,
-    "radius": 150
+    "radius": 150,
+    "blurb": "Mos Le'Harmless is the quaint, pirate-run free port that can be visited after completion of the Cabin Fever quest."
   },
   {
     "id": "mount-karuulm",
@@ -456,7 +506,8 @@
     "y": 3807,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Mount Karuulm is a volcano found in the northern edge of the Kebos Lowlands."
   },
   {
     "id": "musa-point",
@@ -465,7 +516,8 @@
     "y": 3162,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Musa Point is a small settlement on the north-eastern edge of Karamja."
   },
   {
     "id": "nardah",
@@ -474,7 +526,8 @@
     "y": 2911,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Nardah is a town in the far south of the Kharidian Desert."
   },
   {
     "id": "neitiznot",
@@ -483,7 +536,8 @@
     "y": 3802,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Neitiznot (Jagex: NAY-tizz-not) is a fortified town on one of the Fremennik Isles that can be accessed by talking to Maria Gunnars on the most north-eastern pier in Rellekka."
   },
   {
     "id": "pollnivneach",
@@ -492,7 +546,8 @@
     "y": 2974,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Pollnivneach ( POL-niv-neech) is a town located in the middle of the Kharidian Desert, wherein the desert heat does not affect the player."
   },
   {
     "id": "port-khazard",
@@ -501,7 +556,8 @@
     "y": 3159,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Port Khazard is a port located south of Ardougne and north of Yanille."
   },
   {
     "id": "port-phasmatys",
@@ -510,7 +566,8 @@
     "y": 3486,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Port Phasmatys (Jagex: faz-MAT-iss) is a small town located on the north-eastern coast of Morytania."
   },
   {
     "id": "port-piscarilius",
@@ -519,7 +576,8 @@
     "y": 3752,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Port Piscarilius is one of the five cities in the Kingdom of Great Kourend."
   },
   {
     "id": "port-sarim",
@@ -528,7 +586,8 @@
     "y": 3221,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Port Sarim is a small port in south-eastern Asgarnia."
   },
   {
     "id": "rellekka",
@@ -537,7 +596,8 @@
     "y": 3677,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Rellekka is a village in the Fremennik Province."
   },
   {
     "id": "rimmington",
@@ -546,7 +606,8 @@
     "y": 3226,
     "plane": 0,
     "tier": 1,
-    "radius": 47
+    "radius": 47,
+    "blurb": "Rimmington is a small village in south-west Asgarnia."
   },
   {
     "id": "seers-village",
@@ -555,7 +616,8 @@
     "y": 3485,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Seers' Village is a small settlement to the west of Camelot, known for its white-robed residents who are capable of precognition."
   },
   {
     "id": "shantay-pass",
@@ -564,7 +626,8 @@
     "y": 3123,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Shantay Pass is a small area that separates Al Kharid from the Kharidian Desert."
   },
   {
     "id": "shayzien",
@@ -573,7 +636,8 @@
     "y": 3592,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Shayzien is one of the five cities in the Kingdom of Great Kourend."
   },
   {
     "id": "shilo-village-location",
@@ -582,7 +646,9 @@
     "y": 2972,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Shilo Village is a small village in southern Karamja, accessible after completing the Shilo Village quest.",
+    "wiki": "Shilo Village (location)"
   },
   {
     "id": "sophanem",
@@ -591,7 +657,8 @@
     "y": 2783,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Sophanem, also known as the City of the Dead, is a plague-ridden city located in the southern end of the Kharidian Desert."
   },
   {
     "id": "tai-bwo-wannai",
@@ -600,7 +667,8 @@
     "y": 3065,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Tai Bwo Wannai, meaning 'small clearing in the jungle', is a village located south of Brimhaven in the jungle of Karamja."
   },
   {
     "id": "taverley",
@@ -609,7 +677,8 @@
     "y": 3451,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Taverley is a small Guthixian village found north-west of Falador inhabited primarily by druids."
   },
   {
     "id": "tree-gnome-stronghold",
@@ -618,7 +687,8 @@
     "y": 3460,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Tree Gnome Stronghold, sometimes shortened to Gnome Stronghold, also called Ta Quir Priw in Gnomish, is one of the largest cities in Gielinor and is populated solely by gnomes."
   },
   {
     "id": "trollheim",
@@ -627,7 +697,8 @@
     "y": 3678,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Trollheim is a mountain in located in Troll Country."
   },
   {
     "id": "varlamore",
@@ -636,7 +707,8 @@
     "y": 3120,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Kingdom of Varlamore, also known as the Shining Kingdom, is a kingdom on the continent of Zeah, far west of the mainland across the Western Ocean."
   },
   {
     "id": "varrock",
@@ -645,7 +717,8 @@
     "y": 3448,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Varrock (Jagex pronunciation: vah-ROCK) is the capital of the kingdom of Misthalin."
   },
   {
     "id": "varrock-square",
@@ -654,7 +727,8 @@
     "y": 3429,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Varrock Square is a square found directly south of Varrock Palace."
   },
   {
     "id": "void-knights-outpost",
@@ -663,7 +737,8 @@
     "y": 2656,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Void Knights' Outpost is a small island in the Ardent Ocean occupied by the Void Knights just south-west of Ape Atoll."
   },
   {
     "id": "west-ardougne",
@@ -672,7 +747,8 @@
     "y": 3305,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "West Ardougne is the western part of the capital city of Ardougne, which has been quarantined due to a mysterious plague."
   },
   {
     "id": "witchaven",
@@ -681,7 +757,8 @@
     "y": 3287,
     "plane": 0,
     "tier": 1,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Witchaven is a small village east of Ardougne."
   },
   {
     "id": "wizards-tower",
@@ -690,7 +767,8 @@
     "y": 3160,
     "plane": 0,
     "tier": 1,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Wizards' Tower is located south of Draynor Village, over a bridge."
   },
   {
     "id": "yanille",
@@ -699,7 +777,8 @@
     "y": 3090,
     "plane": 0,
     "tier": 1,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Yanille is a members-only city south of Ardougne, known for hosting Wizards' Guild."
   },
   {
     "id": "abandoned-mine",
@@ -708,7 +787,8 @@
     "y": 3232,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Mort Ridge mines, are an old and deserted, hence more commonly known as the Abandoned Mine, multi-level mine complex under Morytania that once were the site of an extensive mining operation."
   },
   {
     "id": "agility-pyramid",
@@ -717,7 +797,8 @@
     "y": 2842,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Agility Pyramid, also known as the Jaleustrophos Pyramid (meaning Tomb of the Agile in an old desert language), is an Agility training area located in the Kharidian Desert, between Sophanem and…"
   },
   {
     "id": "al-kharid-mine",
@@ -726,7 +807,8 @@
     "y": 3293,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Al Kharid mine (also called Scorpion mine or Al Kharid Mining pit) is a Mining area located just north of the desert city of Al Kharid."
   },
   {
     "id": "al-kharid-palace",
@@ -735,7 +817,8 @@
     "y": 3170,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Al Kharid Palace is the southernmost and largest building in the city of Al Kharid, and it is the residence of the Emir and the seat of government for the emirate of Al Kharid."
   },
   {
     "id": "ancient-pyramid",
@@ -744,7 +827,8 @@
     "y": 2898,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Ancient Pyramid, also known as the Jaldraocht Pyramid, meaning Tomb of Magic in an old desert language, is located south of the Bandit Camp in the Kharidian Desert."
   },
   {
     "id": "ancient-vault",
@@ -753,7 +837,8 @@
     "y": 2971,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Ancient Vault is an old Zarosian structure found in the eastern coast of the Kharidian Desert."
   },
   {
     "id": "ape-atoll-agility-course",
@@ -762,7 +847,8 @@
     "y": 2741,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Ape Atoll Agility Course is an Agility training area located near Marim, available to players with level 48 Agility (cannot be boosted)."
   },
   {
     "id": "ape-atoll-dungeon",
@@ -771,7 +857,8 @@
     "y": 2703,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Ape Atoll Dungeon (also known as Zooknock's Tunnel) can be found in the southern jungle of Ape Atoll."
   },
   {
     "id": "arandar",
@@ -780,7 +867,8 @@
     "y": 3290,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Arandar is a mountain pass leading to Tirannwn that may be used by players upon completion of the Regicide quest."
   },
   {
     "id": "arceuus-library",
@@ -789,7 +877,8 @@
     "y": 3808,
     "plane": 0,
     "tier": 2,
-    "radius": 37
+    "radius": 37,
+    "blurb": "The Arceuus Library, also known as the Grand Library of Great Kourend, is a large library found in Arceuus."
   },
   {
     "id": "ardougne",
@@ -798,7 +887,8 @@
     "y": 3300,
     "plane": 0,
     "tier": 2,
-    "radius": 150
+    "radius": 150,
+    "blurb": "Ardougne (Jagex: (🔊listen) arr-DOYN) is the capital city of the Kingdom of Kandarin."
   },
   {
     "id": "ardougne-market",
@@ -807,7 +897,8 @@
     "y": 3300,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Ardougne Market, also called Ardougne Marketplace or the Equal Trade Market, is a large marketplace located in East Ardougne."
   },
   {
     "id": "ardougne-monastery",
@@ -816,7 +907,8 @@
     "y": 3212,
     "plane": 0,
     "tier": 2,
-    "radius": 16
+    "radius": 16,
+    "blurb": "The Ardougne Monastery, or Kandarin Monastery, in the kingdom of Kandarin is a building located south of Ardougne Zoo and north of the Fight Arena."
   },
   {
     "id": "bandit-camp-kharidian-desert",
@@ -825,7 +917,8 @@
     "y": 2979,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The bandit camp in the Kharidian Desert is a small camp set up by bandits that will attack players wearing any Zamorakian or Saradominist items."
   },
   {
     "id": "bandit-camp-wilderness",
@@ -834,7 +927,8 @@
     "y": 3685,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Bandit Camp is an outlaw stronghold located within levels 17-24 Wilderness."
   },
   {
     "id": "barbarian-outpost",
@@ -843,7 +937,8 @@
     "y": 3558,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Barbarian Outpost is a fenced stronghold north-west of Baxtorian Falls and north of the Tree Gnome Stronghold."
   },
   {
     "id": "bedabin-camp",
@@ -852,7 +947,8 @@
     "y": 3036,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Bedabin Camp is a very small nomad camp south-west of Al Kharid and the Kalphite Lair."
   },
   {
     "id": "black-knights-fortress-location",
@@ -861,7 +957,9 @@
     "y": 3514,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Black Knights' Fortress is a castle of the Zamorakian military order of the Kinshra, commonly referred to as the black knights.",
+    "wiki": "Black Knights' Fortress (location)"
   },
   {
     "id": "blighted-volcano",
@@ -870,7 +968,8 @@
     "y": 3935,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Blighted Volcano is a small volcanic outcrop in the north-eastern section of the Wilderness."
   },
   {
     "id": "bone-yard-hunter-area",
@@ -879,7 +978,8 @@
     "y": 3673,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Bone Yard Hunter area is located slightly south-east of the Bone Yard in the Wilderness."
   },
   {
     "id": "brine-rat-cavern",
@@ -888,7 +988,8 @@
     "y": 3736,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Brine Rat Cavern, also known as Sven's cave, is a dungeon accessible during and after Olaf's Quest."
   },
   {
     "id": "brittle-isle",
@@ -897,7 +998,8 @@
     "y": 4069,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Brittle Isle is an island in the Northern Ocean requiring 81 Sailing to dock at, found north-west of Lunar Isle and north-east of Great Kourend."
   },
   {
     "id": "cairn-isle",
@@ -906,7 +1008,8 @@
     "y": 2976,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Cairn Isle is an island on the south-west of Karamja, south of Tai Bwo Wannai and west of Shilo Village."
   },
   {
     "id": "chaos-druid-tower",
@@ -915,7 +1018,8 @@
     "y": 3356,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Chaos Druid Tower is located to the north of Ardougne and is home to 4 chaos druids, located on the ground floor."
   },
   {
     "id": "chaos-temple-asgarnia",
@@ -924,7 +1028,8 @@
     "y": 3516,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Chaos Temple is a temple of Zamorak located north of Falador, north-west of Goblin Village."
   },
   {
     "id": "chaos-temple-church",
@@ -933,7 +1038,8 @@
     "y": 3821,
     "plane": 0,
     "tier": 2,
-    "radius": 6
+    "radius": 6,
+    "blurb": "The Chaos Temple is a church in level 38 Wilderness, west of the Lava Maze."
   },
   {
     "id": "chaos-temple-wilderness",
@@ -942,7 +1048,8 @@
     "y": 3608,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Chaos Temple is a temple of Zamorak located around level 11 Wilderness, north of Varrock."
   },
   {
     "id": "charred-island",
@@ -951,7 +1058,8 @@
     "y": 2406,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Charred Island is located south of the Void Knights' Outpost and Pest Control Island, in the Unquiet Ocean."
   },
   {
     "id": "chasm-of-fire",
@@ -960,7 +1068,8 @@
     "y": 3668,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Chasm of Fire is a dungeon located in the north-west corner of Shayzien, housing a variety of demons led by Yama, the Master of Pacts."
   },
   {
     "id": "citharede-abbey",
@@ -969,7 +1078,8 @@
     "y": 3177,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Citharede Abbey is a small abandoned abbey found on the eastern end of the Giants' Plateau east of Al Kharid."
   },
   {
     "id": "clock-tower-building",
@@ -978,7 +1088,8 @@
     "y": 3244,
     "plane": 0,
     "tier": 2,
-    "radius": 11
+    "radius": 11,
+    "blurb": "The Clock Tower is a tower south of Ardougne."
   },
   {
     "id": "coal-trucks",
@@ -987,7 +1098,8 @@
     "y": 3490,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Coal Trucks are located north of the Fishing Guild and west of McGrubor's Wood."
   },
   {
     "id": "combat-ring-shayzien",
@@ -996,7 +1108,8 @@
     "y": 3624,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The combat ring is an arena in the Shayzien Encampment."
   },
   {
     "id": "combat-training-camp",
@@ -1005,7 +1118,8 @@
     "y": 3370,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Combat Training Camp is a combat training facility which players may access upon completion of the Biohazard quest."
   },
   {
     "id": "cooks-guild",
@@ -1014,7 +1128,8 @@
     "y": 3449,
     "plane": 0,
     "tier": 2,
-    "radius": 7
+    "radius": 7,
+    "blurb": "The Cooks' Guild (also known as the Cooking Guild or the Chefs' Guild) is a guild for master chefs located in a three-story windmill west of Varrock."
   },
   {
     "id": "corsair-cove-resource-area",
@@ -1023,7 +1138,8 @@
     "y": 2892,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Corsair Cove Resource Area is a gated resource-rich area in the north-west corner of the Corsair Cove."
   },
   {
     "id": "crash-site-cavern",
@@ -1032,7 +1148,8 @@
     "y": 3520,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Crash Site Cavern is a cave located a very short distance north of the Tree Gnome Stronghold."
   },
   {
     "id": "daimon-s-crater",
@@ -1041,7 +1158,8 @@
     "y": 4064,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Daimon's Crater is the location of the Bounty Hunter minigame and is only accessible on worlds 318 (UK), 319 (US West), or 569 (AUS)."
   },
   {
     "id": "dark-warriors-fortress",
@@ -1050,7 +1168,8 @@
     "y": 3630,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Dark Warriors' Fortress is a castle in level 14 to 16 multi-combat Wilderness, north of Ice Mountain."
   },
   {
     "id": "death-plateau-location",
@@ -1059,7 +1178,9 @@
     "y": 3586,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Death Plateau is a tall, flat land formation, surrounded by steep ascents, north-west of Burthorpe and directly north of the Warriors' Guild.",
+    "wiki": "Death Plateau (location)"
   },
   {
     "id": "demonic-ruins",
@@ -1068,7 +1189,8 @@
     "y": 3885,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Demonic Ruins, originally known as Annakarl during the rule of Zaros, is a ruined fortress that is located in level 44-48 Wilderness."
   },
   {
     "id": "dense-essence-mine",
@@ -1077,7 +1199,8 @@
     "y": 3853,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The dense essence mine is located north-east of Arceuus."
   },
   {
     "id": "desert-mining-camp",
@@ -1086,7 +1209,8 @@
     "y": 3021,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The desert mining camp is a slave camp located south of Al Kharid in the Kharidian Desert, run by Captain Siad."
   },
   {
     "id": "diango-s-workshop",
@@ -1095,7 +1219,8 @@
     "y": 3276,
     "plane": 0,
     "tier": 2,
-    "radius": 4
+    "radius": 4,
+    "blurb": "Diango's Workshop is an underground factory in Draynor Village which was accessed via the trapdoor found in the north-westernmost house in Draynor Village."
   },
   {
     "id": "eagles-peak-mountain",
@@ -1104,7 +1229,9 @@
     "y": 3486,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Eagles' Peak is a relatively small mountain located in the south of Piscatoris.",
+    "wiki": "Eagles' Peak (mountain)"
   },
   {
     "id": "edgeville-bank",
@@ -1113,7 +1240,8 @@
     "y": 3494,
     "plane": 0,
     "tier": 2,
-    "radius": 7
+    "radius": 7,
+    "blurb": "The Edgeville bank, also known as edge bank, is a popular bank found in Edgeville, east of the Grand Exchange and just below the Wilderness ditch."
   },
   {
     "id": "edgeville-monastery",
@@ -1122,7 +1250,8 @@
     "y": 3490,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Edgeville Monastery, also referred to as simply the Monastery, is a two-story building north-east of Falador, east of the Black Knights' Fortress and west of Edgeville."
   },
   {
     "id": "elemental-workshop-location",
@@ -1131,7 +1260,9 @@
     "y": 3497,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Elemental Workshop is a dungeon that players can progressively explore more of as they complete the Elemental Workshop quest series.",
+    "wiki": "Elemental Workshop (location)"
   },
   {
     "id": "etceteria",
@@ -1140,7 +1271,8 @@
     "y": 3873,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Etceteria is an island kingdom in the Northern Ocean, north-west off the coast of the Fremennik Province."
   },
   {
     "id": "falador-park",
@@ -1149,7 +1281,8 @@
     "y": 3380,
     "plane": 0,
     "tier": 2,
-    "radius": 28
+    "radius": 28,
+    "blurb": "The Falador Park is a large, fenced-in park found in Falador."
   },
   {
     "id": "farming-guild",
@@ -1158,7 +1291,8 @@
     "y": 3737,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Farming Guild is a members-only guild located within the Kebos Lowlands just north of the Kebos Swamp."
   },
   {
     "id": "feldip-hunter-area",
@@ -1167,7 +1301,8 @@
     "y": 2911,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Feldip Hunter area is one of several Hunter training areas."
   },
   {
     "id": "fenkenstrain-s-castle",
@@ -1176,7 +1311,8 @@
     "y": 3550,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Fenkenstrain's Castle is a castle in northern Morytania, north-east of Canifis, and north of the Haunted Woods."
   },
   {
     "id": "fishing-platform",
@@ -1185,7 +1321,8 @@
     "y": 3282,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Fishing Platform is located in the Ardent Ocean due east of Witchaven."
   },
   {
     "id": "ghorrock",
@@ -1194,7 +1331,8 @@
     "y": 3935,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Ghorrock is an abandoned Zarosian fortress historically located in the north-west corner of the Zarosian Empire during the Second Age."
   },
   {
     "id": "giants-plateau",
@@ -1203,7 +1341,8 @@
     "y": 3161,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Giants' Plateau is an area found east of Al Kharid."
   },
   {
     "id": "glarial-s-tomb",
@@ -1212,7 +1351,8 @@
     "y": 3445,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Glarial's Tomb is a dungeon underneath the tombstone near the Baxtorian Falls and the Kingdom of Kandarin."
   },
   {
     "id": "gnome-stronghold-agility-course",
@@ -1221,7 +1361,8 @@
     "y": 3428,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Gnome Stronghold Agility Course is an Agility course in which the player must traverse obstacles consisting of a log balance, obstacle nets, tightropes, and pipes."
   },
   {
     "id": "goblin-settlement",
@@ -1230,7 +1371,8 @@
     "y": 3180,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The goblin settlement is a small camp found in the ruins east of the Observatory."
   },
   {
     "id": "gu-tanoth",
@@ -1239,7 +1381,8 @@
     "y": 3035,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Gu'Tanoth is an ogre city far south of Ardougne and slightly south-west of Yanille."
   },
   {
     "id": "gwenith",
@@ -1248,7 +1391,8 @@
     "y": 3410,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Gwenith is a small village north-west of Prifddinas, in the shadow of the mountain of Mynydd."
   },
   {
     "id": "h-a-m-hideout",
@@ -1257,7 +1401,8 @@
     "y": 3235,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The H.A.M. Hideout is the base of operations for the Humans Against Monsters organisation."
   },
   {
     "id": "hardwood-grove",
@@ -1266,7 +1411,8 @@
     "y": 3084,
     "plane": 0,
     "tier": 2,
-    "radius": 9
+    "radius": 9,
+    "blurb": "The Hardwood grove is a fenced area just north-east of Tai Bwo Wannai village, in order to cut the trees inside, the player must have done some of the Tai Bwo Wannai Cleanup minigame."
   },
   {
     "id": "harmony-island",
@@ -1275,7 +1421,8 @@
     "y": 2844,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Harmony Island was once a peaceful island full of monks, but it was taken over by zombie pirates who turned the monks undead."
   },
   {
     "id": "haunted-woods",
@@ -1284,7 +1431,8 @@
     "y": 3492,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Haunted Woods is a large swampy forest in Morytania."
   },
   {
     "id": "hosidius-kitchen",
@@ -1293,7 +1441,8 @@
     "y": 3618,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Hosidius kitchen is a small building located in the north-west corner of Hosidius, just east of the Mess."
   },
   {
     "id": "house-on-the-hill",
@@ -1302,7 +1451,8 @@
     "y": 3872,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The House on the Hill is a location on Fossil Island."
   },
   {
     "id": "ice-path",
@@ -1311,7 +1461,8 @@
     "y": 3809,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Ice Path is a path ascending up a mountain, in the Troll Country region of Gielinor."
   },
   {
     "id": "iorwerth-camp",
@@ -1320,7 +1471,8 @@
     "y": 3253,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Iorwerth Camp is a small camp outside Prifddinas, occupied by elf warriors under the command of Lord Iorwerth."
   },
   {
     "id": "isafdar",
@@ -1329,7 +1481,8 @@
     "y": 3182,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Isafdar (Jagex pronunciation: ISS-aff-dar) is the elven forest."
   },
   {
     "id": "isle-of-souls",
@@ -1338,7 +1491,8 @@
     "y": 2900,
     "plane": 0,
     "tier": 2,
-    "radius": 150
+    "radius": 150,
+    "blurb": "The Isle of Souls is an island located in the Shrouded Ocean, west of Feldip Hills."
   },
   {
     "id": "jalsavrah-pyramid",
@@ -1347,7 +1501,8 @@
     "y": 2795,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Jalsavrah Pyramid, whose name translates to Tomb of Kings, is (presumably) the burial site of past pharaohs, and is the location of the Pyramid Plunder minigame."
   },
   {
     "id": "kalphite-cave",
@@ -1356,7 +1511,8 @@
     "y": 3122,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Kalphite Cave is a dungeon located east of the Shantay Pass, housing kalphites that can only be killed while on a Slayer task."
   },
   {
     "id": "karamja",
@@ -1365,7 +1521,8 @@
     "y": 3070,
     "plane": 0,
     "tier": 2,
-    "radius": 150
+    "radius": 150,
+    "blurb": "Karamja is a large island in Gielinor."
   },
   {
     "id": "kebos-swamp",
@@ -1374,7 +1531,8 @@
     "y": 3616,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Kebos Swamp is a swamp located in the Kebos Lowlands north of Mount Quidamortem."
   },
   {
     "id": "kharazi-jungle",
@@ -1383,7 +1541,8 @@
     "y": 2907,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Kharazi Jungle is an area south of Shilo Village on Karamja."
   },
   {
     "id": "kharid-et",
@@ -1392,7 +1551,8 @@
     "y": 3198,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Kharid-et was a Zarosian settlement dating back to the Second Age."
   },
   {
     "id": "kingstown",
@@ -1401,7 +1561,8 @@
     "y": 3677,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Kingstown is a town located in the centre of Great Kourend, made up of Kourend Castle, its courtyard, and multiple houses to the east of the courtyard."
   },
   {
     "id": "klenter-s-pyramid",
@@ -1410,7 +1571,8 @@
     "y": 2773,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Klenter's Pyramid is one of the two pyramids in Sophanem, the other being Jalsavrah."
   },
   {
     "id": "kourend-woodland",
@@ -1419,7 +1581,8 @@
     "y": 3464,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Kourend Woodland is an area found in the southern coast of Great Kourend."
   },
   {
     "id": "kruk-s-dungeon",
@@ -1428,7 +1591,8 @@
     "y": 2789,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Kruk's Dungeon is a large labyrinth whose entrance is hidden under jungle grass west of Marim on Ape Atoll."
   },
   {
     "id": "lake-molch",
@@ -1437,7 +1601,8 @@
     "y": 3633,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Lake Molch is a large lake found just west of Great Kourend."
   },
   {
     "id": "land-s-end",
@@ -1446,7 +1611,8 @@
     "y": 3430,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Land's End is a small village in Great Kourend that is located in the south-western corner of the kingdom, within its Woodland."
   },
   {
     "id": "lassar",
@@ -1455,7 +1621,8 @@
     "y": 3486,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Lassar was a Zarosian fortress built on what is now known as Ice Mountain."
   },
   {
     "id": "lava-dragon-isle",
@@ -1464,7 +1631,8 @@
     "y": 3828,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Lava Dragon Isle is a members-only section of the Wilderness which stretches from level 36 to level 42."
   },
   {
     "id": "legends-guild",
@@ -1473,7 +1641,8 @@
     "y": 3369,
     "plane": 0,
     "tier": 2,
-    "radius": 20
+    "radius": 20,
+    "blurb": "The Legends' Guild is the second most exclusive of the quest-based guilds in Old School RuneScape (with the Myths' Guild being the first)."
   },
   {
     "id": "library-historical-archive",
@@ -1482,7 +1651,8 @@
     "y": 3808,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Library Historical Archive is small area within Arceuus accessible only by speaking to Archeio, the archive's guardian, on the Arceuus Library ground floor."
   },
   {
     "id": "lighthouse",
@@ -1491,7 +1661,8 @@
     "y": 3641,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Lighthouse is an area north of the Barbarian Outpost, and features prominently in the Horror from the Deep quest."
   },
   {
     "id": "lizardman-caves",
@@ -1500,7 +1671,8 @@
     "y": 3586,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Lizardman Caves are a series of caves located at the north-west corner of the Lizardman Settlement in the Kebos Lowlands."
   },
   {
     "id": "lumbridge-castle",
@@ -1509,7 +1681,8 @@
     "y": 3219,
     "plane": 0,
     "tier": 2,
-    "radius": 21
+    "radius": 21,
+    "blurb": "Lumbridge Castle is a large castle located in Lumbridge and home of Duke Horacio."
   },
   {
     "id": "mage-arena",
@@ -1518,7 +1691,8 @@
     "y": 3934,
     "plane": 0,
     "tier": 2,
-    "radius": 27
+    "radius": 27,
+    "blurb": "The Mage Arena is a members-only combat area located deep in the Wilderness."
   },
   {
     "id": "mage-arena-bank",
@@ -1527,7 +1701,8 @@
     "y": 3956,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Mage Arena bank, also known as the mage bank or wildy bank, is a bank located deep within the Wilderness underneath a crumbling building north of the Mage Arena."
   },
   {
     "id": "marim",
@@ -1536,7 +1711,8 @@
     "y": 2786,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Marim is a settlement on Ape Atoll, inhabited by a population of societal monkeys who are ruled over by King Awowogei."
   },
   {
     "id": "melzar-s-maze",
@@ -1545,7 +1721,8 @@
     "y": 3247,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Melzar's Maze is a large, three-story building with a basement located north-west of Rimmington."
   },
   {
     "id": "mess",
@@ -1554,7 +1731,8 @@
     "y": 3627,
     "plane": 0,
     "tier": 2,
-    "radius": 11
+    "radius": 11,
+    "blurb": "The Mess is a minigame located in the Mess Hall just south of Kingstown in Great Kourend, in which players cook and serve food to Shayzien soldiers."
   },
   {
     "id": "mistrock",
@@ -1563,7 +1741,8 @@
     "y": 2862,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Mistrock is a dwarven settlement on the island of Aldarin, located in the region of Varlamore."
   },
   {
     "id": "mort-myre-swamp",
@@ -1572,7 +1751,8 @@
     "y": 3390,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Mort Myre Swamp, once a forest known as Humblethorn, is a swampland in western Morytania."
   },
   {
     "id": "mort-ton",
@@ -1581,7 +1761,8 @@
     "y": 3288,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Mort'ton (Jagex: , ) is a small, dilapidated town in the Mort Myre Swamp, inhabited by afflicted humans and ghostly shades."
   },
   {
     "id": "mount-quidamortem",
@@ -1590,7 +1771,8 @@
     "y": 3550,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Mount Quidamortem ( KWID-ər-mort-əm) is a mountain in the Kebos Lowlands."
   },
   {
     "id": "mountain-camp",
@@ -1599,7 +1781,8 @@
     "y": 3670,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Mountain Camp is a small settlement east of the Troll Stronghold, built by the migratory Mountain Tribe."
   },
   {
     "id": "mourner-headquarters",
@@ -1608,7 +1791,8 @@
     "y": 3327,
     "plane": 0,
     "tier": 2,
-    "radius": 11
+    "radius": 11,
+    "blurb": "The Mourner Headquarters, also known as the Mourner HQ, is the headquarters for the Mourners, who are secretly the Death Guard of Prifddinas and members of the Iorwerth Clan."
   },
   {
     "id": "museum-camp",
@@ -1617,7 +1801,8 @@
     "y": 3812,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The museum camp is a small camp on Fossil Island, established by the Varrock Museum expedition."
   },
   {
     "id": "mushroom-forest",
@@ -1626,7 +1811,8 @@
     "y": 3857,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Mushroom Forest is a location on Fossil Island."
   },
   {
     "id": "mycelium-pool",
@@ -1635,7 +1821,8 @@
     "y": 3886,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Mycelium pool is found in the northern area of the Mushroom Forest on Fossil Island."
   },
   {
     "id": "myreque-hideout",
@@ -1644,7 +1831,8 @@
     "y": 3449,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Myreque Hideouts are the safe-havens of the resistance force of the Myreque, with each of them located in Morytania."
   },
   {
     "id": "myths-guild",
@@ -1653,7 +1841,8 @@
     "y": 2846,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Myths' Guild is a guild located on the south-western tip of Feldip Hills."
   },
   {
     "id": "necromancer-s-tower",
@@ -1662,7 +1851,8 @@
     "y": 3243,
     "plane": 0,
     "tier": 2,
-    "radius": 6
+    "radius": 6,
+    "blurb": "The Necromancer's Tower is a tower south of East Ardougne where a few necromancers reside."
   },
   {
     "id": "necropolis",
@@ -1671,7 +1861,8 @@
     "y": 2724,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Necropolis is an area on the south-eastern coast of the Kharidian Desert."
   },
   {
     "id": "observatory",
@@ -1680,7 +1871,8 @@
     "y": 3162,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Observatory is a complex mostly used during the Observatory Quest."
   },
   {
     "id": "ourania-cave",
@@ -1689,7 +1881,8 @@
     "y": 3231,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Ourania Cave is a dungeon that houses the Ourania Altar, which is the cave's main point of interest."
   },
   {
     "id": "paddewwa",
@@ -1698,7 +1891,8 @@
     "y": 3491,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Paddewwa (also spelled “Padewwa” in one source) was a settlement of the Zarosian Empire."
   },
   {
     "id": "paterdomus-temple",
@@ -1707,7 +1901,8 @@
     "y": 3487,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Paterdomus Temple is the temple marking Misthalin's eastern border."
   },
   {
     "id": "penguin-agility-course",
@@ -1716,7 +1911,8 @@
     "y": 4055,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Penguin Agility Course is an Agility training area found whilst exploring the KGP Headquarters located on the Iceberg."
   },
   {
     "id": "pest-control",
@@ -1725,7 +1921,8 @@
     "y": 2625,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Pest Control is a co-operative combat-based minigame, in which players defend the Void Knight from an onslaught of pests, while also destroying the portals from which the monsters spawn."
   },
   {
     "id": "pirates-cove",
@@ -1734,7 +1931,8 @@
     "y": 3812,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Pirates' Cove is a small island located in the Northern Ocean north of the Fremennik Province."
   },
   {
     "id": "piscatoris",
@@ -1743,7 +1941,8 @@
     "y": 3576,
     "plane": 0,
     "tier": 2,
-    "radius": 150
+    "radius": 150,
+    "blurb": "Piscatoris is the region of Gielinor that makes up the north-western part of Kandarin."
   },
   {
     "id": "piscatoris-fishing-colony",
@@ -1752,7 +1951,8 @@
     "y": 3683,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Piscatoris Fishing Colony is a settlement in the northern-most part of Piscatoris."
   },
   {
     "id": "piscatoris-hunter-area",
@@ -1761,7 +1961,8 @@
     "y": 3585,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Piscatoris Hunter area is a Hunter area containing a large variety of hunter creatures."
   },
   {
     "id": "port-roberts",
@@ -1770,7 +1971,8 @@
     "y": 3298,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Port Roberts is a floating platform found in the Western Ocean, which is under the jurisdiction of Great Kourend."
   },
   {
     "id": "port-sarim-jail",
@@ -1779,7 +1981,8 @@
     "y": 3186,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Port Sarim jail is a top security prison located in Port Sarim, commonly referred to as the worst jail in Gielinor."
   },
   {
     "id": "port-tyras",
@@ -1788,7 +1991,8 @@
     "y": 3122,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Port Tyras is a port west of the Tyras Camp."
   },
   {
     "id": "ranging-guild",
@@ -1797,7 +2001,8 @@
     "y": 3429,
     "plane": 0,
     "tier": 2,
-    "radius": 18
+    "radius": 18,
+    "blurb": "The Ranging Guild is an encampment located between Seers' Village and East Ardougne."
   },
   {
     "id": "ritual-site",
@@ -1806,7 +2011,8 @@
     "y": 3422,
     "plane": 0,
     "tier": 2,
-    "radius": 16
+    "radius": 16,
+    "blurb": "The Ritual Site in the north-western forest of The Stranglewood is the site where The Strangler was created."
   },
   {
     "id": "river-dougne",
@@ -1815,7 +2021,8 @@
     "y": 3304,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The River Dougne ( DOYN) is the longest river in Gielinor."
   },
   {
     "id": "river-lum",
@@ -1824,7 +2031,8 @@
     "y": 3350,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The River Lum is a river flowing through mostly Misthalin and the Wilderness, moving north-to-south."
   },
   {
     "id": "river-of-souls",
@@ -1833,7 +2041,8 @@
     "y": 3898,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The River of Souls is a river of ectoplasm that carries the souls of the dead."
   },
   {
     "id": "river-salve",
@@ -1842,7 +2051,8 @@
     "y": 3350,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The River Salve is a river marking the border between Misthalin and Morytania."
   },
   {
     "id": "rogues-castle",
@@ -1851,7 +2061,8 @@
     "y": 3933,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Rogues' Castle is a building located in the deep Wilderness, specifically in levels 52-56."
   },
   {
     "id": "ruins-of-unkah",
@@ -1860,7 +2071,8 @@
     "y": 2845,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Ruins of Unkah are ancient ruins in the Kharidian Desert, now inhabited by the Spirit Anglers, who have set up camp to research and subdue Tempoross."
   },
   {
     "id": "ruins-of-uzer",
@@ -1869,7 +2081,8 @@
     "y": 3095,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Ruins of Uzer are all that remain of the former city of Uzer, an ancient city in the Kharidian Desert that was destroyed during the God Wars."
   },
   {
     "id": "salt-mine",
@@ -1878,7 +2091,8 @@
     "y": 3941,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The salt mine is a mine located beneath Weiss, accessible from the staircase in Snowflake and My Arm's hut."
   },
   {
     "id": "senntisten",
@@ -1887,7 +2101,8 @@
     "y": 3390,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Senntisten was the capital city of the Zarosian Empire, which existed during the Second and Third Age."
   },
   {
     "id": "shayzien-encampment",
@@ -1896,7 +2111,8 @@
     "y": 3645,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Shayzien Encampment is military camp found north of Shayzien."
   },
   {
     "id": "shilo-village-mine",
@@ -1905,7 +2121,8 @@
     "y": 3001,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Shilo Village mining site is one of only three places in Gielinor where players can find gem rocks, others being the mine on Lunar Isle, and the mine on the Onyx Crest."
   },
   {
     "id": "silvarea",
@@ -1914,7 +2131,8 @@
     "y": 3500,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Silvarea is a small area in the north-eastern corner of Misthalin."
   },
   {
     "id": "sinclair-mansion",
@@ -1923,7 +2141,8 @@
     "y": 3555,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Sinclair Mansion is a large mansion owned by the Sinclair family that plays a significant role in the Murder Mystery quest."
   },
   {
     "id": "slepe",
@@ -1932,7 +2151,8 @@
     "y": 3335,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Slepe is a small coastal town which occupies an area east of Meiyerditch and Darkmeyer."
   },
   {
     "id": "smoke-devil-dungeon",
@@ -1941,7 +2161,8 @@
     "y": 3061,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Smoke Devil Dungeon is a dungeon located in the Chompy Marsh south of Castle Wars, housing smoke devils and the thermonuclear smoke devil that can both only be killed while on a Slayer task."
   },
   {
     "id": "smoke-dungeon",
@@ -1950,7 +2171,8 @@
     "y": 2962,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Smoke Dungeon is a winding tunnel underneath the Kharidian Desert."
   },
   {
     "id": "sorcerer-s-tower",
@@ -1959,7 +2181,8 @@
     "y": 3406,
     "plane": 0,
     "tier": 2,
-    "radius": 5
+    "radius": 5,
+    "blurb": "The Sorcerer's Tower is a four-story tower south of Seers' Village."
   },
   {
     "id": "south-falador-farm",
@@ -1968,7 +2191,8 @@
     "y": 3294,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The South Falador Farm is a large farm between Falador and Port Sarim."
   },
   {
     "id": "tar-swamp",
@@ -1977,7 +2201,8 @@
     "y": 3750,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Tar Swamp is a location on Fossil Island."
   },
   {
     "id": "the-great-conch",
@@ -1986,7 +2211,8 @@
     "y": 2435,
     "plane": 0,
     "tier": 2,
-    "radius": 150
+    "radius": 150,
+    "blurb": "The Great Conch is a large island located in the Unquiet Ocean south of Menaphos."
   },
   {
     "id": "the-pandemonium",
@@ -1995,7 +2221,8 @@
     "y": 2980,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Pandemonium is an island off the eastern coast of Karamja."
   },
   {
     "id": "the-stranglewood",
@@ -2004,7 +2231,8 @@
     "y": 3379,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Stranglewood is a dangerous forest located south of Mount Quidamortem, first visited during Desert Treasure II. The forest's fauna and flora have been infected by a parasitic organism known as…"
   },
   {
     "id": "the-teomat",
@@ -2013,7 +2241,8 @@
     "y": 3185,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Teomat is a monastery found on the summit of Ralos' Rise."
   },
   {
     "id": "tower-of-life-building",
@@ -2022,7 +2251,8 @@
     "y": 3219,
     "plane": 0,
     "tier": 2,
-    "radius": 8
+    "radius": 8,
+    "blurb": "The Tower of Life is a tower south of Ardougne and is home to alchemy and hybridisation of various animals."
   },
   {
     "id": "tree-gnome-village-location",
@@ -2031,7 +2261,9 @@
     "y": 3167,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Tree Gnome Village is a village led by King Bolren.",
+    "wiki": "Tree Gnome Village (location)"
   },
   {
     "id": "troll-stronghold-location",
@@ -2040,7 +2272,9 @@
     "y": 3680,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Troll Stronghold is a stronghold inhabited by mountain trolls in the Troll Country, carved into the side of the mountain that the Mountain Camp is situated on top of.",
+    "wiki": "Troll Stronghold (location)"
   },
   {
     "id": "trollweiss-mountain",
@@ -2049,7 +2283,8 @@
     "y": 3790,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Trollweiss Mountain is a snowy mountain located in Troll Country and is one of the largest mountains in Gielinor."
   },
   {
     "id": "tyras-camp",
@@ -2058,7 +2293,8 @@
     "y": 3145,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Tyras camp is a camp formed by King Tyras and his soldiers, located in a secluded part of the elven forest of Isafdar."
   },
   {
     "id": "underground-pass-dungeon",
@@ -2067,7 +2303,8 @@
     "y": 3312,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Underground Pass is the third quest in the Elf quest series, and explores an extensive and perilous dungeon to the west of Ardougne."
   },
   {
     "id": "uzer-hunter-area",
@@ -2076,7 +2313,8 @@
     "y": 3100,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Uzer Hunter area is one of several Hunter training areas."
   },
   {
     "id": "uzer-oasis",
@@ -2085,7 +2323,8 @@
     "y": 3041,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Uzer Oasis is a small settlement found directly south of the ruins of the Ruins of Uzer."
   },
   {
     "id": "varrock-palace",
@@ -2094,7 +2333,8 @@
     "y": 3474,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Varrock Palace is the official residence of the ruler of Misthalin as well as the nation's primary diplomatic and military centre."
   },
   {
     "id": "varrock-rooftop-course",
@@ -2103,7 +2343,8 @@
     "y": 3414,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Varrock Rooftop Course is a Rooftop Agility Course located in Varrock that is available to players with an Agility level of 30 or higher."
   },
   {
     "id": "vinery",
@@ -2112,7 +2353,8 @@
     "y": 3555,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The vinery is a greenhouse in which grapes are grown."
   },
   {
     "id": "warriors-guild",
@@ -2121,7 +2363,8 @@
     "y": 3546,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Warriors' Guild is a large building located in the west of Burthorpe, founded by Harrallak Menarous."
   },
   {
     "id": "waterbirth-island",
@@ -2130,7 +2373,8 @@
     "y": 3743,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Waterbirth Island is a snowy, crescent-shaped island found in the Northern Ocean, off the coast of Rellekka."
   },
   {
     "id": "watson-s-house",
@@ -2139,7 +2383,8 @@
     "y": 3570,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Watson's house is a building found below the maple tree near Hosidius."
   },
   {
     "id": "weiss",
@@ -2148,7 +2393,8 @@
     "y": 3940,
     "plane": 0,
     "tier": 2,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Weiss is an ice troll settlement located in the North, requiring partial completion of Making Friends with My Arm to access."
   },
   {
     "id": "werewolf-skullball",
@@ -2157,7 +2403,8 @@
     "y": 3462,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Werewolf Skullball is an activity that trains Agility."
   },
   {
     "id": "wilderness-god-wars-dungeon",
@@ -2166,7 +2413,8 @@
     "y": 3739,
     "plane": 0,
     "tier": 2,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Wilderness God Wars Dungeon is a multi-combat area located within a cave east of The Forgotten Cemetery at level 28 Wilderness."
   },
   {
     "id": "witchaven-dungeon",
@@ -2175,7 +2423,8 @@
     "y": 3283,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Witchaven Dungeon is a dungeon located below the Pillars of Zanash near Witchaven."
   },
   {
     "id": "wizards-guild",
@@ -2184,7 +2433,8 @@
     "y": 3088,
     "plane": 0,
     "tier": 2,
-    "radius": 6
+    "radius": 6,
+    "blurb": "The Wizards' Guild, located in Yanille, contains a number of useful resources for those interested in Magic."
   },
   {
     "id": "woodcutting-guild",
@@ -2193,7 +2443,8 @@
     "y": 3496,
     "plane": 0,
     "tier": 2,
-    "radius": 51
+    "radius": 51,
+    "blurb": "The Woodcutting Guild is a members-only guild located in the south-western corner of Hosidius."
   },
   {
     "id": "zemouregal-s-fort",
@@ -2202,7 +2453,8 @@
     "y": 3858,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Zemouregal's Fort is a Mahjarrat stronghold belonging to Zemouregal, located in the North."
   },
   {
     "id": "zul-andra",
@@ -2211,7 +2463,8 @@
     "y": 3060,
     "plane": 0,
     "tier": 2,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Zul-Andra is a small village located south of Port Tyras."
   },
   {
     "id": "adventurers-camp-lumbridge-swamp",
@@ -2220,7 +2473,8 @@
     "y": 3205,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Adventurers' Camp is a small camp located in Lumbridge Swamp at the threshold between the forest and the swamp between Draynor Village and Lumbridge and north of Father Urhney's house."
   },
   {
     "id": "agility-pyramid-mine",
@@ -2229,7 +2483,8 @@
     "y": 2875,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Agility Pyramid mine is located just north of the Wanderer's tent from Icthlarin's Little Helper."
   },
   {
     "id": "ah-za-rhoon",
@@ -2238,7 +2493,8 @@
     "y": 3000,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Ah Za Rhoon, which means Magnificence Floating on Water in an ancient language, was an ancient temple in Karamja that was built by Zadimus and destroyed by Rashiliyia."
   },
   {
     "id": "al-kharid-bank",
@@ -2247,7 +2503,8 @@
     "y": 3167,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Al Kharid bank is a bank in western Al Kharid, immediately west of the Al Kharid Palace."
   },
   {
     "id": "aldarin-windmill",
@@ -2256,7 +2513,8 @@
     "y": 2894,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Aldarin windmill is a windmill located in Aldarin."
   },
   {
     "id": "alice-s-farm",
@@ -2265,7 +2523,8 @@
     "y": 3524,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Alice's farm is a farm located west of Port Phasmatys and east of Canifis."
   },
   {
     "id": "annakarl",
@@ -2274,7 +2533,8 @@
     "y": 3885,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Annakarl was one of Zaros' fortresses that was located in what is now the Wilderness."
   },
   {
     "id": "apple-orchard",
@@ -2283,7 +2543,8 @@
     "y": 3380,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "An apple orchard can be found immediately south-east of the Tree Gnome Stronghold."
   },
   {
     "id": "arandar-mine",
@@ -2292,7 +2553,8 @@
     "y": 3268,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Arandar mine is located to the north of the exit from the Arandar pass in Tirannwn and to the east of Prifddinas' eastern wall."
   },
   {
     "id": "ardougne-castle",
@@ -2301,7 +2563,8 @@
     "y": 3298,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Ardougne Castle is a castle in East Ardougne near the border to West Ardougne."
   },
   {
     "id": "ardougne-farm",
@@ -2310,7 +2573,8 @@
     "y": 3366,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Ardougne farm is a large farm just north of Ardougne, known for offering a herb patch which can conveniently be teleported to with the Ardougne cloak 2 or above."
   },
   {
     "id": "ardougne-south-bank",
@@ -2319,7 +2583,8 @@
     "y": 3284,
     "plane": 0,
     "tier": 3,
-    "radius": 6
+    "radius": 6,
+    "blurb": "The Ardougne south bank, also known as Ardy south or often simply Ardy bank, is the first of two banks added to the city of Ardougne."
   },
   {
     "id": "banana-plantation",
@@ -2328,7 +2593,8 @@
     "y": 3165,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Luthas' banana plantation can be found across from Zembo's bar on Musa Point."
   },
   {
     "id": "bandit-camp-mine",
@@ -2337,7 +2603,8 @@
     "y": 3762,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Bandit Camp mine (or the Hobgoblin Mine) is a mining site found north-east of the Bandit Camp in the Wilderness from levels 32 to 35 and east of the Wilderness God Wars Dungeon."
   },
   {
     "id": "barbarian-village-mine",
@@ -2346,7 +2613,8 @@
     "y": 3430,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Barbarian Village mine in the centre of Barbarian Village has four coal and five tin rocks."
   },
   {
     "id": "battlefield",
@@ -2355,7 +2623,8 @@
     "y": 3232,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Battlefield is located south of West Ardougne, and north of Tree Gnome Village."
   },
   {
     "id": "battlefield-mine",
@@ -2364,7 +2633,8 @@
     "y": 3252,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Battlefield mine is located to the south of West Ardougne and west of the Khazard Battlefield."
   },
   {
     "id": "battlefront",
@@ -2373,7 +2643,8 @@
     "y": 3716,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Battlefront is a large battlefield just outside the western border of Great Kourend."
   },
   {
     "id": "bazaar",
@@ -2382,7 +2653,8 @@
     "y": 3106,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The bazaar is a marketplace found near the centre of Civitas illa Fortis."
   },
   {
     "id": "black-arm-gang-headquarters",
@@ -2391,7 +2663,8 @@
     "y": 3391,
     "plane": 0,
     "tier": 3,
-    "radius": 11
+    "radius": 11,
+    "blurb": "The Black Arm Gang Headquarters is located in the south-western part of Varrock, near the southern entrance to to city."
   },
   {
     "id": "bone-yard",
@@ -2400,7 +2673,8 @@
     "y": 3746,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Bone Yard is located in level 32 Wilderness, and is populated by aggressive level 25 skeletons."
   },
   {
     "id": "brimstail-s-cave",
@@ -2409,7 +2683,8 @@
     "y": 3419,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Brimstail's cave is a small cave found in the south-western section of the Tree Gnome Stronghold."
   },
   {
     "id": "burning-man",
@@ -2418,7 +2693,8 @@
     "y": 3791,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Burning Man is a monument located in western Lovakengj, just south-west of the Xeric's Inferno teleport."
   },
   {
     "id": "burthorpe-castle",
@@ -2427,7 +2703,8 @@
     "y": 3564,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Burthorpe Castle is the central feature of the principality of Burthorpe."
   },
   {
     "id": "canal-barge",
@@ -2436,7 +2713,8 @@
     "y": 3451,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The canal barge is a small ship built by the Varrockian Museum just north of the Digsite, east of Varrock."
   },
   {
     "id": "canifis-hunter-area",
@@ -2445,7 +2723,8 @@
     "y": 3450,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Canifis Hunter area is located south-east of Canifis and south of the Werewolf Agility Course."
   },
   {
     "id": "carnillean-mansion",
@@ -2454,7 +2733,8 @@
     "y": 3272,
     "plane": 0,
     "tier": 3,
-    "radius": 9
+    "radius": 9,
+    "blurb": "The Carnillean Mansion is a residence located in the south west corner of East Ardougne."
   },
   {
     "id": "carrallanger",
@@ -2463,7 +2743,8 @@
     "y": 3652,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Carrallanger (also spelled “Carrallangar” or “Carrallagar” in some sources), was a Zarosian fortress that was located in current-day Wilderness."
   },
   {
     "id": "central-fremennik-isles-mine",
@@ -2472,7 +2753,8 @@
     "y": 3850,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Central Fremennik Isles mining site (also known as Neitiznot Runite Mine) is a small mine on an island north-east of Neitiznot in The Fremennik Isles accessible by crossing the two…"
   },
   {
     "id": "chemist-s-house",
@@ -2481,7 +2763,8 @@
     "y": 3211,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The chemist's house is a home located on the western side of Rimmington."
   },
   {
     "id": "chompy-marsh",
@@ -2490,7 +2773,8 @@
     "y": 3048,
     "plane": 0,
     "tier": 3,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Chompy Marsh is located in the Feldip Hills, south of Castle Wars."
   },
   {
     "id": "citharede-abbey-mine",
@@ -2499,7 +2783,8 @@
     "y": 3170,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Citharede Abbey mine is a small collection of rocks located just south-west of the Citharede Abbey."
   },
   {
     "id": "corsair-cove-bank",
@@ -2508,7 +2793,8 @@
     "y": 2865,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Corsair Cove bank, also known as the Corsair bank, is a bank found in the Corsair Cove, a small town at the southern point of Feldip Hills."
   },
   {
     "id": "crabclaw-isle",
@@ -2517,7 +2803,8 @@
     "y": 3420,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Crabclaw Isle is a small island just south of the Hosidius coast."
   },
   {
     "id": "crafting-guild-mine",
@@ -2526,7 +2813,8 @@
     "y": 3283,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Crafting Guild mine is a mine accessible only to players who can gain entry to the Crafting Guild."
   },
   {
     "id": "crash-island",
@@ -2535,7 +2823,8 @@
     "y": 2720,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Crash Island is a small island to the east of Ape Atoll."
   },
   {
     "id": "crombwick-manor",
@@ -2544,7 +2833,8 @@
     "y": 3358,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Crombwick Manor is a large manor located in the town of Slepe."
   },
   {
     "id": "crumbling-tower",
@@ -2553,7 +2843,8 @@
     "y": 2996,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Crumbling Tower is a tower located on a small island off the north-west coast of Isle of Souls, which can be reached by using the fairy ring code BJP and running westward."
   },
   {
     "id": "crypt-white-knights-castle",
@@ -2562,7 +2853,8 @@
     "y": 3331,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The White Knights' Castle Crypt is a crypt found beneath the White Knights' Castle."
   },
   {
     "id": "dareeyak",
@@ -2571,7 +2863,8 @@
     "y": 3695,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Dareeyak was a settlement of the Zarosian Empire located in what is now the Wilderness."
   },
   {
     "id": "dark-wizards-tower",
@@ -2580,7 +2873,8 @@
     "y": 3335,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Dark Wizards' Tower is a tower to the west of Falador, in the members-only area immediately north of the Makeover Mage."
   },
   {
     "id": "dognose-island",
@@ -2589,7 +2883,8 @@
     "y": 2648,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Dognose Island is an island located in the Unquiet Ocean and south of Tempoross Cove."
   },
   {
     "id": "doric-s-hut",
@@ -2598,7 +2893,8 @@
     "y": 3451,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Doric's hut is a small hut located south of Goblin Village, just east of the gate to Taverley."
   },
   {
     "id": "dragontooth-island",
@@ -2607,7 +2903,8 @@
     "y": 3549,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Dragontooth Island is an island located in the north-east of Gielinor."
   },
   {
     "id": "draynor-jail",
@@ -2616,7 +2913,8 @@
     "y": 3247,
     "plane": 0,
     "tier": 3,
-    "radius": 17
+    "radius": 17,
+    "blurb": "The Draynor jail is a small jail run by Lady Keli, patrolled by several aggressive jail guards who will attack anyone under level 53."
   },
   {
     "id": "east-fremennik-isles-mine",
@@ -2625,7 +2923,8 @@
     "y": 3860,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The East Fremennik Isles mine is a small mine located north of the island city of Jatizso."
   },
   {
     "id": "east-lumbridge-swamp-mine",
@@ -2634,7 +2933,8 @@
     "y": 3148,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The east Lumbridge Swamp mine is a mine that may be found in the south-east section of the Lumbridge Swamp near a Fishing site."
   },
   {
     "id": "edgeville-furnace",
@@ -2643,7 +2943,8 @@
     "y": 3499,
     "plane": 0,
     "tier": 3,
-    "radius": 4
+    "radius": 4,
+    "blurb": "The Edgeville furnace is a small building in Edgeville known for hosting the closest free-to-play furnace to a bank."
   },
   {
     "id": "entrana-church",
@@ -2652,7 +2953,8 @@
     "y": 3349,
     "plane": 0,
     "tier": 3,
-    "radius": 10
+    "radius": 10,
+    "blurb": "The Entrana church is a Saradomin church led by the High Priest and is the focal point of Entrana."
   },
   {
     "id": "exam-centre",
@@ -2661,7 +2963,8 @@
     "y": 3340,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Exam Centre is a location in Misthalin (found south-east of Varrock, directly south of the Digsite) that is central to several quests."
   },
   {
     "id": "experiment-cave",
@@ -2670,7 +2973,8 @@
     "y": 3526,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The experiment cave is a cave first accessed during the quest Creature of Fenkenstrain, and is used by players to train melee skills."
   },
   {
     "id": "falador-east-bank",
@@ -2679,7 +2983,8 @@
     "y": 3356,
     "plane": 0,
     "tier": 3,
-    "radius": 8
+    "radius": 8,
+    "blurb": "The Falador east bank, also known as Falador east or fally east, is a bank found in east Falador, south of the Falador Park."
   },
   {
     "id": "falador-west-bank",
@@ -2688,7 +2993,8 @@
     "y": 3367,
     "plane": 0,
     "tier": 3,
-    "radius": 8
+    "radius": 8,
+    "blurb": "The Falador west bank, also known as Falador west, fally west, and formerly Falador bank, is a popular bank found in north-west Falador."
   },
   {
     "id": "fight-arena-location",
@@ -2697,7 +3003,9 @@
     "y": 3168,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Fight Arena is a large structure south of Ardougne.",
+    "wiki": "Fight Arena (location)"
   },
   {
     "id": "fight-arena-mine",
@@ -2706,7 +3014,8 @@
     "y": 3145,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Fight Arena mine is a mining area located between Port Khazard and Yanille, near the Fight Arena."
   },
   {
     "id": "fishing-guild-bank",
@@ -2715,7 +3024,8 @@
     "y": 3416,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Fishing Guild bank is a bank located in the Fishing Guild."
   },
   {
     "id": "fishing-hamlet",
@@ -2724,7 +3034,8 @@
     "y": 3945,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Fishing Hamlet is a ruined settlement found east of the Wintertodt Camp in the Northern Tundras."
   },
   {
     "id": "flamtaer",
@@ -2733,7 +3044,8 @@
     "y": 3317,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Flamtaer is the name of a ruined temple in Mort'ton."
   },
   {
     "id": "forthos-ruin",
@@ -2742,7 +3054,8 @@
     "y": 3573,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Forthos Ruin is a ruined stronghold found in western Hosidius."
   },
   {
     "id": "fortis-temple",
@@ -2751,7 +3064,8 @@
     "y": 3086,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Temple is a building found within Civitas illa Fortis that serves as a holy site dedicated to Ralos."
   },
   {
     "id": "fossil-island-volcano",
@@ -2760,7 +3074,8 @@
     "y": 3783,
     "plane": 0,
     "tier": 3,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Fossil Island Volcano (marked Volcano on the world map) is a volcanic outcrop found on the eastern coast of Fossil Island."
   },
   {
     "id": "frozen-waste-plateau",
@@ -2769,7 +3084,8 @@
     "y": 3903,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Frozen Waste Plateau, also known as Ice Plateau (or historically Ghorrock), is located in the north-west corner of the Wilderness."
   },
   {
     "id": "giant-pit",
@@ -2778,7 +3094,8 @@
     "y": 3613,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Giant Pit is a small enclosure found north-west of Shayzien."
   },
   {
     "id": "gorlah",
@@ -2787,7 +3104,8 @@
     "y": 3428,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Gorlah is an old shrine north of Prifddinas, where it serves as a place for quiet worship away from the city."
   },
   {
     "id": "grave-of-scorpius",
@@ -2796,7 +3114,8 @@
     "y": 3228,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Grave of Scorpius, also known as the Shrine of Scorpius, is found south of West Ardougne in some crumbling ruins atop a hill."
   },
   {
     "id": "graveyard",
@@ -2805,7 +3124,8 @@
     "y": 3402,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Graveyard is a fenced-off area located just north of Castle Drakan in Morytania, east of the Mort Myre Swamp."
   },
   {
     "id": "graveyard-of-heroes",
@@ -2814,7 +3134,8 @@
     "y": 3564,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Graveyard of Heroes is located in the south-western part of Shayzien."
   },
   {
     "id": "graveyard-of-shadows",
@@ -2823,7 +3144,8 @@
     "y": 3672,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Graveyard of Shadows, located at levels 18–21 in the Wilderness, occupies a section of what was once the Zarosian fortress of Carrallanger."
   },
   {
     "id": "gwenith-hunter-area",
@@ -2832,7 +3154,8 @@
     "y": 3408,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Gwenith Hunter area is a small valley located north-east of Prifddinas and east of Gwenith."
   },
   {
     "id": "harmony-island-windmill",
@@ -2841,7 +3164,8 @@
     "y": 2826,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Harmony Island windmill is a windmill located in the south-west corner of Harmony Island."
   },
   {
     "id": "here-be-penguins",
@@ -2850,7 +3174,8 @@
     "y": 3910,
     "plane": 0,
     "tier": 3,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Here be penguins is a cluster of small arctic islands north of Etceteria and Miscellania that are only inhabited by penguins."
   },
   {
     "id": "hobgoblin-peninsula",
@@ -2859,7 +3184,8 @@
     "y": 3281,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Hobgoblin Peninsula is an area west of the Crafting Guild."
   },
   {
     "id": "ice-troll-caves",
@@ -2868,7 +3194,8 @@
     "y": 3891,
     "plane": 0,
     "tier": 3,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Ice Troll Caves can be found north of Jatizso and Neitiznot."
   },
   {
     "id": "iceberg",
@@ -2877,7 +3204,8 @@
     "y": 4029,
     "plane": 0,
     "tier": 3,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The iceberg is a plain iceberg in the sea."
   },
   {
     "id": "infirmary",
@@ -2886,7 +3214,8 @@
     "y": 3620,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Infirmary in Shayzien Encampment is the place in which wounded Shayzien soldiers, either from fighting off the lizardmen or attacked by gang members throughout the kingdom, can be found…"
   },
   {
     "id": "isafdar-mine",
@@ -2895,7 +3224,8 @@
     "y": 3158,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Isafdar mine is a mine found in Isafdar, fairly close to the entrance of the elven city of Lletya."
   },
   {
     "id": "island-of-stone",
@@ -2904,7 +3234,8 @@
     "y": 4008,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Island of Stone is an island in the Northern Ocean, accessible for the first time during The Fremennik Exiles."
   },
   {
     "id": "isle-of-souls-mine",
@@ -2913,7 +3244,8 @@
     "y": 2793,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Isle of Souls mine is a mine found just south of the Soul Wars Lobby on the Isle of Souls."
   },
   {
     "id": "jaltevas-pyramid",
@@ -2922,7 +3254,8 @@
     "y": 2705,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Jaltevas Pyramid, whose name translates to Tomb of the Father, is a large pyramid found in the necropolis on the south-eastern coast of the Kharidian Desert."
   },
   {
     "id": "jatizso-mine",
@@ -2931,7 +3264,8 @@
     "y": 3812,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Jatizso mine is found just outside the western gates of Jatizso."
   },
   {
     "id": "jiggig",
@@ -2940,7 +3274,8 @@
     "y": 3046,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Jiggig is a former ogre ritual site, located south of Castle Wars."
   },
   {
     "id": "jormungand-s-prison",
@@ -2949,7 +3284,8 @@
     "y": 3691,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Jormungand's Prison is a dungeon beneath the Island of Stone."
   },
   {
     "id": "kandarin-windmill",
@@ -2958,7 +3294,8 @@
     "y": 3386,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Kandarin windmill is a windmill located north of East Ardougne and east of the Fishing Guild."
   },
   {
     "id": "karamja-hunter-area",
@@ -2967,7 +3304,8 @@
     "y": 3001,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Karamja Hunter area is located west of Shilo Village, on the western coast of Karamja."
   },
   {
     "id": "karamja-jungle-mine",
@@ -2976,7 +3314,8 @@
     "y": 3033,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Karamjan Jungle mine is a mine located just north of Shilo Village."
   },
   {
     "id": "karamja-volcano",
@@ -2985,7 +3324,8 @@
     "y": 3174,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Karamja Volcano is located on the island of Karamja between Brimhaven to Musa Point."
   },
   {
     "id": "karamjan-temple",
@@ -2994,7 +3334,8 @@
     "y": 2896,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Karamjan Temple is a large maze found beneath the Kharazi Jungle visited during Dragon Slayer II. In order to reach the temple, players must travel to south-east corner of the Kharazi Jungle, and…"
   },
   {
     "id": "kebos-lowlands-mine",
@@ -3003,7 +3344,8 @@
     "y": 3657,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Kebos Lowlands mine (also called Kebos Swamp mine) is a medium-high level mine located in the north-western corner of the Kebos Swamp."
   },
   {
     "id": "keep-le-faye",
@@ -3012,7 +3354,8 @@
     "y": 3401,
     "plane": 0,
     "tier": 3,
-    "radius": 8
+    "radius": 8,
+    "blurb": "Keep Le Faye is a tower south of Camelot Castle, and directly east of Sorcerer's Tower."
   },
   {
     "id": "keldagrim-entrance-mine",
@@ -3021,7 +3364,8 @@
     "y": 3705,
     "plane": 0,
     "tier": 3,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Keldagrim entrance mining site, also known as the Fremennik Province mine, is located east of Rellekka near the Keldagrim entrance."
   },
   {
     "id": "kraken-cove",
@@ -3030,7 +3374,8 @@
     "y": 3611,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Kraken Cove is a dungeon full of underground lakes located in Piscatoris, south-west of the Piscatoris Fishing Colony, housing waterfiends, cave krakens, and the Kraken boss."
   },
   {
     "id": "last-light",
@@ -3039,7 +3384,8 @@
     "y": 2330,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Last Light is an island located in the Unquiet Ocean."
   },
   {
     "id": "lava-maze-runite-mine",
@@ -3048,7 +3394,8 @@
     "y": 3884,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Lava Maze runite mine is located north-west of the Lava Maze in level 46 Wilderness."
   },
   {
     "id": "limestone-mine",
@@ -3057,7 +3404,8 @@
     "y": 3500,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Limestone Mine is a mining location which lies on Silvarea west of the temple Paterdomus and north-east of Varrock."
   },
   {
     "id": "lithkren",
@@ -3066,7 +3414,8 @@
     "y": 4003,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Lithkren is an island found north-west of Fossil Island."
   },
   {
     "id": "lizardman-canyon",
@@ -3075,7 +3424,8 @@
     "y": 3704,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Lizardman Canyon is a valley in the west portion of Great Kourend, between Lovakengj and Shayzien."
   },
   {
     "id": "lizardman-settlement",
@@ -3084,7 +3434,8 @@
     "y": 3556,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Lizardman Settlement is an area in the Kebos Lowlands inhabited by Lizardmen, between Mount Quidamortem and Shayziens' Wall."
   },
   {
     "id": "lletya-bank",
@@ -3093,7 +3444,8 @@
     "y": 3162,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Lletya bank is a bank located in Lletya."
   },
   {
     "id": "locus-oasis",
@@ -3102,7 +3454,8 @@
     "y": 2986,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Locus Oasis is an oasis in the middle of the Avium Savannah."
   },
   {
     "id": "lovakite-mine",
@@ -3111,7 +3464,8 @@
     "y": 3830,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The lovakite mine is located in the north-western section of Lovakengj in Great Kourend."
   },
   {
     "id": "lucien-s-camp",
@@ -3120,7 +3474,8 @@
     "y": 3804,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Lucien's camp is the base of the Mahjarrat Lucien, located in a snowy chasm that can't be reached on foot, north of the God Wars Dungeon and south of the fortress of Ghorrock and the Mahjarrat Ritual…"
   },
   {
     "id": "lumber-yard",
@@ -3129,7 +3484,8 @@
     "y": 3505,
     "plane": 0,
     "tier": 3,
-    "radius": 19
+    "radius": 19,
+    "blurb": "The Lumber Yard is a location north-east of Varrock."
   },
   {
     "id": "lumbridge-cow-field",
@@ -3138,7 +3494,8 @@
     "y": 3278,
     "plane": 0,
     "tier": 3,
-    "radius": 26
+    "radius": 26,
+    "blurb": "The Lumbridge cow field is a field containing level 2 cows and cow calves."
   },
   {
     "id": "lumbridge-cow-field-north",
@@ -3147,7 +3504,8 @@
     "y": 3328,
     "plane": 0,
     "tier": 3,
-    "radius": 36
+    "radius": 36,
+    "blurb": "The northern Lumbridge cow field is a field containing cows, cow calves, a dairy cow, and attackable farmers located in the north of Lumbridge."
   },
   {
     "id": "lumbridge-graveyard",
@@ -3156,7 +3514,8 @@
     "y": 3200,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Lumbridge Graveyard is located in the south-eastern portion of Lumbridge behind the Lumbridge Church."
   },
   {
     "id": "lunar-isle-mine",
@@ -3165,7 +3524,8 @@
     "y": 3944,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Lunar Isle mine (also called the Lunar mine) is located in the north-eastern part of Lunar Isle."
   },
   {
     "id": "mac-s-island",
@@ -3174,7 +3534,8 @@
     "y": 3540,
     "plane": 0,
     "tier": 3,
-    "radius": 6
+    "radius": 6,
+    "blurb": "Mac's island is an island in Merwick Lake located west of the Warriors' Guild where Mac may be found."
   },
   {
     "id": "magic-axe-hut",
@@ -3183,7 +3544,8 @@
     "y": 3960,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The magic axe hut is a small hut located in the north of the Wilderness at level 54 Wilderness."
   },
   {
     "id": "mausoleum",
@@ -3192,7 +3554,8 @@
     "y": 3571,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Mausoleum is a small graveyard located on a small island off the coast of Morytania."
   },
   {
     "id": "mcgrubor-s-wood",
@@ -3201,7 +3564,8 @@
     "y": 3485,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "McGrubor's Wood is a wooded, fenced-in area north of Hemenster and west of Seers' Village, used primarily for quests."
   },
   {
     "id": "miscellania-castle",
@@ -3210,7 +3574,8 @@
     "y": 3861,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Miscellania Castle is the residence of King Vargas, ruler of the small island-kingdom of Miscellania, neighbour to the smaller island town Etceteria."
   },
   {
     "id": "molch",
@@ -3219,7 +3584,8 @@
     "y": 3663,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Molch is a small settlement found in the Kebos Swamp, a swamp in the Kebos Lowlands."
   },
   {
     "id": "monk-camp",
@@ -3228,7 +3594,8 @@
     "y": 3494,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The monk camp, also referred to in an update blog as the priest camp, is a small camp south of Hosidius in which several Saradominist monks have set up tents, a fire, and an altar."
   },
   {
     "id": "mons-gratia",
@@ -3237,7 +3604,8 @@
     "y": 3240,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Mons Gratia is a mountain located west of the Quetzacalli Gorge."
   },
   {
     "id": "moonrise-brewery-and-winery",
@@ -3246,7 +3614,8 @@
     "y": 2922,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Moonrise Brewery and Winery is a brewery and winery located in the centre of Aldarin."
   },
   {
     "id": "moss-giant-island",
@@ -3255,7 +3624,8 @@
     "y": 3208,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Moss Giant Island is a small island located west of Brimhaven, accessed by using a rope swing (Rope not needed) requiring 10 Agility."
   },
   {
     "id": "mount-karuulm-mine",
@@ -3264,7 +3634,8 @@
     "y": 3814,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Mount Karuulm mine is located to the west of Mount Karuulm."
   },
   {
     "id": "mudskipper-point",
@@ -3273,7 +3644,8 @@
     "y": 3122,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Mudskipper Point is a small peninsula located in the south of the Kingdom of Asgarnia."
   },
   {
     "id": "mynydd",
@@ -3282,7 +3654,8 @@
     "y": 3423,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Mynydd is a lone mountain located just north-west of Prifddinas."
   },
   {
     "id": "myreque-s-rest",
@@ -3291,7 +3664,8 @@
     "y": 3230,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Burgh de Rott inn, renamed Myreque's Rest after completing The Blood Moon Rises, is an inn located in Burgh de Rott, requiring Priest in Peril and partial completion of In Aid of the Myreque to…"
   },
   {
     "id": "nature-grotto",
@@ -3300,7 +3674,8 @@
     "y": 3337,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Nature Grotto is a small cave located deep within the Mort Myre Swamp."
   },
   {
     "id": "necropolis-hunter-area",
@@ -3309,7 +3684,8 @@
     "y": 2738,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The necropolis Hunter area is a small Hunter training area located in the westernmost part of the necropolis, just south of Sophanem."
   },
   {
     "id": "north-brimhaven-mine",
@@ -3318,7 +3694,8 @@
     "y": 3225,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The North Brimhaven mine (also known as the horseshoe mine or Karamja north-western mine) is located on the peninsula north-west of Brimhaven."
   },
   {
     "id": "north-crandor-mine",
@@ -3327,7 +3704,8 @@
     "y": 3300,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "North Crandor mine is a mining site scattered across the northern area of Crandor."
   },
   {
     "id": "observatory-dungeon",
@@ -3336,7 +3714,8 @@
     "y": 3184,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Observatory Dungeon leads from the Goblin settlement found north-east of the Observatory, to the Observatory."
   },
   {
     "id": "ortus-farm",
@@ -3345,7 +3724,8 @@
     "y": 3126,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Ortus Farm is a farm to the west of Civitas illa Fortis."
   },
   {
     "id": "otto-s-grotto",
@@ -3354,7 +3734,8 @@
     "y": 3489,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Otto's Grotto is an area west of Baxtorian Falls and where players can start the Barbarian Training miniquest."
   },
   {
     "id": "ourania-hunter-area",
@@ -3363,7 +3744,8 @@
     "y": 3240,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Ourania Hunter area is located west of the Battlefield and north of the Observatory."
   },
   {
     "id": "outer-fortis",
@@ -3372,7 +3754,8 @@
     "y": 3065,
     "plane": 0,
     "tier": 3,
-    "radius": 50
+    "radius": 50,
+    "blurb": "Outer Fortis is a part of Civitas illa Fortis found outside the main walls."
   },
   {
     "id": "outlaw-camp",
@@ -3381,7 +3764,8 @@
     "y": 3472,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Outlaw Camp is a small outlaw settlement north-west of Varrock and north of the Cooks' Guild."
   },
   {
     "id": "pest-control-island",
@@ -3390,7 +3774,8 @@
     "y": 2592,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Pest Control Island is the island which plays host to Pest Control."
   },
   {
     "id": "phoenix-gang-hideout",
@@ -3399,7 +3784,8 @@
     "y": 3383,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Located in the south-eastern alleys of Varrock, the Phoenix Gang Hideout is a meeting place for the notorious gang members of the Phoenix Gang."
   },
   {
     "id": "pirates-hideout-mine",
@@ -3408,7 +3794,8 @@
     "y": 3944,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Pirates' Hideout mine, or Pirates' Mine, is a mining site located east of the Pirates' Hideout in the deep Wilderness."
   },
   {
     "id": "piscatoris-falconry-area",
@@ -3417,7 +3804,8 @@
     "y": 3596,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Piscatoris falconry area is one of several Hunter training areas."
   },
   {
     "id": "piscatoris-mine",
@@ -3426,7 +3814,8 @@
     "y": 3640,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Piscatoris mine is a mine located south of the Piscatoris Fishing Colony and north of Eagles' Peak."
   },
   {
     "id": "poison-waste",
@@ -3435,7 +3824,8 @@
     "y": 3078,
     "plane": 0,
     "tier": 3,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Poison Waste is a large, mostly inaccessible, marshy area of Tirannwn, south of Isafdar."
   },
   {
     "id": "quidamortem-cave",
@@ -3444,7 +3834,8 @@
     "y": 3559,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Quidamortem Cave is a small cave found underneath a crevice on the western side of Mount Quidamortem."
   },
   {
     "id": "ralos-rise-mine",
@@ -3453,7 +3844,8 @@
     "y": 3085,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Ralos' Rise mine is a mine located to the south-east of Ralos' Rise, and west of the Avium Savannah."
   },
   {
     "id": "rashiliyia-s-tomb",
@@ -3462,7 +3854,8 @@
     "y": 3088,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Rashiliyia's Tomb is the final burial ground for the zombie queen, Rashiliyia."
   },
   {
     "id": "red-chinchompa-hunting-ground",
@@ -3471,7 +3864,8 @@
     "y": 2894,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Red chinchompa hunting ground is a small dungeon located south of Feldip Hills, just south of the Hunting expert, who sells the Hunter cape."
   },
   {
     "id": "red-rock",
@@ -3480,7 +3874,8 @@
     "y": 2517,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Red Rock is an island in the Unquiet Ocean, located south-east of the Void Knights' Outpost."
   },
   {
     "id": "rellekka-hunter-area",
@@ -3489,7 +3884,8 @@
     "y": 3791,
     "plane": 0,
     "tier": 3,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The Rellekka Hunter area is one of several Hunter training areas."
   },
   {
     "id": "rellekka-mine",
@@ -3498,7 +3894,8 @@
     "y": 3704,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Rellekka mining site is located in north-east Rellekka."
   },
   {
     "id": "rimmington-mine",
@@ -3507,7 +3904,8 @@
     "y": 3239,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Rimmington mine is located north-east of Rimmington, west of Port Sarim and south-west of Falador."
   },
   {
     "id": "river-amja",
@@ -3516,7 +3914,8 @@
     "y": 3030,
     "plane": 0,
     "tier": 3,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The River Amja flows north on Karamja from a lake near Shilo Village to the Musa Passage."
   },
   {
     "id": "river-hos",
@@ -3525,7 +3924,8 @@
     "y": 3550,
     "plane": 0,
     "tier": 3,
-    "radius": 150
+    "radius": 150,
+    "blurb": "The River Hos is a river in Gielinor and runs through Hosidius."
   },
   {
     "id": "river-molch",
@@ -3534,7 +3934,8 @@
     "y": 3686,
     "plane": 0,
     "tier": 3,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The River Molch a small river in Gielinor that runs through the northern part of the Kebos Lowlands, a members-only region."
   },
   {
     "id": "river-varla",
@@ -3543,7 +3944,8 @@
     "y": 3135,
     "plane": 0,
     "tier": 3,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The River Varla is a river that runs down the middle of Varlamore just west of Ralos' Rise."
   },
   {
     "id": "rock-island-prison",
@@ -3552,7 +3954,8 @@
     "y": 2837,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "Rock Island Prison is an inaccessible island in the Ardent Ocean, located south of the Kharazi Jungle."
   },
   {
     "id": "ruins-of-morra",
@@ -3561,7 +3964,8 @@
     "y": 3509,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Ruins of Morra is found south-west of Shayzien."
   },
   {
     "id": "ruins-of-ullek",
@@ -3570,7 +3974,8 @@
     "y": 2811,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Ruins of Ullek is a ruined ancient city located in the deep south of the Kharidian Desert."
   },
   {
     "id": "ruins-of-unkah-mine",
@@ -3579,7 +3984,8 @@
     "y": 2870,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Ruins of Unkah mine is a mine located on the northern side of the Ruins of Unkah."
   },
   {
     "id": "salvager-overlook",
@@ -3588,7 +3994,8 @@
     "y": 3295,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Salvager Overlook is a small village north of Civitas illa Fortis."
   },
   {
     "id": "scorpion-pit",
@@ -3597,7 +4004,8 @@
     "y": 3944,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Scorpion Pit is a valley in the northern portion of the Wilderness extending from level 53 to 55."
   },
   {
     "id": "seers-village-bank",
@@ -3606,7 +4014,8 @@
     "y": 3492,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Seers' Village bank, sometimes known simply as Seers bank, is a bank in Seers' Village."
   },
   {
     "id": "seers-village-courthouse",
@@ -3615,7 +4024,8 @@
     "y": 3469,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Seers' Village courthouse is a building located south-east of the Seers' Village bank."
   },
   {
     "id": "settlement-ruins",
@@ -3624,7 +4034,8 @@
     "y": 3895,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Settlement Ruins are a village found south-west of the Wintertodt Camp in the Northern Tundras."
   },
   {
     "id": "shed-lumbridge-swamp",
@@ -3633,7 +4044,8 @@
     "y": 3169,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Lumbridge Swamp shed is a seemingly inconspicuous storage shed located at the heart of the swamp, east of the mysterious runes for the water altar."
   },
   {
     "id": "shilo-village-bank",
@@ -3642,7 +4054,8 @@
     "y": 2955,
     "plane": 0,
     "tier": 3,
-    "radius": 10
+    "radius": 10,
+    "blurb": "The Shilo Village bank is a bank found in Shilo Village."
   },
   {
     "id": "shimmering-atoll",
@@ -3651,7 +4064,8 @@
     "y": 2786,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Shimmering Atoll is an atoll found south of the Avium Savannah in Wyrm's Waters."
   },
   {
     "id": "shipwreck-cove",
@@ -3660,7 +4074,8 @@
     "y": 3315,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Shipwreck Cove is a location in northern Varlamore, just west of the Salvager Overlook, and east of the Auburn Valley."
   },
   {
     "id": "shipyard-karamja",
@@ -3669,7 +4084,8 @@
     "y": 3050,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Shipyard is a ship-building facility on the east shore of Karamja, built under the discreet supervision of Glough to raise a navy capable of attacking the human population of Gielinor."
   },
   {
     "id": "slepe-church",
@@ -3678,7 +4094,8 @@
     "y": 3312,
     "plane": 0,
     "tier": 3,
-    "radius": 16
+    "radius": 16,
+    "blurb": "The Slepe church is a large Zamorakian church in Slepe that houses Nemishka, Hanchen the Hound, and Lady Crombwick, who are infected with the Sleeper Plague."
   },
   {
     "id": "south-brimhaven-mine",
@@ -3687,7 +4104,8 @@
     "y": 3150,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The South Brimhaven mine (also known as the Brimhaven Dungeon mine) is located south-west of Brimhaven by the entrance to Brimhaven Dungeon."
   },
   {
     "id": "south-crandor-mine",
@@ -3696,7 +4114,8 @@
     "y": 3245,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The South Crandor mine consists of two mining spots very close to one another on the southern portion of the island of Crandor."
   },
   {
     "id": "south-salvager-overlook-mine",
@@ -3705,7 +4124,8 @@
     "y": 3277,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The South Salvager Overlook mine (also called South Salvager mine) is located between the Salvager Overlook, The Proudspire, and the Twilight Temple."
   },
   {
     "id": "south-wilderness-mine",
@@ -3714,7 +4134,8 @@
     "y": 3569,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The south Wilderness mine is a small mine located in level 6 Wilderness, near the Air Obelisk hill."
   },
   {
     "id": "south-east-ardougne-mine",
@@ -3723,7 +4144,8 @@
     "y": 3232,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The South-east Ardougne mine, also referred to as Monastery Mine or South Ardougne Mine, can be found south of East Ardougne and east of the Clock Tower near the Kandarin Monastery."
   },
   {
     "id": "south-east-varrock-mine",
@@ -3732,7 +4154,8 @@
     "y": 3365,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The south-east Varrock mine (also called East Varrock Mine) is a good low to medium level mine located outside the south-east corner of the city wall."
   },
   {
     "id": "south-west-varrock-mine",
@@ -3741,7 +4164,8 @@
     "y": 3370,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The South-west Varrock mine (also called West Varrock Mine) is a low-medium level mine located outside the south-western corner of Varrock."
   },
   {
     "id": "south-west-wilderness-mine",
@@ -3750,7 +4174,8 @@
     "y": 3589,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The south-west Wilderness mine is located in level 9 Wilderness, just north-west of Edgeville, north of the Black Knights' Fortress, and south of the Dark Warriors' Fortress."
   },
   {
     "id": "stonecutter-outpost",
@@ -3759,7 +4184,8 @@
     "y": 2963,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Stonecutter Outpost is a mining site located at the eastern coast of the Avium Savannah, just south-east of the Locus Oasis in the continent of Varlamore."
   },
   {
     "id": "temple-of-marimbo",
@@ -3768,7 +4194,8 @@
     "y": 2787,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Temple of Marimbo is a temple in Marim, Ape Atoll; it is dedicated to the monkey goddess, Marimbo."
   },
   {
     "id": "tempoross-cove",
@@ -3777,7 +4204,8 @@
     "y": 2850,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Tempoross Cove is a small island where Tempoross can be found."
   },
   {
     "id": "the-forgotten-cemetery",
@@ -3786,7 +4214,8 @@
     "y": 3750,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Forgotten Cemetery is a minor area in the Wilderness at around level 30."
   },
   {
     "id": "the-node",
@@ -3795,7 +4224,8 @@
     "y": 3028,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Node is a group of three small islands just south of Tutorial Island that are only accessible to Group Ironman players."
   },
   {
     "id": "the-stranglewood-mine",
@@ -3804,7 +4234,8 @@
     "y": 3320,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Stranglewood mine is a Mining area located in The Stranglewood."
   },
   {
     "id": "tower-of-ascension",
@@ -3813,7 +4244,8 @@
     "y": 3222,
     "plane": 0,
     "tier": 3,
-    "radius": 8
+    "radius": 8,
+    "blurb": "The Tower of Ascension is a part of the Twilight Temple within Varlamore."
   },
   {
     "id": "tower-of-magic",
@@ -3822,7 +4254,8 @@
     "y": 3820,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Tower of Magic is a building in Arceuus, west of the Grand Library of Great Kourend."
   },
   {
     "id": "trakerel-s-fish-shop",
@@ -3831,7 +4264,8 @@
     "y": 3291,
     "plane": 0,
     "tier": 3,
-    "radius": 5
+    "radius": 5,
+    "blurb": "Trakerel's Fish Shop is a ruined and abandoned fish shop found in north-eastern Meiyerditch."
   },
   {
     "id": "troll-arena",
@@ -3840,7 +4274,8 @@
     "y": 3612,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Troll arena is a combat arena used by trolls in the Troll Country."
   },
   {
     "id": "tunnel-of-chaos",
@@ -3849,7 +4284,8 @@
     "y": 3469,
     "plane": 0,
     "tier": 3,
-    "radius": 4
+    "radius": 4,
+    "blurb": "The Tunnel of Chaos can be found during and after the What Lies Below quest."
   },
   {
     "id": "ungael",
@@ -3858,7 +4294,8 @@
     "y": 4064,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Ungael is an island located in the northernmost region of the Northern Ocean."
   },
   {
     "id": "uzer-mastaba",
@@ -3867,7 +4304,8 @@
     "y": 3021,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Uzer Mastaba is a flat-topped structure located just south of the Uzer Oasis."
   },
   {
     "id": "uzer-mine",
@@ -3876,7 +4314,8 @@
     "y": 3160,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Uzer mine is a mine that features 10 clay rocks."
   },
   {
     "id": "varrock-anvil-building",
@@ -3885,7 +4324,8 @@
     "y": 3424,
     "plane": 0,
     "tier": 3,
-    "radius": 6
+    "radius": 6,
+    "blurb": "The Varrock anvil building is a building found just south of the Varrock west bank."
   },
   {
     "id": "varrock-church",
@@ -3894,7 +4334,8 @@
     "y": 3480,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Varrock church is a four-story building found in the north-east part of Varrock, which represents the Varrock branch of the Church of Saradomin."
   },
   {
     "id": "varrock-hair-salon",
@@ -3903,7 +4344,8 @@
     "y": 3463,
     "plane": 0,
     "tier": 3,
-    "radius": 6
+    "radius": 6,
+    "blurb": "The Varrock hair salon is a hair salon located just north of the Varrock Museum."
   },
   {
     "id": "ver-sinhaza",
@@ -3912,7 +4354,8 @@
     "y": 3220,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Ver Sinhaza is a castle found in the southern sector of Meiyerditch, where the vampyre noble Verzik Vitur currently resides."
   },
   {
     "id": "verdant-valley",
@@ -3921,7 +4364,8 @@
     "y": 3760,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Verdant Valley is a small valley south of the Museum Camp near the Fossil Island Volcano."
   },
   {
     "id": "villa-lucens",
@@ -3930,7 +4374,8 @@
     "y": 2930,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "Villa Lucens is a manor found in Aldarin, accessible during and after Death on the Isle, where the majority of the quest takes place."
   },
   {
     "id": "war-tent",
@@ -3939,7 +4384,8 @@
     "y": 3636,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The War Tent is a large tent found in the Shayzien Encampment."
   },
   {
     "id": "water-mill-cellar",
@@ -3948,7 +4394,8 @@
     "y": 3286,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Water mill cellar is used in the Death to the Dorgeshuun quest."
   },
   {
     "id": "west-falador-mine",
@@ -3957,7 +4404,8 @@
     "y": 3362,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The West Falador mine is located west of Falador and south of Taverley."
   },
   {
     "id": "west-fremennik-isles-mine",
@@ -3966,7 +4414,8 @@
     "y": 3854,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The West Fremennik Isles mine holds three copper rocks and many aggressive ice trolls."
   },
   {
     "id": "white-knights-castle",
@@ -3975,7 +4424,8 @@
     "y": 3342,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The White Knights' Castle is the centre of Falador and base of the White Knights, who are a major political force in Asgarnia and loyal to Saradomin."
   },
   {
     "id": "white-wolf-mountain",
@@ -3984,7 +4434,8 @@
     "y": 3483,
     "plane": 0,
     "tier": 3,
-    "radius": 50
+    "radius": 50,
+    "blurb": "The White Wolf Mountain is a natural region in the members-only area."
   },
   {
     "id": "wilderness-hunter-area",
@@ -3993,7 +4444,8 @@
     "y": 3776,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Wilderness Hunter area is located slightly south of the Wilderness Pond in the Wilderness."
   },
   {
     "id": "wilderness-pond",
@@ -4002,7 +4454,8 @@
     "y": 3800,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Wilderness Pond is located in the centre of the Wilderness."
   },
   {
     "id": "wintertodt-camp",
@@ -4011,7 +4464,8 @@
     "y": 3938,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Wintertodt Camp is found in the Northern Tundras north of Arceuus in Great Kourend."
   },
   {
     "id": "witch-s-house-location",
@@ -4020,7 +4474,9 @@
     "y": 3468,
     "plane": 0,
     "tier": 3,
-    "radius": 21
+    "radius": 21,
+    "blurb": "The witch's house is the primary setting of the Witch's House quest and is also visited during Grim Tales.",
+    "wiki": "Witch's house (location)"
   },
   {
     "id": "xeric-s-lookout",
@@ -4029,7 +4485,8 @@
     "y": 3531,
     "plane": 0,
     "tier": 3,
-    "radius": 8
+    "radius": 8,
+    "blurb": "Xeric's Lookout is an abandoned tower found in the south-east corner of Shayzien."
   },
   {
     "id": "yanille-chain",
@@ -4038,7 +4495,8 @@
     "y": 3098,
     "plane": 0,
     "tier": 3,
-    "radius": 12
+    "radius": 12,
+    "blurb": "The Yanille Chain is a series of islands to the east of Yanille where Hazelmere the gnome lives."
   },
   {
     "id": "zamorakian-chapel",
@@ -4047,6 +4505,7 @@
     "y": 3387,
     "plane": 0,
     "tier": 3,
-    "radius": 22
+    "radius": 22,
+    "blurb": "The Zamorakian chapel is a small temple found in the south-east part of Varrock."
   }
 ]

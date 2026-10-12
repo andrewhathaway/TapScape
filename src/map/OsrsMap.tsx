@@ -10,9 +10,11 @@ interface Props {
   /** Omitted once the round is locked in, which also freezes picking. */
   onPick?: (point: WorldPoint) => void
   plane?: Plane
+  /** Hard mode: how far in the player may zoom while guessing. */
+  maxZoom?: number
 }
 
-export default function OsrsMap({ guess, answer, onPick, plane = 0 }: Props) {
+export default function OsrsMap({ guess, answer, onPick, plane = 0, maxZoom }: Props) {
   const hostRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<L.Map | null>(null)
   const overlayRef = useRef<L.LayerGroup | null>(null)
@@ -48,6 +50,10 @@ export default function OsrsMap({ guess, answer, onPick, plane = 0 }: Props) {
     map.on('click', (e: L.LeafletMouseEvent) => {
       pickRef.current?.(toWorld(e.latlng, plane))
     })
+    // Exposed for the smoke tests; the app itself never reads it.
+    const noteZoom = () => (host.dataset.zoom = String(map.getZoom()))
+    map.on('zoomend', noteZoom)
+    noteZoom()
 
     return () => {
       map.remove()
@@ -55,6 +61,11 @@ export default function OsrsMap({ guess, answer, onPick, plane = 0 }: Props) {
       overlayRef.current = null
     }
   }, [plane])
+
+  // Leaflet pulls the view out if it is already past the new ceiling.
+  useEffect(() => {
+    mapRef.current?.setMaxZoom(maxZoom ?? MAP_VIEW.maxZoom)
+  }, [maxZoom])
 
   // Redraw guess / answer markers whenever the round state changes.
   useEffect(() => {

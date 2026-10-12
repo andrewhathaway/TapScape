@@ -9,8 +9,10 @@ export interface WorldPoint {
 export interface Location extends WorldPoint {
   id: string
   name: string
-  /** Shown after the guess is locked in. */
+  /** One sentence from the wiki, shown after the guess is locked in. */
   blurb?: string
+  /** Wiki article title, only when it differs from `name` (e.g. "Shilo Village (location)"). */
+  wiki?: string
   /** Rough difficulty, used to shape the daily mix. */
   tier: 1 | 2 | 3
   /**

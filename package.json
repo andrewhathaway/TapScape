@@ -24,6 +24,7 @@
     "preview": "vite preview",
     "data:locations": "node scripts/build-locations.mjs",
     "data:map-version": "node scripts/refresh-map-version.mjs",
+    "data:blurbs": "node scripts/build-blurbs.mjs",
     "deploy": "npm run build && wrangler deploy",
     "preview:cf": "npm run build && wrangler dev",
     "smoke": "node scripts/smoke.mjs",

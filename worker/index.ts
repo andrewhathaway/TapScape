@@ -21,6 +21,8 @@ import { handlePage } from './pages'
 
 export interface Env {
   DB: D1Database
+  /** The static site, so the Worker can read its own og.png for the live card. */
+  ASSETS: Fetcher
   VAPID_PUBLIC_KEY: string
   VAPID_PRIVATE_KEY: string
   /** `mailto:` or `https:` URL the push services can use to reach the operator. */
@@ -56,6 +58,7 @@ const MAX_FAILURES = 5
 const LAPSE_DAYS = 14
 
 const DAY_MS = 86_400_000
+const DAY_MAX = 25_000
 
 const DAILY_MESSAGE: PushMessage = {
   data: {
@@ -215,6 +218,25 @@ async function sendDue(env: Env, now: number): Promise<void> {
 async function handleApi(request: Request, env: Env, path: string): Promise<Response> {
   const now = Date.now()
 
+  if (request.method === 'POST' && path === '/api/stats/played') {
+    const body = await readJson(request)
+    const { dayKey, total } = body ?? {}
+    const yesterday = dayKeyOf(now - 86_400_000)
+    if (
+      typeof dayKey !== 'string' || (dayKey !== dayKeyOf(now) && dayKey !== yesterday) ||
+      typeof total !== 'number' || !Number.isInteger(total) || total < 0 || total > DAY_MAX
+    ) {
+      return json({ error: 'bad request' }, 400)
+    }
+    await env.DB.prepare(
+      `INSERT INTO daily_stats (day_key, plays, total) VALUES (?, 1, ?)
+       ON CONFLICT (day_key) DO UPDATE SET plays = plays + 1, total = total + excluded.total`,
+    )
+      .bind(dayKey, total)
+      .run()
+    return json({ ok: true })
+  }
+
   if (request.method === 'GET' && path === '/api/reminders/key') {
     return json({ publicKey: env.VAPID_PUBLIC_KEY })
   }
@@ -305,7 +327,7 @@ export default {
     if (pathname.startsWith('/api/groups')) return handleGroups(request, env, pathname)
     if (pathname.startsWith('/api/')) return handleApi(request, env, pathname)
     if (request.method === 'GET') {
-      const page = await handlePage(request, pathname)
+      const page = await handlePage(request, env, pathname)
       if (page) return page
     }
     return new Response('Not found', { status: 404 })

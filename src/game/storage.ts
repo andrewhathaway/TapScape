@@ -7,6 +7,8 @@ const KEEP_DAYS = 60
 export interface DayResult {
   total: number
   scores: number[]
+  /** Played with the 30-second timer and the zoom cap. */
+  hard?: boolean
 }
 
 interface Stored {
@@ -93,13 +95,15 @@ export function getStreak(): { current: number; best: number } {
 export function saveDayResult(
   dayKey: string,
   results: Guess[],
-  { countsForStreak = true } = {},
+  { countsForStreak = true, hard = false } = {},
 ): Milestone | null {
   const state = read()
   if (state.days?.[dayKey]) return null
 
   const total = results.reduce((sum, r) => sum + r.score, 0)
-  const days = { ...state.days, [dayKey]: { total, scores: results.map((r) => r.score) } }
+  const result: DayResult = { total, scores: results.map((r) => r.score) }
+  if (hard) result.hard = true
+  const days = { ...state.days, [dayKey]: result }
 
   // Drop anything older than the window so the entry can't grow without bound.
   const kept = Object.fromEntries(

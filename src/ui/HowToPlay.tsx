@@ -19,6 +19,10 @@ export default function HowToPlay() {
         <li>
           <strong>Endless</strong> — a fresh five whenever you want them. Nothing is recorded.
         </li>
+        <li>
+          <strong>Hard</strong> — the same puzzle with thirty seconds a round and no zooming
+          in close. Your shared result says so.
+        </li>
       </ul>
       <p className="muted">
         Rounds open with well-known places and get harder as you go.

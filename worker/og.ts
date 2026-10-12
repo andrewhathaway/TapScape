@@ -28,33 +28,50 @@ function esc(text: string): string {
 }
 
 export interface CardSpec {
-  /** Small line above the score, e.g. the date or "Challenge". */
+  /** Small line above the big text, e.g. the date or "Challenge". */
   kicker: string
-  /** The big number. */
-  total: number
-  max: number
-  /** Five round scores, drawn as coloured squares. */
+  /** The headline: a score, or "Day 285". */
+  big: string
+  /** Under the headline, e.g. "out of 25,000". */
+  sub: string
+  /** Round scores drawn as coloured squares; empty for none. */
   scores: number[]
-  /** Line under the squares, e.g. "Can you beat it?". */
+  /** Line at the bottom, e.g. "Can you beat it?". */
   tagline: string
+  /** Optional JPEG drawn faintly behind the panel, as raw bytes. */
+  backdrop?: ArrayBuffer
 }
 
-export function cardSvg({ kicker, total, max, scores, tagline }: CardSpec): string {
+function base64(bytes: ArrayBuffer): string {
+  const view = new Uint8Array(bytes)
+  let out = ''
+  for (let i = 0; i < view.length; i += 0x8000) {
+    out += String.fromCharCode(...view.subarray(i, i + 0x8000))
+  }
+  return btoa(out)
+}
+
+export function cardSvg({ kicker, big, sub, scores, tagline, backdrop }: CardSpec): string {
   const squares = scores
     .map((s, i) => {
       const fill = BAND_FILL[bandForRatio(s / MAX_ROUND_SCORE)]
       return `<rect x="${96 + i * 92}" y="392" width="76" height="76" rx="14" fill="${fill}"/>`
     })
     .join('')
+  const image = backdrop
+    ? `<image href="data:image/jpeg;base64,${base64(backdrop)}" width="${CARD_WIDTH}" height="${CARD_HEIGHT}" preserveAspectRatio="xMidYMid slice" opacity="0.55"/>`
+    : ''
+  const panelFill = backdrop ? 'rgba(23,21,15,0.9)' : '#17150f'
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${CARD_WIDTH}" height="${CARD_HEIGHT}" viewBox="0 0 ${CARD_WIDTH} ${CARD_HEIGHT}">
   <rect width="${CARD_WIDTH}" height="${CARD_HEIGHT}" fill="#0e0d0b"/>
-  <rect x="48" y="48" width="${CARD_WIDTH - 96}" height="${CARD_HEIGHT - 96}" rx="28" fill="#17150f" stroke="#3a3426" stroke-width="3"/>
+  ${image}
+  <rect x="48" y="48" width="${CARD_WIDTH - 96}" height="${CARD_HEIGHT - 96}" rx="28" fill="${panelFill}" stroke="#3a3426" stroke-width="3"/>
   <g font-family="Inter" font-weight="700">
     <text x="96" y="140" font-size="34" fill="#ffb833" letter-spacing="4">TAPSCAPE</text>
     <text x="96" y="196" font-size="30" fill="#a2977d">${esc(kicker)}</text>
-    <text x="96" y="330" font-size="132" fill="#ffb833">${total.toLocaleString('en-GB')}</text>
-    <text x="${96 + 8}" y="372" font-size="26" fill="#a2977d">out of ${max.toLocaleString('en-GB')}</text>
+    <text x="96" y="330" font-size="132" fill="#ffb833">${esc(big)}</text>
+    <text x="${96 + 8}" y="372" font-size="26" fill="#a2977d">${esc(sub)}</text>
     ${squares}
     <text x="96" y="536" font-size="30" fill="#f0e6d2">${esc(tagline)}</text>
     <text x="${CARD_WIDTH - 96}" y="536" font-size="24" fill="#a2977d" text-anchor="end">tapscape.andrewhathaway.net</text>

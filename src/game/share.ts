@@ -13,10 +13,10 @@ export function resultUrl(dayKey: string, scores: number[]): string {
   return `${SITE_URL}/r/${dayKey}/${scores.join('-')}`
 }
 
-export function shareText(dayKey: string, scores: number[]): string {
+export function shareText(dayKey: string, scores: number[], hard = false): string {
   const total = scores.reduce((a, b) => a + b, 0)
   return [
-    `TapScape ${dayKey}`,
+    `TapScape ${dayKey}${hard ? ' · hard' : ''}`,
     `${total.toLocaleString()} / ${(MAX_ROUND_SCORE * scores.length).toLocaleString()}`,
     scores.map(band).join(''),
     resultUrl(dayKey, scores),
