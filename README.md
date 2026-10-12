@@ -45,7 +45,7 @@ Safari composites that very slowly.
 
 ## Where the locations come from
 
-`src/data/locations.json` is generated from the OSRS Wiki — 450 surface locations
+`src/data/locations.json` is generated from the OSRS Wiki — 550 surface locations
 with coordinates, split into three difficulty tiers.
 
 ```bash
@@ -98,7 +98,7 @@ more likely and to turn a share into an invitation:
 - **Challenges.** An endless run is seeded, so "Challenge a friend" sends the
   same five places with your score to beat.
 - **Location pages.** `scripts/build-pages.mjs` writes `/where/<id>/` for all
-  450 locations after the build: a map, the coordinates, what's nearby, and a
+  550 locations after the build: a map, the coordinates, what's nearby, and a
   nudge to play. They answer "where is X in OSRS" searches and are in the
   sitemap.
 - **A fact after every guess.** Each location carries a one-sentence `blurb`

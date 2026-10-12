@@ -184,8 +184,11 @@ async function main() {
   const missing = TIER_ONE.filter((n) => !found.some((f) => f.name === n))
   if (missing.length) console.warn(`\n  !! tier-1 names with no coordinates: ${missing.join(', ')}\n`)
 
+  // Everything with coordinates. Adding places reshuffles the daily decks, so
+  // src/data/pool-v1.json pins the original 450 (with their tiers) for the
+  // days dealt before the pool grew; see poolForDay in src/data/locations.ts.
   found.sort((a, b) => b.weight - a.weight)
-  const pool = found.slice(0, 450)
+  const pool = found
   const rest = pool.filter((l) => !famous.has(l.name))
 
   const locations = pool

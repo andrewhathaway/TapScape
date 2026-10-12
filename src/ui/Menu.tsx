@@ -1,5 +1,6 @@
 import { getReminderState, pushSupported } from '../game/reminders'
 import { getMemberships } from '../game/groups'
+import { LOCATIONS } from '../data/locations'
 
 export type MenuTarget = 'how' | 'history' | 'clan' | 'reminders' | 'about'
 
@@ -65,7 +66,7 @@ export default function Menu({ hard, hardLocked, onToggleHard, stream, onToggleS
       <ul className="menu-list">
         <li>
           <a className="menu-row" href="/where/">
-            <span className="menu-label">All 450 locations</span>
+            <span className="menu-label">All {LOCATIONS.length} locations</span>
             <span className="menu-hint">Where each one is, with a map</span>
             <span className="menu-chevron">↗</span>
           </a>

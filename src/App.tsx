@@ -8,7 +8,7 @@ import Menu, { type MenuTarget } from './ui/Menu'
 import History from './ui/History'
 import Reminder from './ui/Reminder'
 import Groups from './ui/Groups'
-import { LOCATIONS, wikiUrl } from './data/locations'
+import { LOCATIONS, poolForDay, wikiUrl } from './data/locations'
 import { MAP_VIEW } from './map/tiles'
 import { dailyRounds, dayIndex, endlessRounds, msUntilNextDay, randomSeed, todayKey } from './game/daily'
 import { MAX_ROUND_SCORE, bandForRatio, isInside, scoreForDistance, tileDistance } from './game/scoring'
@@ -161,7 +161,7 @@ export default function App() {
   }, [])
 
   const rounds = useMemo(
-    () => (mode === 'daily' ? dailyRounds(LOCATIONS, dayKey) : endlessRounds(LOCATIONS, seed)),
+    () => (mode === 'daily' ? dailyRounds(poolForDay(dayKey), dayKey) : endlessRounds(LOCATIONS, seed)),
     [mode, dayKey, seed],
   )
 
