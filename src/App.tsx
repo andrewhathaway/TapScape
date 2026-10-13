@@ -740,6 +740,7 @@ function Summary({
   return (
     <div className="summary">
       <div className="summary-card">
+        <div className="summary-body">
         <h2>{heading}</h2>
         <p className="muted summary-sub">{subheading}</p>
 
@@ -808,6 +809,10 @@ function Summary({
           </div>
         )}
 
+        {isToday && replaying && (
+          <p className="muted summary-note">You've already played today's five.</p>
+        )}
+        </div>
         <div className="sheet-actions">
           {isToday && (
             <>
@@ -816,6 +821,14 @@ function Summary({
               </button>
               <button className="secondary" onClick={onPlayEndless}>
                 Play endless
+              </button>
+              <button
+                className="secondary narrow"
+                onClick={() => onOpen('history')}
+                aria-label="Play previous days"
+                title="Play previous days"
+              >
+                ▦
               </button>
             </>
           )}
@@ -840,14 +853,6 @@ function Summary({
             </>
           )}
         </div>
-        {isToday && (
-          <button className="secondary wide" onClick={() => onOpen('history')}>
-            Play previous days
-          </button>
-        )}
-        {isToday && replaying && (
-          <p className="muted summary-note">You've already played today's five.</p>
-        )}
       </div>
     </div>
   )

@@ -317,16 +317,20 @@ function GroupPanel({ code, today, onBack, onLeft }: PanelProps) {
       </div>
       <h3>{group.name}</h3>
 
-      <h4 className="muted">Today</h4>
+      <h4 className="muted">
+        Today · {todayEntries.length} of {group.members.length} played
+      </h4>
       {todayEntries.length === 0 ? (
         <p className="muted">Nobody has played yet today.</p>
       ) : (
         <ol className="group-scores">
           {todayEntries.map((e) => (
             <li key={e.playerId} className={e.playerId === me ? 'me' : undefined}>
-              <span>{e.name}</span>
-              <span className="group-bands" aria-hidden>
-                {bands(e.scores)}
+              <span className="group-name">
+                {e.name}
+                <span className="group-bands" aria-hidden>
+                  {bands(e.scores)}
+                </span>
               </span>
               <span className="group-total">{e.total.toLocaleString()}</span>
             </li>
@@ -343,9 +347,11 @@ function GroupPanel({ code, today, onBack, onLeft }: PanelProps) {
           <ol className="group-scores">
             {weekRows.map(([id, w]) => (
               <li key={id} className={id === me ? 'me' : undefined}>
-                <span>{w.name}</span>
-                <span className="muted">
-                  {w.days} {w.days === 1 ? 'day' : 'days'} · avg {Math.round(w.total / w.days).toLocaleString()}
+                <span className="group-name">
+                  {w.name}
+                  <span className="group-sub">
+                    {w.days} {w.days === 1 ? 'day' : 'days'} · avg {Math.round(w.total / w.days).toLocaleString()}
+                  </span>
                 </span>
                 <span className="group-total">{w.total.toLocaleString()}</span>
               </li>
@@ -359,7 +365,7 @@ function GroupPanel({ code, today, onBack, onLeft }: PanelProps) {
         <button className="primary" onClick={invite}>
           {copied ? 'Copied' : 'Copy invite link'}
         </button>
-        <button className="secondary" onClick={leave}>
+        <button className="secondary narrow" onClick={leave}>
           Leave
         </button>
       </div>

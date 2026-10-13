@@ -229,6 +229,11 @@ a { color: var(--gold); }
   text-align: left;
 }
 
+@keyframes sheet-up {
+  from { transform: translateY(24px); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
 @keyframes rise {
   from { transform: translateY(8px); opacity: 0; }
   to   { transform: none; opacity: 1; }
@@ -292,6 +297,12 @@ button.link:disabled { opacity: .5; cursor: default; }
 
 /* ---------- overlays ---------- */
 
+/*
+ * Sheets. A centred dialog on wide screens. The header and any `.sheet-actions`
+ * stay put and only the body scrolls, so a long clan table or a tall result card
+ * never pushes the title or the buttons out of reach. Heights use dvh: on iPhone
+ * Safari, vh includes the space behind the toolbar and clips the sheet.
+ */
 .scrim, .summary {
   position: absolute;
   inset: 0;
@@ -304,20 +315,55 @@ button.link:disabled { opacity: .5; cursor: default; }
 .scrim { position: fixed; }
 
 .sheet, .summary-card {
+  display: flex;
+  flex-direction: column;
   background: var(--panel);
   border: 1px solid var(--edge);
   border-radius: 12px;
-  padding: 20px 22px;
   width: min(440px, 100%);
   max-height: calc(100vh - 32px);
-  overflow-y: auto;
+  max-height: calc(100dvh - 32px);
+  overflow: hidden;
 }
+.summary-card { max-height: 100%; }
 
-.sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.sheet-head h2 { margin: 0 0 6px; font-size: 20px; }
+.sheet-grip { flex: 0 0 auto; padding: 0 22px; touch-action: none; }
+.sheet-handle { display: none; }
+.sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 0 10px; }
+.sheet-head h2 { margin: 0; font-size: 20px; }
+
+.sheet-body, .summary-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 22px 18px;
+}
+.summary-body { padding-top: 18px; }
 
 .sheet-actions { display: flex; gap: 9px; margin-top: 18px; flex-wrap: wrap; }
 .sheet-actions button { flex: 1 1 140px; }
+/* Pinned: inside a scrolling body they stick to its bottom edge; as a direct
+   child of the card they are simply the last flex row. */
+.sheet-body > .sheet-actions, .sheet-body > form > .sheet-actions {
+  position: sticky;
+  bottom: -18px;
+  margin: 18px -22px -18px;
+  padding: 12px 22px 18px;
+  background: var(--panel);
+  border-top: 1px solid var(--edge);
+}
+.summary-card > .sheet-actions {
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 12px 22px 18px;
+  border-top: 1px solid var(--edge);
+  background: var(--panel);
+}
+.summary-card > .sheet-actions button { flex: 1 1 0; min-width: 0; padding-inline: 12px; }
+.sheet-actions button.narrow, .summary-card > .sheet-actions button.narrow { flex: 0 0 auto; padding-inline: 16px; }
 
 .prose p { margin: 10px 0; }
 .prose ul { margin: 10px 0; padding-left: 18px; }
@@ -577,10 +623,10 @@ p.reminder { margin-bottom: 0; }
 .group-scores { list-style: none; margin: 0; padding: 0; counter-reset: place; }
 .group-scores li {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 10px;
+  grid-template-columns: 1.4em minmax(0, 1fr) auto;
+  gap: 8px;
   align-items: center;
-  padding: 7px 0;
+  padding: 6px 0;
   border-top: 1px solid var(--edge);
 }
 .group-scores li::before {
@@ -588,13 +634,12 @@ p.reminder { margin-bottom: 0; }
   content: counter(place) '.';
   color: var(--ink-dim);
   font-size: 12px;
-  width: 1.4em;
 }
-.group-scores li > span:first-of-type { grid-column: 2; }
-.group-scores li.me > span:first-of-type { color: var(--gold); font-weight: 700; }
-.group-bands { grid-column: 2; font-size: 12px; letter-spacing: 1px; }
-.group-scores li > .muted { grid-column: 2; font-size: 12px; }
-.group-total { grid-column: 3; grid-row: 1 / span 2; font-weight: 700; white-space: nowrap; }
+.group-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.group-scores li.me .group-name { color: var(--gold); font-weight: 700; }
+.group-bands { margin-left: 7px; font-size: 10px; letter-spacing: 1px; }
+.group-sub { margin-left: 7px; font-size: 11px; color: var(--ink-dim); font-weight: 400; }
+.group-total { font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .group-waiting, .group-note { margin: 6px 0 0; font-size: 12px; }
 
 .field { display: block; margin: 10px 0; }
@@ -637,10 +682,32 @@ p.reminder { margin-bottom: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   .pin-answer::after { animation: none; opacity: 0; }
-  .pin-guess span, .readout, .pill.milestone, .hint.callout { animation: none; }
+  .pin-guess span, .readout, .pill.milestone, .hint.callout, .sheet, .summary-card { animation: none; }
 }
 
 @media (max-width: 560px) {
+  /* Sheets rise from the bottom, sized to content, capped at the visible height. */
+  .scrim, .summary { padding: 0; place-items: end stretch; }
+  .sheet, .summary-card {
+    width: 100%;
+    max-height: 92vh;
+    max-height: 92dvh;
+    border-radius: 16px 16px 0 0;
+    border-bottom: 0;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-shadow: 0 -10px 30px rgba(0,0,0,.5);
+    animation: sheet-up .22s ease-out;
+    transition: transform .2s ease-out;
+  }
+  .summary-card { max-height: 100%; }
+  .sheet-handle { display: block; width: 36px; height: 4px; border-radius: 2px; background: var(--edge); margin: 8px auto 0; }
+  .sheet-head { padding-top: 6px; }
+  .sheet-grip, .sheet-body, .summary-body { padding-left: 16px; padding-right: 16px; }
+  .sheet-body > .sheet-actions, .sheet-body > form > .sheet-actions { margin-left: -16px; margin-right: -16px; padding-left: 16px; padding-right: 16px; }
+  .summary-card > .sheet-actions { padding-left: 16px; padding-right: 16px; }
+  .summary-body { padding-top: 14px; }
+  .summary-body::before { content: ''; display: block; width: 36px; height: 4px; border-radius: 2px; background: var(--edge); margin: -4px auto 10px; }
+
   .topbar { gap: 8px 10px; padding: 8px 10px; }
   .brand { font-size: 13px; }
   .tab { padding: 8px 12px; }

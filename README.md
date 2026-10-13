@@ -123,6 +123,16 @@ more likely and to turn a share into an invitation:
   the map, cached ten minutes. Counts come from an anonymous ping per finished
   daily into `daily_stats`.
 
+## Sheets on phones
+
+Every modal and the result card share one sheet (`src/ui/Modal.tsx`). On wide
+screens it is a centred dialog. On phones it rises from the bottom, capped at
+the visible height (`dvh`, since iOS `vh` includes the space behind Safari's
+toolbar), with the title pinned at the top, `.sheet-actions` pinned at the
+bottom, and only the middle scrolling. Dismiss with ×, a tap outside, a swipe
+down on the header, Escape, or the browser back button (one history entry is
+pushed while a sheet is open).
+
 ## Search and measurement
 
 The homepage ships a static block inside `#root` (headline, what the game is,
