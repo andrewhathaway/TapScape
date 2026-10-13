@@ -89,7 +89,11 @@ more likely and to turn a share into an invitation:
 - **Clans.** A code (`ABCD-EFGH`) shared with friends. Members see each
   other's daily scores and a seven-day table, nothing else. Stored in D1 with
   no accounts: a random id per device and the name you typed. (The code calls
-  them groups; players see "clan".)
+  them groups; players see "clan".) Today's standings show on the result card
+  (a swipeable row when you're in more than one clan), as a rank badge in the
+  header once you've played, and as a "Bob scored 14,200 today" line before
+  round one if a clanmate has already played. Boards are fetched once per visit
+  and again after your score lands.
 - **Share pages.** A shared result links to `/r/<day>/<scores>`, a challenge to
   `/c/<seed>/<score>`. The Worker renders each with its own 1200×630 preview
   (`worker/og.ts`, hand-built SVG rasterised by resvg in WebAssembly), so the

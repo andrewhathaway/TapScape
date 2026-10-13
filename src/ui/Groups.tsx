@@ -13,6 +13,7 @@ import {
   leaveGroup,
   normaliseCode,
   peekGroup,
+  setPrimaryClan,
   type GroupView,
   type Membership,
 } from '../game/groups'
@@ -31,6 +32,8 @@ interface Props {
   inviteCode?: string | null
   /** Called once the join form is answered either way, so it doesn't reappear. */
   onInviteDone?: () => void
+  /** Open straight onto this clan's board (from the header badge or the card). */
+  openCode?: string | null
 }
 
 type View = { kind: 'list' } | { kind: 'group'; code: string } | { kind: 'join'; code: string }
@@ -40,10 +43,14 @@ type View = { kind: 'list' } | { kind: 'group'; code: string } | { kind: 'join';
  * forms. Scores only ever go up when a daily is finished, so there is nothing
  * here to refresh obsessively — it's a once-a-day glance.
  */
-export default function Groups({ today, inviteCode, onInviteDone }: Props) {
+export default function Groups({ today, inviteCode, onInviteDone, openCode }: Props) {
   const [memberships, setMemberships] = useState<Membership[]>(getMemberships)
   const [view, setView] = useState<View>(() =>
-    inviteCode ? { kind: 'join', code: normaliseCode(inviteCode) } : { kind: 'list' },
+    inviteCode
+      ? { kind: 'join', code: normaliseCode(inviteCode) }
+      : openCode
+        ? { kind: 'group', code: openCode }
+        : { kind: 'list' },
   )
 
   const refresh = () => setMemberships(getMemberships())
@@ -253,6 +260,7 @@ function GroupPanel({ code, today, onBack, onLeft }: PanelProps) {
   const me = getPlayer()?.id
 
   useEffect(() => {
+    setPrimaryClan(code)
     void fetchGroup(code).then(setGroup)
   }, [code])
 

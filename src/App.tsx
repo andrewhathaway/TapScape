@@ -8,13 +8,25 @@ import Menu, { type MenuTarget } from './ui/Menu'
 import History from './ui/History'
 import Reminder from './ui/Reminder'
 import Groups from './ui/Groups'
+import ClanBoard from './ui/ClanBoard'
 import { LOCATIONS, poolForDay, wikiUrl } from './data/locations'
 import { MAP_VIEW } from './map/tiles'
 import { dailyRounds, dayIndex, endlessRounds, msUntilNextDay, randomSeed, todayKey } from './game/daily'
 import { MAX_ROUND_SCORE, bandForRatio, isInside, scoreForDistance, tileDistance } from './game/scoring'
 import { challengeText, copyText, shareText } from './game/share'
 import { reportPlayed, syncReminders } from './game/reminders'
-import { postScores } from './game/groups'
+import {
+  getMemberships,
+  getPlayer,
+  getPrimaryClan,
+  loadClans,
+  ordinal,
+  postScores,
+  setPrimaryClan,
+  standing,
+  type GroupView,
+  type Standing,
+} from './game/groups'
 import { reportDailyStat } from './game/stats'
 import { markTipSeen, tipPending } from './game/tips'
 import { track } from './game/analytics'
@@ -156,6 +168,23 @@ export default function App() {
   const [stream, setStream] = useState(readStream)
   const [pinTip, setPinTip] = useState(() => tipPending('placePin'))
   const [revealTip, setRevealTip] = useState(() => tipPending('firstReveal'))
+  /** Every clan's board for today; refreshed after this player's score lands. */
+  const [clans, setClans] = useState<GroupView[]>([])
+  const [clanVersion, setClanVersion] = useState(0)
+  /** Which clan to open from the badge or the card. */
+  const [openClan, setOpenClan] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (getMemberships().length === 0) {
+      setClans([])
+      return
+    }
+    let live = true
+    void loadClans().then((views) => live && setClans(views))
+    return () => {
+      live = false
+    }
+  }, [clanVersion])
 
   useEffect(() => {
     syncReminders()
@@ -235,7 +264,7 @@ export default function App() {
           if (isToday) {
             const scores = next.map((r) => r.score)
             reportPlayed(dayKey)
-            postScores(dayKey, scores)
+            void postScores(dayKey, scores).then(() => setClanVersion((v) => v + 1))
             reportDailyStat(dayKey, total)
           }
         }
@@ -280,7 +309,14 @@ export default function App() {
   }
   const openSheet = (next: Sheet) => {
     if (next) track('sheet_open', { sheet: next })
+    if (next !== 'clan') setOpenClan(null)
     setSheet(next)
+  }
+  // Membership may have changed while the clan sheet was open; reload the boards.
+  const closeClanSheet = () => {
+    setOpenClan(null)
+    setSheet(null)
+    setClanVersion((v) => v + 1)
   }
 
   const advance = useCallback(() => {
@@ -325,6 +361,36 @@ export default function App() {
   const hardRun = replaying ? archived?.hard === true : hard
   const isToday = mode === 'daily' && dayKey === today
   const isArchive = mode === 'daily' && !isToday
+
+  const me = getPlayer()?.id ?? null
+  const standings: Standing[] = useMemo(
+    () => clans.map((view) => standing(view, today, me)),
+    [clans, today, me],
+  )
+  const playedToday = getDayResult(today) !== null
+  // The badge: your place in the clan you opened last, once you've played today.
+  const primaryCode = getPrimaryClan()
+  const primary = standings.find((s) => s.code === primaryCode) ?? standings[0]
+  const badge = playedToday && primary && primary.rank !== null ? primary : null
+  // The race line: the best clanmate score so far, shown before your first pin today.
+  const rival = useMemo(() => {
+    if (playedToday) return null
+    let best: { name: string; total: number } | null = null
+    for (const s of standings) {
+      for (const e of s.entries) {
+        if (e.playerId !== me && (!best || e.total > best.total)) best = { name: e.name, total: e.total }
+      }
+    }
+    return best
+  }, [standings, me, playedToday])
+  const showRace = isToday && !replaying && roundIndex === 0 && !pending && !revealed && rival !== null
+
+  const openClanSheet = (code: string, from: string) => {
+    setPrimaryClan(code)
+    setOpenClan(code)
+    track('clan_open', { from })
+    openSheet('clan')
+  }
 
   const promptHeading = mode === 'endless'
     ? challenge ? 'Challenge' : 'Endless'
@@ -380,7 +446,18 @@ export default function App() {
               />
             ))}
           </div>
-          {total > 0 && <div className="score">{total.toLocaleString()}</div>}
+          {badge && (
+            <button
+              className="rank-badge"
+              onClick={() => openClanSheet(badge.code, 'badge')}
+              title={`${badge.name}: ${ordinal(badge.rank!)} of ${badge.played}${badge.played === badge.members ? '' : ' so far'}`}
+            >
+              <span className="rank-icon" aria-hidden>⚔</span>
+              <span className="rank-pos">{ordinal(badge.rank!)}</span>
+              <span className="rank-of">of {badge.played}</span>
+            </button>
+          )}
+          {total > 0 && <div className={badge ? 'score with-badge' : 'score'}>{total.toLocaleString()}</div>}
           <button className="icon menu-btn" onClick={() => openSheet('menu')} aria-label="Menu">
             <span />
             <span />
@@ -403,6 +480,15 @@ export default function App() {
               <div className={secondsLeft <= 5 ? 'timer urgent' : 'timer'} aria-live="off">
                 {secondsLeft}s
               </div>
+            )}
+            {showRace && rival && (
+              <button className="race" onClick={() => primary && openClanSheet(primary.code, 'race')}>
+                <span className="race-av" aria-hidden>{rival.name.slice(0, 1).toUpperCase()}</span>
+                <span>
+                  <strong>{rival.name}</strong> scored {rival.total.toLocaleString()} today
+                </span>
+                <span className="race-go">Beat it ›</span>
+              </button>
             )}
             {current ? (
               <div className={`readout band-${bandForRatio(current.score / MAX_ROUND_SCORE)}`}>
@@ -464,6 +550,9 @@ export default function App() {
             replaying={replaying}
             milestone={milestone}
             hard={hardRun}
+            standings={isToday ? standings : []}
+            me={me}
+            onOpenClan={(code) => openClanSheet(code, 'card')}
             onPlayEndless={() => startSession('endless')}
             onBackToToday={() => startSession('daily')}
             onOpen={(target) => openSheet(target)}
@@ -512,8 +601,13 @@ export default function App() {
         </Modal>
       )}
       {sheet === 'clan' && (
-        <Modal title="Clan" onClose={() => setSheet(null)}>
-          <Groups today={today} inviteCode={invite} onInviteDone={() => setInvite(null)} />
+        <Modal title="Clan" onClose={closeClanSheet}>
+          <Groups
+            today={today}
+            inviteCode={invite}
+            onInviteDone={() => setInvite(null)}
+            openCode={openClan}
+          />
         </Modal>
       )}
       {sheet === 'reminders' && (
@@ -593,6 +687,9 @@ interface SummaryProps {
   replaying: boolean
   milestone: Milestone | null
   hard: boolean
+  standings: Standing[]
+  me: string | null
+  onOpenClan: (code: string) => void
   onPlayEndless: () => void
   onBackToToday: () => void
   onOpen: (sheet: 'history' | 'clan' | 'reminders') => void
@@ -609,6 +706,9 @@ function Summary({
   replaying,
   milestone,
   hard,
+  standings,
+  me,
+  onOpenClan,
   onPlayEndless,
   onBackToToday,
   onOpen,
@@ -658,6 +758,13 @@ function Summary({
         <div className="pills">
           {hard && <span className="pill">Hard mode</span>}
           {milestone && <span className="pill milestone">{milestoneText(milestone)}</span>}
+          {standings
+            .filter((s) => s.rank === 1 && s.played >= 2)
+            .map((s) => (
+              <span key={s.code} className="pill milestone">
+                Top of {s.name}{s.played === s.members ? ' today' : ' so far'}
+              </span>
+            ))}
         </div>
         {challenge?.theirScore != null && (
           <p className="muted">
@@ -679,6 +786,10 @@ function Summary({
             </li>
           ))}
         </ul>
+
+        {isToday && standings.length > 0 && (
+          <ClanBoard standings={standings} me={me} onOpen={onOpenClan} />
+        )}
 
         {mode === 'daily' && (
           <div className="chips">

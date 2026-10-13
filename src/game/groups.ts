@@ -43,6 +43,8 @@ export interface GroupView {
 interface Stored {
   player?: Player
   groups?: Membership[]
+  /** The clan the header badge shows: the one looked at last. */
+  primary?: string
 }
 
 export const MAX_GROUP_NAME = 24
@@ -92,7 +94,22 @@ function remember(membership: Membership): void {
 
 function forget(code: string): void {
   const state = read()
-  write({ ...state, groups: (state.groups ?? []).filter((g) => g.code !== code) })
+  write({
+    ...state,
+    groups: (state.groups ?? []).filter((g) => g.code !== code),
+    primary: state.primary === code ? undefined : state.primary,
+  })
+}
+
+/** The clan whose rank the header shows: last one opened, else the first joined. */
+export function getPrimaryClan(): string | null {
+  const { primary, groups = [] } = read()
+  if (primary && groups.some((g) => g.code === primary)) return primary
+  return groups[0]?.code ?? null
+}
+
+export function setPrimaryClan(code: string): void {
+  write({ ...read(), primary: code })
 }
 
 async function api<T>(method: string, path: string, body?: unknown): Promise<T | null> {
@@ -133,6 +150,7 @@ export async function createGroup(groupName: string, playerName: string): Promis
   const membership = { code: created.code, name }
   remember(membership)
   await postToday(membership.code, player)
+  invalidateClans()
   return membership
 }
 
@@ -143,6 +161,7 @@ export async function joinGroup(code: string, playerName: string): Promise<Membe
   const membership = { code: normaliseCode(code), name: joined.name }
   remember(membership)
   await postToday(membership.code, player)
+  invalidateClans()
   return membership
 }
 
@@ -150,6 +169,7 @@ export async function leaveGroup(code: string): Promise<void> {
   const player = getPlayer()
   if (player) await api('DELETE', `/${code}/members/${encodeURIComponent(player.id)}`)
   forget(code)
+  invalidateClans()
 }
 
 export async function fetchGroup(code: string): Promise<GroupView | null> {
@@ -161,12 +181,68 @@ export async function peekGroup(code: string): Promise<{ name: string } | null> 
   return api<{ name: string }>('GET', `/${normaliseCode(code)}/peek`)
 }
 
-/** Fire-and-forget: push a finished daily to every group this player is in. */
-export function postScores(dayKey: string, scores: number[]): void {
+/** Push a finished daily to every clan this player is in; resolves when all are posted. */
+export async function postScores(dayKey: string, scores: number[]): Promise<void> {
   const player = getPlayer()
   if (!player) return
   const total = scores.reduce((a, b) => a + b, 0)
-  for (const { code } of getMemberships()) {
-    void api('POST', `/${code}/scores`, { player, dayKey, total, scores })
+  await Promise.all(
+    getMemberships().map(({ code }) => api('POST', `/${code}/scores`, { player, dayKey, total, scores })),
+  )
+  invalidateClans()
+}
+
+// ---- today's boards, fetched once per visit and again after a score lands ----
+
+let boards = new Map<string, Promise<GroupView | null>>()
+
+export function invalidateClans(): void {
+  boards = new Map()
+}
+
+/** Every clan this player is in, with today's and the week's scores. Cached for the visit. */
+export async function loadClans(): Promise<GroupView[]> {
+  const results = await Promise.all(
+    getMemberships().map(({ code }) => {
+      let p = boards.get(code)
+      if (!p) {
+        p = fetchGroup(code)
+        boards.set(code, p)
+      }
+      return p
+    }),
+  )
+  return results.filter((g): g is GroupView => g !== null)
+}
+
+export interface Standing {
+  code: string
+  name: string
+  /** 1-based position among today's entries, or null if this player hasn't posted yet. */
+  rank: number | null
+  played: number
+  members: number
+  entries: GroupEntry[]
+  notYet: string[]
+}
+
+export function standing(view: GroupView, today: string, me: string | null): Standing {
+  const entries = view.days.find((d) => d.dayKey === today)?.entries ?? []
+  const index = me ? entries.findIndex((e) => e.playerId === me) : -1
+  const played = new Set(entries.map((e) => e.playerId))
+  return {
+    code: view.code,
+    name: view.name,
+    rank: index === -1 ? null : index + 1,
+    played: entries.length,
+    members: view.members.length,
+    entries,
+    notYet: view.members.filter((m) => !played.has(m.id)).map((m) => m.name),
   }
+}
+
+export function ordinal(n: number): string {
+  const s = ['th', 'st', 'nd', 'rd']
+  const v = n % 100
+  return n + (s[(v - 20) % 10] || s[v] || s[0])
 }

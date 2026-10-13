@@ -658,3 +658,118 @@ p.reminder { margin-bottom: 0; }
   .history-grid { grid-template-columns: repeat(6, 1fr); }
   .history-stats { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ---------- clan rank: header badge, card board, race line ---------- */
+
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 184, 51, .5);
+  background: rgba(255, 184, 51, .14);
+  color: var(--gold);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.rank-badge:hover { background: rgba(255, 184, 51, .22); }
+.rank-icon { font-size: 13px; line-height: 1; }
+.rank-of { color: var(--ink-dim); font-weight: 600; font-size: 12px; }
+
+.clanboard { margin-top: 12px; }
+.clan-track { display: flex; }
+.clan-track.many {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.clan-track.many::-webkit-scrollbar { display: none; }
+.clan-block {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: block;
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--edge);
+  border-radius: 8px;
+  background: var(--panel-2);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.clan-block:hover { border-color: var(--ink-dim); }
+.clan-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--ink-dim);
+}
+.clan-head b { color: var(--gold); text-transform: none; letter-spacing: 0; font-size: 13px; white-space: nowrap; }
+.clan-rows { list-style: none; margin: 6px 0 0; padding: 0; }
+.clan-rows li {
+  display: grid;
+  grid-template-columns: 18px 1fr auto;
+  gap: 8px;
+  align-items: center;
+  padding: 4px 0;
+  font-size: 13px;
+}
+.clan-rows em { font-style: normal; color: var(--ink-dim); font-size: 11px; }
+.clan-rows li.me { color: var(--gold); font-weight: 700; }
+.clan-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.clan-bands { margin-left: 7px; font-size: 9px; letter-spacing: 1px; opacity: .85; }
+.clan-rows strong { font-variant-numeric: tabular-nums; }
+.clan-empty { margin: 6px 0 0; font-size: 12px; color: var(--ink-dim); }
+.clan-notyet { margin-top: 5px; font-size: 11px; color: var(--ink-dim); }
+.clan-dots { display: flex; justify-content: center; gap: 6px; margin-top: 7px; }
+.clan-dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--edge); }
+.clan-dots span.on { background: var(--gold); }
+
+.race {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 9px;
+  border: 1px solid var(--gold);
+  background: rgba(23,21,15,.96);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  animation: rise .25s ease-out;
+}
+.race strong { color: var(--gold); }
+.race-av {
+  flex: 0 0 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--band-1);
+  color: #1a1403;
+  font-weight: 800;
+  font-size: 11px;
+  display: grid;
+  place-items: center;
+}
+.race-go { margin-left: auto; color: var(--gold); font-weight: 700; white-space: nowrap; }
+
+.stream .race { font-size: 17px; }
+
+@media (max-width: 560px) {
+  /* The badge already implies a score; keep the first row to one row. */
+  .score.with-badge { display: none; }
+  .rank-badge { padding: 3px 8px 3px 7px; font-size: 12px; }
+}
