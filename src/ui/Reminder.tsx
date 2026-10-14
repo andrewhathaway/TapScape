@@ -12,6 +12,7 @@ import {
   snoozeOffer,
 } from '../game/reminders'
 import { track } from '../game/analytics'
+import IosGuide from './IosGuide'
 
 const HOURS = [6, 7, 8, 9, 10, 12, 18, 20]
 
@@ -49,15 +50,22 @@ export default function Reminder({ context = 'card' }: Props) {
   }, [state.enabled])
 
   if (needsHomeScreen()) {
-    return (
+    return inSheet ? (
+      <IosGuide />
+    ) : (
       <p className="reminder muted">
-        Add TapScape to your Home Screen (Share → Add to Home Screen) and it can nudge you
-        each morning when the new puzzle is ready.
+        Add TapScape to your Home Screen and it can nudge you each morning when the new
+        puzzle is ready.
       </p>
     )
   }
   if (!pushSupported()) {
-    return inSheet ? <p className="muted">This browser can't receive notifications.</p> : null
+    return inSheet ? (
+      <p className="muted">
+        This browser can't receive notifications. On iPhone that means iOS 16.4 or later is
+        needed; on Android, Chrome, Firefox or Samsung Internet all work.
+      </p>
+    ) : null
   }
   if (hidden) return null
   if (Notification.permission === 'denied') {

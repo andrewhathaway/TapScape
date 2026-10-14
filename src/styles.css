@@ -840,3 +840,36 @@ p.reminder { margin-bottom: 0; }
   .score.with-badge { display: none; }
   .rank-badge { padding: 3px 8px 3px 7px; font-size: 12px; }
 }
+
+/* ---------- iPhone reminder walkthrough ---------- */
+
+.guide-lede { margin: 0 0 14px; }
+.guide-steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; gap: 14px; }
+.guide-steps li { display: grid; grid-template-columns: 112px 1fr; gap: 12px; align-items: start; }
+.guide-art { position: relative; }
+.guide-art svg { width: 100%; height: auto; display: block; }
+.guide-art::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #1a1403;
+  font-weight: 800;
+  font-size: 12px;
+  display: grid;
+  place-items: center;
+}
+.guide-text { display: grid; gap: 4px; font-size: 13px; }
+.guide-text strong { font-size: 14px; }
+.guide-text b { color: var(--gold); font-weight: 700; }
+.guide-text .muted { font-size: 12px; }
+button.primary.small { padding: 8px 14px; font-size: 13px; justify-self: start; margin-top: 4px; }
+.guide-note { margin: 16px 0 0; font-size: 12px; }
+@media (max-width: 400px) {
+  .guide-steps li { grid-template-columns: 96px 1fr; }
+}

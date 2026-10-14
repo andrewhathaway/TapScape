@@ -1,4 +1,4 @@
-import { getReminderState, pushSupported } from '../game/reminders'
+import { getReminderState, needsHomeScreen, pushSupported } from '../game/reminders'
 import { getMemberships } from '../game/groups'
 import { LOCATIONS } from '../data/locations'
 
@@ -38,10 +38,16 @@ export default function Menu({ hard, hardLocked, onToggleHard, stream, onToggleS
           hint={clans === 0 ? 'Compare scores with friends' : clans === 1 ? '1 clan' : `${clans} clans`}
           onClick={() => onOpen('clan')}
         />
-        {pushSupported() && (
+        {(pushSupported() || needsHomeScreen()) && (
           <Row
             label="Morning reminder"
-            hint={reminder.enabled ? `On · ${hourLabel(reminder.hour)}` : 'Off'}
+            hint={
+              needsHomeScreen()
+                ? 'One-time setup on iPhone'
+                : reminder.enabled
+                  ? `On · ${hourLabel(reminder.hour)}`
+                  : 'Off'
+            }
             onClick={() => onOpen('reminders')}
           />
         )}
