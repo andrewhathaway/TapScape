@@ -1,5 +1,5 @@
 import { MAX_ROUND_SCORE } from '../game/scoring'
-import { BUCKET_SIZE, HIST_BUCKETS, beaten, type Others } from '../game/stats'
+import { BUCKET_SIZE, HIST_BUCKETS, beaten, ordinal, type Others } from '../game/stats'
 
 const DAY_MAX = MAX_ROUND_SCORE * 5
 /** Below this many other players a histogram is just noise; a single bar is shown instead. */
@@ -8,14 +8,19 @@ const HIST_MIN = 10
 const fmt = (n: number) => n.toLocaleString()
 const signed = (n: number) => (n >= 0 ? `+${fmt(n)}` : `−${fmt(-n)}`)
 
-/** After a reveal: this place's average today, the gap, and a line of context. */
+/**
+ * After a reveal: this place's average today, the gap, and a line of context.
+ * How many have played is never shown anywhere; a small number reads as "nobody
+ * plays this", which is the wrong thing to tell a new player.
+ */
 export function RoundCompare({ others, round, score }: { others: Others; round: number; score: number }) {
   const avg = others.roundAvgs[round]
   const delta = score - avg
   const inside = Math.round(others.insideRates[round] * 100)
-  const bits = [`${fmt(others.plays)} ${others.plays === 1 ? 'other has' : 'others have'} played`]
-  if (others.hardest === round) bits.unshift('Hardest place today')
+  const bits: string[] = []
+  if (others.hardest === round) bits.push('Hardest place today')
   if (others.plays >= 5) bits.push(`${inside}% got inside`)
+  if (bits.length === 0) bits.push(delta >= 0 ? 'Above today\'s average' : 'Below today\'s average')
 
   return (
     <div className="cmp-round">
@@ -38,7 +43,11 @@ export function RoundCompare({ others, round, score }: { others: Others; round: 
 export function RunCompare({ others, total }: { others: Others; total: number }) {
   const n = others.plays
   const better = beaten(others, total)
-  const headline = n >= HIST_MIN ? `Better than ${Math.round((better / n) * 100)}%` : `Better than ${better} of ${n}`
+  // A percentage once there are enough to make one; before that, a place in
+  // the running order, which says where you stand without saying how many stood.
+  const headline = n >= HIST_MIN
+    ? `Better than ${Math.round((better / n) * 100)}%`
+    : `${ordinal(n - better + 1)} today`
   const myBucket = Math.min(HIST_BUCKETS - 1, Math.floor(total / BUCKET_SIZE))
   const avgBucket = Math.min(HIST_BUCKETS - 1, Math.floor(others.avg / BUCKET_SIZE))
   const peak = Math.max(1, ...others.hist)
@@ -46,9 +55,7 @@ export function RunCompare({ others, total }: { others: Others; total: number })
   return (
     <div className="cmp-run">
       <div className="cmp-head">
-        <span className="cmp-k">
-          Everyone today · {fmt(n)} {n === 1 ? 'other' : 'others'}
-        </span>
+        <span className="cmp-k">Everyone today</span>
         <span className="cmp-v">{headline}</span>
       </div>
 
@@ -85,7 +92,7 @@ export function RunCompare({ others, total }: { others: Others; total: number })
             <span>You {fmt(total)}</span>
           </div>
           <div className="cmp-note">
-            Early days. The spread shows once ten others have played; reopen this later to see where you really landed.
+            Early days. The full spread appears later on; reopen this tonight to see where you really landed.
           </div>
         </>
       )}

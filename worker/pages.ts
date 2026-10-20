@@ -75,8 +75,8 @@ function card(shared: Shared): CardSpec {
 const DATE = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
 
 /**
- * The homepage's preview card: today's day number, how many have played so far
- * and yesterday's average, over the map art. Cached for ten minutes.
+ * The homepage's preview card: today's day number and yesterday's average,
+ * over the map art. Cached for ten minutes. Never a player count.
  */
 async function todayCard(request: Request, env: Env): Promise<Response> {
   const cache = caches.default
@@ -93,11 +93,11 @@ async function todayCard(request: Request, env: Env): Promise<Response> {
     env.ASSETS.fetch(new URL('/card-bg.jpg', request.url)).then((r) => (r.ok ? r.arrayBuffer() : undefined)),
   ])
   const byDay = new Map(stats.results.map((r) => [r.day_key, r]))
-  const plays = byDay.get(today)?.plays ?? 0
   const prior = byDay.get(yesterday)
   const avg = prior && prior.plays > 0 ? Math.round(prior.total / prior.plays) : null
 
-  const parts = [plays > 0 ? `${fmt(plays)} played so far today` : 'A fresh five places today']
+  // Never a player count: a small one reads as a reason not to bother.
+  const parts = ['A fresh five places today']
   if (avg !== null) parts.push(`yesterday's average ${fmt(avg)}`)
 
   const png = await renderPng(

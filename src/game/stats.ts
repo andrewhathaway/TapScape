@@ -109,3 +109,9 @@ export function beaten(others: Others, total: number): number {
   for (let i = 0; i < bucket; i++) below += others.hist[i]
   return Math.min(others.plays, below + Math.floor(others.hist[bucket] / 2))
 }
+
+export function ordinal(n: number): string {
+  const s = ['th', 'st', 'nd', 'rd']
+  const v = n % 100
+  return n + (s[(v - 20) % 10] || s[v] || s[0])
+}

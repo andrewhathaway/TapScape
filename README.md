@@ -120,11 +120,12 @@ more likely and to turn a share into an invitation:
   the round lives behind the menu button.
 - **You versus everyone today.** After each reveal: this place's average
   today, the gap, and a line of context ("hardest place today", "31% got
-  inside"). On the result card: "Better than 72%" (or "2 of 3" when few have
-  played), a 25-bucket histogram of totals once ten others have played, a
-  single bar before that, and a signed difference per location. Shown only
+  inside"). On the result card: "Better than 72%" (or "2nd today" when few
+  have played), a 25-bucket histogram of totals once ten others have played,
+  a single bar before that, and a signed difference per location. Shown only
   when at least one *other* person has played; this player's own run is
-  subtracted when it is already in the numbers. Hard-mode runs are kept under
+  subtracted when it is already in the numbers. How many have played is never
+  shown anywhere, including the homepage card. Hard-mode runs are kept under
   `YYYY-MM-DD#hard` so they aren't compared with normal ones.
 - **Live homepage card.** `/og/today.png` is the homepage's `og:image`: day
   number, how many have played so far and yesterday's average, over a crop of
