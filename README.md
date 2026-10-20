@@ -144,12 +144,13 @@ pushed while a sheet is open).
 
 ## The landing nudge
 
-Returning players who haven't decided about the reminder get one line above
-the hint when today's daily opens: "Want tomorrow's five brought to you at
-9pm?", with the hour taken from when they usually finish (`src/game/nudge.ts`).
-After eight seconds or the first pin it folds into a small sun badge in the
-corner, which opens the reminder sheet. Rules: never on a player's first day,
-at most once a day, never beside the clan race line, "Not now" buys a week,
+First-time players get one line above the hint at the start of round two of
+their first daily (round one belongs to the tutorial pill): "Want tomorrow's
+five brought to you at 8am?" (`src/game/nudge.ts`). After eight seconds or
+the next pin it folds into a small sun badge in the corner, which opens the
+reminder sheet. The aim is to win the habit at the first chance. Rules: never
+for anyone who has finished a daily before, never in the Home Screen app,
+never beside the clan race line, at most once a day, "Not now" buys a week,
 two "Not now"s retire the pill (the badge and menu row stay), and it all
 disappears once the reminder is on or blocked.
 

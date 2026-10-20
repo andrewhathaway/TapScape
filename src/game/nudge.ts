@@ -1,12 +1,13 @@
 /**
  * The landing nudge: a one-line offer of the morning reminder, shown above
- * the hint when a returning player arrives, folding into a small sun badge.
+ * the hint during a player's first daily, folding into a small sun badge.
  *
  * Rules, all enforced here so the UI can't drift from them:
- *  - never on a player's first day; they must have finished a daily before
- *  - only while the reminder is undecided (not on, not blocked)
+ *  - first-time players only: nobody who has finished a daily before
+ *  - not in the Home Screen app, not when the reminder is on or blocked
  *  - at most once a day; "Not now" buys a week; two "Not now"s retire it
  *  - never alongside the clan race line (the caller checks that)
+ * The aim is to win the habit at the first chance, not to keep asking.
  */
 
 import { DEFAULT_HOUR, getReminderState, needsHomeScreen, pushSupported } from './reminders'
@@ -19,6 +20,8 @@ const MAX_DISMISSALS = 2
 const KEEP_FINISHES = 10
 
 interface Stored {
+  /** The pill has been shown on this device at least once; the badge may follow. */
+  seen?: boolean
   lastShownDay?: string
   lastDismissedAt?: number
   dismissals?: number
@@ -42,18 +45,30 @@ function write(next: Stored): void {
   }
 }
 
+/** Opened from the Home Screen: already the most committed players, and the reminder sheet is a menu tap away. */
+function installed(): boolean {
+  if (typeof window === 'undefined') return false
+  return (navigator as Navigator & { standalone?: boolean }).standalone === true ||
+    window.matchMedia?.('(display-mode: standalone)').matches === true
+}
+
 /** Can this device receive reminders at all, and has the player not already decided? */
+export function nudgeStillRelevant(): boolean {
+  return undecided()
+}
+
 function undecided(): boolean {
+  if (installed()) return false
   if (!(pushSupported() || needsHomeScreen())) return false
   if (getReminderState().enabled) return false
   if (typeof Notification !== 'undefined' && Notification.permission === 'denied') return false
   return true
 }
 
-/** Whether to show the pill on this landing. */
+/** Whether to show the pill: first-time players only, during their first daily. */
 export function shouldNudge(today: string): boolean {
   if (!undecided()) return false
-  if (getLifetime().days < 1) return false
+  if (getLifetime().days > 0) return false
   const s = read()
   if (s.lastShownDay === today) return false
   if ((s.dismissals ?? 0) >= MAX_DISMISSALS) return false
@@ -61,13 +76,13 @@ export function shouldNudge(today: string): boolean {
   return true
 }
 
-/** Whether the resting sun badge may show: same gates, minus the once-a-day rule. */
+/** Whether the resting sun badge may show: once the pill has been seen, while undecided. */
 export function shouldShowBadge(): boolean {
-  return undecided() && getLifetime().days >= 1
+  return undecided() && read().seen === true
 }
 
 export function markNudgeShown(today: string): void {
-  write({ ...read(), lastShownDay: today })
+  write({ ...read(), seen: true, lastShownDay: today })
 }
 
 export function dismissNudge(): void {

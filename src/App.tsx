@@ -34,6 +34,7 @@ import {
   dismissNudge,
   markNudgeShown,
   nudgeCopy,
+  nudgeStillRelevant,
   recordFinish,
   shouldNudge,
   shouldShowBadge,
@@ -259,6 +260,8 @@ export default function App() {
     [today],
   )
 
+  /** True while the nudge pill is on screen, so a pin folds it; set below once visibility is known. */
+  const pillShowingRef = useRef(false)
   const pick = useCallback(
     (point: WorldPoint) => {
       setPending(point)
@@ -266,7 +269,7 @@ export default function App() {
         markTipSeen('placePin')
         setPinTip(false)
       }
-      setNudge((n) => (n === 'pill' ? 'badge' : n))
+      if (pillShowingRef.current) setNudge('badge')
     },
     [pinTip],
   )
@@ -440,10 +443,13 @@ export default function App() {
   }, [standings, me, playedToday])
   const showRace = isToday && !replaying && roundIndex === 0 && !pending && !revealed && rival !== null
 
-  // The pill shows on today's daily, before the first pin, and never beside the race line.
+  // The pill shows at the start of round two of a first-timer's daily: round one
+  // belongs to the tutorial pill, and by round two they know what the game is.
+  // Never beside the race line.
   const nudgePillVisible =
-    nudge === 'pill' && isToday && !replaying && roundIndex === 0 && !pending && !revealed && !showRace && !pinTip
-  const nudgeBadgeVisible = nudge === 'badge' || (nudge === 'pill' && !nudgePillVisible && showSummary === false && roundIndex > 0)
+    nudge === 'pill' && isToday && !replaying && roundIndex === 1 && !pending && !revealed && !showRace
+  const nudgeBadgeVisible = nudge === 'badge'
+  pillShowingRef.current = nudgePillVisible
   useEffect(() => {
     if (!nudgePillVisible) return
     markNudgeShown(today)
@@ -461,9 +467,9 @@ export default function App() {
     dismissNudge()
     setNudge('badge')
   }
-  // Once the reminder is decided, the badge goes too.
+  // Once the reminder is decided (on, or blocked), pill and badge both go.
   useEffect(() => {
-    if (sheet === null && nudge && !shouldShowBadge()) setNudge(null)
+    if (sheet === null && nudge && !nudgeStillRelevant()) setNudge(null)
   }, [sheet, nudge])
 
   const openClanSheet = (code: string, from: string) => {
