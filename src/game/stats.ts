@@ -68,6 +68,11 @@ export function othersFrom(
   stats: DayStats,
   mine: { scores: number[]; inside: boolean[] } | null,
 ): Others | null {
+  // Runs recorded before per-round detail existed count in `plays` but not in
+  // the histogram. A day with such runs has no trustworthy averages; skip it.
+  const detailed = stats.hist.reduce((a, b) => a + b, 0)
+  if (detailed !== stats.plays) return null
+
   let plays = stats.plays
   let total = stats.total
   const roundSums = stats.roundSums.slice()
