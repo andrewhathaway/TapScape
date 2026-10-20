@@ -58,7 +58,11 @@ const MAX_FAILURES = 5
 const LAPSE_DAYS = 14
 
 const DAY_MS = 86_400_000
-const DAY_MAX = 25_000
+const ROUNDS = 5
+const MAX_ROUND = 5_000
+const DAY_MAX = ROUNDS * MAX_ROUND
+/** Totals are bucketed per 1,000 points for the "better than" comparison. */
+const HIST_BUCKETS = 25
 
 const DAILY_MESSAGE: PushMessage = {
   data: {
@@ -220,21 +224,73 @@ async function handleApi(request: Request, env: Env, path: string): Promise<Resp
 
   if (request.method === 'POST' && path === '/api/stats/played') {
     const body = await readJson(request)
-    const { dayKey, total } = body ?? {}
+    const { dayKey, total, scores, inside, hard } = body ?? {}
     const yesterday = dayKeyOf(now - 86_400_000)
+    const scoresOk =
+      Array.isArray(scores) && scores.length === ROUNDS &&
+      scores.every((x) => Number.isInteger(x) && x >= 0 && x <= MAX_ROUND)
+    const insideOk = Array.isArray(inside) && inside.length === ROUNDS && inside.every((x) => typeof x === 'boolean')
     if (
       typeof dayKey !== 'string' || (dayKey !== dayKeyOf(now) && dayKey !== yesterday) ||
-      typeof total !== 'number' || !Number.isInteger(total) || total < 0 || total > DAY_MAX
+      typeof total !== 'number' || !Number.isInteger(total) || total < 0 || total > DAY_MAX ||
+      !scoresOk || !insideOk || (scores as number[]).reduce((a, b) => a + b, 0) !== total
     ) {
       return json({ error: 'bad request' }, 400)
     }
+    const key = hard === true ? `${dayKey}#hard` : dayKey
+    const bucket = Math.min(HIST_BUCKETS - 1, Math.floor(total / 1000))
+    const hist = new Array<number>(HIST_BUCKETS).fill(0)
+    hist[bucket] = 1
+    const insideInts = (inside as boolean[]).map((b) => (b ? 1 : 0))
+    // One statement, so concurrent runs can't lose each other's increment.
     await env.DB.prepare(
-      `INSERT INTO daily_stats (day_key, plays, total) VALUES (?, 1, ?)
-       ON CONFLICT (day_key) DO UPDATE SET plays = plays + 1, total = total + excluded.total`,
+      `INSERT INTO daily_stats (day_key, plays, total, round_sums, inside_counts, hist)
+       VALUES (?1, 1, ?2, ?3, ?4, ?5)
+       ON CONFLICT (day_key) DO UPDATE SET
+         plays = plays + 1,
+         total = total + ?2,
+         round_sums = json_array(
+           json_extract(round_sums, '$[0]') + json_extract(?3, '$[0]'),
+           json_extract(round_sums, '$[1]') + json_extract(?3, '$[1]'),
+           json_extract(round_sums, '$[2]') + json_extract(?3, '$[2]'),
+           json_extract(round_sums, '$[3]') + json_extract(?3, '$[3]'),
+           json_extract(round_sums, '$[4]') + json_extract(?3, '$[4]')),
+         inside_counts = json_array(
+           json_extract(inside_counts, '$[0]') + json_extract(?4, '$[0]'),
+           json_extract(inside_counts, '$[1]') + json_extract(?4, '$[1]'),
+           json_extract(inside_counts, '$[2]') + json_extract(?4, '$[2]'),
+           json_extract(inside_counts, '$[3]') + json_extract(?4, '$[3]'),
+           json_extract(inside_counts, '$[4]') + json_extract(?4, '$[4]')),
+         hist = json_set(hist, ?6, coalesce(json_extract(hist, ?6), 0) + 1)`,
     )
-      .bind(dayKey, total)
+      // The path is built here: D1 binds numbers as REAL, and '$[9.0]' is not a JSON path.
+      .bind(key, total, JSON.stringify(scores), JSON.stringify(insideInts), JSON.stringify(hist), `$[${bucket}]`)
       .run()
     return json({ ok: true })
+  }
+
+  if (request.method === 'GET' && path === '/api/stats/day') {
+    const url = new URL(request.url)
+    const day = url.searchParams.get('day') ?? ''
+    const hard = url.searchParams.get('hard') === '1'
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(day)) return json({ error: 'bad request' }, 400)
+    const row = await env.DB.prepare(
+      'SELECT plays, total, round_sums, inside_counts, hist FROM daily_stats WHERE day_key = ?',
+    )
+      .bind(hard ? `${day}#hard` : day)
+      .first<{ plays: number; total: number; round_sums: string; inside_counts: string; hist: string }>()
+    const stats = row
+      ? {
+          plays: row.plays,
+          total: row.total,
+          roundSums: JSON.parse(row.round_sums) as number[],
+          insideCounts: JSON.parse(row.inside_counts) as number[],
+          hist: JSON.parse(row.hist) as number[],
+        }
+      : { plays: 0, total: 0, roundSums: [0, 0, 0, 0, 0], insideCounts: [0, 0, 0, 0, 0], hist: new Array(HIST_BUCKETS).fill(0) }
+    // Not cached: the card refetches right after this player's own run posts,
+    // and a stale copy would make "everyone else" subtract a run that isn't there.
+    return json(stats)
   }
 
   if (request.method === 'GET' && path === '/api/reminders/key') {

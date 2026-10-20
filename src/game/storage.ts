@@ -9,6 +9,8 @@ export interface DayResult {
   scores: number[]
   /** Played with the 30-second timer and the zoom cap. */
   hard?: boolean
+  /** Which rounds landed inside the place; absent for results saved before this was kept. */
+  inside?: boolean[]
 }
 
 interface Stored {
@@ -101,7 +103,11 @@ export function saveDayResult(
   if (state.days?.[dayKey]) return null
 
   const total = results.reduce((sum, r) => sum + r.score, 0)
-  const result: DayResult = { total, scores: results.map((r) => r.score) }
+  const result: DayResult = {
+    total,
+    scores: results.map((r) => r.score),
+    inside: results.map((r) => isInside(r.distance, r.location.radius)),
+  }
   if (hard) result.hard = true
   const days = { ...state.days, [dayKey]: result }
 

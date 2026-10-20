@@ -27,7 +27,8 @@ import {
   type GroupView,
   type Standing,
 } from './game/groups'
-import { reportDailyStat } from './game/stats'
+import { fetchDayStats, othersFrom, reportDailyStat, type DayStats, type Others } from './game/stats'
+import { RoundCompare, RunCompare } from './ui/Compare'
 import { markTipSeen, tipPending } from './game/tips'
 import { track } from './game/analytics'
 import {
@@ -173,6 +174,9 @@ export default function App() {
   const [clanVersion, setClanVersion] = useState(0)
   /** Which clan to open from the badge or the card. */
   const [openClan, setOpenClan] = useState<string | null>(null)
+  /** Everyone's numbers for the daily being played, and whether this player's run is in them yet. */
+  const [dayStats, setDayStats] = useState<{ stats: DayStats; includesMe: boolean } | null>(null)
+  const [statsVersion, setStatsVersion] = useState(0)
 
   useEffect(() => {
     if (getMemberships().length === 0) {
@@ -200,6 +204,27 @@ export default function App() {
 
   const archived = mode === 'daily' ? getDayResult(dayKey) : null
   const replaying = archived !== null && results.length === 0
+
+  // Fetch the field when a daily starts, and again once this run has been posted.
+  // A stored result for today means our own run is already counted; an archive
+  // day never posts, so it never is.
+  useEffect(() => {
+    if (mode !== 'daily') {
+      setDayStats(null)
+      return
+    }
+    let live = true
+    const isToday = dayKey === today
+    const mine = isToday && (archived !== null || statsVersion > 0)
+    void fetchDayStats(dayKey, archived ? archived.hard === true : hard).then((stats) => {
+      if (live && stats) setDayStats({ stats, includesMe: mine })
+      else if (live) setDayStats(null)
+    })
+    return () => {
+      live = false
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode, dayKey, today, statsVersion, hard])
   const target = rounds[roundIndex]
   const finished = roundIndex >= rounds.length
   const showSummary = finished || replaying
@@ -263,9 +288,10 @@ export default function App() {
           if (milestone) track('milestone', { kind: milestone.kind })
           if (isToday) {
             const scores = next.map((r) => r.score)
+            const inside = next.map((r) => isInside(r.distance, r.location.radius))
             reportPlayed(dayKey)
             void postScores(dayKey, scores).then(() => setClanVersion((v) => v + 1))
-            reportDailyStat(dayKey, total)
+            void reportDailyStat(dayKey, scores, inside, hard).then(() => setStatsVersion((v) => v + 1))
           }
         }
       }
@@ -361,6 +387,19 @@ export default function App() {
   const hardRun = replaying ? archived?.hard === true : hard
   const isToday = mode === 'daily' && dayKey === today
   const isArchive = mode === 'daily' && !isToday
+
+  // Everyone else: take our own run back out when it's already in the numbers.
+  const myRun = replaying && archived
+    ? { scores: archived.scores, inside: archived.inside ?? archived.scores.map((sc) => sc >= MAX_ROUND_SCORE) }
+    : finished
+      ? { scores: results.map((r) => r.score), inside: results.map((r) => isInside(r.distance, r.location.radius)) }
+      : null
+  const others: Others | null = useMemo(
+    () => (dayStats ? othersFrom(dayStats.stats, dayStats.includesMe ? myRun : null) : null),
+    // myRun is rebuilt each render; its contents only change with these.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [dayStats, replaying, finished, archived, results],
+  )
 
   const me = getPlayer()?.id ?? null
   const standings: Standing[] = useMemo(
@@ -501,6 +540,9 @@ export default function App() {
                     ? `Inside ${current.location.name}`
                     : `${Math.round(current.distance).toLocaleString()} tiles from ${current.location.name}`}
                 </div>
+                {mode === 'daily' && others && (
+                  <RoundCompare others={others} round={roundIndex} score={current.score} />
+                )}
                 {revealTip && (
                   <div className="readout-tip">
                     Anywhere inside the gold circle scores the full 5,000. The further out, the fewer.
@@ -552,6 +594,7 @@ export default function App() {
             hard={hardRun}
             standings={isToday ? standings : []}
             me={me}
+            others={others}
             onOpenClan={(code) => openClanSheet(code, 'card')}
             onPlayEndless={() => startSession('endless')}
             onBackToToday={() => startSession('daily')}
@@ -689,6 +732,7 @@ interface SummaryProps {
   hard: boolean
   standings: Standing[]
   me: string | null
+  others: Others | null
   onOpenClan: (code: string) => void
   onPlayEndless: () => void
   onBackToToday: () => void
@@ -708,6 +752,7 @@ function Summary({
   hard,
   standings,
   me,
+  others,
   onOpenClan,
   onPlayEndless,
   onBackToToday,
@@ -774,18 +819,28 @@ function Summary({
           </p>
         )}
 
+        {mode === 'daily' && others && <RunCompare others={others} total={total} />}
+
         <ul className="summary-list">
-          {lines.map((l) => (
-            <li key={l.name}>
-              <span className={`band-dot band-${bandForRatio(l.score / MAX_ROUND_SCORE)}`} aria-hidden />
-              <span className="summary-name">{l.name}</span>
-              <span className="summary-pts">
-                {l.distance !== undefined &&
-                  (l.inside ? 'inside · ' : `${Math.round(l.distance).toLocaleString()} tiles · `)}
-                {l.score.toLocaleString()}
-              </span>
-            </li>
-          ))}
+          {lines.map((l, i) => {
+            const delta = mode === 'daily' && others ? l.score - others.roundAvgs[i] : null
+            return (
+              <li key={l.name}>
+                <span className={`band-dot band-${bandForRatio(l.score / MAX_ROUND_SCORE)}`} aria-hidden />
+                <span className="summary-name">{l.name}</span>
+                <span className="summary-pts">
+                  {l.distance !== undefined &&
+                    (l.inside ? 'inside · ' : `${Math.round(l.distance).toLocaleString()} tiles · `)}
+                  {l.score.toLocaleString()}
+                </span>
+                {delta !== null && (
+                  <span className={delta >= 0 ? 'summary-delta up' : 'summary-delta down'} title="Against today's average for this place">
+                    {delta >= 0 ? `+${delta.toLocaleString()}` : `−${(-delta).toLocaleString()}`}
+                  </span>
+                )}
+              </li>
+            )
+          })}
         </ul>
 
         {isToday && standings.length > 0 && (
