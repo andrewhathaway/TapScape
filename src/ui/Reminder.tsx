@@ -14,7 +14,7 @@ import {
 import { track } from '../game/analytics'
 import IosGuide from './IosGuide'
 
-const HOURS = [6, 7, 8, 9, 10, 12, 18, 20]
+const BASE_HOURS = [6, 7, 8, 9, 10, 12, 18, 20]
 
 function hourLabel(hour: number): string {
   if (hour === 0) return 'midnight'
@@ -33,12 +33,14 @@ const LOCAL = typeof location !== 'undefined' && ['localhost', '127.0.0.1'].incl
 interface Props {
   /** `sheet`: its own settings page, so it never hides itself and has no "Not now". */
   context?: 'card' | 'sheet'
+  /** Pre-selected hour for a player who hasn't chosen one yet (from their playing habit). */
+  suggestedHour?: number
 }
 
-export default function Reminder({ context = 'card' }: Props) {
+export default function Reminder({ context = 'card', suggestedHour }: Props) {
   const inSheet = context === 'sheet'
   const [state, setState] = useState(getReminderState)
-  const [hour, setHour] = useState(state.hour)
+  const [hour, setHour] = useState(state.enabled ? state.hour : (suggestedHour ?? state.hour))
   const [serverKey, setServerKey] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
   const [note, setNote] = useState<string | null>(null)
@@ -113,6 +115,7 @@ export default function Reminder({ context = 'card' }: Props) {
     setHidden(true)
   }
 
+  const hours = BASE_HOURS.includes(hour) ? BASE_HOURS : [...BASE_HOURS, hour].sort((a, b) => a - b)
   const picker = (
     <select
       className="reminder-hour"
@@ -121,7 +124,7 @@ export default function Reminder({ context = 'card' }: Props) {
       aria-label="Reminder time"
       onChange={(e) => (state.enabled ? void change(Number(e.target.value)) : setHour(Number(e.target.value)))}
     >
-      {HOURS.map((h) => (
+      {hours.map((h) => (
         <option key={h} value={h}>
           {hourLabel(h)}
         </option>

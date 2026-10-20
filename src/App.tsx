@@ -30,6 +30,15 @@ import {
 import { fetchDayStats, othersFrom, reportDailyStat, type DayStats, type Others } from './game/stats'
 import { RoundCompare, RunCompare } from './ui/Compare'
 import { markTipSeen, tipPending } from './game/tips'
+import {
+  dismissNudge,
+  markNudgeShown,
+  nudgeCopy,
+  recordFinish,
+  shouldNudge,
+  shouldShowBadge,
+  suggestedHour,
+} from './game/nudge'
 import { track } from './game/analytics'
 import {
   getDayResult,
@@ -169,6 +178,11 @@ export default function App() {
   const [stream, setStream] = useState(readStream)
   const [pinTip, setPinTip] = useState(() => tipPending('placePin'))
   const [revealTip, setRevealTip] = useState(() => tipPending('firstReveal'))
+  /** The landing nudge: 'pill' for the first seconds, then 'badge' in the corner, or nothing. */
+  const [nudge, setNudge] = useState<'pill' | 'badge' | null>(() =>
+    shouldNudge(todayKey()) ? 'pill' : shouldShowBadge() ? 'badge' : null,
+  )
+  const [nudgeHour] = useState(suggestedHour)
   /** Every clan's board for today; refreshed after this player's score lands. */
   const [clans, setClans] = useState<GroupView[]>([])
   const [clanVersion, setClanVersion] = useState(0)
@@ -252,6 +266,7 @@ export default function App() {
         markTipSeen('placePin')
         setPinTip(false)
       }
+      setNudge((n) => (n === 'pill' ? 'badge' : n))
     },
     [pinTip],
   )
@@ -289,6 +304,7 @@ export default function App() {
           if (isToday) {
             const scores = next.map((r) => r.score)
             const inside = next.map((r) => isInside(r.distance, r.location.radius))
+            recordFinish()
             reportPlayed(dayKey)
             void postScores(dayKey, scores).then(() => setClanVersion((v) => v + 1))
             void reportDailyStat(dayKey, scores, inside, hard).then(() => setStatsVersion((v) => v + 1))
@@ -424,6 +440,32 @@ export default function App() {
   }, [standings, me, playedToday])
   const showRace = isToday && !replaying && roundIndex === 0 && !pending && !revealed && rival !== null
 
+  // The pill shows on today's daily, before the first pin, and never beside the race line.
+  const nudgePillVisible =
+    nudge === 'pill' && isToday && !replaying && roundIndex === 0 && !pending && !revealed && !showRace && !pinTip
+  const nudgeBadgeVisible = nudge === 'badge' || (nudge === 'pill' && !nudgePillVisible && showSummary === false && roundIndex > 0)
+  useEffect(() => {
+    if (!nudgePillVisible) return
+    markNudgeShown(today)
+    track('nudge', { action: 'shown' })
+    const id = setTimeout(() => setNudge((n) => (n === 'pill' ? 'badge' : n)), 8000)
+    return () => clearTimeout(id)
+  }, [nudgePillVisible, today])
+  const openNudge = (from: 'pill' | 'badge') => {
+    track('nudge', { action: 'open', from })
+    setNudge('badge')
+    openSheet('reminders')
+  }
+  const declineNudge = () => {
+    track('nudge', { action: 'dismiss' })
+    dismissNudge()
+    setNudge('badge')
+  }
+  // Once the reminder is decided, the badge goes too.
+  useEffect(() => {
+    if (sheet === null && nudge && !shouldShowBadge()) setNudge(null)
+  }, [sheet, nudge])
+
   const openClanSheet = (code: string, from: string) => {
     setPrimaryClan(code)
     setOpenClan(code)
@@ -520,6 +562,18 @@ export default function App() {
                 {secondsLeft}s
               </div>
             )}
+            {nudgePillVisible && (
+              <div className="nudge-pill">
+                <span className="nudge-sun" aria-hidden>☀</span>
+                <span className="nudge-text">{nudgeCopy()}</span>
+                <button className="nudge-go" onClick={() => openNudge('pill')}>
+                  Remind me ›
+                </button>
+                <button className="nudge-x" onClick={declineNudge} aria-label="Not now">
+                  ×
+                </button>
+              </div>
+            )}
             {showRace && rival && (
               <button className="race" onClick={() => primary && openClanSheet(primary.code, 'race')}>
                 <span className="race-av" aria-hidden>{rival.name.slice(0, 1).toUpperCase()}</span>
@@ -578,6 +632,12 @@ export default function App() {
                 : 'Lock it in'}
             </button>
           </div>
+        )}
+
+        {nudgeBadgeVisible && !showSummary && (
+          <button className="sun-badge" onClick={() => openNudge('badge')} aria-label="Morning reminder">
+            ☀<span className="sun-dot" aria-hidden />
+          </button>
         )}
 
         {showSummary && (
@@ -655,7 +715,7 @@ export default function App() {
       )}
       {sheet === 'reminders' && (
         <Modal title="Morning reminder" onClose={() => setSheet(null)}>
-          <Reminder context="sheet" />
+          <Reminder context="sheet" suggestedHour={nudgeHour} />
         </Modal>
       )}
       {sheet === 'about' && (

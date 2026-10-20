@@ -906,3 +906,56 @@ button.primary.small { padding: 8px 14px; font-size: 13px; justify-self: start; 
 .cmp-note { margin-top: 6px; font-size: 11px; color: var(--ink-dim); }
 .summary-delta { font-size: 11px; font-weight: 700; min-width: 3.2em; text-align: right; font-variant-numeric: tabular-nums; }
 .stream .cmp-line, .stream .cmp-context { font-size: 15px; }
+
+/* ---------- landing nudge: pill above the hint, then a corner sun ---------- */
+
+.nudge-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  padding: 7px 8px 7px 12px;
+  border-radius: 999px;
+  background: rgba(23,21,15,.96);
+  border: 1px solid var(--gold);
+  box-shadow: 0 0 0 4px rgba(255,184,51,.14), 0 6px 18px rgba(0,0,0,.5);
+  font-size: 13px;
+  animation: rise .25s ease-out;
+}
+.nudge-sun { color: var(--gold); font-size: 14px; line-height: 1; }
+.nudge-text { min-width: 0; }
+.nudge-go, .nudge-x { background: none; border: 0; font: inherit; cursor: pointer; padding: 0; }
+.nudge-go { color: var(--gold); font-weight: 700; white-space: nowrap; }
+.nudge-x { color: var(--ink-dim); font-size: 16px; line-height: 1; padding: 0 4px; }
+
+.sun-badge {
+  position: absolute;
+  right: 10px;
+  bottom: 40px;
+  z-index: 500;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: var(--panel);
+  color: var(--gold);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,.5);
+  animation: pop .4s cubic-bezier(.2,.8,.3,1.4);
+}
+.sun-dot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 3px rgba(255,184,51,.25);
+}
+.stream .nudge-pill { font-size: 16px; }
+@media (prefers-reduced-motion: reduce) {
+  .nudge-pill, .sun-badge { animation: none; }
+}

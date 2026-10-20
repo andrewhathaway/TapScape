@@ -84,6 +84,10 @@ export function getHistory(dayKey: string, days: number): HistoryDay[] {
   return out.reverse()
 }
 
+export function getLifetime(): { found: number; best: number; days: number } {
+  return read().lifetime ?? { found: 0, best: 0, days: 0 }
+}
+
 export function getStreak(): { current: number; best: number } {
   const { streak } = read()
   return { current: streak?.current ?? 0, best: streak?.best ?? 0 }
