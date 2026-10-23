@@ -18,9 +18,11 @@ import {
 import { dayKeyOf, nextSendAt } from './schedule'
 import { handleGroups } from './groups'
 import { handlePage } from './pages'
+import { findLatestMapVersion } from './map-version.mjs'
 
 export interface Env {
   DB: D1Database
+  CONFIG: KVNamespace
   /** The static site, so the Worker can read its own og.png for the live card. */
   ASSETS: Fetcher
   VAPID_PUBLIC_KEY: string
@@ -219,6 +221,16 @@ async function sendDue(env: Env, now: number): Promise<void> {
   if (writes.length) await env.DB.batch(writes)
 }
 
+async function refreshMapVersion(env: Env): Promise<void> {
+  const latest = await findLatestMapVersion(fetch)
+  if (!latest) return
+  const current = await env.CONFIG.get('map_version')
+  if (latest !== current) {
+    await env.CONFIG.put('map_version', latest)
+    console.log(`map version ${current ?? 'unset'} → ${latest}`)
+  }
+}
+
 async function handleApi(request: Request, env: Env, path: string): Promise<Response> {
   const now = Date.now()
 
@@ -291,6 +303,13 @@ async function handleApi(request: Request, env: Env, path: string): Promise<Resp
     // Not cached: the card refetches right after this player's own run posts,
     // and a stale copy would make "everyone else" subtract a run that isn't there.
     return json(stats)
+  }
+
+  if (request.method === 'GET' && path === '/api/config') {
+    const mapVersion = await env.CONFIG.get('map_version')
+    return new Response(JSON.stringify({ mapVersion }), {
+      headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'public, max-age=300' },
+    })
   }
 
   if (request.method === 'GET' && path === '/api/reminders/key') {
@@ -391,5 +410,9 @@ export default {
 
   async scheduled(event, env, ctx): Promise<void> {
     ctx.waitUntil(sendDue(env, event.scheduledTime))
+    // Twice a day, learn the wiki's current tileset version. Costs five
+    // subrequests, so it is kept off the hours when the reminder batch is busiest.
+    const hour = new Date(event.scheduledTime).getUTCHours()
+    if (hour === 3 || hour === 15) ctx.waitUntil(refreshMapVersion(env))
   },
 } satisfies ExportedHandler<Env>

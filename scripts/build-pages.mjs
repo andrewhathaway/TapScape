@@ -144,8 +144,12 @@ ${loc.blurb ? `<p>${esc(loc.blurb)}</p>` : ''}
     // Server rows count northward, Leaflet's count southward.
     getTileUrl: function (c) { return L.Util.template(this._url, { z: this._getZoomForUrl(), x: c.x, y: -c.y - 1 }) }
   })
-  new Tiles(${JSON.stringify(TILE_URL)}, { tileSize: 256, maxNativeZoom: 3, minNativeZoom: -3, noWrap: true,
+  var tiles = new Tiles(${JSON.stringify(TILE_URL)}, { tileSize: 256, maxNativeZoom: 3, minNativeZoom: -3, noWrap: true,
     attribution: 'Map data &copy; <a href="https://meta.weirdgloop.org/w/Meta:Copyrights">Weird Gloop</a> &middot; assets &copy; Jagex' }).addTo(map)
+  // The wiki retires old tileset versions; swap to the live one if it has moved on.
+  fetch('/api/config').then(function (r) { return r.json() }).then(function (c) {
+    if (c.mapVersion && c.mapVersion !== ${JSON.stringify(MAP_VERSION)}) tiles.setUrl(${JSON.stringify(TILE_URL)}.replace(${JSON.stringify(MAP_VERSION)}, c.mapVersion))
+  }).catch(function () {})
   var at = [${loc.y}, ${loc.x}]
   L.circle(at, { radius: ${radius}, color: '#ffb833', weight: 2, fillOpacity: 0.12 }).addTo(map)
   L.circleMarker(at, { radius: 5, color: '#ffb833', fillColor: '#ffb833', fillOpacity: 1 }).addTo(map)

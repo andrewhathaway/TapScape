@@ -53,6 +53,13 @@ npm run data:locations     # rebuild from the wiki
 npm run data:map-version   # re-pin MAP_VERSION to the current tileset
 ```
 
+The wiki retires old tileset versions a few weeks after publishing a new one,
+and a retired version goes black tile by tile as edge caches expire. So the
+pin is only a fallback: the Worker's cron checks the wiki's live version
+twice a day (several article pages, newest wins, verified against a canary
+tile) and stores it in KV; the app and the location pages read it from
+`/api/config` at startup and swap the tile URL if it has moved on.
+
 Coordinates live in each article's `{{Map}}` template. The wiki runs no Cargo or
 SMW, so this reads raw wikitext. The subtlety is that **cities declare their map as
 `mtype=polygon` with a bare vertex list and no `x`/`y` at all** — a parser that only

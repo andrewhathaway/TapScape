@@ -6,7 +6,46 @@ import type { Plane, WorldPoint } from '../game/types'
  * dated version; there is no "latest" alias, so this is pinned.
  * Refresh it with `node scripts/refresh-map-version.mjs`.
  */
-export const MAP_VERSION = '2026-08-12_a'
+export const MAP_VERSION = '2026-10-20_a'
+
+const VERSION_KEY = 'tapscape:map-version'
+
+/**
+ * The wiki retires old tileset versions, so a pinned one slowly goes black.
+ * The Worker's cron tracks the live version; the app starts on the last one
+ * it saw (or the pin), then asks and switches if that has moved on.
+ */
+export function startingMapVersion(): string {
+  try {
+    return localStorage.getItem(VERSION_KEY) || MAP_VERSION
+  } catch {
+    return MAP_VERSION
+  }
+}
+
+export async function fetchLiveMapVersion(): Promise<string | null> {
+  try {
+    const res = await fetch('/api/config')
+    if (!res.ok) return null
+    const { mapVersion } = (await res.json()) as { mapVersion?: string | null }
+    if (!mapVersion || !/^\d{4}-\d{2}-\d{2}_[a-z]$/.test(mapVersion)) return null
+    try {
+      localStorage.setItem(VERSION_KEY, mapVersion)
+    } catch {
+      // Next load just asks again.
+    }
+    return mapVersion
+  } catch {
+    return null
+  }
+}
+
+export function tileUrl(version: string, plane: Plane): string {
+  return (
+    `https://maps.runescape.wiki/osrs/versions/${version}` +
+    `/tiles/rendered/${SURFACE_MAP_ID}/{z}/${plane}_{x}_{y}.png`
+  )
+}
 
 const SURFACE_MAP_ID = 0
 const TILE_SIZE = 256
@@ -55,9 +94,8 @@ const OsrsTileLayer = L.TileLayer.extend({
 })
 
 export function attachOsrsTiles(map: L.Map, plane: Plane): L.TileLayer {
-  const url =
-    `https://maps.runescape.wiki/osrs/versions/${MAP_VERSION}` +
-    `/tiles/rendered/${SURFACE_MAP_ID}/{z}/${plane}_{x}_{y}.png`
+  const version = startingMapVersion()
+  const url = tileUrl(version, plane)
 
   const layer = new (OsrsTileLayer as unknown as new (
     url: string,
@@ -73,5 +111,12 @@ export function attachOsrsTiles(map: L.Map, plane: Plane): L.TileLayer {
       'Map data &copy; <a href="https://meta.weirdgloop.org/w/Meta:Copyrights" target="_blank" rel="noreferrer">Weird Gloop</a> &middot; assets &copy; Jagex',
   })
 
-  return layer.addTo(map)
+  layer.addTo(map)
+
+  // Correct the version in the background; setUrl reloads the tiles in place.
+  void fetchLiveMapVersion().then((live) => {
+    if (live && live !== version) layer.setUrl(tileUrl(live, plane))
+  })
+
+  return layer
 }

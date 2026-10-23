@@ -1,20 +1,15 @@
-// The wiki serves map tiles from a dated version folder with no "latest" alias,
-// so we read the current one off a rendered page that embeds a map.
+// The wiki serves map tiles from a dated version folder with no "latest" alias.
+// Each article page embeds the version its render was cached with, so one page
+// can lag the real current version by weeks. We read several, take the newest,
+// and confirm the tile server actually serves it before touching the pin.
 import { readFile, writeFile } from 'node:fs/promises'
+import { findLatestMapVersion } from '../worker/map-version.mjs'
 
-const PROBE = 'https://oldschool.runescape.wiki/w/Varrock'
 const TILES = new URL('../src/map/tiles.ts', import.meta.url)
 
-const html = await fetch(PROBE, {
-  headers: { 'User-Agent': 'TapScape/0.1 (https://github.com/andrewhathaway/TapScape; map version check)' },
-}).then((r) => r.text())
+const latest = await findLatestMapVersion(fetch)
+if (!latest) throw new Error('no servable map version found')
 
-const versions = [...html.matchAll(/maps\.runescape\.wiki\/osrs\/versions\/([^/]+)\//g)].map(
-  (m) => m[1],
-)
-if (!versions.length) throw new Error('no map version found on probe page')
-
-const latest = [...new Set(versions)].sort().pop()
 const source = await readFile(TILES, 'utf8')
 const current = source.match(/MAP_VERSION = '([^']+)'/)?.[1]
 

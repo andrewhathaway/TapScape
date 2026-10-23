@@ -26,6 +26,10 @@
     "crons": ["0 * * * *"]
   },
 
+  // Runtime config the cron keeps fresh, currently just the wiki's live map
+  // tileset version (they retire old versions, which blacks out a pinned map).
+  "kv_namespaces": [{ "binding": "CONFIG", "id": "bfe25f0f01c34c9bb70479b38448e27a" }],
+
   // Push subscriptions. Create the database once with
   //   npx wrangler d1 create tapscape-reminders
   // and paste the id it prints over the placeholder below. Local dev ignores
