@@ -11,6 +11,20 @@ import type { Env } from './index'
 
 const MAX_GROUP_NAME = 24
 const MAX_PLAYER_NAME = 16
+/** One line beside a score. Long enough for a quip, short enough to stay one. */
+const MAX_NOTE = 80
+
+/** The handful of words a clan code shouldn't let through unasked. Not a filter, a tripwire. */
+const BLOCKED = /\b(n[i1]gg|f[a@]gg|k[i1]ke|retard|rape|kys)\w*/i
+
+function cleanNote(input: unknown): string | null | undefined {
+  if (input === undefined) return undefined
+  if (input === null || input === '') return null
+  if (typeof input !== 'string') return undefined
+  const note = input.replace(/[\u0000-\u001f\u007f]/g, '').replace(/\s+/g, ' ').trim().slice(0, MAX_NOTE)
+  if (!note) return null
+  return BLOCKED.test(note) ? undefined : note
+}
 const MAX_MEMBERS = 50
 const ROUNDS = 5
 const HISTORY_DAYS = 7
@@ -83,7 +97,7 @@ async function createGroup(request: Request, env: Env): Promise<Response> {
     const code = newCode()
     try {
       await env.DB.batch([
-        env.DB.prepare('INSERT INTO groups (code, name, created_at) VALUES (?, ?, ?)').bind(code, name, now),
+        env.DB.prepare('INSERT INTO groups (code, name, created_at, creator_id) VALUES (?, ?, ?, ?)').bind(code, name, now, player.id),
         env.DB.prepare('INSERT INTO group_members (code, player_id, name, joined_at) VALUES (?, ?, ?, ?)').bind(
           code,
           player.id,
@@ -128,6 +142,8 @@ async function postScores(request: Request, env: Env, code: string): Promise<Res
   const body = await readJson(request)
   const player = parsePlayer(body?.player)
   const { dayKey, total, scores } = body ?? {}
+  const note = cleanNote(body?.note)
+  if (note === undefined && body?.note !== undefined) return bad('note')
   if (!player || typeof dayKey !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(dayKey)) return bad()
   if (
     !Array.isArray(scores) ||
@@ -151,10 +167,26 @@ async function postScores(request: Request, env: Env, code: string): Promise<Res
   await env.DB.batch([
     env.DB.prepare('UPDATE group_members SET name = ? WHERE code = ? AND player_id = ?').bind(player.name, code, player.id),
     // First result for the day stands; the game only allows one run anyway.
+    // The note may be set or changed any time that day.
     env.DB.prepare(
-      'INSERT INTO group_scores (code, player_id, day_key, total, scores) VALUES (?, ?, ?, ?, ?) ON CONFLICT DO NOTHING',
-    ).bind(code, player.id, dayKey, sum, JSON.stringify(scores)),
+      `INSERT INTO group_scores (code, player_id, day_key, total, scores, note) VALUES (?, ?, ?, ?, ?, ?)
+       ON CONFLICT (code, player_id, day_key) DO UPDATE SET note = CASE WHEN ?7 THEN excluded.note ELSE note END`,
+    ).bind(code, player.id, dayKey, sum, JSON.stringify(scores), note ?? null, body?.note !== undefined ? 1 : 0),
   ])
+  return json({ ok: true })
+}
+
+/** The clan's creator can take down any note in it; a member can clear their own. */
+async function removeNote(request: Request, env: Env, code: string, targetId: string): Promise<Response> {
+  const body = await readJson(request)
+  const player = parsePlayer(body?.player)
+  if (!player) return bad()
+  const group = await env.DB.prepare('SELECT creator_id FROM groups WHERE code = ?').bind(code).first<{ creator_id: string | null }>()
+  if (!group) return json({ error: 'no such group' }, 404)
+  if (player.id !== targetId && group.creator_id !== player.id) return json({ error: 'not allowed' }, 403)
+  await env.DB.prepare('UPDATE group_scores SET note = NULL WHERE code = ? AND player_id = ? AND day_key = ?')
+    .bind(code, targetId, dayKeyOf(Date.now()))
+    .run()
   return json({ ok: true })
 }
 
@@ -166,7 +198,7 @@ async function getGroup(env: Env, code: string): Promise<Response> {
   const [members, scores] = await env.DB.batch([
     env.DB.prepare('SELECT player_id AS id, name FROM group_members WHERE code = ? ORDER BY joined_at').bind(code),
     env.DB.prepare(
-      `SELECT s.player_id, m.name, s.day_key, s.total, s.scores
+      `SELECT s.player_id, m.name, s.day_key, s.total, s.scores, s.note
        FROM group_scores s JOIN group_members m ON m.code = s.code AND m.player_id = s.player_id
        WHERE s.code = ? AND s.day_key >= ?
        ORDER BY s.day_key DESC, s.total DESC`,
@@ -174,13 +206,17 @@ async function getGroup(env: Env, code: string): Promise<Response> {
   ])
 
   const days = new Map<string, { dayKey: string; entries: unknown[] }>()
-  for (const r of scores.results as Array<{ player_id: string; name: string; day_key: string; total: number; scores: string }>) {
+  const today = dayKeyOf(Date.now())
+  for (const r of scores.results as Array<{ player_id: string; name: string; day_key: string; total: number; scores: string; note: string | null }>) {
     let day = days.get(r.day_key)
     if (!day) days.set(r.day_key, (day = { dayKey: r.day_key, entries: [] }))
-    day.entries.push({ playerId: r.player_id, name: r.name, total: r.total, scores: JSON.parse(r.scores) })
+    // Notes are a today thing; yesterday's quip beside yesterday's score is noise.
+    const note = r.day_key === today && r.note ? r.note : undefined
+    day.entries.push({ playerId: r.player_id, name: r.name, total: r.total, scores: JSON.parse(r.scores), ...(note ? { note } : {}) })
   }
+  const meta = await env.DB.prepare('SELECT creator_id FROM groups WHERE code = ?').bind(code).first<{ creator_id: string | null }>()
 
-  return json({ code, name, members: members.results, days: [...days.values()] })
+  return json({ code, name, creatorId: meta?.creator_id ?? null, members: members.results, days: [...days.values()] })
 }
 
 async function leaveGroup(env: Env, code: string, playerId: string): Promise<Response> {
@@ -217,6 +253,9 @@ export async function handleGroups(request: Request, env: Env, path: string): Pr
   if (request.method === 'POST' && action === 'scores') return postScores(request, env, code)
   if (request.method === 'DELETE' && action === 'members' && parts[2]) {
     return leaveGroup(env, code, decodeURIComponent(parts[2]))
+  }
+  if (request.method === 'DELETE' && action === 'notes' && parts[2]) {
+    return removeNote(request, env, code, decodeURIComponent(parts[2]))
   }
   return json({ error: 'not found' }, 404)
 }

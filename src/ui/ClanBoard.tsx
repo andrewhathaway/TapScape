@@ -69,6 +69,7 @@ export default function ClanBoard({ standings, me, onOpen }: Props) {
                           <span className="clan-bands" aria-hidden>
                             {bands(e.scores)}
                           </span>
+                          {e.note && <span className="clan-note">{e.note}</span>}
                         </span>
                         <strong>{e.total.toLocaleString()}</strong>
                       </li>

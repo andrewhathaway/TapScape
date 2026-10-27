@@ -101,6 +101,13 @@ more likely and to turn a share into an invitation:
   header once you've played, and as a "Bob scored 14,200 today" line before
   round one if a clanmate has already played. Boards are fetched once per visit
   and again after your score lands.
+- **Clan notes.** After a daily, one line (80 characters) to your clan,
+  offered under the board with suggestion chips drawn from the run ("Carried
+  by Lumbridge", "Round 4 robbed me", "Beat that" when leading). Same note in
+  every clan, editable until midnight, cleared with the day. Shown beside the
+  score on the board, in the clan sheet and on the race line; never on share
+  cards or public pages. The clan's creator can remove any note in it. A
+  short server-side word list rejects the obvious.
 - **Share pages.** A shared result links to `/r/<day>/<scores>`, a challenge to
   `/c/<seed>/<score>`. The Worker renders each with its own 1200×630 preview
   (`worker/og.ts`, hand-built SVG rasterised by resvg in WebAssembly), so the

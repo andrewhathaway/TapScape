@@ -13,6 +13,7 @@ import {
   leaveGroup,
   normaliseCode,
   peekGroup,
+  removeNote,
   setPrimaryClan,
   type GroupView,
   type Membership,
@@ -294,6 +295,11 @@ function GroupPanel({ code, today, onBack, onLeft }: PanelProps) {
   }
   const weekRows = [...week.entries()].sort((a, b) => b[1].total - a[1].total)
 
+  const takeDown = async (playerId: string) => {
+    if (!confirm('Remove this note from the clan?')) return
+    if (await removeNote(code, playerId)) setGroup(await fetchGroup(code))
+  }
+
   const invite = async () => {
     track('clan_invite_copy')
     setCopied(await copyText(`Join my TapScape clan "${group.name}": ${groupInviteUrl(code)}`))
@@ -331,6 +337,20 @@ function GroupPanel({ code, today, onBack, onLeft }: PanelProps) {
                 <span className="group-bands" aria-hidden>
                   {bands(e.scores)}
                 </span>
+                {e.note && (
+                  <span className="group-quip">
+                    {e.note}
+                    {group.creatorId === me && e.playerId !== me && (
+                      <button
+                        className="link note-remove"
+                        onClick={() => void takeDown(e.playerId)}
+                        title="Remove this note (you made this clan)"
+                      >
+                        remove
+                      </button>
+                    )}
+                  </span>
+                )}
               </span>
               <span className="group-total">{e.total.toLocaleString()}</span>
             </li>

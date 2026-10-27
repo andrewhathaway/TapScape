@@ -959,3 +959,68 @@ button.primary.small { padding: 8px 14px; font-size: 13px; justify-self: start; 
 @media (prefers-reduced-motion: reduce) {
   .nudge-pill, .sun-badge { animation: none; }
 }
+
+/* ---------- clan notes ---------- */
+
+.clan-note, .group-quip, .race-note {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink);
+  white-space: normal;
+}
+.clan-note::before, .group-quip::before, .race-note::before { content: '“'; color: var(--gold); font-style: normal; }
+.clan-note::after, .group-quip::after, .race-note::after { content: '”'; color: var(--gold); font-style: normal; }
+.clan-rows li.me .clan-note, .group-scores li.me .group-quip { color: var(--ink); }
+.clan-rows li { align-items: start; }
+.clan-rows li em { padding-top: 2px; }
+.clan-name { min-width: 0; }
+.race-text { min-width: 0; }
+.race-note { font-size: 12px; color: var(--ink-dim); }
+.note-remove { margin-left: 8px; font-size: 11px; }
+
+.note-compose, .note-posted {
+  margin-top: 10px;
+  padding: 9px 11px;
+  border: 1px solid var(--edge);
+  border-radius: 8px;
+  background: var(--panel-2);
+}
+.note-k { display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-dim); }
+.note-count { text-transform: none; letter-spacing: 0; font-weight: 400; }
+.note-field { display: flex; align-items: center; gap: 8px; margin-top: 7px; }
+.note-field input {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 10px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  border-radius: 7px;
+}
+.note-field input:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: transparent; }
+.note-field input::placeholder { color: var(--ink-dim); font-style: italic; }
+.note-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 7px; }
+.note-chip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--edge);
+  background: var(--panel);
+  color: var(--ink-dim);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.note-chip:hover { color: var(--ink); border-color: var(--ink-dim); }
+.note-acts { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 8px; font-size: 12px; }
+.note-acts .muted { font-size: 12px; }
+.note-links { display: flex; gap: 12px; }
+.note-posted { display: flex; align-items: flex-start; gap: 8px; }
+.note-quote { color: var(--gold); font-size: 18px; line-height: 1; }
+.note-body { flex: 1; font-size: 14px; }
+.note-meta { display: block; font-size: 11px; color: var(--ink-dim); margin-top: 2px; }
+.stream .race-note { font-size: 15px; }

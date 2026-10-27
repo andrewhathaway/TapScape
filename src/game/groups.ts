@@ -25,7 +25,11 @@ export interface GroupEntry {
   name: string
   total: number
   scores: number[]
+  /** Today's one-line note beside the score, if they left one. */
+  note?: string
 }
+
+export const MAX_NOTE = 80
 
 export interface GroupDay {
   dayKey: string
@@ -35,6 +39,8 @@ export interface GroupDay {
 export interface GroupView {
   code: string
   name: string
+  /** Who made the clan; they can remove any note in it. */
+  creatorId: string | null
   members: Player[]
   /** Most recent first, at most a week. */
   days: GroupDay[]
@@ -45,6 +51,8 @@ interface Stored {
   groups?: Membership[]
   /** The clan the header badge shows: the one looked at last. */
   primary?: string
+  /** Today's note, so the card can show it after a reload. */
+  note?: { day: string; text: string }
 }
 
 export const MAX_GROUP_NAME = 24
@@ -116,8 +124,8 @@ async function api<T>(method: string, path: string, body?: unknown): Promise<T |
   try {
     const res = await fetch(`/api/groups${path}`, {
       method,
-      headers: body ? { 'content-type': 'application/json' } : undefined,
-      body: body ? JSON.stringify(body) : undefined,
+      headers: body !== undefined ? { 'content-type': 'application/json' } : undefined,
+      body: body !== undefined ? JSON.stringify(body) : undefined,
     })
     if (!res.ok) return null
     return (await res.json()) as T
@@ -182,14 +190,48 @@ export async function peekGroup(code: string): Promise<{ name: string } | null> 
 }
 
 /** Push a finished daily to every clan this player is in; resolves when all are posted. */
-export async function postScores(dayKey: string, scores: number[]): Promise<void> {
+export async function postScores(dayKey: string, scores: number[], note?: string): Promise<void> {
   const player = getPlayer()
   if (!player) return
   const total = scores.reduce((a, b) => a + b, 0)
-  await Promise.all(
-    getMemberships().map(({ code }) => api('POST', `/${code}/scores`, { player, dayKey, total, scores })),
-  )
+  const body = { player, dayKey, total, scores, ...(note !== undefined ? { note } : {}) }
+  await Promise.all(getMemberships().map(({ code }) => api('POST', `/${code}/scores`, body)))
   invalidateClans()
+}
+
+export function getTodayNote(day: string): string | null {
+  const n = read().note
+  return n && n.day === day ? n.text : null
+}
+
+/**
+ * Set, change or clear today's note in every clan. The score is re-sent with
+ * it (the server keeps the first score and only updates the note).
+ */
+export async function postNote(dayKey: string, scores: number[], text: string): Promise<boolean> {
+  const player = getPlayer()
+  if (!player) return false
+  const note = text.trim().slice(0, MAX_NOTE)
+  const total = scores.reduce((a, b) => a + b, 0)
+  const results = await Promise.all(
+    getMemberships().map(({ code }) => api('POST', `/${code}/scores`, { player, dayKey, total, scores, note })),
+  )
+  const ok = results.some((r) => r !== null)
+  if (ok) {
+    const state = read()
+    write({ ...state, note: note ? { day: dayKey, text: note } : undefined })
+    invalidateClans()
+  }
+  return ok
+}
+
+/** A clan creator taking down someone's note in that clan. */
+export async function removeNote(code: string, playerId: string): Promise<boolean> {
+  const player = getPlayer()
+  if (!player) return false
+  const ok = (await api('DELETE', `/${code}/notes/${encodeURIComponent(playerId)}`, { player })) !== null
+  if (ok) invalidateClans()
+  return ok
 }
 
 // ---- today's boards, fetched once per visit and again after a score lands ----

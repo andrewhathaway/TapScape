@@ -9,6 +9,7 @@ import History from './ui/History'
 import Reminder from './ui/Reminder'
 import Groups from './ui/Groups'
 import ClanBoard from './ui/ClanBoard'
+import ClanNote from './ui/ClanNote'
 import { LOCATIONS, poolForDay, wikiUrl } from './data/locations'
 import { MAP_VIEW } from './map/tiles'
 import { dailyRounds, dayIndex, endlessRounds, msUntilNextDay, randomSeed, todayKey } from './game/daily'
@@ -433,10 +434,10 @@ export default function App() {
   // The race line: the best clanmate score so far, shown before your first pin today.
   const rival = useMemo(() => {
     if (playedToday) return null
-    let best: { name: string; total: number } | null = null
+    let best: { name: string; total: number; note?: string } | null = null
     for (const s of standings) {
       for (const e of s.entries) {
-        if (e.playerId !== me && (!best || e.total > best.total)) best = { name: e.name, total: e.total }
+        if (e.playerId !== me && (!best || e.total > best.total)) best = { name: e.name, total: e.total, note: e.note }
       }
     }
     return best
@@ -583,8 +584,9 @@ export default function App() {
             {showRace && rival && (
               <button className="race" onClick={() => primary && openClanSheet(primary.code, 'race')}>
                 <span className="race-av" aria-hidden>{rival.name.slice(0, 1).toUpperCase()}</span>
-                <span>
+                <span className="race-text">
                   <strong>{rival.name}</strong> scored {rival.total.toLocaleString()} today
+                  {rival.note && <span className="race-note">{rival.note}</span>}
                 </span>
                 <span className="race-go">Beat it ›</span>
               </button>
@@ -661,6 +663,8 @@ export default function App() {
             standings={isToday ? standings : []}
             me={me}
             others={others}
+            results={results}
+            onNotePosted={() => setClanVersion((v) => v + 1)}
             onOpenClan={(code) => openClanSheet(code, 'card')}
             onPlayEndless={() => startSession('endless')}
             onBackToToday={() => startSession('daily')}
@@ -799,6 +803,8 @@ interface SummaryProps {
   standings: Standing[]
   me: string | null
   others: Others | null
+  results: Guess[]
+  onNotePosted: () => void
   onOpenClan: (code: string) => void
   onPlayEndless: () => void
   onBackToToday: () => void
@@ -819,6 +825,8 @@ function Summary({
   standings,
   me,
   others,
+  results,
+  onNotePosted,
   onOpenClan,
   onPlayEndless,
   onBackToToday,
@@ -910,7 +918,16 @@ function Summary({
         </ul>
 
         {isToday && standings.length > 0 && (
-          <ClanBoard standings={standings} me={me} onOpen={onOpenClan} />
+          <>
+            <ClanBoard standings={standings} me={me} onOpen={onOpenClan} />
+            <ClanNote
+              dayKey={dayKey}
+              scores={scores}
+              results={results}
+              leading={standings.some((s) => s.rank === 1 && s.played >= 2)}
+              onPosted={onNotePosted}
+            />
+          </>
         )}
 
         {mode === 'daily' && (
